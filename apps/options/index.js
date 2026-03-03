@@ -413,7 +413,7 @@ new Vue({
             if (status === 'update_available') {
                 // Show update notification
                 this.showNotification({
-                    title: 'FeHelper 更新',
+                    title: 'FeHelper Update',
                     message: 'New version found, updating...'
                 });
                 
@@ -424,7 +424,7 @@ new Vue({
             } else if (status === 'no_update') {
                 // If no update available, but user clicked update button
                 this.showNotification({
-                    title: 'FeHelper 更新',
+                    title: 'FeHelper Update',
                     message: 'Your FeHelper is already the latest version.'
                 });
             } else {
@@ -435,7 +435,7 @@ new Vue({
                 });
                 
                 this.showNotification({
-                    title: 'FeHelper 更新',
+                    title: 'FeHelper Update',
                     message: 'Auto-update failed, please visit FeHelper official website to manually get the latest version.'
                 });
             }
@@ -449,7 +449,7 @@ new Vue({
             });
             
             this.showNotification({
-                title: 'FeHelper 更新错误',
+                title: 'FeHelper Update Error',
                 message: 'Error occurred during update, please check for updates manually.'
             });
         },
@@ -782,7 +782,7 @@ new Vue({
             } catch (error) {
                 // Show installation failure notification
                 this.showInPageNotification({
-                    message: `安装失败：${error.message || '未知错误'}`,
+                    message: `Installation failed: ${error.message || 'unknown error'}`,
                     type: 'error',
                     duration: 5000
                 });
@@ -794,7 +794,7 @@ new Vue({
             try {
                 // Use custom confirmation dialog instead of native confirm
                 this.showConfirm({
-                    title: '卸载确认',
+                    title: 'Uninstall Confirmation',
                     message: `Are you sure you want to uninstall "${this.originalTools[toolKey].name}" tool?`,
                     callback: async (key) => {
                         try {
@@ -830,7 +830,7 @@ new Vue({
                         } catch (error) {
                             // Show uninstall failure notification
                             this.showInPageNotification({
-                                message: `卸载失败：${error.message || '未知错误'}`,
+                                message: `Uninstall failed: ${error.message || 'unknown error'}`,
                                 type: 'error',
                                 duration: 5000
                             });
@@ -1172,19 +1172,19 @@ new Vue({
                         
                         // Show notification
                         this.showNotification({
-                            title: 'FeHelper 设置',
+                            title: 'FeHelper Settings',
                             message: 'Settings and tool sorting saved!'
                         });
                     } catch (innerError) {
                         this.showNotification({
-                            title: 'FeHelper 设置错误',
+                            title: 'FeHelper Settings Error',
                             message: 'Failed to save menu settings: ' + innerError.message
                         });
                     }
                 });
             } catch (error) {
                 this.showNotification({
-                    title: 'FeHelper 设置错误',
+                    title: 'FeHelper Settings Error',
                     message: 'Failed to save settings: ' + error.message
                 });
             }
@@ -1325,7 +1325,7 @@ new Vue({
                     }, resolve);
                 });
                 if (!result || !result.success) {
-                    throw new Error('Failed to get remote configuration: ' + (result && result.error ? result.error : '未知错误'));
+                    throw new Error('Failed to get remote configuration: ' + (result && result.error ? result.error : 'unknown error'));
                 }
                 // Get script content
                 const scriptContent = result.content;
@@ -1475,7 +1475,7 @@ new Vue({
             } catch (error) {
                 console.error('Failed to reset tool order:', error);
                 this.showInPageNotification({
-                    message: '重置失败，请重试',
+                    message: 'Reset failed, please retry',
                     type: 'error'
                 });
             }
@@ -1496,7 +1496,7 @@ new Vue({
             } catch (error) {
                 console.error('Failed to save tool sorting:', error);
                 this.showInPageNotification({
-                    message: '保存失败，请重试',
+                    message: 'Save failed, please retry',
                     type: 'error'
                 });
             }
@@ -1504,7 +1504,7 @@ new Vue({
 
         async autoFixBugs() {
             this.showNotification({ 
-                title: 'FeHelper 一键修复',
+                title: 'FeHelper Auto Fix',
                 message: 'Fetching fix patches, please wait...' 
             });
             chrome.runtime.sendMessage({
@@ -1513,21 +1513,21 @@ new Vue({
             }, (resp) => {
                 if (chrome.runtime.lastError) {
                     this.showNotification({ 
-                        title: 'FeHelper 一键修复',
+                        title: 'FeHelper Auto Fix',
                         message: 'Failed to fetch patches: ' + chrome.runtime.lastError.message 
                     });
                     return;
                 }
                 if (!resp || !resp.success) {
-                    const errorMsg = resp && resp.error ? resp.error : '未知错误';
+                    const errorMsg = resp && resp.error ? resp.error : 'unknown error';
                     this.showNotification({ 
-                        title: 'FeHelper 一键修复',
+                        title: 'FeHelper Auto Fix',
                         message: errorMsg
                     });
                     return;
                 }
                 this.showNotification({
-                    title: 'FeHelper 一键修复',
+                    title: 'FeHelper Auto Fix',
                     message: 'All known bugs in FeHelper extension have been fixed, you can verify now.',
                     duration: 5000
                 });
