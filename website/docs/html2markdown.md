@@ -1,167 +1,167 @@
-# Markdown转换工具
+# Markdown Conversion Tool
 
-## 工具简介
+## Tool Introduction
 
-Markdown转换工具是一个功能强大的文档处理工具，支持HTML与Markdown格式之间的相互转换，并提供实时预览功能。该工具集成了专业的Markdown编辑器，支持语法高亮、实时预览、文件导入导出等功能，是写作、文档转换和内容管理的理想选择。
+The Markdown Conversion Tool is a powerful document processing tool that supports bidirectional conversion between HTML and Markdown formats, with real-time preview functionality. This tool integrates a professional Markdown editor with syntax highlighting, real-time preview, file import/export, and other features, making it an ideal choice for writing, document conversion, and content management.
 
-## 主要功能
+## Main Features
 
-### 1. 格式转换
-- HTML转Markdown
-- Markdown转HTML
-- 支持双向转换
-- 保持格式完整性
+### 1. Format Conversion
+- HTML to Markdown
+- Markdown to HTML
+- Support bidirectional conversion
+- Maintain format integrity
 
-### 2. 编辑器功能
-- 语法高亮显示
-- 实时预览
-- 工具栏快捷操作
-- 支持快捷键
-- 自动保存
+### 2. Editor Features
+- Syntax highlighting
+- Real-time preview
+- Toolbar quick operations
+- Keyboard shortcuts support
+- Auto-save
 
-### 3. 文件操作
-- 导入本地文件
-- 导出Markdown文件
-- 导出HTML文件
-- 支持拖拽文件
-- 支持复制粘贴
+### 3. File Operations
+- Import local files
+- Export Markdown files
+- Export HTML files
+- Support drag-and-drop files
+- Support copy-paste
 
-### 4. 编辑辅助
-- 常用格式工具栏
-- 代码块支持
-- 图片插入
-- 链接管理
-- 列表支持
+### 4. Editing Assistance
+- Common format toolbar
+- Code block support
+- Image insertion
+- Link management
+- List support
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 选择编辑模式（Markdown/HTML）
-2. 输入或粘贴内容
-3. 使用工具栏进行格式编辑
-4. 实时预览效果
-5. 导出所需格式
+### Basic Usage
+1. Select editing mode (Markdown/HTML)
+2. Input or paste content
+3. Use toolbar for format editing
+4. Real-time preview effect
+5. Export desired format
 
-### 工具栏功能
-- 加粗文本
-- 斜体文本
-- 引用块
-- 代码块
-- 无序列表
-- 有序列表
-- 链接插入
-- 图片插入
-- 预览切换
-- 文件保存
+### Toolbar Functions
+- Bold text
+- Italic text
+- Block quote
+- Code block
+- Unordered list
+- Ordered list
+- Insert link
+- Insert image
+- Toggle preview
+- Save file
 
-## 使用技巧
+## Usage Tips
 
-1. **快捷键操作**：
-   - Ctrl+S：保存文件
-   - 支持常用编辑快捷键
-   - 支持代码块快捷键
-   - 支持格式转换快捷键
+1. **Keyboard Operations**:
+   - Ctrl+S: Save file
+   - Support common editing shortcuts
+   - Support code block shortcuts
+   - Support format conversion shortcuts
 
-2. **文件处理**：
-   - 支持拖拽导入文件
-   - 支持多种格式导出
-   - 自动生成文件名
-   - 支持批量处理
+2. **File Processing**:
+   - Support drag-and-drop file import
+   - Support multiple format export
+   - Auto-generate file names
+   - Support batch processing
 
-3. **格式转换**：
-   - 保持原始格式
-   - 智能识别结构
-   - 支持复杂格式
-   - 转换结果可编辑
+3. **Format Conversion**:
+   - Maintain original format
+   - Smart structure recognition
+   - Support complex formats
+   - Editable conversion results
 
-4. **预览功能**：
-   - 实时预览
-   - 支持切换预览模式
-   - 支持代码高亮
-   - 支持数学公式
+4. **Preview Features**:
+   - Real-time preview
+   - Support toggle preview mode
+   - Support code highlighting
+   - Support mathematical formulas
 
-## 适用场景
+## Application Scenarios
 
-1. **文档编写**：
-   - 技术文档
-   - 博客文章
-   - 项目文档
-   - 学习笔记
+1. **Document Writing**:
+   - Technical documentation
+   - Blog articles
+   - Project documentation
+   - Study notes
 
-2. **内容转换**：
-   - 网页内容转换
-   - 文档格式转换
-   - 内容迁移
-   - 格式标准化
+2. **Content Conversion**:
+   - Web content conversion
+   - Document format conversion
+   - Content migration
+   - Format standardization
 
-3. **协作编辑**：
-   - 团队文档
-   - 共享笔记
-   - 内容审核
-   - 版本控制
+3. **Collaborative Editing**:
+   - Team documentation
+   - Shared notes
+   - Content review
+   - Version control
 
-## 注意事项
+## Notes
 
-1. 转换前请备份原始文件
-2. 复杂格式可能需要手动调整
-3. 大文件处理可能需要等待
-4. 注意保存编辑内容
+1. Back up original files before conversion
+2. Complex formats may require manual adjustment
+3. Large files may require waiting
+4. Pay attention to saving edited content
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用CodeMirror编辑器
-- 集成Marked解析器
-- 支持语法高亮
-- 支持实时预览
+- Based on Vue.js development
+- Using CodeMirror editor
+- Integrated Marked parser
+- Support syntax highlighting
+- Support real-time preview
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本转换功能
-- 提供编辑器功能
+- Initial version release
+- Support basic conversion functionality
+- Provide editor features
 
 ### v1.1.0
-- 添加文件导入导出
-- 优化转换算法
-- 改进用户界面
+- Add file import/export
+- Optimize conversion algorithm
+- Improve user interface
 
 ### v1.2.0
-- 添加实时预览
-- 支持代码高亮
-- 提升转换效率
+- Add real-time preview
+- Support code highlighting
+- Improve conversion efficiency
 
-## 常见问题
+## FAQ
 
-1. **Q: 转换后的格式有偏差怎么办？**
-   A: 某些复杂格式可能需要手动调整，建议在转换后检查并微调。
+1. **Q: What if the converted format has deviations?**
+   A: Some complex formats may require manual adjustment. It's recommended to check and fine-tune after conversion.
 
-2. **Q: 支持哪些文件格式的导入？**
-   A: 支持导入HTML和Markdown格式的文件，支持拖拽和文件选择。
+2. **Q: Which file formats are supported for import?**
+   A: Supports importing HTML and Markdown format files, with drag-and-drop and file selection.
 
-3. **Q: 如何保持图片链接？**
-   A: 工具会自动处理图片链接，建议使用相对路径或完整的URL。
+3. **Q: How to maintain image links?**
+   A: The tool automatically handles image links. It's recommended to use relative paths or complete URLs.
 
-4. **Q: 大文件处理会卡顿吗？**
-   A: 工具针对大文件做了优化，但建议分块处理超大文件。
+4. **Q: Will large file processing cause lag?**
+   A: The tool is optimized for large files, but it's recommended to process very large files in chunks.
 
-## 最佳实践
+## Best Practices
 
-1. **内容编辑**：
-   - 使用工具栏快捷操作
-   - 善用快捷键
-   - 定期保存内容
-   - 注意格式规范
+1. **Content Editing**:
+   - Use toolbar quick operations
+   - Make good use of shortcuts
+   - Save content regularly
+   - Pay attention to format specifications
 
-2. **文件管理**：
-   - 合理组织文件
-   - 使用有意义的文件名
-   - 定期备份文件
-   - 注意文件大小
+2. **File Management**:
+   - Organize files reasonably
+   - Use meaningful file names
+   - Back up files regularly
+   - Pay attention to file size
 
-3. **格式转换**：
-   - 转换前检查内容
-   - 转换后验证格式
-   - 必要时手动调整
-   - 保持格式一致性 
+3. **Format Conversion**:
+   - Check content before conversion
+   - Verify format after conversion
+   - Manually adjust when necessary
+   - Maintain format consistency

@@ -1,119 +1,119 @@
-# 二维码工具
+# QR Code Tool
 
-## 简介
-二维码工具是FeHelper提供的一个多功能工具，支持二维码的生成和解码功能。该工具提供了直观的用户界面，让用户可以轻松地生成自定义二维码，也可以快速解码已有的二维码图片。
+## Introduction
+The QR Code Tool is a multifunctional tool provided by FeHelper that supports QR code generation and decoding functions. This tool provides an intuitive user interface, allowing users to easily generate custom QR codes and quickly decode existing QR code images.
 
 
 ![popup](static/screenshot/qr-code.png)
 
-## 主要功能
+## Main Features
 
-### 二维码生成功能
-1. **内容输入**
-   - 支持输入任意文本内容
-   - 支持URL地址
-   - 支持特殊字符
+### QR Code Generation Functions
+1. **Content Input**
+   - Support inputting any text content
+   - Support URL addresses
+   - Support special characters
 
-2. **自定义设置**
-   - 可调整二维码尺寸
-   - 可自定义二维码颜色
-   - 支持添加中心图标
-     * 使用默认图标
-     * 上传自定义图标
-     * 无图标选项
+2. **Custom Settings**
+   - Adjustable QR code size
+   - Customizable QR code color
+   - Support adding center icon
+     * Use default icon
+     * Upload custom icon
+     * No icon option
 
-3. **结果处理**
-   - 实时预览生成的二维码
-   - 支持复制二维码图片
-   - 支持下载二维码图片
+3. **Result Processing**
+   - Real-time preview of generated QR code
+   - Support copying QR code image
+   - Support downloading QR code image
 
-### 二维码解码功能
-1. **图片输入方式**
-   - 点击选择本地图片
-   - 拖拽图片到指定区域
-   - 直接粘贴截图
-   - 粘贴图片URL地址
+### QR Code Decoding Functions
+1. **Image Input Methods**
+   - Click to select local image
+   - Drag image to designated area
+   - Directly paste screenshot
+   - Paste image URL address
 
-2. **解码结果**
-   - 实时显示解码内容
-   - 支持复制解码结果
-   - 自动识别二维码类型
+2. **Decoding Results**
+   - Real-time display of decoded content
+   - Support copying decoding results
+   - Auto-identify QR code type
 
-## 使用说明
+## Usage Instructions
 
-### 生成二维码
-1. 打开工具后，默认进入"二维码生成器"模式
-2. 在左侧输入框中输入需要生成二维码的内容
-3. 在中间区域设置二维码参数：
-   - 调整尺寸（默认200px）
-   - 选择颜色（默认黑色）
-   - 选择是否添加中心图标
-4. 点击"生成二维码"按钮
-5. 在右侧预览区域查看生成的二维码
-6. 可以使用"复制"或"下载"按钮保存二维码
+### Generate QR Code
+1. After opening the tool, it defaults to "QR Code Generator" mode
+2. Enter content to generate QR code in the left input box
+3. Set QR code parameters in the middle area:
+   - Adjust size (default 200px)
+   - Select color (default black)
+   - Choose whether to add center icon
+4. Click "Generate QR Code" button
+5. View generated QR code in the right preview area
+6. Can use "Copy" or "Download" buttons to save QR code
 
-### 解码二维码
-1. 点击右上角"切换为解码/扫码模式"按钮
-2. 通过以下任一方式输入二维码图片：
-   - 点击"选择图片"按钮选择本地图片
-   - 将图片拖拽到指定区域
-   - 复制图片后直接粘贴
-   - 复制图片URL后粘贴
-3. 右侧会显示解码结果
-4. 点击结果文本框可自动选中全部内容
+### Decode QR Code
+1. Click "Switch to Decode/Scan Mode" button in the upper right
+2. Input QR code image through any of the following methods:
+   - Click "Select Image" button to choose local image
+   - Drag image to designated area
+   - Copy image and paste directly
+   - Copy image URL and paste
+3. Decoding result will display on the right side
+4. Click result text box to auto-select all content
 
-## 使用技巧
-1. **快速生成**
-   - 直接输入URL生成二维码
-   - 使用默认设置快速生成
-   - 复制生成的二维码图片
+## Usage Tips
+1. **Quick Generation**
+   - Directly input URL to generate QR code
+   - Use default settings for quick generation
+   - Copy generated QR code image
 
-2. **自定义美化**
-   - 调整二维码尺寸适应不同场景
-   - 使用自定义颜色增加辨识度
-   - 添加品牌图标提升专业度
+2. **Custom Beautification**
+   - Adjust QR code size for different scenarios
+   - Use custom colors to increase recognition
+   - Add brand icons to enhance professionalism
 
-3. **批量处理**
-   - 快速解码多个二维码
-   - 批量生成不同内容的二维码
-   - 保存常用设置
+3. **Batch Processing**
+   - Quickly decode multiple QR codes
+   - Batch generate QR codes with different content
+   - Save commonly used settings
 
-## 注意事项
-1. 图片格式支持
-   - 支持jpg、jpeg、gif、png、bmp格式
-   - 建议使用清晰、对比度高的图片
+## Notes
+1. Image Format Support
+   - Support jpg, jpeg, gif, png, bmp formats
+   - Recommend using clear, high-contrast images
 
-2. 二维码内容限制
-   - 内容长度影响二维码复杂度
-   - 特殊字符可能需要正确编码
+2. QR Code Content Limitations
+   - Content length affects QR code complexity
+   - Special characters may need proper encoding
 
-3. 图片大小限制
-   - 建议使用小于5MB的图片
-   - 过大的图片可能影响处理速度
+3. Image Size Limitations
+   - Recommend using images smaller than 5MB
+   - Oversized images may affect processing speed
 
-## 常见问题
-1. **Q: 为什么生成的二维码无法扫描？**
-   A: 可能原因包括：内容过长、二维码尺寸过小、颜色对比度不足等。
+## FAQ
+1. **Q: Why can't the generated QR code be scanned?**
+   A: Possible reasons include: content too long, QR code size too small, insufficient color contrast, etc.
 
-2. **Q: 支持哪些类型的二维码？**
-   A: 支持标准QR码、Data Matrix、Aztec等多种格式。
+2. **Q: Which types of QR codes are supported?**
+   A: Supports standard QR codes, Data Matrix, Aztec, and other formats.
 
-3. **Q: 如何提高二维码的识别率？**
-   A: 建议使用合适的尺寸、保持足够的留白、选择对比度高的颜色。
+3. **Q: How to improve QR code recognition rate?**
+   A: Recommend using appropriate size, maintaining sufficient white space, choosing high-contrast colors.
 
-## 更新日志
-- 2024-03-21: 优化二维码生成性能
-- 2024-03-20: 添加自定义图标功能
-- 2024-03-19: 支持拖拽上传图片
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize QR code generation performance
+- 2024-03-20: Add custom icon function
+- 2024-03-19: Support drag-and-drop upload images
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [图片Base64转换工具](../image-base64.md)
-- [图片处理工具](../image-tools.md)
-- [编码转换工具](../encoding-converter.md) 
+## Related Tools
+- [Image Base64 Conversion Tool](../image-base64.md)
+- [Image Processing Tool](../image-tools.md)
+- [Encoding Converter Tool](../encoding-converter.md)

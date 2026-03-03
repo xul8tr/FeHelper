@@ -1,168 +1,168 @@
-# 网页取色器工具
+# Web Color Picker Tool
 
-## 工具简介
+## Tool Introduction
 
-网页取色器是一个专业的网页颜色提取工具，可以帮助用户从任意网页中精确获取颜色值。该工具支持多种颜色格式（HEX、RGB、HSL），并提供实时预览功能，是网页设计和开发人员的得力助手。
+Web Color Picker is a professional web color extraction tool that helps users accurately obtain color values from any webpage. This tool supports multiple color formats (HEX, RGB, HSL) and provides real-time preview functionality, making it a powerful assistant for web designers and developers.
 
-## 主要功能
+## Main Features
 
-### 1. 颜色提取
-- 精确像素取色
-- 实时颜色预览
-- 多格式颜色值
-- 颜色历史记录
-- 复制颜色代码
+### 1. Color Extraction
+- Precise pixel color picking
+- Real-time color preview
+- Multi-format color values
+- Color history records
+- Copy color codes
 
-### 2. 颜色格式
-- HEX颜色值
-- RGB颜色值
-- HSL颜色值
-- 颜色格式转换
-- 大小写切换
+### 2. Color Formats
+- HEX color values
+- RGB color values
+- HSL color values
+- Color format conversion
+- Case switching
 
-### 3. 取色功能
-- 放大镜预览
-- 像素级定位
-- 颜色锁定
-- 实时更新
-- 跨页面取色
+### 3. Color Picking Features
+- Magnifier preview
+- Pixel-level positioning
+- Color locking
+- Real-time updates
+- Cross-page color picking
 
-### 4. 辅助功能
-- 颜色预览框
-- 颜色值显示
-- 快捷键支持
-- 取色器开关
-- 界面定制
+### 4. Auxiliary Functions
+- Color preview box
+- Color value display
+- Shortcut key support
+- Color picker toggle
+- Interface customization
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 启用取色器
-2. 移动鼠标到目标位置
-3. 点击选择颜色
-4. 复制颜色值
-5. 关闭取色器
+### Basic Usage
+1. Enable color picker
+2. Move mouse to target position
+3. Click to select color
+4. Copy color value
+5. Close color picker
 
-### 取色方式
-1. **精确取色**：
-   - 移动鼠标到目标位置
-   - 查看放大镜预览
-   - 点击确认选择
-   - 复制颜色值
+### Color Picking Methods
+1. **Precise Picking**:
+   - Move mouse to target position
+   - View magnifier preview
+   - Click to confirm selection
+   - Copy color value
 
-2. **锁定取色**：
-   - 启用锁定模式
-   - 移动鼠标预览
-   - 确认后解锁
-   - 继续取色
+2. **Locked Picking**:
+   - Enable lock mode
+   - Move mouse to preview
+   - Unlock after confirmation
+   - Continue picking
 
-3. **快速取色**：
-   - 使用快捷键
-   - 快速切换开关
-   - 快速复制值
-   - 快速切换格式
+3. **Quick Picking**:
+   - Use shortcut keys
+   - Quick toggle switch
+   - Quick copy value
+   - Quick format switching
 
-## 使用技巧
+## Usage Tips
 
-1. **精确取色**：
-   - 使用放大镜
-   - 注意像素对齐
-   - 避免抖动
-   - 确认颜色值
+1. **Precise Picking**:
+   - Use magnifier
+   - Pay attention to pixel alignment
+   - Avoid shaking
+   - Confirm color value
 
-2. **颜色管理**：
-   - 记录常用颜色
-   - 使用颜色历史
-   - 整理颜色方案
-   - 导出颜色列表
+2. **Color Management**:
+   - Record commonly used colors
+   - Use color history
+   - Organize color schemes
+   - Export color lists
 
-3. **效率提升**：
-   - 使用快捷键
-   - 开启锁定模式
-   - 批量取色
-   - 快速切换格式
+3. **Efficiency Improvement**:
+   - Use shortcut keys
+   - Enable lock mode
+   - Batch color picking
+   - Quick format switching
 
-## 适用场景
+## Application Scenarios
 
-1. **网页设计**：
-   - 配色方案
-   - 主题设计
-   - 界面美化
-   - 品牌规范
+1. **Web Design**:
+   - Color schemes
+   - Theme design
+   - Interface beautification
+   - Brand standards
 
-2. **开发调试**：
-   - 样式调试
-   - 颜色匹配
-   - 主题开发
-   - 响应式设计
+2. **Development Debugging**:
+   - Style debugging
+   - Color matching
+   - Theme development
+   - Responsive design
 
-3. **设计参考**：
-   - 颜色提取
-   - 方案借鉴
-   - 风格分析
-   - 趋势研究
+3. **Design Reference**:
+   - Color extraction
+   - Scheme reference
+   - Style analysis
+   - Trend research
 
-## 注意事项
+## Precautions
 
-1. 注意取色精度
-2. 避免频繁切换
-3. 及时保存颜色
-4. 注意版权问题
+1. Pay attention to picking accuracy
+2. Avoid frequent switching
+3. Save colors promptly
+4. Note copyright issues
 
-## 技术实现
+## Technical Implementation
 
-- 基于Canvas实现
-- 支持像素级取色
-- 实时颜色转换
-- 跨浏览器兼容
+- Based on Canvas implementation
+- Support pixel-level color picking
+- Real-time color conversion
+- Cross-browser compatible
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本取色
-- 提供颜色预览
+- Initial version released
+- Support basic color picking
+- Provide color preview
 
 ### v1.1.0
-- 添加颜色锁定
-- 优化取色精度
-- 改进用户界面
+- Added color locking
+- Optimized picking accuracy
+- Improved user interface
 
 ### v1.2.0
-- 添加格式转换
-- 支持快捷键
-- 提升使用体验
+- Added format conversion
+- Support shortcut keys
+- Enhanced user experience
 
-## 常见问题
+## Common Questions
 
-1. **Q: 如何精确取色？**
-   A: 使用放大镜功能，注意像素对齐，避免鼠标抖动。
+1. **Q: How to pick colors precisely?**
+   A: Use the magnifier function, pay attention to pixel alignment, and avoid mouse shaking.
 
-2. **Q: 支持哪些颜色格式？**
-   A: 支持HEX、RGB、HSL等多种颜色格式，可以互相转换。
+2. **Q: What color formats are supported?**
+   A: Supports HEX, RGB, HSL and other color formats, which can be converted to each other.
 
-3. **Q: 如何复制颜色值？**
-   A: 点击颜色值或使用快捷键即可复制到剪贴板。
+3. **Q: How to copy color values?**
+   A: Click the color value or use shortcut keys to copy to clipboard.
 
-4. **Q: 取色器如何关闭？**
-   A: 点击关闭按钮或使用快捷键即可关闭取色器。
+4. **Q: How to close the color picker?**
+   A: Click the close button or use shortcut keys to close the color picker.
 
-## 最佳实践
+## Best Practices
 
-1. **取色技巧**：
-   - 使用放大镜
-   - 保持稳定
-   - 确认颜色
-   - 及时保存
+1. **Picking Techniques**:
+   - Use magnifier
+   - Keep stable
+   - Confirm colors
+   - Save promptly
 
-2. **颜色管理**：
-   - 建立规范
-   - 分类存储
-   - 定期整理
-   - 及时更新
+2. **Color Management**:
+   - Establish standards
+   - Categorize storage
+   - Organize regularly
+   - Update timely
 
-3. **效率提升**：
-   - 熟悉快捷键
-   - 使用锁定模式
-   - 批量操作
-   - 建立工作流 
+3. **Efficiency Improvement**:
+   - Familiarize with shortcut keys
+   - Use lock mode
+   - Batch operations
+   - Establish workflow 

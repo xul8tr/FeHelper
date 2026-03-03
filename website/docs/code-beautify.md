@@ -1,173 +1,173 @@
-# 代码格式化工具
+# Code Formatter Tool
 
-## 简介
-代码格式化工具是FeHelper提供的一个强大的代码美化工具，支持多种编程语言的代码格式化。该工具可以帮助开发者快速整理和美化代码，提高代码的可读性和维护性。支持JavaScript、CSS、HTML、XML和SQL等多种语言的格式化。
+## Introduction
+Code Formatter is a powerful code beautification tool provided by FeHelper, supporting code formatting for multiple programming languages. This tool helps developers quickly organize and beautify code, improving code readability and maintainability. Supports formatting for JavaScript, CSS, HTML, XML, SQL and other languages.
 
-## 主要功能
+## Main Features
 
-### 多语言支持
-1. **JavaScript格式化**
-   - 自动缩进
-   - 括号对齐
-   - 空格规范化
-   - 链式方法处理
-   - 保留换行
+### Multi-Language Support
+1. **JavaScript Formatting**
+   - Auto indentation
+   - Bracket alignment
+   - Space normalization
+   - Chained method handling
+   - Line break preservation
 
-2. **CSS格式化**
-   - 属性对齐
-   - 选择器格式化
-   - 缩进规范化
-   - 空格处理
-   - 注释保留
+2. **CSS Formatting**
+   - Property alignment
+   - Selector formatting
+   - Indentation normalization
+   - Space handling
+   - Comment preservation
 
-3. **HTML格式化**
-   - 标签缩进
-   - 属性对齐
-   - 标签闭合检查
-   - 空格规范化
-   - 注释保留
+3. **HTML Formatting**
+   - Tag indentation
+   - Attribute alignment
+   - Tag closing check
+   - Space normalization
+   - Comment preservation
 
-4. **XML格式化**
-   - 节点缩进
-   - 属性对齐
-   - 标签闭合检查
-   - 空格规范化
-   - 注释保留
+4. **XML Formatting**
+   - Node indentation
+   - Attribute alignment
+   - Tag closing check
+   - Space normalization
+   - Comment preservation
 
-5. **SQL格式化**
-   - 关键字大写
-   - 子句对齐
-   - 缩进规范化
-   - 空格处理
-   - 注释保留
+5. **SQL Formatting**
+   - Keyword capitalization
+   - Clause alignment
+   - Indentation normalization
+   - Space handling
+   - Comment preservation
 
-### 格式化选项
-1. **缩进设置**
-   - 缩进字符（空格/制表符）
-   - 缩进大小（默认4空格）
-   - 最大缩进级别
+### Formatting Options
+1. **Indentation Settings**
+   - Indent character (space/tab)
+   - Indent size (default 4 spaces)
+   - Maximum indent level
 
-2. **换行处理**
-   - 保留换行
-   - 最大保留行数
-   - 链式方法换行
-   - 条件语句换行
+2. **Line Break Handling**
+   - Preserve line breaks
+   - Maximum preserved lines
+   - Chained method line breaks
+   - Conditional statement line breaks
 
-3. **空格处理**
-   - 运算符前后空格
-   - 括号内空格
-   - 逗号后空格
-   - 分号后空格
+3. **Space Handling**
+   - Spaces around operators
+   - Spaces inside parentheses
+   - Spaces after commas
+   - Spaces after semicolons
 
-4. **其他选项**
-   - 行长度限制
-   - 注释保留
-   - 字符串转义
-   - 数组格式化
+4. **Other Options**
+   - Line length limit
+   - Comment preservation
+   - String escaping
+   - Array formatting
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 选择代码类型
-   - 点击对应的语言单选按钮
-   - 支持JS、CSS、HTML、XML、SQL
+### Basic Usage
+1. Select code type
+   - Click corresponding language radio button
+   - Supports JS, CSS, HTML, XML, SQL
 
-2. 输入代码
-   - 在文本框中粘贴需要格式化的代码
-   - 支持从剪贴板直接粘贴
-   - 支持从文件拖拽
+2. Input code
+   - Paste code to be formatted in text box
+   - Supports direct paste from clipboard
+   - Supports file drag and drop
 
-3. 格式化处理
-   - 点击"格式化"按钮
-   - 等待处理完成
-   - 查看格式化结果
+3. Format processing
+   - Click "Format" button
+   - Wait for processing to complete
+   - View formatting results
 
-4. 复制结果
-   - 点击"复制结果"按钮
-   - 结果自动复制到剪贴板
-   - 可直接粘贴使用
+4. Copy results
+   - Click "Copy Result" button
+   - Results automatically copied to clipboard
+   - Can be pasted directly for use
 
-### 示例代码
-1. **JavaScript示例**
-   - 函数定义和调用
-   - 条件语句和循环
-   - 对象和数组
+### Example Code
+1. **JavaScript Example**
+   - Function definitions and calls
+   - Conditional statements and loops
+   - Objects and arrays
 
-2. **CSS示例**
-   - 选择器和属性
-   - 媒体查询
-   - 动画定义
+2. **CSS Example**
+   - Selectors and properties
+   - Media queries
+   - Animation definitions
 
-3. **HTML示例**
-   - 基本标签结构
-   - 表单元素
-   - 列表和表格
+3. **HTML Example**
+   - Basic tag structure
+   - Form elements
+   - Lists and tables
 
-4. **XML示例**
-   - 基本节点结构
-   - 属性和值
-   - 命名空间
+4. **XML Example**
+   - Basic node structure
+   - Attributes and values
+   - Namespaces
 
-5. **SQL示例**
-   - 查询语句
-   - 表连接
-   - 条件筛选
+5. **SQL Example**
+   - Query statements
+   - Table joins
+   - Conditional filtering
 
-## 使用技巧
-1. **快速格式化**
-   - 使用示例代码快速测试
-   - 复制格式化后的代码
-   - 保存常用格式化设置
+## Usage Tips
+1. **Quick Formatting**
+   - Use example code for quick testing
+   - Copy formatted code
+   - Save commonly used formatting settings
 
-2. **代码优化**
-   - 检查代码结构
-   - 优化缩进和空格
-   - 提高代码可读性
+2. **Code Optimization**
+   - Check code structure
+   - Optimize indentation and spacing
+   - Improve code readability
 
-3. **批量处理**
-   - 支持大段代码格式化
-   - 保持代码风格一致
-   - 提高工作效率
+3. **Batch Processing**
+   - Support large code block formatting
+   - Maintain consistent code style
+   - Improve work efficiency
 
-## 注意事项
-1. 代码限制
-   - 建议单次处理不超过10000行
-   - 过大的代码可能影响性能
-   - 注意内存使用
+## Precautions
+1. Code Limitations
+   - Recommended processing not exceeding 10000 lines per time
+   - Excessively large code may affect performance
+   - Note memory usage
 
-2. 格式保持
-   - 某些特殊格式可能被修改
-   - 注释可能被调整
-   - 注意检查格式化结果
+2. Format Preservation
+   - Some special formats may be modified
+   - Comments may be adjusted
+   - Note to check formatting results
 
-3. 兼容性
-   - 支持主流浏览器
-   - 支持常见代码编辑器
-   - 注意编码问题
+3. Compatibility
+   - Supports mainstream browsers
+   - Supports common code editors
+   - Note encoding issues
 
-## 常见问题
-1. **Q: 为什么格式化后的代码和预期不同？**
-   A: 可能是由于代码中存在特殊字符或格式，建议检查原始代码的格式。
+## Common Questions
+1. **Q: Why is formatted code different from expected?**
+   A: May be due to special characters or formatting in the code. It is recommended to check the original code format.
 
-2. **Q: 如何处理大文件？**
-   A: 建议将大文件分段处理，或使用其他专业工具。
+2. **Q: How to handle large files?**
+   A: It is recommended to process large files in segments, or use other professional tools.
 
-3. **Q: 格式化后的代码出现错误怎么办？**
-   A: 检查原始代码的语法是否正确，某些语法错误可能影响格式化结果。
+3. **Q: What if formatted code has errors?**
+   A: Check if the original code syntax is correct. Some syntax errors may affect formatting results.
 
-## 更新日志
-- 2024-03-21: 优化格式化性能
-- 2024-03-20: 添加SQL格式化支持
-- 2024-03-19: 改进代码高亮显示
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimized formatting performance
+- 2024-03-20: Added SQL formatting support
+- 2024-03-19: Improved code highlighting
+- 2024-03-18: Initial version released
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback & Suggestions
+If you encounter any problems or have suggestions for improvement during use, please feel free to provide feedback through:
+1. Submit Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on tool page
 
-## 相关工具
-- [代码压缩工具](../code-compress.md)
-- [正则表达式工具](../regexp.md)
-- [编码转换工具](../encoding-converter.md) 
+## Related Tools
+- [Code Compressor](../code-compress.md)
+- [Regular Expression Tool](../regexp.md)
+- [Encoding Converter](../encoding-converter.md) 

@@ -1,168 +1,168 @@
-# 信息编解码工具
+# Encoding/Decoding Tool
 
-## 简介
-信息编解码工具是FeHelper提供的一个多功能编码转换工具，支持多种编码格式的转换和解析。该工具可以帮助用户快速进行文本编码转换、加密解密、URL参数解析等操作，是开发调试和数据处理的重要助手。
+## Introduction
+The Encoding/Decoding tool is a multifunctional encoding conversion tool provided by FeHelper, supporting conversion and parsing of various encoding formats. This tool can help users quickly perform text encoding conversion, encryption/decryption, URL parameter parsing and other operations, and is an important assistant for development debugging and data processing.
 
-## 主要功能
+## Main Features
 
-### 编码转换
-1. **Unicode编码**
-   - Unicode编码（\u开头）
-   - Unicode解码
-   - 支持中文转换
-   - 保持特殊字符
+### Encoding Conversion
+1. **Unicode Encoding**
+   - Unicode encoding (starting with \u)
+   - Unicode decoding
+   - Support Chinese conversion
+   - Preserve special characters
 
-2. **URL编码**
-   - URL编码（%开头）
-   - URL解码
-   - 参数解析
-   - 完整URL分析
+2. **URL Encoding**
+   - URL encoding (starting with %)
+   - URL decoding
+   - Parameter parsing
+   - Complete URL analysis
 
-3. **UTF编码**
-   - UTF8编码/解码
-   - UTF16编码/解码
-   - 支持多语言
-   - 字符集转换
+3. **UTF Encoding**
+   - UTF8 encoding/decoding
+   - UTF16 encoding/decoding
+   - Support multiple languages
+   - Character set conversion
 
-### 加密解密
+### Encryption/Decryption
 1. **Base64**
-   - Base64编码
-   - Base64解码
-   - 支持二进制
-   - 图片转换
+   - Base64 encoding
+   - Base64 decoding
+   - Support binary
+   - Image conversion
 
-2. **哈希算法**
-   - MD5计算
-   - SHA1加密
-   - 十六进制编码
-   - 十六进制解码
+2. **Hash Algorithms**
+   - MD5 calculation
+   - SHA1 encryption
+   - Hexadecimal encoding
+   - Hexadecimal decoding
 
-3. **HTML编码**
-   - HTML普通编码
-   - HTML深度编码
-   - HTML实体解码
-   - HTML转JS
+3. **HTML Encoding**
+   - HTML normal encoding
+   - HTML deep encoding
+   - HTML entity decoding
+   - HTML to JS
 
-### 特殊解析
-1. **URL解析**
-   - 协议解析
-   - 域名解析
-   - 路径解析
-   - 参数解析
+### Special Parsing
+1. **URL Parsing**
+   - Protocol parsing
+   - Domain parsing
+   - Path parsing
+   - Parameter parsing
 
-2. **JWT解析**
-   - Header解析
-   - Payload解析
-   - 签名验证
-   - 完整信息
+2. **JWT Parsing**
+   - Header parsing
+   - Payload parsing
+   - Signature verification
+   - Complete information
 
-3. **Cookie解析**
-   - Cookie格式化
-   - 参数提取
-   - 值解析
-   - 结构展示
+3. **Cookie Parsing**
+   - Cookie formatting
+   - Parameter extraction
+   - Value parsing
+   - Structure display
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 输入内容
-   - 粘贴待转换文本
-   - 选择转换类型
-   - 点击转换按钮
-   - 查看转换结果
+### Basic Usage
+1. Input content
+   - Paste text to convert
+   - Select conversion type
+   - Click convert button
+   - View conversion result
 
-2. 转换操作
-   - 选择编码类型
-   - 执行转换
-   - 复制结果
-   - 清空内容
+2. Conversion operation
+   - Select encoding type
+   - Execute conversion
+   - Copy result
+   - Clear content
 
-3. 结果处理
-   - 查看转换结果
-   - 复制到剪贴板
-   - 导出结果
-   - 继续转换
+3. Result processing
+   - View conversion result
+   - Copy to clipboard
+   - Export result
+   - Continue conversion
 
-### 高级功能
-1. **批量处理**
-   - 多行文本转换
-   - 批量编码转换
-   - 结果合并
-   - 格式保持
+### Advanced Functions
+1. **Batch Processing**
+   - Multi-line text conversion
+   - Batch encoding conversion
+   - Result merging
+   - Format preservation
 
-2. **智能识别**
-   - 自动识别编码
-   - 格式检测
-   - 错误提示
-   - 建议修正
+2. **Smart Recognition**
+   - Auto-detect encoding
+   - Format detection
+   - Error prompts
+   - Suggested corrections
 
-3. **特殊处理**
-   - 特殊字符处理
-   - 编码兼容性
-   - 格式验证
-   - 结果优化
+3. **Special Processing**
+   - Special character handling
+   - Encoding compatibility
+   - Format validation
+   - Result optimization
 
-## 使用技巧
-1. **提高效率**
-   - 使用快捷键
-   - 保存常用设置
-   - 批量处理
-   - 结果复用
+## Usage Tips
+1. **Improve Efficiency**
+   - Use shortcuts
+   - Save common settings
+   - Batch processing
+   - Result reuse
 
-2. **编码选择**
-   - 根据需求选择
-   - 考虑兼容性
-   - 注意安全性
-   - 保持可读性
+2. **Encoding Selection**
+   - Select based on needs
+   - Consider compatibility
+   - Pay attention to security
+   - Maintain readability
 
-3. **结果验证**
-   - 检查转换结果
-   - 验证正确性
-   - 测试兼容性
-   - 确认可用性
+3. **Result Verification**
+   - Check conversion results
+   - Verify correctness
+   - Test compatibility
+   - Confirm usability
 
-## 注意事项
-1. 使用限制
-   - 注意输入长度
-   - 避免特殊字符
-   - 考虑编码范围
-   - 注意性能影响
+## Notes
+1. Usage restrictions
+   - Pay attention to input length
+   - Avoid special characters
+   - Consider encoding range
+   - Note performance impact
 
-2. 安全考虑
-   - 敏感信息保护
-   - 加密强度
-   - 数据安全
-   - 隐私保护
+2. Security considerations
+   - Sensitive information protection
+   - Encryption strength
+   - Data security
+   - Privacy protection
 
-3. 兼容性
-   - 浏览器支持
-   - 编码标准
-   - 字符集兼容
-   - 格式规范
+3. Compatibility
+   - Browser support
+   - Encoding standards
+   - Character set compatibility
+   - Format specifications
 
-## 常见问题
-1. **Q: 为什么某些字符转换后显示异常？**
-   A: 可能是编码不兼容或字符集不支持，建议检查输入字符和选择的编码方式。
+## Frequently Asked Questions
+1. **Q: Why do some characters display abnormally after conversion?**
+   A: It may be encoding incompatibility or character set not supported, please check the input characters and selected encoding method.
 
-2. **Q: 如何处理大文本转换？**
-   A: 建议分段处理，或使用其他专业工具，注意内存使用。
+2. **Q: How to handle large text conversion?**
+   A: It is recommended to process in segments, or use other professional tools, pay attention to memory usage.
 
-3. **Q: 转换结果不准确怎么办？**
-   A: 检查输入格式是否正确，确保选择了正确的编码方式，必要时可以尝试其他编码。
+3. **Q: What if the conversion result is inaccurate?**
+   A: Check if the input format is correct, make sure the correct encoding method is selected, and try other encodings if necessary.
 
-## 更新日志
-- 2024-03-21: 优化转换性能
-- 2024-03-20: 添加JWT解析功能
-- 2024-03-19: 改进URL参数解析
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize conversion performance
+- 2024-03-20: Add JWT parsing function
+- 2024-03-19: Improve URL parameter parsing
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems or have suggestions for improvement during use, please provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send an email to the developer
+3. Click the "Feedback" button on the tool page
 
-## 相关工具
-- [Base64转换工具](../image-base64.md)
-- [URL编码工具](../url-encoder.md)
-- [JSON格式化工具](../json-format.md) 
+## Related Tools
+- [Base64 Conversion Tool](../image-base64.md)
+- [URL Encoding Tool](../url-encoder.md)
+- [JSON Formatting Tool](../json-format.md)

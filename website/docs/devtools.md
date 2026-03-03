@@ -1,168 +1,168 @@
-# 开发者工具
+# Developer Tools
 
-## 工具简介
+## Tool Introduction
 
-开发者工具是一个功能强大的FeHelper插件开发工具，支持创建、编辑、管理和发布自定义工具。该工具提供了完整的开发环境，包括代码编辑器、文件管理、实时预览等功能，帮助开发者快速构建和部署自己的工具。
+Developer Tools is a powerful FeHelper plugin development tool that supports creating, editing, managing, and publishing custom tools. This tool provides a complete development environment, including code editor, file management, real-time preview and other functions, helping developers quickly build and deploy their own tools.
 
-## 主要功能
+## Main Features
 
-### 1. 工具创建
-- 本地工具创建
-- 远程工具导入
-- 模板工具使用
-- 工具配置管理
-- 图标选择器
+### 1. Tool Creation
+- Local tool creation
+- Remote tool import
+- Template tool usage
+- Tool configuration management
+- Icon selector
 
-### 2. 开发环境
-- 代码编辑器
-- 语法高亮
-- 实时保存
-- 文件管理
-- 多文件支持
+### 2. Development Environment
+- Code editor
+- Syntax highlighting
+- Real-time saving
+- File management
+- Multi-file support
 
-### 3. 工具管理
-- 工具启用/停用
-- 工具更新
-- 工具打包
-- 工具删除
-- 配置导出
+### 3. Tool Management
+- Tool enable/disable
+- Tool updates
+- Tool packaging
+- Tool deletion
+- Configuration export
 
-### 4. 开发辅助
-- 代码模板
-- 文件导入
-- 实时预览
-- 错误提示
-- 开发文档
+### 4. Development Assistance
+- Code templates
+- File import
+- Real-time preview
+- Error prompts
+- Development documentation
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 创建新工具
-2. 编辑工具代码
-3. 管理工具文件
-4. 测试工具功能
-5. 发布工具
+### Basic Usage
+1. Create new tool
+2. Edit tool code
+3. Manage tool files
+4. Test tool functions
+5. Publish tool
 
-### 工具创建方式
-1. **本地创建**：
-   - 点击"开始我的第一个FH工具"
-   - 填写工具信息
-   - 选择开发模式
-   - 开始编码
+### Tool Creation Methods
+1. **Local Creation**:
+   - Click "Start My First FH Tool"
+   - Fill in tool information
+   - Select development mode
+   - Start coding
 
-2. **远程导入**：
-   - 点击"从远程服务载入工具"
-   - 输入工具URL
-   - 等待下载完成
-   - 开始编辑
+2. **Remote Import**:
+   - Click "Load Tool from Remote Service"
+   - Enter tool URL
+   - Wait for download completion
+   - Start editing
 
-3. **示例工具**：
-   - 点击"来个HelloWorld试试"
-   - 查看示例代码
-   - 学习开发方式
-   - 基于示例开发
+3. **Example Tool**:
+   - Click "Try a HelloWorld"
+   - View example code
+   - Learn development methods
+   - Develop based on examples
 
-## 使用技巧
+## Usage Tips
 
-1. **工具配置**：
-   - 设置工具ID
-   - 选择工具图标
-   - 配置更新地址
-   - 设置注入脚本
+1. **Tool Configuration**:
+   - Set tool ID
+   - Select tool icon
+   - Configure update address
+   - Set injection script
 
-2. **文件管理**：
-   - 创建新文件
-   - 导入已有文件
-   - 删除不需要的文件
-   - 管理文件结构
+2. **File Management**:
+   - Create new files
+   - Import existing files
+   - Delete unnecessary files
+   - Manage file structure
 
-3. **代码编辑**：
-   - 使用语法高亮
-   - 自动保存功能
-   - 代码格式化
-   - 错误检查
+3. **Code Editing**:
+   - Use syntax highlighting
+   - Auto-save function
+   - Code formatting
+   - Error checking
 
-## 适用场景
+## Applicable Scenarios
 
-1. **工具开发**：
-   - 创建新工具
-   - 修改现有工具
-   - 调试工具功能
-   - 发布工具更新
+1. **Tool Development**:
+   - Create new tools
+   - Modify existing tools
+   - Debug tool functions
+   - Publish tool updates
 
-2. **学习实践**：
-   - 学习工具开发
-   - 练习编码技能
-   - 测试新功能
-   - 分享开发经验
+2. **Learning Practice**:
+   - Learn tool development
+   - Practice coding skills
+   - Test new functions
+   - Share development experience
 
-3. **团队协作**：
-   - 工具版本管理
-   - 代码共享
-   - 功能测试
-   - 问题修复
+3. **Team Collaboration**:
+   - Tool version management
+   - Code sharing
+   - Function testing
+   - Issue fixing
 
-## 注意事项
+## Notes
 
-1. 工具ID必须唯一
-2. 注意文件命名规范
-3. 定期备份工具代码
-4. 测试工具兼容性
+1. Tool ID must be unique
+2. Pay attention to file naming conventions
+3. Regularly backup tool code
+4. Test tool compatibility
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用CodeMirror编辑器
-- 支持文件系统操作
-- 提供完整的开发API
+- Developed based on Vue.js
+- Uses CodeMirror editor
+- Supports file system operations
+- Provides complete development API
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本工具创建
-- 提供代码编辑器
+- Initial version release
+- Support basic tool creation
+- Provide code editor
 
 ### v1.1.0
-- 添加远程工具支持
-- 优化编辑器功能
-- 改进用户界面
+- Add remote tool support
+- Optimize editor functions
+- Improve user interface
 
 ### v1.2.0
-- 添加文件管理
-- 支持工具打包
-- 提升开发体验
+- Add file management
+- Support tool packaging
+- Enhance development experience
 
-## 常见问题
+## Frequently Asked Questions
 
-1. **Q: 如何创建新工具？**
-   A: 点击"开始我的第一个FH工具"按钮，填写工具信息即可创建。
+1. **Q: How to create a new tool?**
+   A: Click the "Start My First FH Tool" button and fill in the tool information to create.
 
-2. **Q: 支持哪些文件类型？**
-   A: 支持HTML、JavaScript、CSS等Web开发相关文件。
+2. **Q: What file types are supported?**
+   A: Supports HTML, JavaScript, CSS and other Web development related files.
 
-3. **Q: 如何更新工具？**
-   A: 可以通过本地更新或远程URL更新两种方式。
+3. **Q: How to update tools?**
+   A: Can be updated through local update or remote URL update.
 
-4. **Q: 如何分享工具？**
-   A: 可以将工具打包后分享给其他用户，或发布到远程服务器。
+4. **Q: How to share tools?**
+   A: You can share the packaged tool with other users, or publish it to a remote server.
 
-## 最佳实践
+## Best Practices
 
-1. **开发流程**：
-   - 规划工具功能
-   - 设计用户界面
-   - 编写核心代码
-   - 测试和优化
+1. **Development Process**:
+   - Plan tool functions
+   - Design user interface
+   - Write core code
+   - Test and optimize
 
-2. **代码管理**：
-   - 使用版本控制
-   - 定期备份代码
-   - 遵循编码规范
-   - 做好注释说明
+2. **Code Management**:
+   - Use version control
+   - Regularly backup code
+   - Follow coding standards
+   - Maintain good comments
 
-3. **工具发布**：
-   - 充分测试功能
-   - 优化用户体验
-   - 准备使用文档
-   - 收集用户反馈 
+3. **Tool Publishing**:
+   - Thoroughly test functions
+   - Optimize user experience
+   - Prepare usage documentation
+   - Collect user feedback

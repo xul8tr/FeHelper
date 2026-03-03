@@ -1,109 +1,109 @@
-# 图片Base64转换工具
+# Image Base64 Conversion Tool
 
-## 简介
-图片Base64转换工具是FeHelper提供的一个实用工具，用于在图片和Base64编码之间进行相互转换。该工具支持多种图片格式，并提供了便捷的拖拽、粘贴等操作方式，让图片转换变得更加简单高效。
+## Introduction
+The Image Base64 Conversion Tool is a practical tool provided by FeHelper for bidirectional conversion between images and Base64 encoding. This tool supports multiple image formats and provides convenient drag-and-drop, paste, and other operation methods, making image conversion simpler and more efficient.
 
-## 主要功能
+## Main Features
 
-### 图片转Base64功能
-1. **多种上传方式**
-   - 点击选择图片文件
-   - 拖拽图片到指定区域
-   - 直接粘贴截图
-   - 粘贴图片URL地址
+### Image to Base64 Features
+1. **Multiple Upload Methods**
+   - Click to select image files
+   - Drag images to designated area
+   - Directly paste screenshots
+   - Paste image URL addresses
 
-2. **实时预览**
-   - 显示原始图片预览
-   - 显示转换后的Base64编码
-   - 显示原始图片尺寸和Base64数据大小
+2. **Real-time Preview**
+   - Display original image preview
+   - Display converted Base64 encoding
+   - Display original image size and Base64 data size
 
-3. **智能处理**
-   - 自动识别图片格式
-   - 自动处理图片URL
-   - 支持多种图片格式（jpg、jpeg、gif、png、bmp）
+3. **Smart Processing**
+   - Auto-identify image format
+   - Auto-process image URLs
+   - Support multiple image formats (jpg, jpeg, gif, png, bmp)
 
-### Base64转图片功能
-1. **数据输入**
-   - 支持直接粘贴Base64数据
-   - 自动补全DataURI前缀
-   - 实时预览转换结果
+### Base64 to Image Features
+1. **Data Input**
+   - Support direct paste of Base64 data
+   - Auto-complete DataURI prefix
+   - Real-time preview of conversion results
 
-2. **错误处理**
-   - 自动检测Base64数据格式
-   - 显示转换错误提示
-   - 支持手动修正数据
+2. **Error Handling**
+   - Auto-detect Base64 data format
+   - Display conversion error prompts
+   - Support manual data correction
 
-## 使用说明
+## Usage Instructions
 
-### 图片转Base64
-1. 打开工具后，默认进入"图片转Base64"模式
-2. 可以通过以下任一方式上传图片：
-   - 点击"选择图片"按钮选择本地图片文件
-   - 将图片文件拖拽到指定区域
-   - 复制图片后直接粘贴（支持截图）
-   - 复制图片URL后粘贴
-3. 上传成功后，右侧会显示：
-   - Base64编码结果
-   - 原始图片大小
-   - Base64数据大小
+### Image to Base64
+1. After opening the tool, it defaults to "Image to Base64" mode
+2. Upload images through any of the following methods:
+   - Click "Select Image" button to choose local image file
+   - Drag image file to designated area
+   - Copy image and paste directly (supports screenshots)
+   - Copy image URL and paste
+3. After successful upload, the right side will display:
+   - Base64 encoding result
+   - Original image size
+   - Base64 data size
 
-### Base64转图片
-1. 点击右上角"切换为Base64转图片"按钮
-2. 在左侧输入框中粘贴Base64数据
-3. 右侧会实时显示转换后的图片预览
-4. 如果数据格式有误，会显示错误提示
+### Base64 to Image
+1. Click "Switch to Base64 to Image" button in the upper right
+2. Paste Base64 data in the left input box
+3. The right side will display the converted image preview in real-time
+4. If the data format is incorrect, an error prompt will be displayed
 
-## 使用技巧
-1. **快速转换**
-   - 使用截图工具截图后直接粘贴
-   - 复制图片URL后直接粘贴
-   - 拖拽图片文件到工具窗口
+## Usage Tips
+1. **Quick Conversion**
+   - Use screenshot tool and paste directly after capturing
+   - Copy image URL and paste directly
+   - Drag image files to tool window
 
-2. **数据复制**
-   - 点击结果文本框自动选中全部内容
-   - 支持复制完整的DataURI数据
+2. **Data Copying**
+   - Click result text box to auto-select all content
+   - Support copying complete DataURI data
 
-3. **格式处理**
-   - 自动处理DataURI前缀
-   - 自动识别图片格式
-   - 支持手动修正数据格式
+3. **Format Processing**
+   - Auto-process DataURI prefix
+   - Auto-identify image format
+   - Support manual data format correction
 
-## 注意事项
-1. 图片大小限制
-   - 建议转换小于5MB的图片
-   - 过大的图片可能影响转换速度
+## Notes
+1. Image size limitations
+   - Recommended to convert images smaller than 5MB
+   - Oversized images may affect conversion speed
 
-2. 数据格式要求
-   - Base64数据需要是有效的图片数据
-   - 支持标准的DataURI格式
+2. Data format requirements
+   - Base64 data needs to be valid image data
+   - Support standard DataURI format
 
-3. 浏览器兼容性
-   - 支持主流现代浏览器
-   - 建议使用Chrome、Firefox等浏览器
+3. Browser compatibility
+   - Support mainstream modern browsers
+   - Chrome, Firefox, etc. browsers are recommended
 
-## 常见问题
-1. **Q: 为什么转换后的Base64数据很大？**
-   A: Base64编码会使数据量增加约33%，这是正常的编码转换过程。
+## FAQ
+1. **Q: Why is the converted Base64 data so large?**
+   A: Base64 encoding increases data size by about 33%, which is a normal encoding conversion process.
 
-2. **Q: 支持哪些图片格式？**
-   A: 支持jpg、jpeg、gif、png、bmp等常见图片格式。
+2. **Q: Which image formats are supported?**
+   A: Supports common image formats such as jpg, jpeg, gif, png, bmp.
 
-3. **Q: 如何判断Base64数据是否有效？**
-   A: 工具会自动检测数据格式，无效数据会显示错误提示。
+3. **Q: How to determine if Base64 data is valid?**
+   A: The tool automatically detects data format, and invalid data will display error prompts.
 
-## 更新日志
-- 2024-03-21: 优化图片处理性能
-- 2024-03-20: 添加拖拽上传功能
-- 2024-03-19: 支持截图直接粘贴
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize image processing performance
+- 2024-03-20: Add drag-and-drop upload function
+- 2024-03-19: Support screenshot direct paste
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [JSON格式化工具](../json-format.md)
-- [图片处理工具](../image-tools.md)
-- [编码转换工具](../encoding-converter.md) 
+## Related Tools
+- [JSON Format Tool](../json-format.md)
+- [Image Processing Tool](../image-tools.md)
+- [Encoding Converter Tool](../encoding-converter.md)

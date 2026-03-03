@@ -1,131 +1,131 @@
-# 时间戳转换工具
+# Timestamp Conversion Tool
 
-## 工具简介
+## Tool Introduction
 
-时间戳转换工具是一个功能强大的时间处理工具，支持本地时间与Unix时间戳之间的相互转换，并提供全球时区时钟显示功能。该工具特别适合开发者在处理时间相关数据时使用，能够快速准确地进行各种时间格式的转换。
+The Timestamp Conversion Tool is a powerful time processing tool that supports bidirectional conversion between local time and Unix timestamps, and provides global time zone clock display functionality. This tool is especially suitable for developers when handling time-related data, enabling quick and accurate conversion of various time formats.
 
-## 主要功能
+## Main Features
 
-### 1. 实时时间显示
-- 实时显示当前本地时间
-- 实时显示当前Unix时间戳（秒级和毫秒级）
-- 支持暂停/继续时间更新
-- 点击时间戳可快速复制到剪贴板
+### 1. Real-time Time Display
+- Real-time display of current local time
+- Real-time display of current Unix timestamp (second and millisecond level)
+- Support pause/resume time updates
+- Click timestamp for quick copy to clipboard
 
-### 2. Unix时间戳转本地时间
-- 支持输入秒级或毫秒级时间戳
-- 自动根据时区设置进行转换
-- 转换结果支持毫秒级精度显示
-- 点击结果可快速复制
+### 2. Unix Timestamp to Local Time
+- Support inputting second-level or millisecond-level timestamps
+- Auto-convert based on time zone settings
+- Conversion results support millisecond-level precision display
+- Click result for quick copy
 
-### 3. 本地时间转Unix时间戳
-- 支持多种时间格式输入
-- 自动补全时间（如只输入日期，自动补全为当天00:00:00）
-- 支持输出秒级或毫秒级时间戳
-- 点击结果可快速复制
+### 3. Local Time to Unix Timestamp
+- Support multiple time format inputs
+- Auto-complete time (e.g., only input date, auto-complete to 00:00:00 of that day)
+- Support output of second-level or millisecond-level timestamps
+- Click result for quick copy
 
-### 4. 全球时区时钟
-- 支持24个主要时区的实时时间显示
-- 包含全球主要城市和地区
-- 时区范围：GMT-12 到 GMT+12
-- 实时更新，精确到秒
+### 4. Global Time Zone Clock
+- Support real-time time display for 24 major time zones
+- Include major global cities and regions
+- Time zone range: GMT-12 to GMT+12
+- Real-time updates, accurate to the second
 
-### 5. 时区设置
-- 支持手动选择当前时区
-- 提供全球主要时区选项
-- 时区设置会影响所有转换结果
-- 默认使用系统当前时区
+### 5. Time Zone Settings
+- Support manually selecting current time zone
+- Provide major global time zone options
+- Time zone settings affect all conversion results
+- Default uses current system time zone
 
-## 使用说明
+## Usage Instructions
 
-### 时间戳转本地时间
-1. 在输入框中输入Unix时间戳
-2. 选择时间戳单位（秒/毫秒）
-3. 点击"转换"按钮
-4. 查看转换结果，点击可复制
+### Timestamp to Local Time
+1. Enter Unix timestamp in input box
+2. Select timestamp unit (second/millisecond)
+3. Click "Convert" button
+4. View conversion result, click to copy
 
-### 本地时间转时间戳
-1. 在输入框中输入本地时间（格式：YYYY-MM-DD HH:mm:ss）
-2. 点击"转换"按钮
-3. 选择输出时间戳单位（秒/毫秒）
-4. 查看转换结果，点击可复制
+### Local Time to Timestamp
+1. Enter local time in input box (format: YYYY-MM-DD HH:mm:ss)
+2. Click "Convert" button
+3. Select output timestamp unit (second/millisecond)
+4. View conversion result, click to copy
 
-### 全球时钟查看
-- 工具底部提供全球主要时区的实时时间显示
-- 时间每秒钟自动更新
-- 支持查看任意时区的当前时间
+### View Global Clock
+- Tool bottom provides real-time time display for major global time zones
+- Time auto-updates every second
+- Support viewing current time for any time zone
 
-## 使用技巧
+## Usage Tips
 
-1. **快速复制**：所有时间戳和转换结果都支持点击复制，方便开发使用
+1. **Quick Copy**: All timestamps and conversion results support click to copy, convenient for development use
 
-2. **时间格式**：
-   - 支持标准格式：YYYY-MM-DD HH:mm:ss
-   - 支持简写格式：YYYY-MM-DD（自动补全为当天00:00:00）
-   - 支持毫秒显示：YYYY-MM-DD HH:mm:ss.SSS
+2. **Time Format**:
+   - Support standard format: YYYY-MM-DD HH:mm:ss
+   - Support abbreviated format: YYYY-MM-DD (auto-complete to 00:00:00 of that day)
+   - Support millisecond display: YYYY-MM-DD HH:mm:ss.SSS
 
-3. **时区处理**：
-   - 转换时会自动考虑时区因素
-   - 可以通过顶部时区选择器切换不同时区
-   - 时区切换后所有显示和转换结果都会相应更新
+3. **Time Zone Processing**:
+   - Conversion auto-considers time zone factors
+   - Can switch different time zones via top time zone selector
+   - After time zone switch, all display and conversion results will update accordingly
 
-4. **实时更新**：
-   - 当前时间显示支持暂停/继续
-   - 全球时钟实时更新，无需手动刷新
+4. **Real-time Updates**:
+   - Current time display supports pause/resume
+   - Global clock updates in real-time, no manual refresh needed
 
-## 适用场景
+## Application Scenarios
 
-1. **开发调试**：
-   - API接口时间参数转换
-   - 数据库时间字段处理
-   - 日志时间分析
+1. **Development Debugging**:
+   - API interface time parameter conversion
+   - Database time field processing
+   - Log time analysis
 
-2. **跨时区协作**：
-   - 全球团队协作时间同步
-   - 国际会议时间安排
-   - 跨时区项目协调
+2. **Cross-time Zone Collaboration**:
+   - Global team collaboration time synchronization
+   - International meeting time arrangement
+   - Cross-time zone project coordination
 
-3. **数据分析**：
-   - 时间序列数据处理
-   - 日志时间分析
-   - 性能监控时间戳转换
+3. **Data Analysis**:
+   - Time series data processing
+   - Log time analysis
+   - Performance monitoring timestamp conversion
 
-## 注意事项
+## Notes
 
-1. 时间戳输入必须是有效的数字
-2. 本地时间输入需要符合标准格式
-3. 时区切换会影响所有转换结果
-4. 毫秒级时间戳转换时注意单位选择
+1. Timestamp input must be valid numbers
+2. Local time input needs to conform to standard format
+3. Time zone switching affects all conversion results
+4. Pay attention to unit selection when converting millisecond-level timestamps
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用原生JavaScript处理时间计算
-- 支持实时更新和自动格式化
-- 提供友好的用户界面和交互体验
+- Based on Vue.js development
+- Using native JavaScript for time calculations
+- Support real-time updates and auto-formatting
+- Provide friendly user interface and interaction experience
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本的时间戳转换功能
-- 支持全球时区时钟显示
+- Initial version release
+- Support basic timestamp conversion functionality
+- Support global time zone clock display
 
 ### v1.1.0
-- 添加毫秒级时间戳支持
-- 优化时区选择功能
-- 改进用户界面交互
+- Add millisecond-level timestamp support
+- Optimize time zone selection functionality
+- Improve user interface interaction
 
-## 常见问题
+## FAQ
 
-1. **Q: 为什么转换结果和预期不符？**
-   A: 请检查时区设置是否正确，转换结果会根据当前选择的时区进行计算。
+1. **Q: Why don't conversion results match expectations?**
+   A: Please check if time zone settings are correct. Conversion results are calculated based on currently selected time zone.
 
-2. **Q: 如何输入毫秒级时间戳？**
-   A: 在时间戳输入框中选择"毫秒(ms)"单位，然后输入13位数字的时间戳。
+2. **Q: How to input millisecond-level timestamps?**
+   A: Select "Millisecond (ms)" unit in timestamp input box, then enter 13-digit timestamp.
 
-3. **Q: 时间显示不更新了怎么办？**
-   A: 检查是否点击了"暂停"按钮，点击"开始"即可恢复更新。
+3. **Q: What if time display doesn't update?**
+   A: Check if "Pause" button was clicked. Click "Start" to resume updates.
 
-4. **Q: 如何快速复制时间戳？**
-   A: 直接点击显示的时间戳或转换结果即可复制到剪贴板。 
+4. **Q: How to quickly copy timestamp?**
+   A: Directly click displayed timestamp or conversion result to copy to clipboard.

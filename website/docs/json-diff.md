@@ -1,125 +1,125 @@
-# JSON比对工具
+# JSON Comparison Tool
 
-## 简介
+## Introduction
 
-JSON比对工具是FeHelper提供的一个专业的JSON数据比较工具，它能够帮助开发者快速比较两个JSON数据之间的差异，并以直观的方式展示差异点。该工具支持多种JSON数据格式，包括对象、数组、嵌套结构等，是进行API调试、数据验证和配置对比的得力助手。
+The JSON Comparison Tool is a professional JSON data comparison tool provided by FeHelper. It helps developers quickly compare differences between two JSON data sets and display difference points in an intuitive way. This tool supports various JSON data formats including objects, arrays, nested structures, etc., making it a powerful assistant for API debugging, data validation, and configuration comparison.
 
 ![popup](static/screenshot/json-diff.png)
 
-## 主要功能
+## Main Features
 
-### 1. 基础比对功能
-- **实时比对**：输入JSON数据后自动进行比对
-- **差异高亮**：使用不同颜色标记新增、删除和修改的内容
-- **结构对比**：支持复杂JSON结构的对比
-- **语法验证**：自动检测JSON语法错误
+### 1. Basic Comparison Features
+- **Real-time Comparison**: Automatically compares after inputting JSON data
+- **Difference Highlighting**: Uses different colors to mark added, deleted, and modified content
+- **Structure Comparison**: Supports comparison of complex JSON structures
+- **Syntax Validation**: Automatically detects JSON syntax errors
 
-### 2. 高级比对特性
-- **智能匹配**：自动识别相似的数据结构
-- **路径显示**：清晰显示差异数据的具体路径
-- **差异统计**：显示差异点的数量统计
-- **格式化显示**：自动格式化JSON数据，提高可读性
+### 2. Advanced Comparison Features
+- **Smart Matching**: Automatically identifies similar data structures
+- **Path Display**: Clearly shows specific paths of different data
+- **Difference Statistics**: Shows the number of difference points
+- **Formatted Display**: Automatically formats JSON data for improved readability
 
-### 3. 示例数据
-工具内置了多种示例数据，方便用户快速上手：
-- **用户信息**：展示用户数据结构的对比
-- **商品数据**：展示商品信息的对比
-- **配置选项**：展示配置文件的对比
-- **API响应**：展示API返回数据的对比
+### 3. Sample Data
+The tool includes various built-in sample data for quick start:
+- **User Information**: Shows comparison of user data structures
+- **Product Data**: Shows comparison of product information
+- **Configuration Options**: Shows comparison of configuration files
+- **API Response**: Shows comparison of API return data
 
-### 4. 界面特性
-- **双栏布局**：左右分栏显示待比较的JSON数据
-- **语法高亮**：使用CodeMirror提供专业的代码编辑体验
-- **实时预览**：比对结果实时显示
-- **错误提示**：清晰的错误提示和定位
+### 4. Interface Features
+- **Dual-column Layout**: Left and right columns display JSON data to be compared
+- **Syntax Highlighting**: Uses CodeMirror to provide professional code editing experience
+- **Real-time Preview**: Comparison results display in real-time
+- **Error Prompts**: Clear error prompts and positioning
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 在左侧输入框中粘贴第一个JSON数据
-2. 在右侧输入框中粘贴第二个JSON数据
-3. 工具会自动进行比对并显示差异
+### Basic Usage
+1. Paste the first JSON data in the left input box
+2. Paste the second JSON data in the right input box
+3. The tool will automatically compare and display differences
 
-### 高级功能使用
-1. **使用示例数据**：
-   - 点击"示例数据"下拉菜单
-   - 选择需要的示例类型
-   - 工具会自动填充示例数据
+### Advanced Feature Usage
+1. **Using Sample Data**:
+   - Click "Sample Data" dropdown menu
+   - Select the desired sample type
+   - The tool will automatically fill in sample data
 
-2. **查看差异**：
-   - 新增内容：绿色高亮显示
-   - 删除内容：红色高亮显示
-   - 修改内容：黄色高亮显示
+2. **View Differences**:
+   - Added content: Green highlighting
+   - Deleted content: Red highlighting
+   - Modified content: Yellow highlighting
 
-3. **错误处理**：
-   - 当JSON格式错误时，工具会显示具体的错误位置
-   - 支持自动修复常见的JSON格式问题
+3. **Error Handling**:
+   - When JSON format is incorrect, the tool displays specific error positions
+   - Supports automatic fixing of common JSON format issues
 
-## 使用技巧
+## Usage Tips
 
-1. **快速比对**：
-   - 使用示例数据快速了解工具功能
-   - 支持复制粘贴JSON数据
-   - 支持拖拽文件到输入框
+1. **Quick Comparison**:
+   - Use sample data to quickly understand tool functionality
+   - Support copy-paste JSON data
+   - Support drag-and-drop files to input box
 
-2. **差异分析**：
-   - 关注高亮显示的差异部分
-   - 使用路径信息定位具体差异
-   - 查看差异统计了解整体变化
+2. **Difference Analysis**:
+   - Focus on highlighted difference sections
+   - Use path information to locate specific differences
+   - View difference statistics to understand overall changes
 
-3. **数据验证**：
-   - 在比对前确保JSON格式正确
-   - 检查数据结构的完整性
-   - 验证数据类型的正确性
+3. **Data Validation**:
+   - Ensure JSON format is correct before comparison
+   - Check data structure integrity
+   - Verify data type correctness
 
-## 注意事项
+## Notes
 
-1. 确保输入的JSON数据格式正确
-2. 大型JSON数据可能需要较长的处理时间
-3. 注意检查嵌套结构的完整性
-4. 建议在比对前先格式化JSON数据
+1. Ensure input JSON data format is correct
+2. Large JSON data may require longer processing time
+3. Pay attention to checking nested structure integrity
+4. It's recommended to format JSON data before comparison
 
-## 常见问题
+## FAQ
 
-1. **Q: 为什么我的JSON比对结果不准确？**
-   A: 请检查：
-   - JSON数据格式是否正确
-   - 数据结构是否完整
-   - 数据类型是否匹配
-   - 是否有特殊字符或编码问题
+1. **Q: Why are my JSON comparison results inaccurate?**
+   A: Please check:
+   - Whether JSON data format is correct
+   - Whether data structure is complete
+   - Whether data types match
+   - Whether there are special characters or encoding issues
 
-2. **Q: 如何处理大型JSON数据的比对？**
-   A: 建议：
-   - 先格式化JSON数据
-   - 分块进行比对
-   - 关注关键字段的差异
-   - 使用路径信息快速定位
+2. **Q: How to handle large JSON data comparison?**
+   A: Recommendations:
+   - Format JSON data first
+   - Compare in chunks
+   - Focus on key field differences
+   - Use path information for quick location
 
-3. **Q: 为什么有些差异没有被标记出来？**
-   A: 可能的原因：
-   - 数据结构不一致
-   - 数据类型不匹配
-   - 特殊字符编码问题
-   - 工具配置问题
+3. **Q: Why are some differences not marked?**
+   A: Possible reasons:
+   - Inconsistent data structure
+   - Mismatched data types
+   - Special character encoding issues
+   - Tool configuration issues
 
-## 更新日志
+## Update Log
 
-### 最新版本
-- 优化了大型JSON的处理性能
-- 改进了差异显示的准确性
-- 新增了更多示例数据
-- 优化了界面交互体验
-- 增强了错误处理能力
+### Latest Version
+- Optimized processing performance for large JSON
+- Improved difference display accuracy
+- Added more sample data
+- Optimized interface interaction experience
+- Enhanced error handling capabilities
 
-## 反馈与建议
+## Feedback and Suggestions
 
-如果您在使用过程中遇到任何问题，或者有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件到开发团队
-3. 在工具市场页面留言
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to development team
+3. Leave a message on the tool market page
 
-## 相关工具
+## Related Tools
 
-- [JSON格式化工具](../json-format.md)：用于格式化JSON数据
-- [代码美化工具](../code-beautify.md)：支持多种编程语言的代码格式化
-- [信息编码转换](../en-decode.md)：支持多种编码格式的转换 
+- [JSON Format Tool](../json-format.md): For formatting JSON data
+- [Code Beautify Tool](../code-beautify.md): Supports code formatting for multiple programming languages
+- [Encoding Conversion Tool](../en-decode.md): Supports conversion of multiple encoding formats
