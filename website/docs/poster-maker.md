@@ -1,168 +1,168 @@
-# 海报快速生成工具
+# Poster Quick Generator Tool
 
-## 工具简介
+## Tool Introduction
 
-海报快速生成工具是一个专业的营销海报制作工具，支持多种社交媒体平台的海报模板，如朋友圈、小红书等。该工具提供了丰富的模板、自定义文字、图片和配色功能，帮助用户快速创建精美的营销推广海报。
+The Poster Quick Generator Tool is a professional marketing poster creation tool that supports poster templates for various social media platforms such as WeChat Moments and Xiaohongshu. This tool provides rich templates, custom text, images, and color schemes to help users quickly create beautiful marketing promotion posters.
 
-## 主要功能
+## Main Features
 
-### 1. 模板系统
-- 朋友圈模板
-- 小红书模板
-- 自定义模板
-- 模板预览
-- 模板管理
+### 1. Template System
+- WeChat Moments templates
+- Xiaohongshu templates
+- Custom templates
+- Template preview
+- Template management
 
-### 2. 编辑功能
-- 文字编辑
-- 图片上传
-- 背景设置
-- 元素拖拽
-- 图层管理
+### 2. Editing Functions
+- Text editing
+- Image upload
+- Background settings
+- Element dragging
+- Layer management
 
-### 3. 样式定制
-- 字体选择
-- 颜色搭配
-- 布局调整
-- 特效添加
-- 滤镜应用
+### 3. Style Customization
+- Font selection
+- Color matching
+- Layout adjustment
+- Effect addition
+- Filter application
 
-### 4. 导出功能
-- 图片导出
-- 格式选择
-- 尺寸调整
-- 质量设置
-- 批量导出
+### 4. Export Functions
+- Image export
+- Format selection
+- Size adjustment
+- Quality settings
+- Batch export
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 选择模板
-2. 编辑内容
-3. 调整样式
-4. 预览效果
-5. 导出海报
+### Basic Usage
+1. Select template
+2. Edit content
+3. Adjust style
+4. Preview effect
+5. Export poster
 
-### 编辑方式
-1. **文字编辑**：
-   - 输入文字内容
-   - 选择字体样式
-   - 调整文字大小
-   - 设置文字颜色
+### Editing Methods
+1. **Text Editing**:
+   - Input text content
+   - Select font style
+   - Adjust text size
+   - Set text color
 
-2. **图片处理**：
-   - 上传本地图片
-   - 调整图片大小
-   - 应用图片滤镜
-   - 设置图片位置
+2. **Image Processing**:
+   - Upload local images
+   - Adjust image size
+   - Apply image filters
+   - Set image position
 
-3. **样式设置**：
-   - 选择配色方案
-   - 调整布局结构
-   - 添加装饰元素
-   - 设置背景效果
+3. **Style Settings**:
+   - Select color scheme
+   - Adjust layout structure
+   - Add decorative elements
+   - Set background effects
 
-## 使用技巧
+## Usage Tips
 
-1. **模板选择**：
-   - 根据平台选择
-   - 考虑目标受众
-   - 注意品牌调性
-   - 保持风格统一
+1. **Template Selection**:
+   - Choose based on platform
+   - Consider target audience
+   - Pay attention to brand tone
+   - Maintain consistent style
 
-2. **内容设计**：
-   - 突出核心信息
-   - 保持简洁清晰
-   - 注意视觉层次
-   - 优化阅读体验
+2. **Content Design**:
+   - Highlight core information
+   - Keep it simple and clear
+   - Pay attention to visual hierarchy
+   - Optimize reading experience
 
-3. **效果优化**：
-   - 合理使用滤镜
-   - 注意色彩搭配
-   - 保持画面平衡
-   - 突出重点内容
+3. **Effect Optimization**:
+   - Use filters reasonably
+   - Pay attention to color matching
+   - Maintain image balance
+   - Highlight key content
 
-## 适用场景
+## Application Scenarios
 
-1. **营销推广**：
-   - 产品宣传
-   - 活动推广
-   - 品牌展示
-   - 节日营销
+1. **Marketing Promotion**:
+   - Product promotion
+   - Event promotion
+   - Brand display
+   - Holiday marketing
 
-2. **社交媒体**：
-   - 朋友圈分享
-   - 小红书笔记
-   - 微博配图
-   - 公众号封面
+2. **Social Media**:
+   - WeChat Moments sharing
+   - Xiaohongshu posts
+   - Weibo images
+   - Official account covers
 
-3. **个人创作**：
-   - 生活记录
-   - 旅行分享
-   - 美食展示
-   - 心情表达
+3. **Personal Creation**:
+   - Life records
+   - Travel sharing
+   - Food display
+   - Mood expression
 
-## 注意事项
+## Notes
 
-1. 注意版权问题
-2. 控制图片大小
-3. 保持画面简洁
-4. 注意导出质量
+1. Pay attention to copyright issues
+2. Control image size
+3. Keep image simple
+4. Pay attention to export quality
 
-## 技术实现
+## Technical Implementation
 
-- 基于Canvas实现
-- 使用Vue.js开发
-- 支持图片处理
-- 提供完整API
+- Based on Canvas implementation
+- Using Vue.js development
+- Support image processing
+- Provide complete API
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本模板
-- 提供编辑功能
+- Initial version release
+- Support basic templates
+- Provide editing functions
 
 ### v1.1.0
-- 添加更多模板
-- 优化编辑体验
-- 改进用户界面
+- Add more templates
+- Optimize editing experience
+- Improve user interface
 
 ### v1.2.0
-- 添加特效功能
-- 支持批量导出
-- 提升使用体验
+- Add effect functions
+- Support batch export
+- Enhance user experience
 
-## 常见问题
+## FAQ
 
-1. **Q: 支持哪些图片格式？**
-   A: 支持JPG、PNG、WEBP等常见图片格式。
+1. **Q: Which image formats are supported?**
+   A: Supports common image formats such as JPG, PNG, WEBP.
 
-2. **Q: 如何调整图片大小？**
-   A: 可以通过拖拽或输入具体尺寸来调整图片大小。
+2. **Q: How to adjust image size?**
+   A: You can adjust image size by dragging or entering specific dimensions.
 
-3. **Q: 如何保存海报？**
-   A: 点击导出按钮，选择需要的格式和质量即可保存。
+3. **Q: How to save posters?**
+   A: Click export button, select desired format and quality to save.
 
-4. **Q: 如何添加特效？**
-   A: 在编辑面板中选择特效选项，可以添加各种视觉效果。
+4. **Q: How to add effects?**
+   A: Select effect option in the editing panel to add various visual effects.
 
-## 最佳实践
+## Best Practices
 
-1. **设计原则**：
-   - 保持简洁
-   - 突出重点
-   - 注意平衡
-   - 统一风格
+1. **Design Principles**:
+   - Keep it simple
+   - Highlight key points
+   - Pay attention to balance
+   - Unified style
 
-2. **内容组织**：
-   - 合理布局
-   - 层次分明
-   - 重点突出
-   - 易于阅读
+2. **Content Organization**:
+   - Reasonable layout
+   - Clear hierarchy
+   - Highlighted key points
+   - Easy to read
 
-3. **效果优化**：
-   - 适当使用特效
-   - 注意色彩搭配
-   - 保持画面协调
-   - 突出主题内容 
+3. **Effect Optimization**:
+   - Appropriate use of effects
+   - Pay attention to color matching
+   - Maintain image harmony
+   - Highlight theme content

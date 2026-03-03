@@ -1,152 +1,152 @@
-# 随机密码生成工具
+# Random Password Generator Tool
 
-## 工具简介
+## Tool Introduction
 
-随机密码生成工具是一个专业的密码生成器，能够根据用户需求生成高强度的随机密码。该工具支持自定义密码组成元素和长度，生成的密码具有高度的随机性和安全性，特别适合需要创建安全密码的场景。
+The Random Password Generator Tool is a professional password generator that can generate high-strength random passwords according to user needs. This tool supports customizing password composition elements and length. Generated passwords have high randomness and security, especially suitable for scenarios requiring secure password creation.
 
-## 主要功能
+## Main Features
 
-### 1. 密码元素选择
-- 支持数字（0-9）
-- 支持小写字母（a-z）
-- 支持大写字母（A-Z）
-- 支持特殊符号（~!@#$%^&*等）
-- 可自由组合以上元素
+### 1. Password Element Selection
+- Support numbers (0-9)
+- Support lowercase letters (a-z)
+- Support uppercase letters (A-Z)
+- Support special symbols (~!@#$%^&*, etc.)
+- Free combination of above elements
 
-### 2. 密码长度设置
-- 支持自定义密码长度
-- 默认长度为16位
-- 无长度上限限制
-- 实时预览生成结果
+### 2. Password Length Settings
+- Support custom password length
+- Default length is 16 characters
+- No upper limit on length
+- Real-time preview of generation results
 
-### 3. 随机性保证
-- 使用加密级随机数生成
-- 避免字符重复出现
-- 确保密码元素分布均匀
-- 保证密码的不可预测性
+### 3. Randomness Guarantee
+- Use cryptographic-grade random number generation
+- Avoid character repetition
+- Ensure even distribution of password elements
+- Guarantee password unpredictability
 
-### 4. 便捷操作
-- 一键生成新密码
-- 一键复制密码
-- 实时预览密码
-- 支持鼠标悬停选中
+### 4. Convenient Operations
+- One-click generate new password
+- One-click copy password
+- Real-time password preview
+- Support mouse hover selection
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 选择需要的密码元素（数字/大小写字母/特殊符号）
-2. 设置期望的密码长度
-3. 点击"生成随机密码"按钮
-4. 查看生成的密码
-5. 点击"复制"按钮使用密码
+### Basic Usage
+1. Select desired password elements (numbers/uppercase/lowercase letters/special symbols)
+2. Set expected password length
+3. Click "Generate Random Password" button
+4. View generated password
+5. Click "Copy" button to use password
 
-### 密码元素说明
-- 数字：0-9
-- 小写字母：a-z
-- 大写字母：A-Z
-- 特殊符号：~!@#$%^&*()[{]}-_=+\|;:\'\",<.>/?`
+### Password Element Description
+- Numbers: 0-9
+- Lowercase letters: a-z
+- Uppercase letters: A-Z
+- Special symbols: ~!@#$%^&*()[{]}-_=+\|;:\'\",<.>/?`
 
-## 使用技巧
+## Usage Tips
 
-1. **密码强度**：
-   - 建议同时选择多种字符类型
-   - 密码长度建议不少于12位
-   - 特殊符号可以增加密码强度
-   - 避免使用容易猜测的组合
+1. **Password Strength**:
+   - Recommend selecting multiple character types simultaneously
+   - Password length recommended to be at least 12 characters
+   - Special symbols can increase password strength
+   - Avoid using easily guessable combinations
 
-2. **快速操作**：
-   - 使用快捷键复制密码
-   - 鼠标悬停自动选中密码
-   - 一键重新生成新密码
-   - 复制成功有提示信息
+2. **Quick Operations**:
+   - Use shortcuts to copy password
+   - Mouse hover auto-selects password
+   - One-click regenerate new password
+   - Copy success notification
 
-3. **安全建议**：
-   - 不同网站使用不同密码
-   - 定期更换重要密码
-   - 避免使用个人信息
-   - 妥善保管生成的密码
+3. **Security Recommendations**:
+   - Use different passwords for different websites
+   - Change important passwords regularly
+   - Avoid using personal information
+   - Properly keep generated passwords
 
-## 适用场景
+## Application Scenarios
 
-1. **账号注册**：
-   - 网站账号注册
-   - 应用账号创建
-   - 邮箱密码设置
-   - 社交账号密码
+1. **Account Registration**:
+   - Website account registration
+   - Application account creation
+   - Email password setup
+   - Social account passwords
 
-2. **系统管理**：
-   - 服务器密码
-   - 数据库密码
-   - 管理员账号
-   - 系统密钥
+2. **System Management**:
+   - Server passwords
+   - Database passwords
+   - Administrator accounts
+   - System keys
 
-3. **安全防护**：
-   - 加密文件密码
-   - 安全证书密码
-   - 加密通信密钥
-   - 安全存储密码
+3. **Security Protection**:
+   - Encrypted file passwords
+   - Security certificate passwords
+   - Encrypted communication keys
+   - Secure storage passwords
 
-## 注意事项
+## Notes
 
-1. 生成的密码请妥善保管
-2. 建议使用密码管理器保存
-3. 重要账号密码建议定期更换
-4. 避免在不安全的环境使用
+1. Properly keep generated passwords
+2. Recommend using password manager to save
+3. Important account passwords should be changed regularly
+4. Avoid use in insecure environments
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用加密级随机数生成
-- 支持现代浏览器API
-- 提供友好的用户界面
+- Based on Vue.js development
+- Using cryptographic-grade random number generation
+- Support modern browser APIs
+- Provide friendly user interface
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本密码生成功能
-- 提供多种字符类型选择
+- Initial version release
+- Support basic password generation functionality
+- Provide multiple character type selections
 
 ### v1.1.0
-- 优化随机算法
-- 添加复制功能
-- 改进用户界面
+- Optimize random algorithm
+- Add copy functionality
+- Improve user interface
 
 ### v1.2.0
-- 添加密码强度提示
-- 优化复制体验
-- 提升生成效率
+- Add password strength prompt
+- Optimize copy experience
+- Improve generation efficiency
 
-## 常见问题
+## FAQ
 
-1. **Q: 生成的密码安全吗？**
-   A: 是的，工具使用加密级随机数生成，确保密码的随机性和安全性。
+1. **Q: Are generated passwords secure?**
+   A: Yes, the tool uses cryptographic-grade random number generation to ensure password randomness and security.
 
-2. **Q: 如何生成更安全的密码？**
-   A: 建议同时选择多种字符类型，并设置较长的密码长度（建议12位以上）。
+2. **Q: How to generate more secure passwords?**
+   A: Recommend selecting multiple character types simultaneously and setting longer password length (recommended 12+ characters).
 
-3. **Q: 可以生成特定格式的密码吗？**
-   A: 目前支持自定义字符类型和长度，但不支持特定格式的密码生成。
+3. **Q: Can passwords be generated in specific formats?**
+   A: Currently supports customizing character types and length, but does not support specific format password generation.
 
-4. **Q: 生成的密码会重复吗？**
-   A: 工具会尽量避免字符重复，但由于随机性，理论上可能存在重复，但概率极低。
+4. **Q: Will generated passwords repeat?**
+   A: The tool tries to avoid character repetition, but due to randomness, repetition may theoretically exist, though probability is extremely low.
 
-## 最佳实践
+## Best Practices
 
-1. **密码生成**：
-   - 选择多种字符类型
-   - 设置合适的密码长度
-   - 避免使用个人信息
-   - 定期更换重要密码
+1. **Password Generation**:
+   - Select multiple character types
+   - Set appropriate password length
+   - Avoid using personal information
+   - Change important passwords regularly
 
-2. **密码管理**：
-   - 使用密码管理器
-   - 分类保存不同用途
-   - 定期更新密码
-   - 做好备份工作
+2. **Password Management**:
+   - Use password manager
+   - Save by category for different purposes
+   - Update passwords regularly
+   - Backup properly
 
-3. **安全使用**：
-   - 在安全环境使用
-   - 及时清除剪贴板
-   - 避免明文传输
-   - 注意密码保护 
+3. **Secure Use**:
+   - Use in secure environment
+   - Clear clipboard promptly
+   - Avoid plain text transmission
+   - Pay attention to password protection

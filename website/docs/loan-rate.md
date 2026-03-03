@@ -1,160 +1,160 @@
-# 贷款利率计算器
+# Loan Rate Calculator
 
-## 工具简介
+## Tool Introduction
 
-贷款利率计算器是一个专业的贷款计算工具，支持等额本息和等额本金两种还款方式的计算，并提供实际年化利率反推功能。该工具能够帮助用户快速计算贷款月供、总利息等关键数据，是个人理财和贷款规划的理想助手。
+The Loan Rate Calculator is a professional loan calculation tool that supports calculations for two repayment methods: equal principal and interest, and equal principal. It also provides actual annual interest rate reverse calculation functionality. This tool helps users quickly calculate monthly loan payments, total interest, and other key data, making it an ideal assistant for personal finance and loan planning.
 
-## 主要功能
+## Main Features
 
-### 1. 还款方式计算
-- 等额本息计算
-- 等额本金计算
-- 月供金额计算
-- 总利息计算
-- 还款计划生成
+### 1. Repayment Method Calculation
+- Equal principal and interest calculation
+- Equal principal calculation
+- Monthly payment calculation
+- Total interest calculation
+- Repayment schedule generation
 
-### 2. 实际年化反推
-- 根据总还款额反推年化利率
-- 支持等额本息反推
-- 支持等额本金反推
-- 精确到小数点后两位
+### 2. Actual Annual Rate Reverse Calculation
+- Reverse calculate annual interest rate based on total repayment
+- Support equal principal and interest reverse calculation
+- Support equal principal reverse calculation
+- Accurate to two decimal places
 
-### 3. 还款计划明细
-- 期数显示
-- 月供金额
-- 本金和利息拆分
-- 累计还款统计
-- 剩余还款统计
+### 3. Repayment Schedule Details
+- Period display
+- Monthly payment amount
+- Principal and interest breakdown
+- Cumulative repayment statistics
+- Remaining repayment statistics
 
-### 4. 智能计算
-- 实时计算
-- 数据合法性校验
-- 精确的数学计算
-- 友好的错误提示
+### 4. Smart Calculation
+- Real-time calculation
+- Data validity verification
+- Precise mathematical calculation
+- Friendly error prompts
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 输入贷款本金
-2. 选择贷款期限
-3. 选择还款方式
-4. 输入年化利率
-5. 点击计算按钮
+### Basic Usage
+1. Enter loan principal
+2. Select loan term
+3. Select repayment method
+4. Enter annual interest rate
+5. Click calculate button
 
-### 计算模式
-1. **利率计算模式**：
-   - 输入贷款本金
-   - 输入贷款期限
-   - 输入年化利率
-   - 选择还款方式
-   - 查看计算结果
+### Calculation Modes
+1. **Interest Rate Calculation Mode**:
+   - Enter loan principal
+   - Enter loan term
+   - Enter annual interest rate
+   - Select repayment method
+   - View calculation results
 
-2. **实际年化反推模式**：
-   - 输入贷款本金
-   - 输入贷款期限
-   - 输入总还款额
-   - 选择还款方式
-   - 查看反推结果
+2. **Actual Annual Rate Reverse Calculation Mode**:
+   - Enter loan principal
+   - Enter loan term
+   - Enter total repayment amount
+   - Select repayment method
+   - View reverse calculation results
 
-## 使用技巧
+## Usage Tips
 
-1. **数据输入**：
-   - 贷款本金必须大于0
-   - 贷款期限不能超过360个月
-   - 年化利率必须大于0
-   - 总还款额必须大于本金
+1. **Data Input**:
+   - Loan principal must be greater than 0
+   - Loan term cannot exceed 360 months
+   - Annual interest rate must be greater than 0
+   - Total repayment must be greater than principal
 
-2. **还款方式选择**：
-   - 等额本息：每月还款金额固定
-   - 等额本金：每月本金固定，利息递减
+2. **Repayment Method Selection**:
+   - Equal principal and interest: Fixed monthly payment amount
+   - Equal principal: Fixed monthly principal, decreasing interest
 
-3. **结果查看**：
-   - 查看每月还款明细
-   - 关注总利息支出
-   - 对比不同还款方式
-   - 分析还款压力
+3. **Result Viewing**:
+   - View monthly repayment details
+   - Pay attention to total interest expenditure
+   - Compare different repayment methods
+   - Analyze repayment pressure
 
-## 适用场景
+## Application Scenarios
 
-1. **个人贷款**：
-   - 房贷计算
-   - 车贷计算
-   - 消费贷款
-   - 信用贷款
+1. **Personal Loans**:
+   - Mortgage calculation
+   - Car loan calculation
+   - Consumer loans
+   - Credit loans
 
-2. **理财规划**：
-   - 贷款成本分析
-   - 还款能力评估
-   - 提前还款规划
-   - 利率对比分析
+2. **Financial Planning**:
+   - Loan cost analysis
+   - Repayment capacity assessment
+   - Early repayment planning
+   - Interest rate comparison analysis
 
-3. **金融咨询**：
-   - 贷款方案设计
-   - 还款计划制定
-   - 利率水平评估
-   - 成本效益分析
+3. **Financial Consulting**:
+   - Loan plan design
+   - Repayment plan formulation
+   - Interest rate level assessment
+   - Cost-benefit analysis
 
-## 注意事项
+## Notes
 
-1. 计算结果仅供参考
-2. 实际贷款以银行审批为准
-3. 注意利率单位换算
-4. 考虑其他费用支出
+1. Calculation results are for reference only
+2. Actual loans are subject to bank approval
+3. Pay attention to interest rate unit conversion
+4. Consider other fee expenditures
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用精确的数学计算
-- 支持实时数据更新
-- 提供友好的用户界面
+- Based on Vue.js development
+- Use precise mathematical calculations
+- Support real-time data updates
+- Provide friendly user interface
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本计算功能
-- 提供两种还款方式
+- Initial version release
+- Support basic calculation functions
+- Provide two repayment methods
 
 ### v1.1.0
-- 添加实际年化反推
-- 优化计算精度
-- 改进用户界面
+- Add actual annual rate reverse calculation
+- Optimize calculation precision
+- Improve user interface
 
 ### v1.2.0
-- 添加数据校验
-- 优化计算效率
-- 提升使用体验
+- Add data validation
+- Optimize calculation efficiency
+- Enhance user experience
 
-## 常见问题
+## FAQ
 
-1. **Q: 等额本息和等额本金有什么区别？**
-   A: 等额本息每月还款金额固定，等额本金每月本金固定，利息递减。
+1. **Q: What's the difference between equal principal and interest and equal principal?**
+   A: Equal principal and interest has fixed monthly payments, while equal principal has fixed monthly principal with decreasing interest.
 
-2. **Q: 如何选择还款方式？**
-   A: 等额本息适合收入稳定的借款人，等额本金适合收入较高的借款人。
+2. **Q: How to choose repayment method?**
+   A: Equal principal and interest is suitable for borrowers with stable income, while equal principal is suitable for borrowers with higher income.
 
-3. **Q: 提前还款是否划算？**
-   A: 需要根据实际利率、剩余期限等因素综合考虑。
+3. **Q: Is early repayment worthwhile?**
+   A: Needs to be considered comprehensively based on actual interest rate, remaining term, and other factors.
 
-4. **Q: 如何计算实际年化利率？**
-   A: 可以使用工具的实际年化反推功能，输入本金、期限和总还款额即可。
+4. **Q: How to calculate actual annual interest rate?**
+   A: You can use the tool's actual annual rate reverse calculation function by entering principal, term, and total repayment amount.
 
-## 最佳实践
+## Best Practices
 
-1. **贷款规划**：
-   - 合理评估还款能力
-   - 选择适合的还款方式
-   - 注意利率水平
-   - 考虑提前还款
+1. **Loan Planning**:
+   - Reasonably assess repayment capacity
+   - Choose suitable repayment method
+   - Pay attention to interest rate level
+   - Consider early repayment
 
-2. **成本控制**：
-   - 比较不同贷款方案
-   - 关注总利息支出
-   - 评估还款压力
-   - 做好资金规划
+2. **Cost Control**:
+   - Compare different loan plans
+   - Pay attention to total interest expenditure
+   - Assess repayment pressure
+   - Plan funds well
 
-3. **风险防范**：
-   - 预留应急资金
-   - 关注利率变化
-   - 评估还款风险
-   - 做好风险控制 
+3. **Risk Prevention**:
+   - Reserve emergency funds
+   - Pay attention to interest rate changes
+   - Assess repayment risks
+   - Control risks well

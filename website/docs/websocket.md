@@ -1,168 +1,168 @@
-# WebSocket工具
+# WebSocket Tool
 
-## 简介
-WebSocket工具是FeHelper提供的一个专业的WebSocket测试工具，支持WebSocket连接的建立、消息发送和接收等功能。该工具提供了直观的界面和实时通信功能，帮助开发者快速测试和调试WebSocket应用。
+## Introduction
+The WebSocket Tool is a professional WebSocket testing tool provided by FeHelper, supporting WebSocket connection establishment, message sending and receiving, and other functions. This tool provides an intuitive interface and real-time communication functionality, helping developers quickly test and debug WebSocket applications.
 
-## 主要功能
+## Main Features
 
-### 连接管理
-1. **连接控制**
-   - 建立连接
-   - 关闭连接
-   - 连接状态显示
-   - 自动重连
+### Connection Management
+1. **Connection Control**
+   - Establish connection
+   - Close connection
+   - Connection status display
+   - Auto-reconnect
 
-2. **地址配置**
-   - WebSocket地址输入
-   - 地址格式验证
-   - 默认地址提供
-   - 地址保存
+2. **Address Configuration**
+   - WebSocket address input
+   - Address format validation
+   - Default address provision
+   - Address saving
 
-3. **状态监控**
-   - 连接状态显示
-   - 错误提示
-   - 时间戳记录
-   - 状态日志
+3. **Status Monitoring**
+   - Connection status display
+   - Error prompts
+   - Timestamp recording
+   - Status logs
 
-### 消息处理
-1. **消息发送**
-   - 文本消息输入
-   - 消息发送
-   - 发送状态显示
-   - 发送历史记录
+### Message Processing
+1. **Message Sending**
+   - Text message input
+   - Message sending
+   - Send status display
+   - Send history records
 
-2. **消息接收**
-   - 实时消息显示
-   - 消息格式化
-   - 时间戳记录
-   - 消息历史
+2. **Message Receiving**
+   - Real-time message display
+   - Message formatting
+   - Timestamp recording
+   - Message history
 
-3. **消息管理**
-   - 消息清空
-   - 历史记录
-   - 消息过滤
-   - 错误处理
+3. **Message Management**
+   - Clear messages
+   - History records
+   - Message filtering
+   - Error handling
 
-### 界面功能
-1. **操作控制**
-   - 连接按钮
-   - 关闭按钮
-   - 发送按钮
-   - 清空按钮
+### Interface Functions
+1. **Operation Control**
+   - Connect button
+   - Close button
+   - Send button
+   - Clear button
 
-2. **显示区域**
-   - 消息输入框
-   - 消息显示区
-   - 状态显示
-   - 时间显示
+2. **Display Area**
+   - Message input box
+   - Message display area
+   - Status display
+   - Time display
 
-3. **交互优化**
-   - 按钮状态控制
-   - 输入验证
-   - 错误提示
-   - 操作反馈
+3. **Interaction Optimization**
+   - Button state control
+   - Input validation
+   - Error prompts
+   - Operation feedback
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 建立连接
-   - 输入WebSocket地址
-   - 点击连接按钮
-   - 等待连接成功
-   - 查看连接状态
+### Basic Usage
+1. Establish Connection
+   - Enter WebSocket address
+   - Click connect button
+   - Wait for connection success
+   - View connection status
 
-2. 发送消息
-   - 输入消息内容
-   - 点击发送按钮
-   - 查看发送状态
-   - 确认消息发送
+2. Send Message
+   - Enter message content
+   - Click send button
+   - View send status
+   - Confirm message sent
 
-3. 接收消息
-   - 查看消息显示区
-   - 确认消息接收
-   - 查看时间戳
-   - 处理接收消息
+3. Receive Message
+   - View message display area
+   - Confirm message received
+   - View timestamp
+   - Process received message
 
-### 高级功能
-1. **连接管理**
-   - 自动重连
-   - 连接状态监控
-   - 错误处理
-   - 连接优化
+### Advanced Functions
+1. **Connection Management**
+   - Auto-reconnect
+   - Connection status monitoring
+   - Error handling
+   - Connection optimization
 
-2. **消息处理**
-   - 消息格式化
-   - 历史记录
-   - 消息过滤
-   - 批量处理
+2. **Message Processing**
+   - Message formatting
+   - History records
+   - Message filtering
+   - Batch processing
 
-3. **调试功能**
-   - 状态监控
-   - 错误追踪
-   - 性能分析
-   - 日志记录
+3. **Debugging Functions**
+   - Status monitoring
+   - Error tracking
+   - Performance analysis
+   - Log recording
 
-## 使用技巧
-1. **提高效率**
-   - 使用快捷键
-   - 快速连接
-   - 消息模板
-   - 批量发送
+## Usage Tips
+1. **Improve Efficiency**
+   - Use keyboard shortcuts
+   - Quick connection
+   - Message templates
+   - Batch sending
 
-2. **调试技巧**
-   - 状态监控
-   - 错误分析
-   - 性能优化
-   - 问题定位
+2. **Debugging Techniques**
+   - Status monitoring
+   - Error analysis
+   - Performance optimization
+   - Problem location
 
-3. **最佳实践**
-   - 连接管理
-   - 消息处理
-   - 错误处理
-   - 性能优化
+3. **Best Practices**
+   - Connection management
+   - Message processing
+   - Error handling
+   - Performance optimization
 
-## 注意事项
-1. 使用限制
-   - 连接数量
-   - 消息大小
-   - 发送频率
-   - 资源占用
+## Notes
+1. Usage Limitations
+   - Connection quantity
+   - Message size
+   - Send frequency
+   - Resource consumption
 
-2. 兼容性
-   - 浏览器支持
-   - 协议版本
-   - 安全限制
-   - 网络环境
+2. Compatibility
+   - Browser support
+   - Protocol version
+   - Security restrictions
+   - Network environment
 
-3. 性能考虑
-   - 连接管理
-   - 消息处理
-   - 内存使用
-   - 响应速度
+3. Performance Considerations
+   - Connection management
+   - Message processing
+   - Memory usage
+   - Response speed
 
-## 常见问题
-1. **Q: 为什么连接失败？**
-   A: 可能是地址格式不正确、服务器未启动或网络问题，请检查WebSocket地址和网络连接。
+## FAQ
+1. **Q: Why does connection fail?**
+   A: May be incorrect address format, server not started, or network issues. Please check WebSocket address and network connection.
 
-2. **Q: 如何保持长连接？**
-   A: 工具支持自动重连功能，但建议在应用层面实现心跳机制来保持连接。
+2. **Q: How to maintain long connection?**
+   A: Tool supports auto-reconnect functionality, but recommend implementing heartbeat mechanism at application layer to maintain connection.
 
-3. **Q: 消息发送失败怎么办？**
-   A: 检查连接状态，确保连接正常，同时验证消息格式是否正确。
+3. **Q: What if message sending fails?**
+   A: Check connection status, ensure connection is normal, and verify message format is correct.
 
-## 更新日志
-- 2024-03-21: 优化连接性能
-- 2024-03-20: 添加自动重连功能
-- 2024-03-19: 改进消息显示
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize connection performance
+- 2024-03-20: Add auto-reconnect function
+- 2024-03-19: Improve message display
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [HTTP请求工具](../postman.md)
-- [WebSocket调试工具](../devtools.md)
-- [网络监控工具](../page-timing.md) 
+## Related Tools
+- [HTTP Request Tool](../postman.md)
+- [WebSocket Debugging Tool](../devtools.md)
+- [Network Monitoring Tool](../page-timing.md)

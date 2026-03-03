@@ -1,168 +1,168 @@
-# 网页油猴工具
+# Web Page Userscript Tool
 
-## 工具简介
+## Tool Introduction
 
-网页油猴工具是一个强大的网页定制和调试工具，允许用户为任意网页注入自定义JavaScript代码，实现页面功能增强、自动化操作、界面美化等功能。该工具支持多种匹配规则，可以针对特定网站或全局网页进行定制化开发。
+The Web Page Userscript Tool is a powerful web customization and debugging tool that allows users to inject custom JavaScript code into any web page to enhance page functionality, automate operations, beautify interfaces, and more. This tool supports various matching rules and enables customized development for specific websites or global web pages.
 
-## 主要功能
+## Main Features
 
-### 1. 脚本管理
-- 创建新脚本
-- 编辑现有脚本
-- 导入导出脚本
-- 启用/停用脚本
-- 删除脚本
+### 1. Script Management
+- Create new scripts
+- Edit existing scripts
+- Import/export scripts
+- Enable/disable scripts
+- Delete scripts
 
-### 2. 匹配规则
-- 精确网址匹配
-- 通配符匹配
-- 正则表达式匹配
-- 多规则组合
-- 规则测试
+### 2. Matching Rules
+- Exact URL matching
+- Wildcard matching
+- Regular expression matching
+- Multiple rule combinations
+- Rule testing
 
-### 3. 脚本功能
-- 自定义JavaScript代码
-- 依赖脚本引入
-- 自动刷新设置
-- 实时生效
-- 错误提示
+### 3. Script Functions
+- Custom JavaScript code
+- Dependency script inclusion
+- Auto-refresh settings
+- Real-time effect
+- Error prompts
 
-### 4. 开发辅助
-- 代码编辑器
-- 语法高亮
-- 自动保存
-- 示例代码
-- 开发文档
+### 4. Development Assistance
+- Code editor
+- Syntax highlighting
+- Auto-save
+- Example code
+- Development documentation
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 创建新脚本
-2. 设置匹配规则
-3. 编写注入代码
-4. 保存并启用
-5. 查看效果
+### Basic Usage
+1. Create new script
+2. Set matching rules
+3. Write injection code
+4. Save and enable
+5. View effects
 
-### 脚本创建方式
-1. **新建脚本**：
-   - 点击"创建猴子"
-   - 填写脚本信息
-   - 编写注入代码
-   - 保存并启用
+### Script Creation Methods
+1. **New Script**:
+   - Click "Create Monkey"
+   - Fill in script information
+   - Write injection code
+   - Save and enable
 
-2. **导入脚本**：
-   - 点击"导入猴子"
-   - 选择脚本文件
-   - 确认导入
-   - 启用脚本
+2. **Import Script**:
+   - Click "Import Monkey"
+   - Select script file
+   - Confirm import
+   - Enable script
 
-3. **示例脚本**：
-   - 点击"来个Demo尝尝"
-   - 查看示例代码
-   - 学习使用方法
-   - 基于示例开发
+3. **Example Script**:
+   - Click "Try a Demo"
+   - View example code
+   - Learn usage methods
+   - Develop based on examples
 
-## 使用技巧
+## Usage Tips
 
-1. **匹配规则**：
-   - 使用精确URL
-   - 使用通配符
-   - 使用正则表达式
-   - 测试规则有效性
+1. **Matching Rules**:
+   - Use exact URL
+   - Use wildcards
+   - Use regular expressions
+   - Test rule effectiveness
 
-2. **脚本编写**：
-   - 使用JavaScript
-   - 引入依赖库
-   - 处理页面元素
-   - 添加错误处理
+2. **Script Writing**:
+   - Use JavaScript
+   - Include dependency libraries
+   - Handle page elements
+   - Add error handling
 
-3. **自动刷新**：
-   - 设置刷新间隔
-   - 选择合适频率
-   - 避免频繁刷新
-   - 考虑性能影响
+3. **Auto-refresh**:
+   - Set refresh interval
+   - Choose appropriate frequency
+   - Avoid frequent refreshing
+   - Consider performance impact
 
-## 适用场景
+## Application Scenarios
 
-1. **页面定制**：
-   - 界面美化
-   - 功能增强
-   - 广告过滤
-   - 内容修改
+1. **Page Customization**:
+   - Interface beautification
+   - Function enhancement
+   - Ad filtering
+   - Content modification
 
-2. **自动化操作**：
-   - 自动填表
-   - 自动点击
-   - 数据采集
-   - 定时任务
+2. **Automated Operations**:
+   - Auto-fill forms
+   - Auto-click
+   - Data collection
+   - Scheduled tasks
 
-3. **开发调试**：
-   - 页面测试
-   - 功能验证
-   - 性能分析
-   - 问题排查
+3. **Development Debugging**:
+   - Page testing
+   - Function verification
+   - Performance analysis
+   - Problem troubleshooting
 
-## 注意事项
+## Notes
 
-1. 注意脚本安全性
-2. 避免影响页面性能
-3. 定期检查脚本有效性
-4. 备份重要脚本
+1. Pay attention to script security
+2. Avoid affecting page performance
+3. Regularly check script effectiveness
+4. Backup important scripts
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用CodeMirror编辑器
-- 支持Chrome存储API
-- 提供完整的开发环境
+- Based on Vue.js development
+- Using CodeMirror editor
+- Support Chrome storage API
+- Provide complete development environment
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本脚本管理
-- 提供代码编辑器
+- Initial version release
+- Support basic script management
+- Provide code editor
 
 ### v1.1.0
-- 添加自动刷新
-- 优化编辑器功能
-- 改进用户界面
+- Add auto-refresh
+- Optimize editor functions
+- Improve user interface
 
 ### v1.2.0
-- 添加依赖脚本
-- 支持脚本导入导出
-- 提升使用体验
+- Add dependency scripts
+- Support script import/export
+- Enhance user experience
 
-## 常见问题
+## FAQ
 
-1. **Q: 如何创建新脚本？**
-   A: 点击"创建猴子"按钮，填写脚本信息并编写代码即可。
+1. **Q: How to create a new script?**
+   A: Click "Create Monkey" button, fill in script information and write code.
 
-2. **Q: 支持哪些匹配规则？**
-   A: 支持精确URL、通配符和正则表达式等多种匹配方式。
+2. **Q: Which matching rules are supported?**
+   A: Supports exact URL, wildcards, regular expressions, and other matching methods.
 
-3. **Q: 如何导入已有脚本？**
-   A: 点击"导入猴子"按钮，选择脚本文件即可导入。
+3. **Q: How to import existing scripts?**
+   A: Click "Import Monkey" button and select script file to import.
 
-4. **Q: 脚本如何生效？**
-   A: 保存脚本后，在匹配的网页上会自动注入并执行。
+4. **Q: How do scripts take effect?**
+   A: After saving the script, it will automatically inject and execute on matching web pages.
 
-## 最佳实践
+## Best Practices
 
-1. **脚本开发**：
-   - 规划脚本功能
-   - 编写清晰代码
-   - 添加错误处理
-   - 测试脚本效果
+1. **Script Development**:
+   - Plan script functions
+   - Write clear code
+   - Add error handling
+   - Test script effects
 
-2. **规则设置**：
-   - 使用精确匹配
-   - 避免规则冲突
-   - 测试规则有效性
-   - 定期更新规则
+2. **Rule Settings**:
+   - Use exact matching
+   - Avoid rule conflicts
+   - Test rule effectiveness
+   - Update rules regularly
 
-3. **性能优化**：
-   - 控制脚本大小
-   - 优化执行效率
-   - 避免频繁操作
-   - 及时清理资源 
+3. **Performance Optimization**:
+   - Control script size
+   - Optimize execution efficiency
+   - Avoid frequent operations
+   - Clean up resources promptly

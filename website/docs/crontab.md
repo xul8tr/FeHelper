@@ -1,163 +1,163 @@
-# Crontab工具
+# Crontab Tool
 
-## 工具简介
+## Tool Introduction
 
-Crontab工具是一个专业的定时任务表达式生成器，帮助用户快速创建和验证Crontab表达式。该工具提供直观的图形界面，支持实时预览执行时间，并能够智能检测表达式错误，是系统管理员和开发者的得力助手。
+The Crontab Tool is a professional cron expression generator that helps users quickly create and validate Crontab expressions. This tool provides an intuitive graphical interface, supports real-time preview of execution times, and can intelligently detect expression errors, making it a powerful assistant for system administrators and developers.
 
-## 主要功能
+## Main Features
 
-### 1. 表达式生成
-- 分钟设置（0-59）
-- 小时设置（0-23）
-- 日期设置（1-31）
-- 月份设置（1-12）
-- 星期设置（0-7）
-- 支持特殊字符（* / , -）
+### 1. Expression Generation
+- Minute setting (0-59)
+- Hour setting (0-23)
+- Date setting (1-31)
+- Month setting (1-12)
+- Day of week setting (0-7)
+- Support for special characters (* / , -)
 
-### 2. 智能提示
-- 实时语法检查
-- 错误提示
-- 警告提示
-- 格式验证
-- 智能补全
+### 2. Intelligent Hints
+- Real-time syntax checking
+- Error prompts
+- Warning prompts
+- Format validation
+- Smart auto-completion
 
-### 3. 时间预览
-- 显示下次执行时间
-- 显示未来执行计划
-- 支持时区显示
-- 支持时间格式化
-- 支持多时区转换
+### 3. Time Preview
+- Display next execution time
+- Display future execution schedule
+- Support timezone display
+- Support time formatting
+- Support multi-timezone conversion
 
-### 4. 辅助功能
-- 常用表达式模板
-- 表达式解释
-- 复制功能
-- 导入导出
-- 历史记录
+### 4. Auxiliary Functions
+- Common expression templates
+- Expression explanation
+- Copy function
+- Import/Export
+- History records
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 选择需要设置的时间单位
-2. 输入或选择具体数值
-3. 查看表达式预览
-4. 检查执行时间
-5. 复制生成的表达式
+### Basic Usage
+1. Select the time unit to configure
+2. Enter or select specific values
+3. View expression preview
+4. Check execution time
+5. Copy the generated expression
 
-### 时间单位说明
-- 分钟：0-59
-- 小时：0-23
-- 日期：1-31
-- 月份：1-12
-- 星期：0-7（0和7都表示周日）
+### Time Unit Description
+- Minutes: 0-59
+- Hours: 0-23
+- Date: 1-31
+- Month: 1-12
+- Day of week: 0-7 (both 0 and 7 represent Sunday)
 
-### 特殊字符说明
-- *：表示任意值
-- /：表示间隔
-- ,：表示列举
-- -：表示范围
+### Special Character Description
+- *: Represents any value
+- /: Represents interval
+- ,: Represents enumeration
+- -: Represents range
 
-## 使用技巧
+## Usage Tips
 
-1. **表达式编写**：
-   - 使用特殊字符简化表达式
-   - 注意时间单位的范围
-   - 避免冲突的时间设置
-   - 使用注释说明用途
+1. **Expression Writing**:
+   - Use special characters to simplify expressions
+   - Pay attention to time unit ranges
+   - Avoid conflicting time settings
+   - Use comments to explain purpose
 
-2. **时间预览**：
-   - 检查执行时间是否符合预期
-   - 注意时区设置
-   - 验证执行频率
-   - 检查时间冲突
+2. **Time Preview**:
+   - Check if execution time meets expectations
+   - Pay attention to timezone settings
+   - Verify execution frequency
+   - Check for time conflicts
 
-3. **错误处理**：
-   - 查看错误提示
-   - 检查语法正确性
-   - 验证时间有效性
-   - 避免常见错误
+3. **Error Handling**:
+   - Review error prompts
+   - Check syntax correctness
+   - Validate time validity
+   - Avoid common errors
 
-## 适用场景
+## Applicable Scenarios
 
-1. **系统管理**：
-   - 系统维护任务
-   - 日志轮转
-   - 数据备份
-   - 系统监控
+1. **System Administration**:
+   - System maintenance tasks
+   - Log rotation
+   - Data backup
+   - System monitoring
 
-2. **应用开发**：
-   - 定时任务
-   - 数据同步
-   - 缓存更新
-   - 报表生成
+2. **Application Development**:
+   - Scheduled tasks
+   - Data synchronization
+   - Cache updates
+   - Report generation
 
-3. **运维管理**：
-   - 服务重启
-   - 资源清理
-   - 性能监控
-   - 安全扫描
+3. **Operations Management**:
+   - Service restart
+   - Resource cleanup
+   - Performance monitoring
+   - Security scanning
 
-## 注意事项
+## Notes
 
-1. 注意时间单位的范围限制
-2. 避免设置过于频繁的任务
-3. 考虑服务器负载情况
-4. 注意时区设置的影响
+1. Pay attention to time unit range restrictions
+2. Avoid setting tasks that are too frequent
+3. Consider server load conditions
+4. Pay attention to the impact of timezone settings
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用Crontab解析库
-- 支持实时预览
-- 提供友好的用户界面
+- Developed based on Vue.js
+- Uses Crontab parsing library
+- Supports real-time preview
+- Provides user-friendly interface
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本表达式生成
-- 提供时间预览功能
+- Initial version release
+- Support basic expression generation
+- Provide time preview function
 
 ### v1.1.0
-- 添加错误检查
-- 优化时间预览
-- 改进用户界面
+- Add error checking
+- Optimize time preview
+- Improve user interface
 
 ### v1.2.0
-- 添加常用模板
-- 支持多时区
-- 提升使用体验
+- Add common templates
+- Support multiple timezones
+- Enhance user experience
 
-## 常见问题
+## Frequently Asked Questions
 
-1. **Q: 如何设置每分钟执行一次？**
-   A: 使用表达式 `* * * * *`，表示在每分钟的每一秒都执行。
+1. **Q: How to set execution every minute?**
+   A: Use the expression `* * * * *`, which means execute every second of every minute.
 
-2. **Q: 如何设置每周一执行？**
-   A: 使用表达式 `0 0 * * 1`，表示在每周一的0点0分执行。
+2. **Q: How to set execution every Monday?**
+   A: Use the expression `0 0 * * 1`, which means execute at 00:00 every Monday.
 
-3. **Q: 如何设置每月1号执行？**
-   A: 使用表达式 `0 0 1 * *`，表示在每月1号的0点0分执行。
+3. **Q: How to set execution on the 1st of every month?**
+   A: Use the expression `0 0 1 * *`, which means execute at 00:00 on the 1st of every month.
 
-4. **Q: 如何设置每5分钟执行一次？**
-   A: 使用表达式 `*/5 * * * *`，表示每5分钟执行一次。
+4. **Q: How to set execution every 5 minutes?**
+   A: Use the expression `*/5 * * * *`, which means execute every 5 minutes.
 
-## 最佳实践
+## Best Practices
 
-1. **表达式编写**：
-   - 使用清晰的注释
-   - 避免过于复杂的表达式
-   - 注意时间冲突
-   - 定期检查有效性
+1. **Expression Writing**:
+   - Use clear comments
+   - Avoid overly complex expressions
+   - Pay attention to time conflicts
+   - Regularly check validity
 
-2. **任务管理**：
-   - 合理分配执行时间
-   - 避免资源竞争
-   - 设置任务优先级
-   - 做好日志记录
+2. **Task Management**:
+   - Properly allocate execution time
+   - Avoid resource competition
+   - Set task priorities
+   - Maintain good logging
 
-3. **系统维护**：
-   - 定期检查任务执行情况
-   - 及时处理错误
-   - 优化执行效率
-   - 做好备份工作 
+3. **System Maintenance**:
+   - Regularly check task execution
+   - Handle errors promptly
+   - Optimize execution efficiency
+   - Maintain good backups

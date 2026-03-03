@@ -1,151 +1,151 @@
-# SVG转换工具
+# SVG Conversion Tool
 
-## 简介
-SVG转换工具是FeHelper提供的一个专业的SVG文件转换工具，支持将SVG格式转换为PNG、JPG、WEBP等常见图片格式。该工具提供了直观的界面和丰富的转换选项，帮助用户轻松完成SVG文件的转换工作。
+## Introduction
+The SVG Conversion Tool is a professional SVG file conversion tool provided by FeHelper, supporting conversion of SVG format to common image formats such as PNG, JPG, WEBP. This tool provides an intuitive interface and rich conversion options, helping users easily complete SVG file conversion work.
 
-## 主要功能
+## Main Features
 
-### 输入方式
-1. **文件上传**
-   - 支持拖拽上传
-   - 点击上传按钮
-   - 支持.svg格式文件
+### Input Methods
+1. **File Upload**
+   - Support drag-and-drop upload
+   - Click upload button
+   - Support .svg format files
 
-2. **URL导入**
-   - 支持从网络URL加载SVG
-   - 自动下载并解析
-   - 支持HTTPS链接
+2. **URL Import**
+   - Support loading SVG from network URL
+   - Auto-download and parse
+   - Support HTTPS links
 
-3. **代码粘贴**
-   - 支持直接粘贴SVG代码
-   - 自动解析SVG内容
-   - 实时预览效果
+3. **Code Paste**
+   - Support directly pasting SVG code
+   - Auto-parse SVG content
+   - Real-time preview effect
 
-### 转换选项
-1. **输出格式**
-   - PNG格式（支持透明背景）
-   - JPG格式（适合照片类图片）
-   - WEBP格式（更小的文件体积）
+### Conversion Options
+1. **Output Format**
+   - PNG format (support transparent background)
+   - JPG format (suitable for photo-type images)
+   - WEBP format (smaller file size)
 
-2. **尺寸设置**
-   - 自定义宽度（像素）
-   - 自定义高度（像素）
-   - 保持原始比例
-   - 自动计算尺寸
+2. **Size Settings**
+   - Custom width (pixels)
+   - Custom height (pixels)
+   - Maintain original ratio
+   - Auto-calculate dimensions
 
-3. **预览功能**
-   - 实时预览SVG源文件
-   - 实时预览转换结果
-   - 支持缩放查看
+3. **Preview Function**
+   - Real-time preview of SVG source file
+   - Real-time preview of conversion results
+   - Support zoom viewing
 
-### 文件信息
-1. **源文件信息**
-   - 文件尺寸
-   - 文件大小
-   - 文件类型
-   - 原始比例
+### File Information
+1. **Source File Information**
+   - File dimensions
+   - File size
+   - File type
+   - Original ratio
 
-2. **转换结果信息**
-   - 输出尺寸
-   - 文件大小
-   - 格式信息
-   - 大小变化对比
+2. **Conversion Result Information**
+   - Output dimensions
+   - File size
+   - Format information
+   - Size change comparison
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 导入SVG文件
-   - 拖拽文件到指定区域
-   - 点击上传按钮选择文件
-   - 粘贴SVG代码
-   - 输入SVG文件URL
+### Basic Usage
+1. Import SVG File
+   - Drag file to designated area
+   - Click upload button to select file
+   - Paste SVG code
+   - Enter SVG file URL
 
-2. 设置转换参数
-   - 选择输出格式
-   - 设置输出尺寸
-   - 调整其他选项
+2. Set Conversion Parameters
+   - Select output format
+   - Set output dimensions
+   - Adjust other options
 
-3. 执行转换
-   - 点击转换按钮
-   - 等待处理完成
-   - 查看转换结果
+3. Execute Conversion
+   - Click convert button
+   - Wait for processing completion
+   - View conversion results
 
-4. 下载结果
-   - 预览转换后的图片
-   - 点击下载按钮
-   - 保存到本地
+4. Download Results
+   - Preview converted image
+   - Click download button
+   - Save to local
 
-### 高级功能
-1. **批量处理**
-   - 支持多个文件同时转换
-   - 保持原始文件名
-   - 批量下载结果
+### Advanced Functions
+1. **Batch Processing**
+   - Support simultaneous conversion of multiple files
+   - Maintain original file names
+   - Batch download results
 
-2. **智能优化**
-   - 自动优化SVG代码
-   - 压缩输出文件
-   - 保持图片质量
+2. **Smart Optimization**
+   - Auto-optimize SVG code
+   - Compress output files
+   - Maintain image quality
 
-3. **错误处理**
-   - 自动检测SVG错误
-   - 提供错误提示
-   - 支持重新转换
+3. **Error Handling**
+   - Auto-detect SVG errors
+   - Provide error prompts
+   - Support reconversion
 
-## 使用技巧
-1. **提高转换质量**
-   - 使用高质量源文件
-   - 选择合适的输出格式
-   - 保持适当的输出尺寸
+## Usage Tips
+1. **Improve Conversion Quality**
+   - Use high-quality source files
+   - Choose appropriate output format
+   - Maintain appropriate output dimensions
 
-2. **优化文件大小**
-   - 选择WEBP格式
-   - 适当压缩图片
-   - 删除不必要的元素
+2. **Optimize File Size**
+   - Choose WEBP format
+   - Appropriately compress images
+   - Delete unnecessary elements
 
-3. **提高效率**
-   - 使用快捷键操作
-   - 保存常用设置
-   - 批量处理文件
+3. **Improve Efficiency**
+   - Use keyboard shortcuts
+   - Save commonly used settings
+   - Batch process files
 
-## 注意事项
-1. 文件限制
-   - 建议文件大小不超过10MB
-   - 支持标准SVG格式
-   - 注意内存使用
+## Notes
+1. File Limitations
+   - Recommended file size not exceed 10MB
+   - Support standard SVG format
+   - Pay attention to memory usage
 
-2. 格式兼容
-   - 检查浏览器支持
-   - 注意格式特性
-   - 考虑兼容性问题
+2. Format Compatibility
+   - Check browser support
+   - Pay attention to format characteristics
+   - Consider compatibility issues
 
-3. 性能考虑
-   - 大文件可能处理较慢
-   - 复杂SVG需要更多资源
-   - 注意系统负载
+3. Performance Considerations
+   - Large files may process slowly
+   - Complex SVG requires more resources
+   - Pay attention to system load
 
-## 常见问题
-1. **Q: 转换后的图片质量不理想怎么办？**
-   A: 可以尝试调整输出尺寸，或选择更高质量的格式。
+## FAQ
+1. **Q: What if converted image quality is not ideal?**
+   A: Can try adjusting output dimensions or choosing higher quality format.
 
-2. **Q: 为什么某些SVG无法正确转换？**
-   A: 可能是SVG代码不规范或包含特殊元素，建议检查SVG代码。
+2. **Q: Why can't some SVGs convert correctly?**
+   A: May be non-standard SVG code or contains special elements. Recommend checking SVG code.
 
-3. **Q: 如何处理大文件转换？**
-   A: 建议将大文件分段处理，或使用其他专业工具。
+3. **Q: How to handle large file conversion?**
+   A: Recommend processing large files in segments, or using other professional tools.
 
-## 更新日志
-- 2024-03-21: 优化转换性能
-- 2024-03-20: 添加WEBP格式支持
-- 2024-03-19: 改进文件信息显示
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize conversion performance
+- 2024-03-20: Add WEBP format support
+- 2024-03-19: Improve file information display
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [图片Base64转换工具](../image-base64.md)
-- [图片处理工具](../image-processor.md)
-- [代码格式化工具](../code-beautify.md) 
+## Related Tools
+- [Image Base64 Conversion Tool](../image-base64.md)
+- [Image Processing Tool](../image-processor.md)
+- [Code Format Tool](../code-beautify.md)

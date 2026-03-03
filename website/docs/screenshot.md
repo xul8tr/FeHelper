@@ -1,143 +1,143 @@
-# 截图工具
+# Screenshot Tool
 
-## 简介
-截图工具是FeHelper提供的一个专业网页截屏工具，支持全页截图、可视区域截图、长网页拼接、图片保存等多种功能。该工具适用于网页内容归档、技术文档编写、产品演示等多种场景，操作简单，效果专业。
+## Introduction
+The Screenshot Tool is a professional web screenshot tool provided by FeHelper, supporting full-page screenshots, visible area screenshots, long web page stitching, image saving, and other functions. This tool is suitable for web content archiving, technical documentation writing, product demonstrations, and other scenarios. It's simple to operate with professional results.
 
-## 主要功能
+## Main Features
 
-### 截图类型
-1. **全页截图**
-   - 支持长网页完整截取
-   - 自动滚动拼接
-   - 保持原始页面比例
-   - 适合内容归档
+### Screenshot Types
+1. **Full-page Screenshot**
+   - Support complete capture of long web pages
+   - Auto-scroll and stitch
+   - Maintain original page ratio
+   - Suitable for content archiving
 
-2. **可视区域截图**
-   - 仅截取当前可见区域
-   - 快速保存重点内容
-   - 操作便捷
+2. **Visible Area Screenshot**
+   - Only capture currently visible area
+   - Quickly save key content
+   - Convenient operation
 
-3. **区域自定义截图**
-   - 支持自定义选择区域
-   - 精准截取所需内容
-   - 适合局部演示
+3. **Custom Area Screenshot**
+   - Support custom area selection
+   - Precisely capture required content
+   - Suitable for partial demonstrations
 
-### 图片处理
-1. **多图拼接**
-   - 自动垂直拼接多张截图
-   - 保持图片清晰度
-   - 智能对齐
+### Image Processing
+1. **Multi-image Stitching**
+   - Auto-vertically stitch multiple screenshots
+   - Maintain image clarity
+   - Smart alignment
 
-2. **图片预览**
-   - 实时预览截图结果
-   - 支持缩放查看
-   - 背景色自定义
+2. **Image Preview**
+   - Real-time preview of screenshot results
+   - Support zoom viewing
+   - Custom background color
 
-3. **图片保存**
-   - 一键保存为PNG格式
-   - 支持自定义文件名
-   - 下载到本地
+3. **Image Saving**
+   - One-click save as PNG format
+   - Support custom file names
+   - Download to local
 
-### 操作与交互
-1. **右键菜单集成**
-   - 通过浏览器右键菜单快速启动
-   - 支持快捷键
-   - 初次安装建议重启浏览器
+### Operations and Interaction
+1. **Right-click Menu Integration**
+   - Quick launch via browser right-click menu
+   - Support keyboard shortcuts
+   - First installation recommends restarting browser
 
-2. **界面友好**
-   - 直观操作面板
-   - 进度提示与错误反馈
-   - 支持打赏和工具市场入口
+2. **Friendly Interface**
+   - Intuitive operation panel
+   - Progress prompts and error feedback
+   - Support donation and tool market entrances
 
-3. **权限管理**
-   - 按需申请下载权限
-   - 安全可靠
+3. **Permission Management**
+   - Request download permission on demand
+   - Secure and reliable
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 启动截图
-   - 通过右键菜单选择"网页截屏"
-   - 或在工具页面点击启动按钮
+### Basic Usage
+1. Start Screenshot
+   - Select "Web Screenshot" via right-click menu
+   - Or click launch button on tool page
 
-2. 选择截图类型
-   - 全页截图：自动滚动并拼接
-   - 可视区域截图：截取当前屏幕内容
-   - 自定义区域截图：手动选择区域
+2. Select Screenshot Type
+   - Full-page screenshot: Auto-scroll and stitch
+   - Visible area screenshot: Capture current screen content
+   - Custom area screenshot: Manually select area
 
-3. 预览与保存
-   - 截图完成后自动预览
-   - 点击"保存图片到本地"按钮
-   - 选择保存路径和文件名
+3. Preview and Save
+   - Auto-preview after screenshot completion
+   - Click "Save Image to Local" button
+   - Select save path and file name
 
-### 高级功能
-1. **多图拼接**
-   - 长网页自动分段截图并拼接
-   - 保证图片无缝衔接
+### Advanced Functions
+1. **Multi-image Stitching**
+   - Long web pages auto-segment and stitch screenshots
+   - Ensure seamless image stitching
 
-2. **图片编辑**
-   - 支持简单裁剪
-   - 可导出为PNG
+2. **Image Editing**
+   - Support simple cropping
+   - Can export as PNG
 
-3. **异常处理**
-   - 截图失败自动提示
-   - 支持重试
+3. **Exception Handling**
+   - Auto-prompt on screenshot failure
+   - Support retry
 
-## 使用技巧
-1. **提高效率**
-   - 利用右键菜单一键截屏
-   - 批量保存多张截图
-   - 结合其他工具进行图片处理
+## Usage Tips
+1. **Improve Efficiency**
+   - Use right-click menu for one-click screenshot
+   - Batch save multiple screenshots
+   - Combine with other tools for image processing
 
-2. **优化截图效果**
-   - 截图前关闭弹窗和浮层
-   - 保持页面稳定
-   - 调整浏览器缩放比例
+2. **Optimize Screenshot Effect**
+   - Close pop-ups and overlays before screenshot
+   - Keep page stable
+   - Adjust browser zoom ratio
 
-3. **文件管理**
-   - 合理命名文件
-   - 分类保存截图
-   - 便于后续查找
+3. **File Management**
+   - Reasonably name files
+   - Categorize and save screenshots
+   - Facilitate subsequent searching
 
-## 注意事项
-1. 使用限制
-   - 某些特殊页面（如chrome扩展页面）无法截屏
-   - 超长网页可能因内存限制导致失败
-   - 建议单次截图不超过50000像素高度
+## Notes
+1. Usage Limitations
+   - Some special pages (such as chrome extension pages) cannot be captured
+   - Ultra-long web pages may fail due to memory limitations
+   - Recommended single screenshot not exceed 50000 pixels in height
 
-2. 兼容性
-   - 支持主流浏览器
-   - 建议使用最新版Chrome
-   - 某些页面需刷新后重试
+2. Compatibility
+   - Support mainstream browsers
+   - Latest version of Chrome recommended
+   - Some pages need to be refreshed and retried
 
-3. 性能考虑
-   - 大尺寸截图需耐心等待
-   - 处理大图时注意内存占用
-   - 避免多任务同时截屏
+3. Performance Considerations
+   - Large screenshots need patience to wait
+   - Pay attention to memory usage when processing large images
+   - Avoid multi-task simultaneous screenshots
 
-## 常见问题
-1. **Q: 为什么有些页面无法截屏？**
-   A: 可能是浏览器安全策略限制，或页面内容为特殊协议（如chrome://），建议更换页面或刷新重试。
+## FAQ
+1. **Q: Why can't some pages be captured?**
+   A: May be browser security policy restrictions, or page content uses special protocols (such as chrome://). Recommend changing page or refreshing retry.
 
-2. **Q: 截图后图片不完整怎么办？**
-   A: 检查页面是否有浮动层、弹窗等遮挡，建议关闭后再试。
+2. **Q: What if the screenshot is incomplete?**
+   A: Check if page has floating layers, pop-ups, etc. obstructing. Recommend closing before trying again.
 
-3. **Q: 如何保存为其他格式？**
-   A: 当前支持PNG格式，如需其他格式可用第三方工具转换。
+3. **Q: How to save as other formats?**
+   A: Currently supports PNG format. If other formats needed, can use third-party tools for conversion.
 
-## 更新日志
-- 2024-03-21: 优化拼接算法，提升大图处理性能
-- 2024-03-20: 增加自定义区域截图功能
-- 2024-03-19: 改进图片预览与保存体验
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize stitching algorithm, improve large image processing performance
+- 2024-03-20: Add custom area screenshot function
+- 2024-03-19: Improve image preview and save experience
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [图片Base64转换工具](../image-base64.md)
-- [SVG转换工具](../svg-converter.md)
-- [颜色转换工具](../trans-color.md) 
+## Related Tools
+- [Image Base64 Conversion Tool](../image-base64.md)
+- [SVG Conversion Tool](../svg-converter.md)
+- [Color Conversion Tool](../trans-color.md)

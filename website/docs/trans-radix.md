@@ -1,163 +1,163 @@
-# 进制转换工具
+# Radix Conversion Tool
 
-## 简介
-进制转换工具是FeHelper提供的一个简单而强大的数字进制转换工具，支持2-36进制之间的相互转换。该工具提供了直观的界面和实时转换功能，帮助用户快速完成不同进制之间的转换工作。
+## Introduction
+The Radix Conversion Tool is a simple yet powerful number base conversion tool provided by FeHelper, supporting bidirectional conversion between bases 2-36. This tool provides an intuitive interface and real-time conversion functionality, helping users quickly complete conversion work between different number bases.
 
-## 主要功能
+## Main Features
 
-### 进制支持
-1. **常用进制**
-   - 二进制（2进制）
-   - 四进制（4进制）
-   - 八进制（8进制）
-   - 十进制（10进制）
-   - 十六进制（16进制）
+### Base Support
+1. **Common Bases**
+   - Binary (base 2)
+   - Quaternary (base 4)
+   - Octal (base 8)
+   - Decimal (base 10)
+   - Hexadecimal (base 16)
 
-2. **扩展进制**
-   - 支持2-36进制
-   - 自定义进制选择
-   - 灵活切换
-   - 实时转换
+2. **Extended Bases**
+   - Support bases 2-36
+   - Custom base selection
+   - Flexible switching
+   - Real-time conversion
 
-### 转换功能
-1. **实时转换**
-   - 输入即转换
-   - 自动更新
-   - 即时显示
-   - 结果验证
+### Conversion Functions
+1. **Real-time Conversion**
+   - Input instant conversion
+   - Auto-update
+   - Instant display
+   - Result validation
 
-2. **双向转换**
-   - 源进制选择
-   - 目标进制选择
-   - 快速切换
-   - 结果保持
+2. **Bidirectional Conversion**
+   - Source base selection
+   - Target base selection
+   - Quick switching
+   - Result preservation
 
-3. **数据验证**
-   - 输入检查
-   - 格式验证
-   - 错误提示
-   - 结果确认
+3. **Data Validation**
+   - Input checking
+   - Format validation
+   - Error prompts
+   - Result confirmation
 
-### 界面功能
-1. **输入输出**
-   - 原始数字输入
-   - 结果数字显示
-   - 只读结果框
-   - 复制功能
+### Interface Functions
+1. **Input/Output**
+   - Original number input
+   - Result number display
+   - Read-only result box
+   - Copy function
 
-2. **进制选择**
-   - 单选按钮
-   - 下拉选择
-   - 快速切换
-   - 自定义进制
+2. **Base Selection**
+   - Radio buttons
+   - Dropdown selection
+   - Quick switching
+   - Custom base
 
-3. **操作控制**
-   - 交换按钮
-   - 重置功能
-   - 复制结果
-   - 错误处理
+3. **Operation Control**
+   - Swap button
+   - Reset function
+   - Copy result
+   - Error handling
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 选择进制
-   - 选择源进制
-   - 选择目标进制
-   - 确认选择
-   - 开始转换
+### Basic Usage
+1. Select Base
+   - Select source base
+   - Select target base
+   - Confirm selection
+   - Start conversion
 
-2. 输入数字
-   - 输入原始数字
-   - 查看转换结果
-   - 验证结果
-   - 复制结果
+2. Input Number
+   - Input original number
+   - View conversion result
+   - Verify result
+   - Copy result
 
-3. 结果处理
-   - 查看转换结果
-   - 复制到剪贴板
-   - 继续转换
-   - 重置操作
+3. Result Processing
+   - View conversion result
+   - Copy to clipboard
+   - Continue conversion
+   - Reset operation
 
-### 高级功能
-1. **进制切换**
-   - 快速切换
-   - 自定义进制
-   - 批量转换
-   - 结果验证
+### Advanced Functions
+1. **Base Switching**
+   - Quick switching
+   - Custom base
+   - Batch conversion
+   - Result validation
 
-2. **数据验证**
-   - 输入检查
-   - 格式验证
-   - 错误处理
-   - 结果确认
+2. **Data Validation**
+   - Input checking
+   - Format validation
+   - Error handling
+   - Result confirmation
 
-3. **特殊处理**
-   - 大数处理
-   - 精度保持
-   - 格式转换
-   - 结果优化
+3. **Special Processing**
+   - Large number processing
+   - Precision maintenance
+   - Format conversion
+   - Result optimization
 
-## 使用技巧
-1. **提高效率**
-   - 使用快捷键
-   - 快速切换
-   - 复制结果
-   - 批量处理
+## Usage Tips
+1. **Improve Efficiency**
+   - Use keyboard shortcuts
+   - Quick switching
+   - Copy results
+   - Batch processing
 
-2. **数据输入**
-   - 注意格式
-   - 验证输入
-   - 检查结果
-   - 保持精度
+2. **Data Input**
+   - Pay attention to format
+   - Verify input
+   - Check results
+   - Maintain precision
 
-3. **进制选择**
-   - 选择合适进制
-   - 注意兼容性
-   - 保持精度
-   - 验证结果
+3. **Base Selection**
+   - Choose appropriate base
+   - Pay attention to compatibility
+   - Maintain precision
+   - Verify results
 
-## 注意事项
-1. 使用限制
-   - 输入长度限制
-   - 进制范围
-   - 数值范围
-   - 精度保持
+## Notes
+1. Usage Limitations
+   - Input length limit
+   - Base range
+   - Value range
+   - Precision maintenance
 
-2. 兼容性
-   - 浏览器支持
-   - 数值范围
-   - 格式兼容
-   - 结果验证
+2. Compatibility
+   - Browser support
+   - Value range
+   - Format compatibility
+   - Result validation
 
-3. 性能考虑
-   - 实时转换
-   - 内存使用
-   - 响应速度
-   - 资源占用
+3. Performance Considerations
+   - Real-time conversion
+   - Memory usage
+   - Response speed
+   - Resource consumption
 
-## 常见问题
-1. **Q: 为什么某些数字转换后显示异常？**
-   A: 可能是输入格式不正确或数值超出范围，建议检查输入值是否符合当前进制的格式要求。
+## FAQ
+1. **Q: Why do some numbers display abnormally after conversion?**
+   A: May be incorrect input format or values out of range. Recommend checking if input values conform to current base format requirements.
 
-2. **Q: 如何处理大数转换？**
-   A: 工具支持最大32位的数字输入，超过此范围可能会导致精度损失。
+2. **Q: How to handle large number conversion?**
+   A: Tool supports maximum 32-bit number input. Exceeding this range may cause precision loss.
 
-3. **Q: 转换结果不准确怎么办？**
-   A: 检查输入格式是否正确，确保数值在有效范围内，必要时可以尝试其他进制。
+3. **Q: What if conversion results are inaccurate?**
+   A: Check if input format is correct, ensure values are within valid range. If necessary, can try other bases.
 
-## 更新日志
-- 2024-03-21: 优化转换性能
-- 2024-03-20: 添加自定义进制支持
-- 2024-03-19: 改进界面交互
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize conversion performance
+- 2024-03-20: Add custom base support
+- 2024-03-19: Improve interface interaction
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [编码转换工具](../en-decode.md)
-- [时间戳工具](../timestamp.md)
-- [JSON格式化工具](../json-format.md) 
+## Related Tools
+- [Encoding Conversion Tool](../en-decode.md)
+- [Timestamp Tool](../timestamp.md)
+- [JSON Format Tool](../json-format.md)

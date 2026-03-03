@@ -1,170 +1,170 @@
-# Mock数据生成器
+# Mock Data Generator
 
-> 快速生成各种测试数据，支持个人信息、商业数据、技术数据等多种类型，可自定义字段和输出格式。采用现代化左右分栏布局，左侧配置操作，右侧实时预览结果。
+> Quickly generate various test data, supporting personal information, business data, technical data, and other types. Customizable fields and output formats. Modern left-right split layout with configuration operations on the left and real-time preview results on the right.
 
-## 功能特点
+## Features
 
-- **现代化界面**：采用左右分栏布局设计，左侧为配置操作区，右侧为结果展示区
-- **一键快速模板**：提供5种预设模板，点击即可自动选择字段并生成数据
-- **多种数据类型**：支持个人信息、商业数据、技术数据、自定义数据等4大分类
-- **智能操作区**：快速模板和主要操作按钮置顶，提升操作效率
-- **多种输出格式**：支持JSON、CSV、SQL、XML等多种格式输出
-- **实时结果预览**：右侧实时显示生成结果，支持一键复制和下载
-- **批量生成**：支持一次生成1-1000条数据
-- **中文数据优化**：专门优化了中文姓名、地址、公司等本土化数据
-- **响应式设计**：支持不同屏幕尺寸的自适应布局
+- **Modern Interface**: Adopts left-right split layout design, with configuration operation area on the left and result display area on the right
+- **One-click Quick Templates**: Provides 5 preset templates, click to automatically select fields and generate data
+- **Multiple Data Types**: Supports 4 major categories including personal information, business data, technical data, and custom data
+- **Smart Operation Area**: Quick templates and main operation buttons at the top for improved operational efficiency
+- **Multiple Output Formats**: Supports JSON, CSV, SQL, XML, and other format outputs
+- **Real-time Result Preview**: Right side displays generation results in real-time, supports one-click copy and download
+- **Batch Generation**: Supports generating 1-1000 data records at once
+- **Chinese Data Optimization**: Specially optimized for localized data such as Chinese names, addresses, companies, etc.
+- **Responsive Design**: Supports adaptive layout for different screen sizes
 
-## 界面布局
+## Interface Layout
 
-### 现代化顶部导航栏
-- **品牌标识**：FeHelper Logo + 工具名称
-- **工具市场**：一键访问更多实用工具
-- **打赏支持**：支持开发者继续优化工具
+### Modern Top Navigation Bar
+- **Brand Identity**: FeHelper Logo + Tool Name
+- **Tool Market**: One-click access to more practical tools
+- **Support**: Support developers to continue optimizing tools
 
-### 左侧配置操作区（固定宽度500px）
-1. **快速模板区**：5个预设模板按钮，一键生成常用数据
-2. **主要操作区**：生成数据、全选、清空三个主要操作按钮
-3. **数据类型选择**：个人信息、商业数据、技术数据、自定义数据四个标签页
-4. **字段选择区**：根据选中标签页显示相应的可选字段
-5. **生成配置区**：设置生成数量和输出格式
+### Left Configuration Operation Area (Fixed width 500px)
+1. **Quick Template Area**: 5 preset template buttons for one-click generation of common data
+2. **Main Operation Area**: Generate data, select all, clear - three main operation buttons
+3. **Data Type Selection**: Four tabs for personal information, business data, technical data, and custom data
+4. **Field Selection Area**: Display selectable fields based on selected tab
+5. **Generation Configuration Area**: Set generation quantity and output format
 
-### 右侧结果展示区（自适应宽度）
-1. **结果标题栏**：显示生成结果统计、数据大小
-2. **操作按钮区**：复制结果、下载文件（无数据时自动禁用）
-3. **结果展示区**：代码高亮显示生成的数据，支持滚动查看
-4. **空状态提示**：无数据时显示友好的空状态界面
+### Right Result Display Area (Adaptive width)
+1. **Result Title Bar**: Display generation result statistics and data size
+2. **Operation Button Area**: Copy result, download file (auto-disabled when no data)
+3. **Result Display Area**: Code-highlighted display of generated data, supports scrolling
+4. **Empty State Prompt**: Display friendly empty state interface when no data
 
-## 数据类型
+## Data Types
 
-### 个人信息
-- **姓名**：随机生成中文姓名，支持单字名和双字名
-- **邮箱**：生成符合格式的邮箱地址
-- **手机号**：生成符合中国大陆格式的手机号码
-- **身份证号**：生成符合格式的身份证号码
-- **性别**：随机生成男/女
-- **年龄**：18-65岁随机年龄
-- **生日**：随机生成日期
-- **地址**：包含省市区街道的完整地址
+### Personal Information
+- **Name**: Randomly generate Chinese names, supports single and double character names
+- **Email**: Generate email addresses in valid format
+- **Phone Number**: Generate phone numbers in China mainland format
+- **ID Number**: Generate ID numbers in valid format
+- **Gender**: Randomly generate male/female
+- **Age**: Random age 18-65
+- **Birthday**: Randomly generate date
+- **Address**: Complete address including province, city, district, and street
 
-### 商业数据
-- **公司名称**：知名公司名称 + 企业性质后缀
-- **部门**：技术部、产品部、运营部等
-- **职位**：工程师、经理、专员等
-- **薪资**：5000-50000元随机薪资
-- **银行卡号**：符合格式的银行卡号
-- **信用卡号**：符合格式的信用卡号
-- **价格**：0.01-9999.99随机价格
-- **货币**：CNY、USD、EUR等货币代码
+### Business Data
+- **Company Name**: Well-known company names + business entity suffix
+- **Department**: Technology department, product department, operations department, etc.
+- **Position**: Engineer, manager, specialist, etc.
+- **Salary**: Random salary 5000-50000 yuan
+- **Bank Card Number**: Bank card number in valid format
+- **Credit Card Number**: Credit card number in valid format
+- **Price**: Random price 0.01-9999.99
+- **Currency**: Currency codes such as CNY, USD, EUR
 
-### 技术数据
-- **UUID**：标准UUID格式
-- **IP地址**：IPv4地址格式
-- **MAC地址**：网卡MAC地址格式
-- **User Agent**：常见浏览器UA字符串
-- **URL**：完整的网址格式
-- **域名**：随机域名
-- **密码**：包含数字、字母、特殊符号的随机密码
-- **Token**：32位随机Token
-- **颜色值**：十六进制颜色代码
-- **时间戳**：Unix时间戳
-- **文件名**：随机文件名和扩展名
-- **MIME类型**：常见文件MIME类型
+### Technical Data
+- **UUID**: Standard UUID format
+- **IP Address**: IPv4 address format
+- **MAC Address**: Network card MAC address format
+- **User Agent**: Common browser UA strings
+- **URL**: Complete URL format
+- **Domain Name**: Random domain name
+- **Password**: Random password containing numbers, letters, and special symbols
+- **Token**: 32-bit random Token
+- **Color Value**: Hexadecimal color code
+- **Timestamp**: Unix timestamp
+- **File Name**: Random file name and extension
+- **MIME Type**: Common file MIME types
 
-### 自定义数据
-- **字符串类型**：自定义长度的随机字符串
-- **数字类型**：1-1000范围内的随机数字
-- **布尔类型**：随机true/false值
-- **日期类型**：随机日期时间
-- **数组类型**：包含1-5个随机字符串的数组
+### Custom Data
+- **String Type**: Random strings of custom length
+- **Number Type**: Random numbers in the range 1-1000
+- **Boolean Type**: Random true/false values
+- **Date Type**: Random date time
+- **Array Type**: Array containing 1-5 random strings
 
-## 使用方法
+## Usage Methods
 
-### 方法一：快速模板（推荐）
-1. **选择模板**：在左侧顶部点击任意快速模板按钮
-2. **自动生成**：系统自动选择字段、切换标签页并生成数据
-3. **查看结果**：右侧立即显示生成的数据结果
-4. **复制下载**：点击右侧按钮一键复制或下载数据
+### Method 1: Quick Template (Recommended)
+1. **Select Template**: Click any quick template button at the top left
+2. **Auto-generate**: System automatically selects fields, switches tabs, and generates data
+3. **View Results**: Right side immediately displays generated data results
+4. **Copy/Download**: Click right-side buttons to copy or download data with one click
 
-### 方法二：手动配置
-1. **选择数据类型**：点击数据类型标签页（个人信息/商业数据/技术数据/自定义数据）
-2. **选择字段**：勾选需要生成的字段复选框
-3. **配置参数**：设置生成数量（1-1000）和输出格式
-4. **生成数据**：点击"生成数据"按钮
-5. **查看结果**：在右侧查看生成的数据
-6. **操作结果**：使用复制或下载功能保存数据
+### Method 2: Manual Configuration
+1. **Select Data Type**: Click data type tab (Personal Information/Business Data/Technical Data/Custom Data)
+2. **Select Fields**: Check the checkboxes for fields to generate
+3. **Configure Parameters**: Set generation quantity (1-1000) and output format
+4. **Generate Data**: Click "Generate Data" button
+5. **View Results**: View generated data on the right
+6. **Operate Results**: Use copy or download function to save data
 
-### 快捷操作
-- **全选**：快速选择当前标签页的所有字段
-- **清空**：清空所有选择和生成结果
-- **实时预览**：右侧实时显示数据大小和条数
+### Quick Operations
+- **Select All**: Quickly select all fields in current tab
+- **Clear**: Clear all selections and generation results
+- **Real-time Preview**: Right side displays data size and count in real-time
 
-## 快速模板详解
+## Quick Template Details
 
-系统提供5个精心设计的预设模板，点击即可自动生成：
+The system provides 5 carefully designed preset templates that generate data automatically when clicked:
 
-### 用户信息模板
-**字段组合**：姓名、邮箱、手机号、性别、年龄、地址
-**适用场景**：用户管理系统、会员信息、个人资料测试
+### User Information Template
+**Field Combination**: Name, email, phone number, gender, age, address
+**Application Scenarios**: User management system, member information, personal data testing
 
-### 员工信息模板  
-**字段组合**：姓名、邮箱、手机号、公司、部门、职位、薪资
-**适用场景**：人力资源系统、员工管理、组织架构测试
+### Employee Information Template  
+**Field Combination**: Name, email, phone number, company, department, position, salary
+**Application Scenarios**: HR system, employee management, organizational structure testing
 
-### 商品信息模板
-**字段组合**：名称、价格、货币、UUID、时间戳
-**适用场景**：电商系统、商品管理、库存系统测试
+### Product Information Template
+**Field Combination**: Name, price, currency, UUID, timestamp
+**Application Scenarios**: E-commerce system, product management, inventory system testing
 
-### 订单信息模板
-**字段组合**：UUID、姓名、邮箱、手机号、地址、价格、时间戳
-**适用场景**：订单管理系统、交易记录、物流系统测试
+### Order Information Template
+**Field Combination**: UUID, name, email, phone number, address, price, timestamp
+**Application Scenarios**: Order management system, transaction records, logistics system testing
 
-### API测试数据模板
-**字段组合**：UUID、Token、IP地址、User Agent、时间戳、布尔值
-**适用场景**：接口测试、日志分析、系统集成测试
+### API Test Data Template
+**Field Combination**: UUID, Token, IP address, User Agent, timestamp, boolean
+**Application Scenarios**: Interface testing, log analysis, system integration testing
 
-## 自定义字段
+## Custom Fields
 
-支持添加完全自定义的字段：
+Supports adding completely custom fields:
 
-### 配置步骤
-1. **切换到自定义数据标签页**
-2. **输入字段名称**：定义字段的名称
-3. **选择数据类型**：字符串、数字、布尔值、日期、数组
-4. **设置生成规则**：可选，描述字段的生成规则
-5. **添加字段**：点击"添加字段"按钮
-6. **管理字段**：在已添加字段列表中查看和删除
+### Configuration Steps
+1. **Switch to Custom Data Tab**
+2. **Enter Field Name**: Define the field name
+3. **Select Data Type**: String, number, boolean, date, array
+4. **Set Generation Rules**: Optional, describe field generation rules
+5. **Add Field**: Click "Add Field" button
+6. **Manage Fields**: View and delete in added field list
 
-### 支持的数据类型
-- **字符串**：5-20位随机字符串
-- **数字**：1-1000范围内的随机整数
-- **布尔值**：随机true/false
-- **日期**：随机日期时间字符串
-- **数组**：包含1-5个随机字符串的数组
+### Supported Data Types
+- **String**: Random string of 5-20 characters
+- **Number**: Random integer in range 1-1000
+- **Boolean**: Random true/false
+- **Date**: Random date time string
+- **Array**: Array containing 1-5 random strings
 
-## 输出格式
+## Output Formats
 
-### JSON格式（默认）
+### JSON Format (Default)
 ```json
 [
   {
-    "name": "王伟",
+    "name": "Wang Wei",
     "email": "wangwei@example.com",
     "phone": "13812345678",
-    "gender": "男",
+    "gender": "Male",
     "age": 28,
-    "address": "北京市朝阳区建国路123号"
+    "address": "No. 123 Jianguo Road, Chaoyang District, Beijing"
   }
 ]
 ```
 
-### CSV格式
+### CSV Format
 ```csv
 name,email,phone,gender,age,address
-王伟,wangwei@example.com,13812345678,男,28,北京市朝阳区建国路123号
-李娜,lina@example.com,13987654321,女,32,上海市浦东新区世纪大道456号
+Wang Wei,wangwei@example.com,13812345678,Male,28,No. 123 Jianguo Road, Chaoyang District, Beijing
+Li Na,lina@example.com,13987654321,Female,32,No. 456 Century Avenue, Pudong New Area, Shanghai
 ```
 
-### SQL INSERT格式
+### SQL INSERT Format
 ```sql
 CREATE TABLE fake_data (
   name VARCHAR(255),
@@ -176,99 +176,99 @@ CREATE TABLE fake_data (
 );
 
 INSERT INTO fake_data (name, email, phone, gender, age, address) VALUES 
-('王伟', 'wangwei@example.com', '13812345678', '男', 28, '北京市朝阳区建国路123号'),
-('李娜', 'lina@example.com', '13987654321', '女', 32, '上海市浦东新区世纪大道456号');
+('Wang Wei', 'wangwei@example.com', '13812345678', 'Male', 28, 'No. 123 Jianguo Road, Chaoyang District, Beijing'),
+('Li Na', 'lina@example.com', '13987654321', 'Female', 32, 'No. 456 Century Avenue, Pudong New Area, Shanghai');
 ```
 
-### XML格式
+### XML Format
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
   <item id="1">
-    <name>王伟</name>
+    <name>Wang Wei</name>
     <email>wangwei@example.com</email>
     <phone>13812345678</phone>
-    <gender>男</gender>
+    <gender>Male</gender>
     <age>28</age>
-    <address>北京市朝阳区建国路123号</address>
+    <address>No. 123 Jianguo Road, Chaoyang District, Beijing</address>
   </item>
 </data>
 ```
 
-## 使用场景
+## Use Cases
 
-### 开发测试
-- **数据库填充**：为开发环境快速生成大量测试数据
-- **接口测试**：为API测试生成符合格式的请求数据
-- **表单测试**：为前端表单填充各种类型的测试数据
-- **单元测试**：为自动化测试提供mock数据
+### Development Testing
+- **Database Population**: Quickly generate large amounts of test data for development environment
+- **Interface Testing**: Generate request data in valid format for API testing
+- **Form Testing**: Fill frontend forms with various types of test data
+- **Unit Testing**: Provide mock data for automated testing
 
-### 演示数据
-- **产品演示**：为产品演示准备真实感的数据
-- **用户培训**：为培训环境准备安全的虚拟数据
-- **原型设计**：为设计原型提供数据支撑
-- **系统展示**：为系统展示生成美观的样例数据
+### Demo Data
+- **Product Demo**: Prepare realistic data for product demonstrations
+- **User Training**: Prepare safe virtual data for training environment
+- **Prototype Design**: Provide data support for design prototypes
+- **System Showcase**: Generate beautiful sample data for system display
 
-### 压力测试
-- **性能测试**：生成大量数据进行系统压力测试
-- **并发测试**：模拟多用户环境进行并发测试
-- **容量测试**：测试系统在大数据量下的表现
+### Stress Testing
+- **Performance Testing**: Generate large amounts of data for system stress testing
+- **Concurrency Testing**: Simulate multi-user environment for concurrency testing
+- **Capacity Testing**: Test system performance under large data volumes
 
-### 数据分析
-- **算法测试**：为数据分析算法提供测试数据集
-- **图表展示**：为数据可视化组件提供展示数据
-- **统计分析**：为统计功能提供样本数据
+### Data Analysis
+- **Algorithm Testing**: Provide test datasets for data analysis algorithms
+- **Chart Display**: Provide display data for data visualization components
+- **Statistical Analysis**: Provide sample data for statistical functions
 
-## 界面特色
+## Interface Features
 
-### 响应式设计
-- **大屏设备**（>1024px）：完整的左右分栏布局
-- **平板设备**（768px-1024px）：上下布局，保持功能完整
-- **手机设备**（<768px）：垂直布局，按钮和字段适配移动端
+### Responsive Design
+- **Large Screen Devices** (>1024px): Complete left-right split layout
+- **Tablet Devices** (768px-1024px): Top-bottom layout, maintaining full functionality
+- **Mobile Devices** (<768px): Vertical layout, buttons and fields adapted for mobile
 
-### 用户体验优化
-- **空状态设计**：友好的空数据提示界面
-- **智能按钮状态**：无数据时自动禁用复制下载按钮
-- **实时数据统计**：动态显示生成条数和数据大小
-- **一键操作**：快速模板支持一键生成，无需多步操作
-- **视觉反馈**：按钮悬停效果、渐变背景、阴影效果
+### User Experience Optimization
+- **Empty State Design**: Friendly empty data prompt interface
+- **Smart Button State**: Auto-disable copy/download buttons when no data
+- **Real-time Data Statistics**: Dynamically display generation count and data size
+- **One-click Operations**: Quick templates support one-click generation without multiple steps
+- **Visual Feedback**: Button hover effects, gradient backgrounds, shadow effects
 
-### 色彩设计
-- **品牌色调**：紫蓝渐变主色调，体现专业感
-- **层次清晰**：通过色彩深浅区分功能区域
-- **暗色模式**：自动适配系统暗色模式偏好
+### Color Design
+- **Brand Colors**: Purple-blue gradient primary colors reflecting professionalism
+- **Clear Hierarchy**: Distinguish functional areas through color depth
+- **Dark Mode**: Auto-adapt to system dark mode preferences
 
-## 注意事项
+## Notes
 
-1. **数据安全**：生成的数据仅用于测试，不要用于生产环境
-2. **隐私保护**：生成的个人信息为虚拟数据，请勿用于欺诈等违法行为
-3. **格式规范**：生成的数据遵循常见格式规范，但不保证100%真实有效
-4. **数量限制**：单次最多生成1000条数据，避免浏览器性能问题
-5. **中文优化**：针对中文环境进行了优化，特别是姓名、地址等字段
-6. **浏览器兼容**：建议使用现代浏览器以获得最佳体验
+1. **Data Security**: Generated data is for testing only, do not use in production environment
+2. **Privacy Protection**: Generated personal information is virtual data, do not use for fraud or other illegal activities
+3. **Format Specifications**: Generated data follows common format specifications but does not guarantee 100% real validity
+4. **Quantity Limit**: Maximum 1000 records per generation to avoid browser performance issues
+5. **Chinese Optimization**: Optimized for Chinese environment, especially fields like names and addresses
+6. **Browser Compatibility**: Modern browsers recommended for best experience
 
-## 常见问题
+## FAQ
 
-**Q: 快速模板和手动配置有什么区别？**
-A: 快速模板一键生成常用数据组合，手动配置可以自由选择任意字段组合。快速模板更适合快速原型和常见场景，手动配置更灵活。
+**Q: What's the difference between quick templates and manual configuration?**
+A: Quick templates generate common data combinations with one click, manual configuration allows free selection of any field combination. Quick templates are more suitable for rapid prototyping and common scenarios, manual configuration is more flexible.
 
-**Q: 生成的身份证号是真实的吗？**
-A: 不是，生成的身份证号仅符合格式规范，为虚拟数据，不对应真实人员信息。
+**Q: Are the generated ID numbers real?**
+A: No, generated ID numbers only conform to format specifications and are virtual data, not corresponding to real personal information.
 
-**Q: 可以生成多少条数据？**
-A: 单次最多可生成1000条数据，如需更多数据可分批生成。
+**Q: How many data records can be generated?**
+A: Maximum 1000 records per generation, more data can be generated in batches.
 
-**Q: 支持哪些输出格式？**
-A: 目前支持JSON、CSV、SQL INSERT和XML四种格式，满足不同系统的数据导入需求。
+**Q: Which output formats are supported?**
+A: Currently supports JSON, CSV, SQL INSERT, and XML formats, meeting data import needs of different systems.
 
-**Q: 如何添加自定义字段？**
-A: 切换到"自定义数据"标签页，填写字段名称、选择数据类型，可选填写生成规则，然后点击"添加字段"。
+**Q: How to add custom fields?**
+A: Switch to "Custom Data" tab, fill in field name, select data type, optionally fill in generation rules, then click "Add Field".
 
-**Q: 右侧的复制和下载按钮为什么是灰色的？**
-A: 当没有生成数据时，这些按钮会自动禁用显示为灰色。生成数据后按钮会自动激活。
+**Q: Why are the copy and download buttons grayed out on the right?**
+A: When no data is generated, these buttons are auto-disabled and displayed in gray. After generating data, buttons will automatically activate.
 
-**Q: 数据生成失败怎么办？**
-A: 请确保至少选择了一个字段或添加了自定义字段，然后重新点击"生成数据"按钮。
+**Q: What to do if data generation fails?**
+A: Please ensure at least one field is selected or custom field is added, then click "Generate Data" button again.
 
-**Q: 支持移动端使用吗？**
-A: 支持，界面采用响应式设计，在手机和平板上会自动调整为适合的布局。 
+**Q: Does it support mobile use?**
+A: Yes, the interface adopts responsive design and will automatically adjust to suitable layout on phones and tablets.

@@ -1,136 +1,136 @@
-# Postman接口调试工具
+# Postman API Debugging Tool
 
-## 简介
-Postman接口调试工具是FeHelper提供的一个强大且易用的HTTP接口调试工具，支持GET、POST、PUT、DELETE等多种请求方式，适合前后端开发、接口联调、接口测试等场景。支持请求参数、请求头、响应预览、历史记录等功能。
+## Introduction
+The Postman API Debugging Tool is a powerful and easy-to-use HTTP interface debugging tool provided by FeHelper. It supports various request methods including GET, POST, PUT, DELETE, and is suitable for frontend-backend development, API integration, interface testing, and other scenarios. It supports request parameters, request headers, response preview, history records, and other functions.
 
-## 主要功能
+## Main Features
 
-### 请求支持
-1. **多种请求方式**
-   - 支持GET、POST、PUT、DELETE等常用HTTP方法
-   - 支持自定义请求方法
+### Request Support
+1. **Multiple Request Methods**
+   - Support common HTTP methods such as GET, POST, PUT, DELETE
+   - Support custom request methods
 
-2. **参数设置**
-   - 支持URL参数、Body参数、Header参数
-   - 支持表单、JSON、x-www-form-urlencoded等多种格式
-   - 支持文件上传
+2. **Parameter Settings**
+   - Support URL parameters, Body parameters, Header parameters
+   - Support multiple formats including form, JSON, x-www-form-urlencoded
+   - Support file upload
 
-3. **请求头管理**
-   - 支持自定义请求头
-   - 支持常用Header快捷添加
+3. **Request Header Management**
+   - Support custom request headers
+   - Support quick addition of common Headers
 
-### 响应处理
-1. **响应预览**
-   - 支持JSON、XML、HTML、纯文本等多种格式高亮显示
-   - 支持响应内容折叠、展开
-   - 支持响应时间、状态码、Header查看
+### Response Processing
+1. **Response Preview**
+   - Support highlighted display of multiple formats such as JSON, XML, HTML, plain text
+   - Support response content folding and expanding
+   - Support viewing response time, status code, Headers
 
-2. **历史记录**
-   - 自动保存请求历史
-   - 支持历史请求一键重发
-   - 支持历史记录搜索与管理
+2. **History Records**
+   - Automatically save request history
+   - Support one-click resend of historical requests
+   - Support history record search and management
 
-3. **数据导出导入**
-   - 支持请求用例导出为JSON
-   - 支持用例批量导入
+3. **Data Import/Export**
+   - Support exporting request use cases as JSON
+   - Support batch importing use cases
 
-### 其他功能
-1. **环境变量**
-   - 支持自定义环境变量
-   - 变量可用于URL、Header、Body等
+### Other Functions
+1. **Environment Variables**
+   - Support custom environment variables
+   - Variables can be used in URL, Header, Body, etc.
 
-2. **接口分组**
-   - 支持接口分组管理
-   - 便于团队协作
+2. **API Grouping**
+   - Support API group management
+   - Facilitate team collaboration
 
-3. **界面交互**
-   - 响应式设计，适配不同分辨率
-   - 支持快捷键操作
+3. **Interface Interaction**
+   - Responsive design, adapts to different resolutions
+   - Support keyboard shortcut operations
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 新建请求
-   - 选择请求方法（GET/POST等）
-   - 输入接口URL
-   - 设置请求参数和Header
-   - 点击"发送"按钮
+### Basic Usage
+1. Create Request
+   - Select request method (GET/POST, etc.)
+   - Enter API URL
+   - Set request parameters and Headers
+   - Click "Send" button
 
-2. 查看响应
-   - 响应内容自动高亮显示
-   - 可切换不同格式预览
-   - 查看响应Header、状态码、耗时等
+2. View Response
+   - Response content automatically highlighted
+   - Can switch to different format previews
+   - View response Headers, status code, time consumed, etc.
 
-3. 管理历史
-   - 历史请求自动保存
-   - 可一键重发历史请求
-   - 支持删除、搜索历史记录
+3. Manage History
+   - History requests automatically saved
+   - Can resend historical requests with one click
+   - Support deleting and searching history records
 
-### 高级功能
-1. **用例管理**
-   - 导出请求用例为JSON
-   - 批量导入用例
-   - 用于团队共享
+### Advanced Functions
+1. **Use Case Management**
+   - Export request use cases as JSON
+   - Batch import use cases
+   - For team sharing
 
-2. **环境变量**
-   - 设置全局变量
-   - 在请求中引用变量
-   - 便于多环境切换
+2. **Environment Variables**
+   - Set global variables
+   - Reference variables in requests
+   - Convenient for multi-environment switching
 
-3. **接口分组**
-   - 创建分组管理接口
-   - 支持批量操作
+3. **API Grouping**
+   - Create groups to manage APIs
+   - Support batch operations
 
-## 使用技巧
-1. **高效调试**
-   - 利用历史记录快速回测
-   - 用变量管理不同环境
-   - 批量导入导出用例
+## Usage Tips
+1. **Efficient Debugging**
+   - Use history records for quick retesting
+   - Use variables to manage different environments
+   - Batch import/export use cases
 
-2. **格式化响应**
-   - JSON/XML响应自动高亮
-   - 支持折叠、复制
+2. **Format Response**
+   - JSON/XML response automatically highlighted
+   - Support folding and copying
 
-3. **团队协作**
-   - 用例导出后可共享给同事
-   - 分组管理便于多人协作
+3. **Team Collaboration**
+   - Export use cases for sharing with colleagues
+   - Group management facilitates multi-person collaboration
 
-## 注意事项
-1. 使用限制
-   - 单次请求体积建议不超过10MB
-   - 过大响应可能影响性能
+## Notes
+1. Usage Limitations
+   - Single request size recommended not to exceed 10MB
+   - Oversized responses may affect performance
 
-2. 兼容性
-   - 支持主流浏览器
-   - 建议使用最新版Chrome
+2. Compatibility
+   - Support mainstream browsers
+   - Latest version of Chrome recommended
 
-3. 安全性
-   - 注意敏感信息保护
-   - 不建议在公共环境保存敏感用例
+3. Security
+   - Pay attention to protecting sensitive information
+   - Not recommended to save sensitive use cases in public environments
 
-## 常见问题
-1. **Q: 为什么请求失败？**
-   A: 检查接口地址、参数、Header设置，或后端服务是否可用。
+## FAQ
+1. **Q: Why does the request fail?**
+   A: Check API address, parameters, Header settings, or whether backend service is available.
 
-2. **Q: 如何导出/导入用例？**
-   A: 在用例管理区点击导出/导入按钮，选择JSON文件即可。
+2. **Q: How to export/import use cases?**
+   A: Click export/import button in use case management area and select JSON file.
 
-3. **Q: 响应内容乱码怎么办？**
-   A: 检查响应Header中的编码设置，或尝试切换预览格式。
+3. **Q: What if response content is garbled?**
+   A: Check encoding settings in response Header, or try switching preview format.
 
-## 更新日志
-- 2024-03-21: 优化响应高亮与历史管理
-- 2024-03-20: 增加用例导入导出功能
-- 2024-03-19: 改进参数设置体验
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize response highlighting and history management
+- 2024-03-20: Add use case import/export function
+- 2024-03-19: Improve parameter setting experience
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [WebSocket工具](../websocket.md)
-- [编码转换工具](../en-decode.md)
-- [JSON格式化工具](../json-format.md) 
+## Related Tools
+- [WebSocket Tool](../websocket.md)
+- [Encoding Conversion Tool](../en-decode.md)
+- [JSON Format Tool](../json-format.md)
