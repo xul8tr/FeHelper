@@ -1,40 +1,40 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 工具映射表（文件名到工具名称的映射）
+    // Tool name mapping (filename to tool name)
     const toolNameMap = {
-        'json-format': 'JSON美化工具',
-        'json-diff': 'JSON比对工具',
-        'code-beautify': '代码美化工具',
-        'code-compress': '代码压缩工具',
-        'postman': '简易Postman',
-        'websocket': 'Websocket工具',
-        'regexp': '正则公式速查',
-        'page-timing': '网站性能优化',
-        'en-decode': '信息编码转换',
-        'trans-radix': '进制转换工具',
-        'timestamp': '时间(戳)转换',
-        'trans-color': '颜色转换工具',
-        'qr-code': '二维码/解码',
-        'image-base64': '图片转Base64',
-        'svg-converter': 'SVG转为图片',
-        'chart-maker': '图表制作工具',
-        'poster-maker': '海报快速生成',
-        'screenshot': '网页截屏工具',
-        'color-picker': '页面取色工具',
-        'aiagent': 'AI(智能助手)',
-        'sticky-notes': '我的便签笔记',
-        'html2markdown': 'Markdown转换',
-        'page-monkey': '网页油猴工具',
-        'crontab': 'Crontab工具',
-        'loan-rate': '贷(还)款利率',
-        'password': '随机密码生成',
-        'devtools': 'FH开发者工具',
-        'index': '文档首页',
-        'grid-ruler': '网页标尺工具',
-        'excel2json': 'Excel转JSON',
-        'naotu': '思维导图工具'
+        'json-format': 'JSON Beautifier',
+        'json-diff': 'JSON Diff Tool',
+        'code-beautify': 'Code Beautifier',
+        'code-compress': 'Code Compressor',
+        'postman': 'Simple Postman',
+        'websocket': 'Websocket Tool',
+        'regexp': 'RegExp Quick Reference',
+        'page-timing': 'Website Performance',
+        'en-decode': 'Encode/Decode',
+        'trans-radix': 'Radix Converter',
+        'timestamp': 'Timestamp Converter',
+        'trans-color': 'Color Converter',
+        'qr-code': 'QR Code Generator/Decoder',
+        'image-base64': 'Image to Base64',
+        'svg-converter': 'SVG to Image',
+        'chart-maker': 'Chart Maker',
+        'poster-maker': 'Poster Generator',
+        'screenshot': 'Screenshot Tool',
+        'color-picker': 'Color Picker',
+        'aiagent': 'AI Assistant',
+        'sticky-notes': 'Sticky Notes',
+        'html2markdown': 'Markdown Converter',
+        'page-monkey': 'Page Monkey',
+        'crontab': 'Crontab Tool',
+        'loan-rate': 'Loan Rate Calculator',
+        'password': 'Password Generator',
+        'devtools': 'FH Developer Tools',
+        'index': 'Documentation Home',
+        'grid-ruler': 'Grid Ruler',
+        'excel2json': 'Excel to JSON',
+        'naotu': 'Mind Map'
     };
     
-    // 工具分类映射
+    // Tool category mapping
     const toolCategoryMap = {
         'dev': ['json-format', 'json-diff', 'code-beautify', 'code-compress', 'postman', 'websocket', 'regexp', 'page-timing', 'devtools'],
         'encode': ['en-decode', 'trans-radix', 'timestamp', 'trans-color'],
@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
         'other': ['grid-ruler', 'excel2json']
     };
 
-    // 获取URL参数
+    // Get URL parameters
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
     }
     
-    // 初始化 marked 解析器
+    // Initialize marked parser
     const markedOptions = {
         gfm: true,
         breaks: true,
@@ -60,42 +60,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // 加载工具列表
+    // Load tool list
     async function loadToolList() {
         try {
             const toolListElement = document.getElementById('tool-list');
             
-            // 创建"文档首页"链接
+            // Create "Documentation Home" link
             const indexItem = document.createElement('li');
             const indexLink = document.createElement('a');
             indexLink.href = '?tool=index';
-            indexLink.textContent = '文档首页';
+            indexLink.textContent = 'Documentation Home';
             indexLink.dataset.tool = 'index';
             indexItem.appendChild(indexLink);
             toolListElement.innerHTML = '';
             toolListElement.appendChild(indexItem);
             
-            // 根据分类创建工具列表
+            // Create tool list by category
             const categories = {
-                'dev': '开发工具类',
-                'encode': '编解码转换类',
-                'image': '图像处理类',
-                'productivity': '效率工具类',
-                'calculator': '计算工具类',
-                'other': '其他工具'
+                'dev': 'Development Tools',
+                'encode': 'Encode/Decode Tools',
+                'image': 'Image Processing Tools',
+                'productivity': 'Productivity Tools',
+                'calculator': 'Calculator Tools',
+                'other': 'Other Tools'
             };
             
-            // 遍历分类
+            // Iterate through categories
             for (const [category, categoryName] of Object.entries(categories)) {
-                // 创建分类标题
+                // Create category header
                 const categoryHeader = document.createElement('li');
                 categoryHeader.innerHTML = `<h3 style="padding: 15px 20px 5px; margin: 10px 0 0; font-size: 0.9rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">${categoryName}</h3>`;
                 toolListElement.appendChild(categoryHeader);
                 
-                // 获取分类下的工具
+                // Get tools in this category
                 const tools = toolCategoryMap[category] || [];
                 
-                // 创建工具链接
+                // Create tool links
                 for (const tool of tools) {
                     if (toolNameMap[tool]) {
                         const toolItem = document.createElement('li');
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // 为所有工具链接添加点击事件
+            // Add click event to all tool links
             const toolLinks = document.querySelectorAll('.tool-list a');
             toolLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -118,11 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     history.pushState(null, null, `?tool=${tool}`);
                     loadToolDoc(tool);
                     
-                    // 更新活动状态
+                    // Update active state
                     toolLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // 在移动设备上自动关闭侧边栏
+                    // Auto-close sidebar on mobile devices
                     if (window.innerWidth <= 768) {
                         document.body.classList.remove('sidebar-open');
                         document.body.classList.add('sidebar-closed');
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
-            // 根据URL参数加载指定工具的文档
+            // Load specified tool documentation based on URL parameter
             const selectedTool = getQueryParam('tool') || 'index';
             const activeLink = document.querySelector(`.tool-list a[data-tool="${selectedTool}"]`);
             if (activeLink) {
@@ -139,12 +139,12 @@ document.addEventListener('DOMContentLoaded', function() {
             loadToolDoc(selectedTool);
             
         } catch (error) {
-            console.error('加载工具列表失败:', error);
-            document.getElementById('tool-list').innerHTML = '<p style="padding: 20px; color: #ef4444;">加载工具列表失败，请刷新页面重试。</p>';
+            console.error('Failed to load tool list:', error);
+            document.getElementById('tool-list').innerHTML = '<p style="padding: 20px; color: #ef4444;">Failed to load tool list. Please refresh the page and try again.</p>';
         }
     }
     
-    // 加载工具文档
+    // Load tool documentation
     async function loadToolDoc(toolId) {
         const docContainer = document.getElementById('doc-container');
         docContainer.innerHTML = '<div class="loader"><div class="loader-spinner"></div></div>';
@@ -158,20 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const markdownText = await response.text();
             const htmlContent = marked.parse(markdownText, markedOptions);
             
-            // 添加标题和标签
+            // Add title and tags
             const toolName = toolNameMap[toolId] || toolId;
             let category = '';
             
-            // 确定工具所属类别
+            // Determine tool category
             for (const [cat, tools] of Object.entries(toolCategoryMap)) {
                 if (tools.includes(toolId)) {
                     switch(cat) {
-                        case 'dev': category = '开发工具类'; break;
-                        case 'encode': category = '编解码转换类'; break;
-                        case 'image': category = '图像处理类'; break;
-                        case 'productivity': category = '效率工具类'; break;
-                        case 'calculator': category = '计算工具类'; break;
-                        case 'other': category = '其他工具'; break;
+                        case 'dev': category = 'Development Tools'; break;
+                        case 'encode': category = 'Encode/Decode Tools'; break;
+                        case 'image': category = 'Image Processing Tools'; break;
+                        case 'productivity': category = 'Productivity Tools'; break;
+                        case 'calculator': category = 'Calculator Tools'; break;
+                        case 'other': category = 'Other Tools'; break;
                     }
                     break;
                 }
@@ -189,10 +189,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="doc-content">${htmlContent}</div>
             `;
             
-            // 文档加载后，自动滚动到顶部
+            // Auto-scroll to top after loading documentation
             window.scrollTo(0, 0);
             
-            // 为文档中的链接添加点击事件
+            // Add click event to links in documentation
             const docLinks = docContainer.querySelectorAll('a[href^="../"]');
             docLinks.forEach(link => {
                 const href = link.getAttribute('href');
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         history.pushState(null, null, this.href);
                         loadToolDoc(toolPath);
                         
-                        // 更新侧边栏活动状态
+                        // Update sidebar active state
                         const toolLinks = document.querySelectorAll('.tool-list a');
                         toolLinks.forEach(l => l.classList.remove('active'));
                         const activeLink = document.querySelector(`.tool-list a[data-tool="${toolPath}"]`);
@@ -217,20 +217,20 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
         } catch (error) {
-            console.error('加载文档失败:', error);
+            console.error('Failed to load documentation:', error);
             docContainer.innerHTML = `
                 <div class="doc-header">
-                    <h1>文档加载失败</h1>
+                    <h1>Failed to Load Documentation</h1>
                 </div>
                 <div class="doc-content">
-                    <p>抱歉，文档加载失败，请刷新页面重试或返回<a href="?tool=index">文档首页</a>。</p>
-                    <p>错误信息: ${error.message}</p>
+                    <p>Sorry, failed to load documentation. Please refresh the page and try again or return to <a href="?tool=index">Documentation Home</a>.</p>
+                    <p>Error message: ${error.message}</p>
                 </div>
             `;
         }
     }
     
-    // 搜索功能
+    // Search functionality
     const searchInput = document.getElementById('search-docs');
     searchInput.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
@@ -245,13 +245,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // 隐藏/显示类别标题
+        // Hide/show category headers
         const categoryHeaders = document.querySelectorAll('.tool-list h3');
         categoryHeaders.forEach(header => {
             const nextSibling = header.parentElement.nextElementSibling;
             let hasVisibleTools = false;
             
-            // 检查该类别下是否有可见的工具
+            // Check if there are visible tools under this category
             let current = nextSibling;
             while (current && !current.querySelector('h3')) {
                 if (current.style.display !== 'none') {
@@ -265,10 +265,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 移动端侧边栏切换
+    // Mobile sidebar toggle
     const sidebarToggle = document.getElementById('sidebar-toggle');
     
-    // 初始化侧边栏状态
+    // Initialize sidebar state
     function initSidebarState() {
         if (window.innerWidth <= 768) {
             document.body.classList.add('sidebar-closed');
@@ -286,10 +286,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 页面加载时初始化
+    // Initialize on page load
     initSidebarState();
     
-    // 侧边栏切换按钮点击事件
+    // Sidebar toggle button click event
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', function() {
             if (document.body.classList.contains('sidebar-open')) {
@@ -304,12 +304,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 监听窗口大小变化
+    // Listen for window resize
     window.addEventListener('resize', function() {
         initSidebarState();
     });
     
-    // 返回顶部按钮
+    // Back to top button
     const backToTopButton = document.getElementById('back-to-top');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
@@ -326,10 +326,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 初始化
+    // Initialize
     loadToolList();
     
-    // 同步导航栏
+    // Sync navigation bar
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
