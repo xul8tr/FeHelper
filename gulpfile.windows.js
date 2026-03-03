@@ -1,0 +1,493 @@
+/**
+ * FeHelper Chrome Extension Builder By Gulp (Windows Compatible)
+ * @author zhaoxianlie
+ * Modified for Windows Command Prompt compatibility
+ */
+
+const gulp = require('gulp');
+const clean = require('gulp-clean');
+const copy = require('gulp-copy');
+const zip = require('gulp-zip');
+const uglifyjs = require('gulp-uglify-es').default;
+const uglifycss = require('gulp-uglifycss');
+const htmlmin = require('gulp-htmlmin');
+const jsonmin = require('gulp-jsonminify');
+const fs = require('fs');
+const through = require('through2');
+const path = require('path');
+const pretty = require('pretty-bytes');
+const babel = require('gulp-babel');
+const assert = require('assert');
+const gulpIf = require('gulp-if');
+const imagemin = require('gulp-imagemin');
+const imageminGifsicle = require('imagemin-gifsicle');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminSvgo = require('imagemin-svgo');
+
+let isSilentDetect = false; // <-- Global flag
+
+const FIREFOX_REMOVE_TOOLS = [
+    'color-picker', 'postman', 'devtools', 'websocket', 'page-timing',
+    'grid-ruler', 'naotu', 'screenshot', 'page-monkey', 'excel2json'
+];
+
+// Helper function to remove directory recursively (Windows compatible)
+function removeDirRecursive(dirPath) {
+    if (fs.existsSync(dirPath)) {
+        fs.readdirSync(dirPath).forEach((file) => {
+            const curPath = path.join(dirPath, file);
+            if (fs.lstatSync(curPath).isDirectory()) {
+                removeDirRecursive(curPath);
+            } else {
+                fs.unlinkSync(curPath);
+            }
+        });
+        fs.rmdirSync(dirPath);
+    }
+}
+
+// Helper function to move file (Windows compatible)
+function moveFile(source, destination) {
+    if (fs.existsSync(source)) {
+        fs.renameSync(source, destination);
+    }
+}
+
+// Helper function to remove file (Windows compatible)
+function removeFile(filePath) {
+    if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+    }
+}
+
+// Clean output directory
+function cleanOutput(outputDir = 'output-chrome') {
+    return gulp.src(outputDir, {read: false, allowEmpty: true}).pipe(clean({force: true}));
+}
+
+// Copy static resources
+function copyAssets(outputDir = 'output-chrome/apps') {
+    return gulp.src(['apps/**/*.{gif,png,jpg,jpeg,cur,ico,ttf,woff2,svg,md,txt,json}']).pipe(gulp.dest(outputDir));
+}
+
+// Process JSON files
+function processJson(outputDir = 'output-chrome/apps') {
+    return gulp.src('apps/**/*.json').pipe(jsonmin()).pipe(gulp.dest(outputDir));
+}
+
+
+// Process HTML files
+function processHtml(outputDir = 'output-chrome/apps') {
+    return gulp.src('apps/**/*.html').pipe(htmlmin({collapseWhitespace: true})).pipe(gulp.dest(outputDir));
+}
+
+// Merge & compress js
+function processJs(outputDir = 'output-chrome/apps') {
+    let jsMerge = () => {
+        return through.obj(function (file, enc, cb) {
+            let contents = file.contents.toString('utf-8');
+            let merge = (fp, fc) => {
+                return fc.replace(/__importScript\(\s*(['"])([^'"]*)\1\s*\)/gm, function (frag, $1, mod) {
+                    let mp = path.resolve(fp, '../' + mod + (/\.js$/.test(mod) ? '' : '.js'));
+                    let mc = fs.readFileSync(mp).toString('utf-8');
+                    return merge(mp, mc + ';');
+                });
+            };
+            contents = merge(file.path, contents);
+            file.contents = Buffer.from(contents);
+            this.push(file);
+            return cb();
+        })
+    };
+    const shouldSkipProcessing = (file) => {
+        const relativePath = path.relative(path.join(process.cwd(), 'apps'), file.path);
+        return relativePath === 'chart-maker\\lib\\xlsx.full.min.js' 
+            || relativePath === 'chart-maker/lib/xlsx.full.min.js'
+            || relativePath === 'static\\vendor\\evalCore.min.js' 
+            || relativePath === 'static/vendor/evalCore.min.js'
+            || relativePath === 'code-compress\\htmlminifier.min.js'
+            || relativePath === 'code-compress/htmlminifier.min.js';
+    };
+    return gulp.src('apps/**/*.js')
+        .pipe(jsMerge())
+        .pipe(gulpIf(file => !shouldSkipProcessing(file), babel({
+            presets: [
+                ['@babel/preset-env', { modules: false }]
+            ]
+        })))
+        .pipe(gulpIf(file => !shouldSkipProcessing(file), uglifyjs({
+            compress: {
+                ecma: 2015
+            }
+        })))
+        .pipe(gulp.dest(outputDir));
+}
+
+// Merge & compress css
+function processCss(outputDir = 'output-chrome/apps') {
+    let cssMerge = () => {
+        return through.obj(function (file, enc, cb) {
+            let contents = file.contents.toString('utf-8');
+            let merge = (fp, fc) => {
+                return fc.replace(/\@import\s+(url\()?\s*(['"])(.*)\2\s*(\))?\s*;?/gm, function (frag, $1, $2, mod) {
+                    let mp = path.resolve(fp, '../' + mod + (/\.css$/.test(mod) ? '' : '.css'));
+                    let mc = fs.readFileSync(mp).toString('utf-8');
+                    return merge(mp, mc);
+                });
+            };
+            contents = merge(file.path, contents);
+            file.contents = Buffer.from(contents);
+            this.push(file);
+            return cb();
+        })
+    };
+    return gulp.src('apps/**/*.css').pipe(cssMerge()).pipe(uglifycss()).pipe(gulp.dest(outputDir));
+}
+
+// Add image compression task
+function compressImages(outputDir = 'output-chrome/apps') {
+    return gulp.src(path.join(outputDir, '**/*.{png,jpg,jpeg,gif,svg}'))
+        .pipe(imagemin([
+            imageminGifsicle({interlaced: true}),
+            imageminMozjpeg({quality: 75, progressive: true}),
+            imageminSvgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })
+        ]))
+        .pipe(gulp.dest(outputDir));
+}
+
+// Clean redundant files and package as zip for publishing to chrome webstore
+function zipPackage(outputRoot = 'output-chrome', cb) {
+    let pathOfMF = path.join(outputRoot, 'apps/manifest.json');
+    let manifest = require(path.resolve(pathOfMF));
+    manifest.name = manifest.name.replace('-Dev', '');
+    fs.writeFileSync(pathOfMF, JSON.stringify(manifest));
+    
+    let pkgName = 'fehelper.zip';
+    if (outputRoot === 'output-firefox') {
+        pkgName = 'fehelper.xpi';
+    }
+    
+    // Windows-compatible zip creation using gulp-zip
+    const zipPath = path.join(outputRoot, pkgName);
+    const appsPath = path.join(outputRoot, 'apps');
+    
+    gulp.src(path.join(appsPath, '**/*'))
+        .pipe(zip(pkgName))
+        .pipe(gulp.dest(outputRoot))
+        .on('end', () => {
+            let size = fs.statSync(zipPath).size;
+            size = pretty(size);
+            console.log('\n\n================================================================================');
+            console.log('    Current Version:', manifest.version, '\tFile Size:', size);
+            if (outputRoot === 'output-chrome') {
+                console.log('    Publish to Chrome Store: https://chrome.google.com/webstore/devconsole');
+            } else if (outputRoot === 'output-edge') {
+                console.log('    Publish to Edge Store: https://partner.microsoft.com/en-us/dashboard/microsoftedge/overview');
+            } else if (outputRoot === 'output-firefox') {
+                console.log('    Publish to Firefox Store: https://addons.mozilla.org/en-US/developers/');
+            }
+            console.log('================================================================================\n\n');
+            if (cb) cb();
+        });
+}
+
+// Set silent flag
+function setSilentDetect(cb) {
+    isSilentDetect = true;
+    cb();
+}
+function unsetSilentDetect(cb) {
+    isSilentDetect = false;
+    cb();
+}
+
+// Detect unused static files (parameterized outputDir)
+function detectUnusedFiles(outputDir = 'output-chrome/apps', cb) {
+    const allFiles = new Set();
+    const referencedFiles = new Set();
+    function shouldExcludeFile(filePath) {
+        if (filePath.includes('content-script.js') || filePath.includes('content-script.css')) return true;
+        if (filePath.includes('node_modules')) return true;
+        if (filePath.endsWith('fh-config.js')) return true;
+        return false;
+    }
+    function getAllFiles(dir) {
+        const files = fs.readdirSync(dir);
+        files.forEach(file => {
+            const fullPath = path.join(dir, file);
+            if (fs.statSync(fullPath).isDirectory()) {
+                if (file !== 'node_modules') {
+                    getAllFiles(fullPath);
+                }
+            } else {
+                if (/\.(js|css|png|jpg|jpeg|gif|svg)$/i.test(file) && !shouldExcludeFile(fullPath)) {
+                    const relativePath = path.relative(outputDir, fullPath);
+                    allFiles.add(relativePath);
+                }
+            }
+        });
+    }
+    function findReferences(content, filePath) {
+        const fileDir = path.dirname(filePath);
+        const patterns = [
+            /['"`][^`'\"]*?([./\w-]+\.(?:js|css|png|jpg|jpeg|gif|svg))['"`]/g,
+            /url\(['"]?([./\w-]+(?:\.(?:png|jpg|jpeg|gif|svg))?)['"]?\)/gi,
+            /@import\s+['"]([^'\"]+\.css)['"];?/gi,
+            /(?:src|href)=['"](chrome-extension:\/\/[^/]+\/)?([^'"?#]+(?:\.(?:js|css|png|jpg|jpeg|gif|svg)))['"]/gi
+        ];
+        patterns.forEach((pattern, index) => {
+            let match;
+            while ((match = pattern.exec(content)) !== null) {
+                let extractedPath = '';
+                if (index === 3) {
+                    extractedPath = match[2];
+                } else {
+                    extractedPath = match[1];
+                }
+                if (!extractedPath || typeof extractedPath !== 'string') continue;
+                if (shouldExcludeFile(extractedPath)) continue;
+                let finalPathToAdd = '';
+                const isChromeExt = index === 3 && match[1];
+                if (isChromeExt || extractedPath.startsWith('/')) {
+                    finalPathToAdd = extractedPath.startsWith('/') ? extractedPath.slice(1) : extractedPath;
+                } else {
+                    const absolutePath = path.resolve(fileDir, extractedPath);
+                    finalPathToAdd = path.relative(outputDir, absolutePath);
+                }
+                if (finalPathToAdd && !shouldExcludeFile(finalPathToAdd)) {
+                    referencedFiles.add(finalPathToAdd.replace(/\\/g, '/'));
+                }
+            }
+        });
+    }
+    function processManifest() {
+        const manifestPath = path.join(outputDir, 'manifest.json');
+        if (fs.existsSync(manifestPath)) {
+            const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+            const checkManifestField = (obj) => {
+                if (typeof obj === 'string' && /\.(js|css|png|jpg|jpeg|gif|svg)$/i.test(obj)) {
+                    const normalizedPath = obj.startsWith('/') ? obj.slice(1) : obj;
+                    if (!shouldExcludeFile(normalizedPath)) {
+                        referencedFiles.add(normalizedPath);
+                    }
+                } else if (Array.isArray(obj)) {
+                    obj.forEach(item => checkManifestField(item));
+                } else if (typeof obj === 'object' && obj !== null) {
+                    Object.values(obj).forEach(value => checkManifestField(value));
+                }
+            };
+            if (manifest.content_scripts) {
+                manifest.content_scripts.forEach(script => {
+                    if (script.js) {
+                        script.js.forEach(js => {
+                            const normalizedPath = js.startsWith('/') ? js.slice(1) : js;
+                            referencedFiles.add(normalizedPath);
+                        });
+                    }
+                    if (script.css) {
+                        script.css.forEach(css => {
+                            const normalizedPath = css.startsWith('/') ? css.slice(1) : css;
+                            referencedFiles.add(normalizedPath);
+                        });
+                    }
+                });
+            }
+            checkManifestField(manifest);
+        }
+    }
+    function runTests() {
+        if (!isSilentDetect) console.log('\nRunning unit tests...');
+        assert.strictEqual(shouldExcludeFile('path/to/content-script.js'), true, 'Should exclude content-script.js');
+        assert.strictEqual(shouldExcludeFile('path/to/content-script.css'), true, 'Should exclude content-script.css');
+        assert.strictEqual(shouldExcludeFile('path/to/node_modules/file.js'), true, 'Should exclude node_modules files');
+        assert.strictEqual(shouldExcludeFile('path/to/normal.js'), false, 'Should not exclude normal files');
+        const testContent = `
+            <link rel="stylesheet" href="./style.css">
+            <script src="../js/script.js"></script>
+            <img src="/images/test.png">
+            <div style="background: url('./bg.jpg')">
+            @import '../common.css';
+            <img src="chrome-extension://abcdefgh/static/icon.png">
+        `;
+        const testFilePath = path.join(outputDir, 'test/index.html');
+        referencedFiles.clear();
+        findReferences(testContent, testFilePath);
+        const refs = Array.from(referencedFiles);
+        assert(refs.includes('test/style.css') || refs.includes('test\\style.css'), 'Should handle relative path with ./');
+        assert(refs.includes('js/script.js') || refs.includes('js\\script.js'), 'Should handle relative path with ../');
+        assert(refs.includes('images/test.png') || refs.includes('images\\test.png'), 'Should handle absolute path');
+        assert(refs.includes('test/bg.jpg') || refs.includes('test\\bg.jpg'), 'Should handle url() in CSS');
+        assert(refs.includes('common.css'), 'Should handle @import in CSS');
+        assert(refs.includes('static/icon.png'), 'Should handle chrome-extension urls');
+        referencedFiles.clear();
+        if (!isSilentDetect) console.log('Unit tests passed!');
+    }
+    try {
+        runTests();
+        getAllFiles(outputDir);
+        processManifest();
+        const filesToScan = fs.readdirSync(outputDir, { recursive: true })
+            .filter(file => !shouldExcludeFile(file));
+        filesToScan.forEach(file => {
+            const fullPath = path.join(outputDir, file);
+            if (fs.statSync(fullPath).isFile() && /\.(html|js|css|json)$/i.test(file)) {
+                const content = fs.readFileSync(fullPath, 'utf8');
+                findReferences(content, fullPath);
+            }
+        });
+        const unusedFiles = Array.from(allFiles).filter(file => !referencedFiles.has(file));
+        if (unusedFiles.length > 0) {
+            if (!isSilentDetect) console.log('\nFound the following unreferenced files:');
+            if (!isSilentDetect) console.log('=====================================');
+            let totalUnusedSize = 0;
+            unusedFiles.forEach(file => {
+                if (!isSilentDetect) console.log(file);
+                try {
+                    const fullPath = path.join(outputDir, file);
+                    if (fs.existsSync(fullPath)) {
+                       totalUnusedSize += fs.statSync(fullPath).size; 
+                       fs.unlinkSync(fullPath);
+                       if (!isSilentDetect) console.log(`  -> Deleted: ${file}`);
+                    } else {
+                        if (!isSilentDetect) console.warn(`  -> File does not exist, cannot delete or stat: ${file}`);
+                    }
+                } catch (err) {
+                    if (!isSilentDetect) console.warn(`Cannot delete or get file size: ${file}`, err);
+                }
+            });
+            if (!isSilentDetect) console.log('=====================================');
+            if (!isSilentDetect) console.log(`Cleaned ${unusedFiles.length} unused files, freed space: ${pretty(totalUnusedSize)}`);
+            if (process.env.DEBUG && !isSilentDetect) {
+                console.log('\nDebug info:');
+                console.log('----------------------------------------');
+                console.log('All files:');
+                Array.from(allFiles).forEach(file => console.log(`- ${file}`));
+                console.log('----------------------------------------');
+                console.log('Referenced files:');
+                Array.from(referencedFiles).forEach(file => console.log(`- ${file}`));
+            }
+        } else {
+            if (!isSilentDetect) console.log('\nNo unused files found!');
+        }
+    } catch (error) {
+        if (!isSilentDetect) console.error('Error during detection:', error);
+    }
+    cb && cb();
+}
+
+// Firefox preprocessing
+function firefoxPreprocess(cb) {
+    const destDir = 'output-firefox/apps';
+    
+    moveFile(path.join(destDir, 'firefox.json'), path.join(destDir, 'manifest.json'));
+    removeFile(path.join(destDir, 'chrome.json'));
+    removeFile(path.join(destDir, 'edge.json'));
+
+    FIREFOX_REMOVE_TOOLS.forEach(tool => {
+        const toolDir = path.join(destDir, tool);
+        if (fs.existsSync(toolDir)) {
+            removeDirRecursive(toolDir);
+        }
+    });
+    cb();
+}
+
+
+// Chrome preprocessing
+function chromePreprocess(cb) {
+    const destDir = 'output-chrome/apps';
+    
+    moveFile(path.join(destDir, 'chrome.json'), path.join(destDir, 'manifest.json'));
+    removeFile(path.join(destDir, 'firefox.json'));
+    removeFile(path.join(destDir, 'edge.json'));
+
+    cb();
+}
+
+// Edge preprocessing
+function edgePreprocess(cb) {
+    const destDir = 'output-edge/apps';
+    
+    moveFile(path.join(destDir, 'edge.json'), path.join(destDir, 'manifest.json'));
+    removeFile(path.join(destDir, 'chrome.json'));
+    removeFile(path.join(destDir, 'firefox.json'));
+
+    cb();
+}
+
+// Register tasks
+// Chrome default packaging
+function cleanChrome() { return cleanOutput('output-chrome'); }
+function copyChrome() { return copyAssets('output-chrome/apps'); }
+function cssChrome() { return processCss('output-chrome/apps'); }
+function jsChrome() { return processJs('output-chrome/apps'); }
+function htmlChrome() { return processHtml('output-chrome/apps'); }
+function jsonChrome() { return processJson('output-chrome/apps'); }
+function detectChrome(cb) { detectUnusedFiles('output-chrome/apps', cb); }
+function zipChrome(cb) { zipPackage('output-chrome', cb); }
+
+gulp.task('default', 
+    gulp.series(
+        cleanChrome,
+        copyChrome,
+        gulp.parallel(cssChrome, jsChrome, htmlChrome, jsonChrome),
+        chromePreprocess,
+        setSilentDetect,
+        detectChrome,
+        unsetSilentDetect,
+        zipChrome
+    )
+);
+
+// ------------------------------------------------------------
+
+// Edge packaging
+function cleanEdge() { return cleanOutput('output-edge'); }
+function copyEdge() { return copyAssets('output-edge/apps'); }
+function cssEdge() { return processCss('output-edge/apps'); }
+function jsEdge() { return processJs('output-edge/apps'); }
+function htmlEdge() { return processHtml('output-edge/apps'); }
+function jsonEdge() { return processJson('output-edge/apps'); }
+function detectEdge(cb) { detectUnusedFiles('output-edge/apps', cb); }
+function zipEdge(cb) { zipPackage('output-edge', cb); }
+
+gulp.task('edge', 
+    gulp.series(
+        cleanEdge,
+        copyEdge,
+        gulp.parallel(cssEdge, jsEdge, htmlEdge, jsonEdge),
+        edgePreprocess,
+        setSilentDetect,
+        detectEdge,
+        unsetSilentDetect,
+        zipEdge
+    )
+);
+
+// Firefox packaging main task
+function cleanFirefox() { return cleanOutput('output-firefox'); }
+function copyFirefox() { return copyAssets('output-firefox/apps'); }
+function cssFirefox() { return processCss('output-firefox/apps'); }
+function jsFirefox() { return processJs('output-firefox/apps'); }
+function htmlFirefox() { return processHtml('output-firefox/apps'); }
+function jsonFirefox() { return processJson('output-firefox/apps'); }
+function detectFirefox(cb) { detectUnusedFiles('output-firefox/apps', cb); }
+function zipFirefox(cb) { zipPackage('output-firefox', cb); }
+
+gulp.task('firefox',
+    gulp.series(
+        cleanFirefox,
+        copyFirefox,
+        gulp.parallel(cssFirefox, jsFirefox, htmlFirefox, jsonFirefox),
+        firefoxPreprocess,
+        setSilentDetect,
+        detectFirefox,
+        unsetSilentDetect,
+        zipFirefox
+    )
+);
