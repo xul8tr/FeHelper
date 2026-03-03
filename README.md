@@ -1,264 +1,264 @@
-# FeHelper - 前端开发者的超级助手
+# FeHelper - The Ultimate Assistant for Front-End Developers
 
 <div align="center">
 
 ![FeHelper Logo](https://user-images.githubusercontent.com/865735/75407628-7399c580-594e-11ea-8ef2-00adf39d61a8.jpg)
 
-**一个功能强大的开源浏览器扩展，专为前端开发者和职场人士设计**
+**A powerful open-source browser extension designed for front-end developers and professionals**
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pkgccpejnmalmdinmhkkfafefagiiiad?label=chrome%20web%20store&logo=googlechrome&color=3b82f6&style=for-the-badge)](https://chrome.google.com/webstore/detail/pkgccpejnmalmdinmhkkfafefagiiiad)
 [![Chrome Web Store Rating](https://img.shields.io/chrome-web-store/rating/pkgccpejnmalmdinmhkkfafefagiiiad?label=rating&logo=googlechrome&color=3b82f6&style=for-the-badge)](https://chrome.google.com/webstore/detail/pkgccpejnmalmdinmhkkfafefagiiiad)
 [![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/pkgccpejnmalmdinmhkkfafefagiiiad?label=users&logo=googlechrome&color=3b82f6&style=for-the-badge)](https://chrome.google.com/webstore/detail/pkgccpejnmalmdinmhkkfafefagiiiad)
 [![GitHub Stars](https://img.shields.io/github/stars/zxlie/FeHelper?style=for-the-badge&color=8b5cf6&logo=github)](https://github.com/zxlie/FeHelper)
 [![GitHub Forks](https://img.shields.io/github/forks/zxlie/FeHelper?style=for-the-badge&color=8b5cf6&logo=github)](https://github.com/zxlie/FeHelper)
-[![开发历史](https://img.shields.io/badge/since-2011-f59e0b?style=for-the-badge&logo=calendar&logoColor=white)](https://github.com/zxlie/FeHelper)
+[![Development History](https://img.shields.io/badge/since-2011-f59e0b?style=for-the-badge&logo=calendar&logoColor=white)](https://github.com/zxlie/FeHelper)
 ![star](https://gitcode.com/zxlie/FeHelper/star/badge.svg)
 
-[🌐 官网地址](https://fehelper.com) • [📖 在线文档](https://fehelper.com/docs.html) • [💬 问题反馈](https://github.com/zxlie/FeHelper/issues) • [💰 FH$ 代币](https://www.gitfish.dev/repo/zxlie/FeHelper)
+[🌐 Official Website](https://fehelper.com) • [📖 Documentation](https://fehelper.com/docs.html) • [💬 Issue Tracker](https://github.com/zxlie/FeHelper/issues) • [💰 FH$ Token](https://www.gitfish.dev/repo/zxlie/FeHelper)
 
 </div>
 
-## ✨ 核心特性
+## ✨ Core Features
 
-FeHelper 是一个集成了 **30+ 种实用工具** 的浏览器扩展，支持 Chrome、Edge、Firefox 三大浏览器，为前端开发者和职场人士提供一站式解决方案。
+FeHelper is a browser extension that integrates **30+ practical tools**, supporting Chrome, Edge, and Firefox browsers, providing a one-stop solution for front-end developers and professionals.
 
-### 🎯 产品展示
+### 🎯 Product Showcase
 
 <table>
 <tr>
 <td width="50%" align="center">
 
-![FeHelper 主界面](https://fehelper.com/static/screenshot/popup.png)
-*FeHelper 主界面 - 30+ 种实用工具一键访问*
+![FeHelper Main Interface](https://fehelper.com/static/screenshot/popup.png)
+*FeHelper Main Interface - One-click access to 30+ practical tools*
 
 </td>
 <td width="50%" align="center">
 
-![JSON 格式化工具](https://fehelper.com/static/screenshot/json-format.png)
-*JSON 格式化工具 - 支持美化、校验、压缩等功能*
+![JSON Formatter](https://fehelper.com/static/screenshot/json-format.png)
+*JSON Formatter - Supports formatting, validation, compression and more*
 
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
 
-![编码解码工具](https://fehelper.com/static/screenshot/en-decode.png)
-*编码解码工具 - 支持多种编码格式转换*
+![Encoding/Decoding Tool](https://fehelper.com/static/screenshot/en-decode.png)
+*Encoding/Decoding Tool - Supports multiple encoding format conversions*
 
 </td>
 <td width="50%" align="center">
 
-![二维码工具](https://fehelper.com/static/screenshot/qr-code.png)
-*二维码工具 - 快速生成和识别二维码*
+![QR Code Tool](https://fehelper.com/static/screenshot/qr-code.png)
+*QR Code Tool - Quickly generate and recognize QR codes*
 
 </td>
 </tr>
 <tr>
 <td width="50%" align="center" colspan="2">
 
-![设置页面](https://fehelper.com/static/screenshot/options.png)
-*个性化设置 - 支持工具排序、主题切换等*
+![Settings Page](https://fehelper.com/static/screenshot/options.png)
+*Personalized Settings - Supports tool sorting, theme switching and more*
 
 </td>
 </tr>
 </table>
 
-### 🚀 最新更新
+### 🚀 Latest Updates
 
-- **🤖 AI 智能助手**：集成 AI 助手，提供代码优化建议、方案设计、资料查找等功能
-- **📊 Mock 数据生成器**：快速生成各种测试数据，支持个人信息、商业数据、技术数据等多种类型
-- **🎨 海报制作工具**：内置海报制作功能，支持多种模板和自定义设计
-- **📈 图表制作工具**：支持多种图表类型，数据可视化更简单
-- **🌙 夜间模式**：支持深色主题，保护眼睛，提升夜间使用体验
-- **🔧 个性化排序**：支持自定义工具排序，打造专属工作台
+- **🤖 AI Smart Assistant**: Integrated AI assistant providing code optimization suggestions, solution design, and resource lookup
+- **📊 Mock Data Generator**: Quickly generate various test data, supporting personal info, business data, technical data and more
+- **🎨 Poster Maker**: Built-in poster creation feature with multiple templates and custom design support
+- **📈 Chart Maker**: Supports multiple chart types for easier data visualization
+- **🌙 Dark Mode**: Dark theme support to protect your eyes and enhance night-time experience
+- **🔧 Custom Sorting**: Supports custom tool ordering to create your personal workspace
 
-### 🛠️ 主要功能模块
+### 🛠️ Main Feature Modules
 
-#### 📋 JSON 处理工具
-- **JSON 美化与校验**：一键格式化、校验、压缩、解压 JSON 数据，支持大文件处理
-- **JSON 差异对比**：支持两个 JSON 内容的自动键值比较，高亮显示差异点
-- **JSON 转 Excel**：快速将 JSON 数据转换为 Excel 格式，便于数据分析
+#### 📋 JSON Processing Tools
+- **JSON Format & Validation**: One-click formatting, validation, compression, and decompression of JSON data with large file support
+- **JSON Diff Comparison**: Automatically compare key-value pairs of two JSON contents with highlighted differences
+- **JSON to Excel**: Quickly convert JSON data to Excel format for data analysis
 
 <div align="center">
 
-![JSON 自动格式化](https://fehelper.com/static/screenshot/json-format-auto.png)
-*JSON 自动格式化 - 智能识别并美化 JSON 数据*
+![JSON Auto Format](https://fehelper.com/static/screenshot/json-format-auto.png)
+*JSON Auto Format - Intelligently recognizes and beautifies JSON data*
 
 </div>
 
-#### 🎨 代码处理工具
-- **代码美化**：支持 JavaScript、CSS、HTML、XML、SQL 等多种代码格式的美化
-- **代码压缩**：提供 HTML、JavaScript、CSS 代码压缩，优化网页加载速度
-- **正则表达式**：内置正则表达式测试工具，支持实时匹配和替换
+#### 🎨 Code Processing Tools
+- **Code Beautifier**: Supports beautifying JavaScript, CSS, HTML, XML, SQL and other code formats
+- **Code Minifier**: Provides HTML, JavaScript, CSS code compression to optimize page loading speed
+- **Regular Expression**: Built-in regex testing tool with real-time matching and replacement
 
-#### 🔗 接口调试工具
-- **简易 Postman**：提供接口调试功能，支持 GET/POST/HEAD 请求方式
-- **WebSocket 工具**：支持 WebSocket 连接测试，消息发送和结果分析
-- **接口 Mock**：快速生成 Mock 数据，支持多种数据格式
+#### 🔗 API Testing Tools
+- **Simple Postman**: Provides API testing features supporting GET/POST/HEAD request methods
+- **WebSocket Tool**: Supports WebSocket connection testing, message sending and result analysis
+- **API Mock**: Quickly generate mock data supporting various data formats
 
-#### 🖼️ 图像处理工具
-- **二维码生成与识别**：快速生成二维码，支持文本、链接、名片等多种内容类型
-- **图片转 Base64**：支持图片与 Base64 格式的相互转换
-- **网页截屏**：支持可视区域截屏、全网页滚动截屏
-- **页面取色**：直接在网页上采集任意元素的色值
-- **SVG 转换器**：支持 SVG 与图片格式的相互转换
+#### 🖼️ Image Processing Tools
+- **QR Code Generator & Reader**: Quickly generate QR codes supporting text, links, business cards and more
+- **Image to Base64**: Convert between image and Base64 formats
+- **Web Screenshot**: Supports visible area screenshots and full-page scrolling screenshots
+- **Color Picker**: Extract color values from any element on the webpage
+- **SVG Converter**: Convert between SVG and image formats
 
-#### ⚡ 效率工具
-- **时间戳转换**：本地化时间与时间戳之间的相互转换，支持多时区
-- **随机密码生成**：支持指定长度和字符类型的密码生成
-- **便签笔记**：支持创建目录分类管理，支持一键导出/导入
-- **Markdown 转换**：支持 HTML 转 Markdown，支持 PDF 格式下载
-- **油猴工具**：内置网页脚本注入功能，支持自定义脚本
+#### ⚡ Productivity Tools
+- **Timestamp Converter**: Convert between local time and timestamps with multi-timezone support
+- **Random Password Generator**: Generate passwords with specified length and character types
+- **Sticky Notes**: Create directory-based categorized notes with one-click export/import
+- **Markdown Converter**: Convert HTML to Markdown with PDF download support
+- **Tampermonkey Tool**: Built-in webpage script injection with custom script support
 
-## 🎯 适用场景
+## 🎯 Use Cases
 
-- **前端开发**：JSON 处理、代码美化、接口调试、页面分析
-- **数据分析**：Excel 转 JSON、数据格式转换、图表制作
-- **UI/UX 设计**：页面取色、图像处理、海报制作
-- **办公效率**：便签笔记、时间转换、密码生成
-- **学习研究**：正则表达式、编码解码、WebSocket 测试
+- **Front-End Development**: JSON processing, code beautification, API testing, page analysis
+- **Data Analysis**: Excel to JSON conversion, data format conversion, chart creation
+- **UI/UX Design**: Color picking, image processing, poster creation
+- **Office Productivity**: Sticky notes, time conversion, password generation
+- **Learning & Research**: Regular expressions, encoding/decoding, WebSocket testing
 
-## 📦 安装方式
+## 📦 Installation
 
-### 🌐 浏览器商店（推荐）
+### 🌐 Browser Stores (Recommended)
 
-| 浏览器 | 安装地址 | 评分 | 用户数 |
-|--------|----------|------|--------|
+| Browser | Installation Link | Rating | Users |
+|---------|-------------------|--------|-------|
 | **Chrome** | [Chrome Web Store](https://chrome.google.com/webstore/detail/pkgccpejnmalmdinmhkkfafefagiiiad) | ⭐⭐⭐⭐⭐ 4.7 | 200K+ |
 | **Edge** | [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fehelper%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8B/pkgccpejnmalmdinmhkkfafefagiiiad) | ⭐⭐⭐⭐⭐ 4.8 | 100K+ |
-| **Firefox** | [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/fehelper-%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8B/) | ⭐⭐⭐⭐⭐ 4.9 | 全新发布 |
+| **Firefox** | [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/fehelper-%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8B/) | ⭐⭐⭐⭐⭐ 4.9 | Newly Released |
 
-### 🚀 无梯下载指南
+### 🚀 Alternative Download Guide
 
-无法访问浏览器商店？没关系！我们为您提供完整的离线下载方案：
+Can't access browser stores? No problem! We provide complete offline download options:
 
-| 方法 | 适用场景 | 下载地址 | 安装步骤 | 优势 |
-|------|----------|----------|----------|------|
-| **Chrome-Stats 镜像** | 国内用户首选 | [Chrome-Stats](https://chrome-stats.com/d/pkgccpejnmalmdinmhkkfafefagiiiad) | 1. 点击 "Download CRX file"<br>2. 打开 `chrome://extensions`<br>3. 开启"开发者模式"<br>4. 拖拽 .crx 文件到页面 | ✅ 国内直接访问<br>✅ 一键安装<br>✅ 官方版本 |
-| **ZIP 文件安装** | 需要源码版本 | [Chrome-Stats ZIP](https://chrome-stats.com/d/pkgccpejnmalmdinmhkkfafefagiiiad) | 1. 点击 "Download ZIP file"<br>2. 解压到本地文件夹<br>3. 开启"开发者模式"<br>4. 选择"加载已解压的扩展程序" | ✅ 可查看源码<br>✅ 支持自定义<br>✅ 学习开发 |
-| **GitHub 源码** | 开发者使用 | [GitHub 仓库](https://github.com/zxlie/FeHelper) | 1. `git clone` 克隆仓库<br>2. 打开 `chrome://extensions`<br>3. 开启"开发者模式"<br>4. 选择 apps 目录 | ✅ 最新代码<br>✅ 参与开发<br>✅ 社区贡献 |
+| Method | Use Case | Download Link | Installation Steps | Advantages |
+|--------|----------|---------------|-------------------|------------|
+| **Chrome-Stats Mirror** | Preferred for users in restricted regions | [Chrome-Stats](https://chrome-stats.com/d/pkgccpejnmalmdinmhkkfafefagiiiad) | 1. Click "Download CRX file"<br>2. Open `chrome://extensions`<br>3. Enable "Developer mode"<br>4. Drag .crx file to the page | ✅ Direct access<br>✅ One-click install<br>✅ Official version |
+| **ZIP File Installation** | For source code version | [Chrome-Stats ZIP](https://chrome-stats.com/d/pkgccpejnmalmdinmhkkfafefagiiiad) | 1. Click "Download ZIP file"<br>2. Extract to local folder<br>3. Enable "Developer mode"<br>4. Select "Load unpacked extension" | ✅ View source code<br>✅ Customization support<br>✅ Learning & development |
+| **GitHub Source Code** | For developers | [GitHub Repository](https://github.com/zxlie/FeHelper) | 1. `git clone` repository<br>2. Open `chrome://extensions`<br>3. Enable "Developer mode"<br>4. Select apps directory | ✅ Latest code<br>✅ Contribute to development<br>✅ Community contribution |
 
-#### 📋 详细安装步骤
+#### 📋 Detailed Installation Steps
 
 <table>
 <tr>
 <td width="50%" align="left">
 
-**方法一：CRX 文件安装（推荐）**
+**Method 1: CRX File Installation (Recommended)**
 
-1. 访问 [Chrome-Stats](https://chrome-stats.com/d/pkgccpejnmalmdinmhkkfafefagiiiad)
-2. 点击 "Download CRX file" 下载
-3. 在 Chrome 地址栏输入：`chrome://extensions`
-4. 开启右上角的"开发者模式"
-5. 将 .crx 文件拖拽到扩展页面
-6. 点击"添加扩展程序"完成安装
+1. Visit [Chrome-Stats](https://chrome-stats.com/d/pkgccpejnmalmdinmhkkfafefagiiiad)
+2. Click "Download CRX file" to download
+3. Enter in Chrome address bar: `chrome://extensions`
+4. Enable "Developer mode" in the top right corner
+5. Drag the .crx file to the extensions page
+6. Click "Add extension" to complete installation
 
 </td>
 <td width="50%" align="left">
 
-**方法二：ZIP 文件安装**
+**Method 2: ZIP File Installation**
 
-1. 在 Chrome-Stats 页面点击 "Download ZIP file"
-2. 将 ZIP 文件解压到本地文件夹
-3. 在 Chrome 地址栏输入：`chrome://extensions`
-4. 开启右上角的"开发者模式"
-5. 点击"加载已解压的扩展程序"
-6. 选择解压后的文件夹完成安装
+1. Click "Download ZIP file" on Chrome-Stats page
+2. Extract the ZIP file to a local folder
+3. Enter in Chrome address bar: `chrome://extensions`
+4. Enable "Developer mode" in the top right corner
+5. Click "Load unpacked"
+6. Select the extracted folder to complete installation
 
 </td>
 </tr>
 </table>
 
-#### 🔧 开发者安装
+#### 🔧 Developer Installation
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/zxlie/FeHelper.git
 
-# 进入项目目录
+# Enter the project directory
 cd FeHelper
 
-# 在 Chrome 中加载扩展
-# 1. 打开 chrome://extensions/
-# 2. 开启"开发者模式"
-# 3. 点击"加载已解压的扩展程序"
-# 4. 选择 apps 目录
+# Load extension in Chrome
+# 1. Open chrome://extensions/
+# 2. Enable "Developer mode"
+# 3. Click "Load unpacked"
+# 4. Select the apps directory
 ```
 
-### 📱 其他平台
+### 📱 Other Platforms
 
-- **微信小程序**：扫码即可使用，无需安装
-- **在线版本**：[fehelper.com](https://fehelper.com) 在线使用
+- **WeChat Mini Program**: Scan QR code to use, no installation required
+- **Online Version**: Use online at [fehelper.com](https://fehelper.com)
 
-### ⚠️ 重要提示
+### ⚠️ Important Notes
 
-- Chrome 可能会提示"无法从此网站添加应用"，这是正常现象，选择继续即可
-- 安装后建议关闭"开发者模式"以避免警告提示
-- 扩展功能与商店版本完全一致，支持自动更新检查
-- 如遇安装问题，可在 [GitHub Issues](https://github.com/zxlie/FeHelper/issues) 区域反馈
+- Chrome may show "Cannot add app from this website" - this is normal, just continue
+- After installation, consider disabling "Developer mode" to avoid warning messages
+- Extension features are identical to the store version, with automatic update checking
+- For installation issues, report them in [GitHub Issues](https://github.com/zxlie/FeHelper/issues)
 
 
-## 📊 项目统计
+## 📊 Project Statistics
 
-| 指标 | 数值 |
-|------|------|
-| **开发历史** | 13+ 年 (2011-至今) |
+| Metric | Value |
+|--------|-------|
+| **Development History** | 13+ years (2011-present) |
 | **GitHub Stars** | 5.3K+ |
 | **GitHub Forks** | 1.3K+ |
-| **Chrome 用户** | 200K+ |
-| **提交次数** | 500+ |
-| **工具数量** | 30+ |
-| **支持浏览器** | Chrome, Edge, Firefox |
+| **Chrome Users** | 200K+ |
+| **Commits** | 500+ |
+| **Number of Tools** | 30+ |
+| **Supported Browsers** | Chrome, Edge, Firefox |
 
 
-## 🌟 社区活跃度
+## 🌟 Community Activity
 
-- **📈 持续更新**：2023年至今已有 160+ 次提交
-- **🐛 问题响应**：平均 24 小时内响应 issue
-- **💡 功能建议**：欢迎提交 feature request
-- **🤝 贡献代码**：欢迎提交 Pull Request
+- **📈 Continuous Updates**: 160+ commits since 2023
+- **🐛 Issue Response**: Average response within 24 hours
+- **💡 Feature Requests**: Welcome to submit feature requests
+- **🤝 Code Contributions**: Pull requests are welcome
 
 
-## 💰 FH$ 代币
+## 💰 FH$ Token
 
-FeHelper 在 [GitFish](https://www.gitfish.dev/repo/zxlie/FeHelper) 上发布了 FH$ 代币，对虚拟货币感兴趣的用户可以关注：
+FeHelper has released the FH$ token on [GitFish](https://www.gitfish.dev/repo/zxlie/FeHelper). Users interested in cryptocurrency can follow:
 
 [![GitFish FH$](https://img.shields.io/badge/GitFish-FH%24-00d4aa?style=for-the-badge&logo=bitcoin&logoColor=white)](https://www.gitfish.dev/repo/zxlie/FeHelper)
 
-## 🤝 贡献指南
+## 🤝 Contributing Guide
 
-我们欢迎社区的贡献！如果您有兴趣参与 FeHelper 的开发，请按照以下步骤进行：
+We welcome community contributions! If you're interested in contributing to FeHelper, please follow these steps:
 
-1. **Fork 本仓库**并克隆到本地
-2. **创建新分支**：`git checkout -b feature/YourFeature`
-3. **提交更改**：`git commit -m 'Add some feature'`
-4. **推送分支**：`git push origin feature/YourFeature`
-5. **创建 Pull Request**
+1. **Fork this repository** and clone it locally
+2. **Create a new branch**: `git checkout -b feature/YourFeature`
+3. **Commit your changes**: `git commit -m 'Add some feature'`
+4. **Push to the branch**: `git push origin feature/YourFeature`
+5. **Create a Pull Request**
 
-### 开发规范
+### Development Guidelines
 
-- 遵循 Chrome Extension Manifest V3 最佳实践
-- 保持代码风格一致，添加必要的注释
-- 新功能需要包含完整的 HTML、JS、CSS 文件
-- 在 `manifest.json` 中正确配置新模块
+- Follow Chrome Extension Manifest V3 best practices
+- Maintain consistent code style and add necessary comments
+- New features should include complete HTML, JS, and CSS files
+- Properly configure new modules in `manifest.json`
 
-## 📞 联系我们
+## 📞 Contact Us
 
-- **🌐 官网**：[fehelper.com](https://fehelper.com)
-- **📧 邮箱**：xianliezhao@foxmail.com
-- **💬 微信**：398824681
-- **🐛 问题反馈**：[GitHub Issues](https://github.com/zxlie/FeHelper/issues)
-- **💰 FH$ 代币**：[GitFish](https://www.gitfish.dev/repo/zxlie/FeHelper)
+- **🌐 Official Website**: [fehelper.com](https://fehelper.com)
+- **📧 Email**: xianliezhao@foxmail.com
+- **💬 WeChat**: 398824681
+- **🐛 Issue Tracker**: [GitHub Issues](https://github.com/zxlie/FeHelper/issues)
+- **💰 FH$ Token**: [GitFish](https://www.gitfish.dev/repo/zxlie/FeHelper)
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 [MIT License](LICENSE) 开源协议。
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
 <div align="center">
 
-**⭐ 如果 FeHelper 对您有帮助，请给我们一个 Star！**
+**⭐ If FeHelper has been helpful to you, please give us a Star!**
 
 [![Star History Chart](https://api.star-history.com/svg?repos=zxlie/FeHelper&type=Date)](https://star-history.com/#zxlie/FeHelper&Date)
 
