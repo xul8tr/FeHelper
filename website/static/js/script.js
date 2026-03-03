@@ -408,20 +408,20 @@ async function fetchAllPlatformUsers() {
     if(statEl) statEl.title = details.join('，');
 }
 
-// 工具界面预览区图片放大查看
+// Tool interface preview section - image zoom view
 function initPreviewImageModal() {
     const imgs = document.querySelectorAll('.tool-preview .preview-item img');
     imgs.forEach(img => {
         img.addEventListener('click', function() {
-            // 创建弹窗元素
+            // Create modal element
             const modal = document.createElement('div');
             modal.className = 'img-modal';
             modal.innerHTML = `
-                <span class="img-modal-close" title="关闭">&times;</span>
+                <span class="img-modal-close" title="Close">&times;</span>
                 <img src="${img.src}" alt="${img.alt}" />
             `;
             document.body.appendChild(modal);
-            // 关闭事件
+            // Close event
             modal.querySelector('.img-modal-close').onclick = () => document.body.removeChild(modal);
             modal.onclick = (e) => {
                 if (e.target === modal) document.body.removeChild(modal);

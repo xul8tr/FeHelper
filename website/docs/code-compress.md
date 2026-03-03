@@ -1,163 +1,163 @@
-# 代码压缩工具
+# Code Compression Tool
 
-## 工具简介
+## Tool Introduction
 
-代码压缩工具是一个专业的Web开发辅助工具，支持对HTML、JavaScript和CSS代码进行压缩优化。该工具采用业界领先的压缩算法，能够有效减小代码体积，提高网页加载速度，同时保持代码功能不变。特别适合前端开发者在项目发布前进行代码优化。
+Code Compression Tool is a professional web development auxiliary tool that supports compression and optimization of HTML, JavaScript, and CSS code. This tool uses industry-leading compression algorithms to effectively reduce code size and improve webpage loading speed while maintaining code functionality. Particularly suitable for front-end developers to optimize code before project release.
 
-## 主要功能
+## Main Features
 
-### 1. 多语言支持
-- HTML代码压缩
-- JavaScript代码压缩
-- CSS代码压缩
-- 支持一键切换不同语言模式
+### 1. Multi-Language Support
+- HTML code compression
+- JavaScript code compression
+- CSS code compression
+- Support one-click switching between different language modes
 
-### 2. HTML压缩特性
-- 移除HTML注释
-- 压缩空白字符
-- 移除可选标签
-- 移除空属性
-- 压缩内联CSS和JavaScript
-- 移除冗余属性
-- 优化DOCTYPE声明
-- 支持HTML5规范
+### 2. HTML Compression Features
+- Remove HTML comments
+- Compress whitespace characters
+- Remove optional tags
+- Remove empty attributes
+- Compress inline CSS and JavaScript
+- Remove redundant attributes
+- Optimize DOCTYPE declaration
+- Support HTML5 specifications
 
-### 3. JavaScript压缩特性
-- 移除注释和空白
-- 压缩变量名
-- 优化代码结构
-- 移除未使用的代码
-- 保持代码功能不变
-- 支持ES6+语法
+### 3. JavaScript Compression Features
+- Remove comments and whitespace
+- Compress variable names
+- Optimize code structure
+- Remove unused code
+- Keep code functionality unchanged
+- Support ES6+ syntax
 
-### 4. CSS压缩特性
-- 移除注释
-- 压缩空白字符
-- 合并相同选择器
-- 优化CSS规则
-- 移除冗余属性
-- 保持CSS功能完整
+### 4. CSS Compression Features
+- Remove comments
+- Compress whitespace characters
+- Merge identical selectors
+- Optimize CSS rules
+- Remove redundant attributes
+- Keep CSS functionality complete
 
-### 5. 智能压缩
-- 自动检测代码类型
-- 智能错误提示
-- 压缩率实时显示
-- 保持代码可读性
-- 支持大文件处理
+### 5. Intelligent Compression
+- Auto-detect code type
+- Intelligent error prompts
+- Real-time compression rate display
+- Maintain code readability
+- Support large file processing
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 选择需要压缩的代码类型（HTML/JS/CSS）
-2. 在输入框中粘贴源代码
-3. 点击"压缩"按钮
-4. 查看压缩结果
-5. 点击"复制结果"使用压缩后的代码
+### Basic Usage
+1. Select code type to compress (HTML/JS/CSS)
+2. Paste source code in input box
+3. Click "Compress" button
+4. View compression results
+5. Click "Copy Result" to use compressed code
 
-### 代码示例
-- 提供HTML示例代码
-- 提供JavaScript示例代码
-- 提供CSS示例代码
-- 一键加载示例进行测试
+### Code Examples
+- Provide HTML example code
+- Provide JavaScript example code
+- Provide CSS example code
+- One-click load examples for testing
 
-## 使用技巧
+## Usage Tips
 
-1. **代码类型切换**：
-   - 切换代码类型时会自动调整编辑器模式
-   - 支持语法高亮显示
-   - 自动识别代码格式
+1. **Code Type Switching**:
+   - Switching code type automatically adjusts editor mode
+   - Support syntax highlighting
+   - Auto-recognize code format
 
-2. **压缩效果**：
-   - 实时显示压缩前后代码大小
-   - 显示压缩率百分比
-   - 显示节省的字节数
+2. **Compression Effect**:
+   - Real-time display of code size before and after compression
+   - Display compression rate percentage
+   - Display saved bytes
 
-3. **错误处理**：
-   - 智能检测代码错误
-   - 提供清晰的错误提示
-   - 保持原始代码不变
+3. **Error Handling**:
+   - Intelligently detect code errors
+   - Provide clear error prompts
+   - Keep original code unchanged
 
-4. **复制功能**：
-   - 一键复制压缩结果
-   - 支持直接粘贴使用
-   - 复制成功提示
+4. **Copy Function**:
+   - One-click copy compression results
+   - Support direct paste for use
+   - Copy success notification
 
-## 适用场景
+## Application Scenarios
 
-1. **网站优化**：
-   - 生产环境代码压缩
-   - 静态资源优化
-   - 提高页面加载速度
+1. **Website Optimization**:
+   - Production environment code compression
+   - Static resource optimization
+   - Improve page loading speed
 
-2. **开发调试**：
-   - 代码体积分析
-   - 性能优化测试
-   - 代码结构优化
+2. **Development Debugging**:
+   - Code size analysis
+   - Performance optimization testing
+   - Code structure optimization
 
-3. **项目发布**：
-   - 发布前代码优化
-   - 资源文件压缩
-   - 部署包优化
+3. **Project Release**:
+   - Pre-release code optimization
+   - Resource file compression
+   - Deployment package optimization
 
-## 注意事项
+## Precautions
 
-1. 压缩前请确保代码可以正常运行
-2. 建议保留源代码备份
-3. 压缩后的代码可能难以阅读，请妥善保存
-4. 某些特殊注释可能被移除，请注意检查
+1. Ensure code can run normally before compression
+2. It is recommended to keep source code backup
+3. Compressed code may be difficult to read, please save properly
+4. Some special comments may be removed, please check carefully
 
-## 技术实现
+## Technical Implementation
 
-- 基于Vue.js开发
-- 使用CodeMirror作为代码编辑器
-- 集成UglifyJS3进行JavaScript压缩
-- 使用html-minifier进行HTML压缩
-- 自定义CSS压缩算法
+- Developed with Vue.js
+- Uses CodeMirror as code editor
+- Integrates UglifyJS3 for JavaScript compression
+- Uses html-minifier for HTML compression
+- Custom CSS compression algorithm
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本代码压缩功能
-- 提供三种语言支持
+- Initial version released
+- Support basic code compression function
+- Provide three language support
 
 ### v1.1.0
-- 优化压缩算法
-- 添加代码示例功能
-- 改进用户界面
+- Optimized compression algorithm
+- Added code example function
+- Improved user interface
 
 ### v1.2.0
-- 添加压缩率显示
-- 优化错误处理
-- 提升压缩效率
+- Added compression rate display
+- Optimized error handling
+- Improved compression efficiency
 
-## 常见问题
+## Common Questions
 
-1. **Q: 压缩后的代码无法运行怎么办？**
-   A: 请检查原始代码是否有语法错误，压缩工具会保持代码功能不变，但不会修复代码错误。
+1. **Q: What if compressed code cannot run?**
+   A: Please check if the original code has syntax errors. The compression tool keeps code functionality unchanged but does not fix code errors.
 
-2. **Q: 如何保留某些注释？**
-   A: 目前工具会移除所有注释，如果需要保留特定注释，建议在压缩前将重要注释转换为代码。
+2. **Q: How to preserve certain comments?**
+   A: Currently the tool removes all comments. If you need to preserve specific comments, it is recommended to convert important comments to code before compression.
 
-3. **Q: 压缩后的代码体积没有明显减小？**
-   A: 如果代码已经经过优化或压缩，再次压缩的效果可能不明显。建议检查原始代码是否已经过压缩。
+3. **Q: Compressed code size not significantly reduced?**
+   A: If the code has already been optimized or compressed, further compression may not have obvious effect. It is recommended to check if the original code has already been compressed.
 
-4. **Q: 支持压缩多大的文件？**
-   A: 工具支持处理较大的文件，但建议单次压缩的代码不要超过1MB，以保证最佳性能。
+4. **Q: How large files are supported for compression?**
+   A: The tool supports processing relatively large files, but it is recommended that code for single compression should not exceed 1MB to ensure best performance.
 
-## 最佳实践
+## Best Practices
 
-1. **压缩前检查**：
-   - 确保代码可以正常运行
-   - 移除调试代码
-   - 备份原始代码
+1. **Pre-Compression Check**:
+   - Ensure code can run normally
+   - Remove debug code
+   - Backup original code
 
-2. **压缩后验证**：
-   - 测试压缩后的代码
-   - 检查功能是否正常
-   - 验证页面显示效果
+2. **Post-Compression Verification**:
+   - Test compressed code
+   - Check if functions work normally
+   - Verify page display effect
 
-3. **定期优化**：
-   - 定期检查代码质量
-   - 及时更新压缩工具
-   - 保持代码整洁 
+3. **Regular Optimization**:
+   - Regularly check code quality
+   - Update compression tools promptly
+   - Keep code clean 

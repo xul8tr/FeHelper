@@ -1,165 +1,165 @@
-# 正则表达式工具
+# Regular Expression Tool
 
-## 简介
-正则表达式工具是FeHelper提供的一个强大的正则表达式速查工具，支持多种编程语言的正则表达式格式。该工具提供了丰富的正则表达式模板，涵盖了验证、提取、替换、格式化等多个场景，帮助开发者快速找到所需的正则表达式。
+## Introduction
+The Regular Expression Tool is a powerful regular expression quick reference tool provided by FeHelper, supporting regular expression formats for multiple programming languages. This tool provides rich regular expression templates covering multiple scenarios including validation, extraction, replacement, formatting, etc., helping developers quickly find the required regular expressions.
 
-## 主要功能
+## Main Features
 
-### 验证类正则
-1. **基础验证**
-   - 邮箱验证
-   - 手机号验证
-   - 固定电话验证
-   - URL验证
-   - 身份证验证
-   - IPv4地址验证
-   - 日期验证
+### Validation Regular Expressions
+1. **Basic Validation**
+   - Email validation
+   - Phone number validation
+   - Landline validation
+   - URL validation
+   - ID card validation
+   - IPv4 address validation
+   - Date validation
 
-2. **数字验证**
-   - 数字验证
-   - n位数字验证
-   - 至少n位数字验证
-   - 数字位数范围验证
-   - 小数验证
-   - 整数验证
+2. **Number Validation**
+   - Number validation
+   - n-digit number validation
+   - At least n-digit number validation
+   - Number digit range validation
+   - Decimal validation
+   - Integer validation
 
-3. **身份验证**
-   - 中文姓名验证
-   - 英文姓名验证
-   - 用户名验证
-   - 强密码验证
+3. **Identity Validation**
+   - Chinese name validation
+   - English name validation
+   - Username validation
+   - Strong password validation
 
-4. **特殊格式验证**
-   - MAC地址验证
-   - 16进制颜色验证
-   - 版本号验证
+4. **Special Format Validation**
+   - MAC address validation
+   - Hexadecimal color validation
+   - Version number validation
 
-### 提取类正则
-1. **文本提取**
-   - HTML标签提取
-   - 图片URL提取
-   - 中文字符提取
-   - 数字提取
-   - 邮箱地址提取
-   - 链接提取
+### Extraction Regular Expressions
+1. **Text Extraction**
+   - HTML tag extraction
+   - Image URL extraction
+   - Chinese character extraction
+   - Number extraction
+   - Email address extraction
+   - Link extraction
 
-2. **特殊值提取**
-   - 颜色值提取
-   - IP地址提取
+2. **Special Value Extraction**
+   - Color value extraction
+   - IP address extraction
 
-### 替换类正则
-1. **文本处理**
-   - 去除首尾空格
-   - 去除HTML标签
-   - 去除Script标签
-   - 去除多余空格
-   - 去除注释
+### Replacement Regular Expressions
+1. **Text Processing**
+   - Remove leading/trailing spaces
+   - Remove HTML tags
+   - Remove Script tags
+   - Remove extra spaces
+   - Remove comments
 
-2. **格式转换**
-   - 驼峰命名转换
+2. **Format Conversion**
+   - Camel case conversion
 
-### 格式化类正则
-1. **数据格式化**
-   - 金额格式化
-   - 手机号格式化
-   - 日期格式化
-   - 银行卡格式化
-   - 身份证格式化
+### Formatting Regular Expressions
+1. **Data Formatting**
+   - Amount formatting
+   - Phone number formatting
+   - Date formatting
+   - Bank card formatting
+   - ID card formatting
 
-### 特殊字符类正则
-1. **字符处理**
-   - Emoji表情
-   - 特殊字符
-   - Unicode字符
-   - 不可见字符
+### Special Character Regular Expressions
+1. **Character Processing**
+   - Emoji expressions
+   - Special characters
+   - Unicode characters
+   - Invisible characters
 
-### 编程相关正则
-1. **代码处理**
-   - 变量命名
-   - 函数声明
-   - JSON格式
-   - XML标签
-   - CSS选择器
+### Programming-related Regular Expressions
+1. **Code Processing**
+   - Variable naming
+   - Function declaration
+   - JSON format
+   - XML tags
+   - CSS selectors
 
-## 使用说明
+## Usage Instructions
 
-### 查找正则表达式
-1. 使用搜索框
-   - 在顶部搜索框中输入关键词
-   - 支持模糊搜索
-   - 实时显示匹配结果
+### Find Regular Expressions
+1. Using Search Box
+   - Enter keywords in the top search box
+   - Support fuzzy search
+   - Real-time display of matching results
 
-2. 按类别浏览
-   - 点击左侧类别导航
-   - 查看该类别下的所有正则表达式
-   - 点击具体项目查看详情
+2. Browse by Category
+   - Click category navigation on the left
+   - View all regular expressions under the category
+   - Click specific items to view details
 
-### 使用正则表达式
-1. 查看详情
-   - 点击正则表达式项目
-   - 弹出详情模态框
-   - 显示多语言版本
+### Use Regular Expressions
+1. View Details
+   - Click regular expression item
+   - Pop-up detail modal
+   - Display multi-language versions
 
-2. 复制使用
-   - 选择需要的编程语言版本
-   - 点击复制按钮
-   - 直接粘贴到代码中使用
+2. Copy and Use
+   - Select desired programming language version
+   - Click copy button
+   - Paste directly into code
 
-## 使用技巧
-1. **快速查找**
-   - 使用搜索功能快速定位
-   - 按类别浏览相关正则
-   - 收藏常用正则表达式
+## Usage Tips
+1. **Quick Search**
+   - Use search function for quick location
+   - Browse related regular expressions by category
+   - Bookmark commonly used regular expressions
 
-2. **多语言支持**
-   - 支持JavaScript、Python、PHP、Java
-   - 自动转换语言格式
-   - 保持正则表达式功能一致
+2. **Multi-language Support**
+   - Support JavaScript, Python, PHP, Java
+   - Auto-convert language formats
+   - Maintain consistent regular expression functionality
 
-3. **正则测试**
-   - 在详情页查看使用说明
-   - 了解正则表达式的匹配规则
-   - 参考示例进行测试
+3. **Regular Testing**
+   - View usage instructions on detail page
+   - Understand regular expression matching rules
+   - Refer to examples for testing
 
-## 注意事项
-1. 语言差异
-   - 不同语言的正则语法可能有差异
-   - 注意转义字符的使用
-   - 考虑语言特定的限制
+## Notes
+1. Language Differences
+   - Different languages may have different regular syntax
+   - Pay attention to escape character usage
+   - Consider language-specific limitations
 
-2. 性能考虑
-   - 避免过于复杂的正则表达式
-   - 注意正则表达式的执行效率
-   - 合理使用贪婪和非贪婪匹配
+2. Performance Considerations
+   - Avoid overly complex regular expressions
+   - Pay attention to regular expression execution efficiency
+   - Use greedy and non-greedy matching reasonably
 
-3. 兼容性
-   - 注意不同浏览器的兼容性
-   - 考虑不同编程语言的版本差异
-   - 测试正则表达式的通用性
+3. Compatibility
+   - Pay attention to browser compatibility
+   - Consider different programming language version differences
+   - Test regular expression universality
 
-## 常见问题
-1. **Q: 为什么同一个正则表达式在不同语言中格式不同？**
-   A: 不同编程语言对正则表达式的语法要求不同，工具会自动转换为对应语言的格式。
+## FAQ
+1. **Q: Why is the same regular expression formatted differently in different languages?**
+   A: Different programming languages have different syntax requirements for regular expressions. The tool auto-converts to the corresponding language format.
 
-2. **Q: 如何测试正则表达式的正确性？**
-   A: 可以使用在线正则表达式测试工具，或在实际代码中进行测试。
+2. **Q: How to test regular expression correctness?**
+   A: You can use online regular expression testing tools, or test in actual code.
 
-3. **Q: 正则表达式支持哪些特殊字符？**
-   A: 支持常见的特殊字符，如点号、星号、加号等，具体可查看特殊字符类正则。
+3. **Q: Which special characters do regular expressions support?**
+   A: Support common special characters such as dot, asterisk, plus sign, etc. See special character regular expressions for details.
 
-## 更新日志
-- 2024-03-21: 优化正则表达式搜索功能
-- 2024-03-20: 添加更多编程语言支持
-- 2024-03-19: 新增特殊字符类正则
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize regular expression search function
+- 2024-03-20: Add more programming language support
+- 2024-03-19: Add special character regular expressions
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [代码格式化工具](../code-beautify.md)
-- [代码压缩工具](../code-compress.md)
-- [编码转换工具](../encoding-converter.md) 
+## Related Tools
+- [Code Format Tool](../code-beautify.md)
+- [Code Compression Tool](../code-compress.md)
+- [Encoding Conversion Tool](../encoding-converter.md)

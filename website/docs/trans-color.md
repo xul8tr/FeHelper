@@ -1,168 +1,168 @@
-# 颜色转换工具
+# Color Conversion Tool
 
-## 简介
-颜色转换工具是FeHelper提供的一个专业的颜色格式转换工具，支持RGB/RGBA、HEX、HSL/HSLA、HSV/HSVA等多种颜色格式之间的相互转换。该工具提供了直观的界面和实时预览功能，帮助用户快速完成颜色格式的转换工作。
+## Introduction
+The Color Conversion Tool is a professional color format conversion tool provided by FeHelper, supporting bidirectional conversion between RGB/RGBA, HEX, HSL/HSLA, HSV/HSVA, and other color formats. This tool provides an intuitive interface and real-time preview functionality, helping users quickly complete color format conversion work.
 
-## 主要功能
+## Main Features
 
-### 颜色格式
-1. **HEX格式**
-   - 支持6位HEX
-   - 支持8位HEX（带透明度）
-   - 支持3位简写
-   - 支持4位简写
+### Color Formats
+1. **HEX Format**
+   - Support 6-digit HEX
+   - Support 8-digit HEX (with transparency)
+   - Support 3-digit shorthand
+   - Support 4-digit shorthand
 
-2. **RGB格式**
-   - RGB颜色值
-   - RGBA带透明度
-   - 数值范围0-255
-   - Alpha值0-1
+2. **RGB Format**
+   - RGB color values
+   - RGBA with transparency
+   - Value range 0-255
+   - Alpha value 0-1
 
-3. **HSL格式**
-   - 色相（0-360）
-   - 饱和度（0-100%）
-   - 亮度（0-100%）
-   - 透明度（0-1）
+3. **HSL Format**
+   - Hue (0-360)
+   - Saturation (0-100%)
+   - Lightness (0-100%)
+   - Transparency (0-1)
 
-4. **HSV格式**
-   - 色相（0-360）
-   - 饱和度（0-100%）
-   - 明度（0-100%）
-   - 透明度（0-1）
+4. **HSV Format**
+   - Hue (0-360)
+   - Saturation (0-100%)
+   - Value (0-100%)
+   - Transparency (0-1)
 
-### 转换功能
-1. **实时转换**
-   - 输入即转换
-   - 实时预览
-   - 多格式同步
-   - 自动更新
+### Conversion Functions
+1. **Real-time Conversion**
+   - Input instant conversion
+   - Real-time preview
+   - Multi-format synchronization
+   - Auto-update
 
-2. **透明度控制**
-   - 全局透明度调节
-   - 滑块控制
-   - 数值显示
-   - 实时预览
+2. **Transparency Control**
+   - Global transparency adjustment
+   - Slider control
+   - Value display
+   - Real-time preview
 
-3. **颜色预览**
-   - 实时颜色显示
-   - 多格式预览
-   - 背景色展示
-   - 对比效果
+3. **Color Preview**
+   - Real-time color display
+   - Multi-format preview
+   - Background color display
+   - Contrast effects
 
-### 输出功能
-1. **格式输出**
-   - 标准格式输出
-   - 复制到剪贴板
-   - 多格式同步
-   - 格式验证
+### Output Functions
+1. **Format Output**
+   - Standard format output
+   - Copy to clipboard
+   - Multi-format synchronization
+   - Format validation
 
-2. **复制功能**
-   - 一键复制
-   - 多格式复制
-   - 格式保持
-   - 错误提示
+2. **Copy Function**
+   - One-click copy
+   - Multi-format copy
+   - Format preservation
+   - Error prompts
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 输入颜色
-   - 选择输入格式
-   - 输入颜色值
-   - 查看预览
-   - 确认输入
+### Basic Usage
+1. Input Color
+   - Select input format
+   - Enter color value
+   - View preview
+   - Confirm input
 
-2. 转换操作
-   - 自动转换
-   - 查看结果
-   - 复制结果
-   - 调整透明度
+2. Conversion Operations
+   - Auto-conversion
+   - View results
+   - Copy results
+   - Adjust transparency
 
-3. 结果处理
-   - 查看转换结果
-   - 复制到剪贴板
-   - 导出结果
-   - 继续转换
+3. Result Processing
+   - View conversion results
+   - Copy to clipboard
+   - Export results
+   - Continue conversion
 
-### 高级功能
-1. **颜色调整**
-   - 透明度调节
-   - 颜色微调
-   - 格式优化
-   - 结果验证
+### Advanced Functions
+1. **Color Adjustment**
+   - Transparency adjustment
+   - Color fine-tuning
+   - Format optimization
+   - Result validation
 
-2. **批量处理**
-   - 多颜色转换
-   - 格式统一
-   - 结果导出
-   - 批量复制
+2. **Batch Processing**
+   - Multi-color conversion
+   - Format unification
+   - Result export
+   - Batch copy
 
-3. **特殊处理**
-   - 特殊颜色值
-   - 格式兼容
-   - 错误处理
-   - 结果优化
+3. **Special Processing**
+   - Special color values
+   - Format compatibility
+   - Error handling
+   - Result optimization
 
-## 使用技巧
-1. **提高效率**
-   - 使用快捷键
-   - 快速复制
-   - 格式记忆
-   - 批量处理
+## Usage Tips
+1. **Improve Efficiency**
+   - Use keyboard shortcuts
+   - Quick copy
+   - Format memory
+   - Batch processing
 
-2. **颜色选择**
-   - 参考预览
-   - 对比效果
-   - 调整透明度
-   - 验证结果
+2. **Color Selection**
+   - Reference preview
+   - Contrast effects
+   - Adjust transparency
+   - Verify results
 
-3. **格式转换**
-   - 选择合适格式
-   - 注意兼容性
-   - 保持精度
-   - 验证正确性
+3. **Format Conversion**
+   - Choose appropriate format
+   - Pay attention to compatibility
+   - Maintain precision
+   - Verify correctness
 
-## 注意事项
-1. 使用限制
-   - 注意数值范围
-   - 格式规范
-   - 特殊字符
-   - 精度保持
+## Notes
+1. Usage Limitations
+   - Pay attention to value range
+   - Format specifications
+   - Special characters
+   - Precision maintenance
 
-2. 兼容性
-   - 浏览器支持
-   - 格式兼容
-   - 颜色显示
-   - 透明度处理
+2. Compatibility
+   - Browser support
+   - Format compatibility
+   - Color display
+   - Transparency handling
 
-3. 性能考虑
-   - 实时转换
-   - 内存使用
-   - 响应速度
-   - 资源占用
+3. Performance Considerations
+   - Real-time conversion
+   - Memory usage
+   - Response speed
+   - Resource consumption
 
-## 常见问题
-1. **Q: 为什么某些颜色值转换后显示异常？**
-   A: 可能是输入格式不正确或数值超出范围，建议检查输入值是否符合格式要求。
+## FAQ
+1. **Q: Why do some color values display abnormally after conversion?**
+   A: May be incorrect input format or values out of range. Recommend checking if input values conform to format requirements.
 
-2. **Q: 如何处理带透明度的颜色？**
-   A: 可以使用全局透明度滑块调节，或直接在颜色值中包含透明度参数。
+2. **Q: How to handle colors with transparency?**
+   A: Can use global transparency slider for adjustment, or directly include transparency parameters in color value.
 
-3. **Q: 转换结果不准确怎么办？**
-   A: 检查输入格式是否正确，确保数值在有效范围内，必要时可以尝试其他格式。
+3. **Q: What if conversion results are inaccurate?**
+   A: Check if input format is correct, ensure values are within valid range. If necessary, can try other formats.
 
-## 更新日志
-- 2024-03-21: 优化转换性能
-- 2024-03-20: 添加HSV格式支持
-- 2024-03-19: 改进颜色预览
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize conversion performance
+- 2024-03-20: Add HSV format support
+- 2024-03-19: Improve color preview
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [颜色选择器](../color-picker.md)
-- [图片处理工具](../image-processor.md)
-- [Base64转换工具](../image-base64.md) 
+## Related Tools
+- [Color Picker](../color-picker.md)
+- [Image Processing Tool](../image-processor.md)
+- [Base64 Conversion Tool](../image-base64.md)

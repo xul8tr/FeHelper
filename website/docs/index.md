@@ -1,8 +1,8 @@
-# FeHelper 开发者工具集
+# FeHelper Developer Tools Suite
 
-## 简介
+## Introduction
 
-FeHelper 是一款强大的浏览器开发者工具集，为Web开发者提供了丰富的开发辅助功能。它集成了30+种实用工具，包括代码格式化、JSON处理、编码转换、性能分析、AI助手等，旨在提高开发效率，简化开发流程。
+FeHelper is a powerful browser developer tools suite that provides rich development assistance features for web developers. It integrates 30+ practical tools, including code formatting, JSON processing, encoding conversion, performance analysis, AI assistant, etc., aiming to improve development efficiency and simplify the development process.
 
 ![popup](static/screenshot/popup.png)
 
@@ -10,395 +10,396 @@ FeHelper 是一款强大的浏览器开发者工具集，为Web开发者提供�
 
 ![options](static/screenshot/settings.jpg)
 
-## 主要特性
+## Key Features
 
-- 🛠️ **丰富的工具集**：包含30+种开发工具，涵盖前端开发的方方面面
-- 🚀 **便捷的访问**：支持右键菜单快速访问，一键调用常用功能
-- 💻 **跨平台支持**：支持Chrome、Firefox、Edge等主流浏览器
-- 🔧 **开发者友好**：提供完整的开发者工具支持和开放平台
-- 🎨 **界面美观**：现代化的UI设计，支持夜间模式，提供良好的用户体验
-- ⚙️ **个性化配置**：支持工具排序、快捷键设置、功能开关等个性化配置
-- 🤖 **AI驱动**：集成AI智能助手，提供代码编写、优化建议等智能功能
+- 🛠️ **Rich Toolset**: Contains 30+ development tools covering all aspects of front-end development
+- 🚀 **Convenient Access**: Supports quick access through right-click menu with one-click invocation of common features
+- 💻 **Cross-platform Support**: Supports mainstream browsers such as Chrome, Firefox, Edge, etc.
+- 🔧 **Developer Friendly**: Provides complete developer tools support and open platform
+- 🎨 **Beautiful Interface**: Modern UI design with night mode support for great user experience
+- ⚙️ **Personalized Configuration**: Supports tool sorting, shortcut key settings, feature toggles, and other personalized configurations
+- 🤖 **AI Powered**: Integrates AI intelligent assistant for code writing, optimization suggestions, and other smart features
 
-## 核心功能
+## Core Features
 
-### 🔧 开发工具类
-专为前端开发者设计的核心开发工具，提升编码效率和调试体验。
+### 🔧 Development Tools
+Core development tools designed specifically for front-end developers to enhance coding efficiency and debugging experience.
 
-| 工具名称 | 功能描述 | 
+| Tool Name | Description | 
 |---------|---------|
-| [JSON美化工具](?tool=json-format) | 页面自动检测并格式化、手动格式化、乱码解码、排序、BigInt、编辑、下载、皮肤定制等 |
-| [JSON比对工具](?tool=json-diff) | 支持两个JSON内容的自动键值比较，并高亮显示差异点，同时也能判断JSON是否合法 |
-| [Mock数据生成器](?tool=mock-data) | 快速生成各种测试数据，支持个人信息、商业数据、技术数据等多种类型，提供快速模板一键生成，支持JSON/CSV/SQL/XML格式输出 |
-| [代码美化工具](?tool=code-beautify) | 支持多语言的代码美化，包括Javascript、CSS、HTML、XML、SQL等格式 |
-| [代码压缩工具](?tool=code-compress) | Web开发用，提供简单的代码压缩功能，支持HTML、Javascript、CSS代码压缩 |
-| [简易Postman](?tool=postman) | 开发过程中的接口调试工具，支持GET/POST/HEAD请求方式，且支持JSON内容自动格式化 |
-| [Websocket工具](?tool=websocket) | 支持对Websocket接口的抓包测试，包括ws服务的连接测试、消息发送测试、结果分析等 |
-| [正则公式速查](?tool=regexp) | 支持JavaScript/Python/PHP/Java等语言的正则速查，包含验证类、提取类、替换类等常用正则表达式 |
-| [网站性能优化](?tool=page-timing) | 全面分析网页性能指标，包括核心Web指标(LCP/FID/CLS)、资源加载性能、内存使用等，并提供优化建议 |
+| [JSON Formatter](?tool=json-format) | Automatic page detection and formatting, manual formatting, garbled text decoding, sorting, BigInt support, editing, downloading, theme customization, etc. |
+| [JSON Diff](?tool=json-diff) | Supports automatic key-value comparison of two JSON contents with highlighted differences, and can also validate JSON syntax |
+| [Mock Data Generator](?tool=mock-data) | Quickly generate various test data, supports personal information, business data, technical data and more, provides quick template one-click generation, supports JSON/CSV/SQL/XML format output |
+| [Code Beautifier](?tool=code-beautify) | Multi-language code beautification, including Javascript, CSS, HTML, XML, SQL and other formats |
+| [Code Compressor](?tool=code-compress) | For web development, provides simple code compression functionality, supports HTML, Javascript, CSS code compression |
+| [Simple Postman](?tool=postman) | API debugging tool for development, supports GET/POST/HEAD request methods with automatic JSON content formatting |
+| [Websocket Tool](?tool=websocket) | Supports packet capture testing of Websocket interfaces, including ws service connection testing, message sending testing, result analysis, etc. |
+| [RegExp Quick Reference](?tool=regexp) | Quick reference for regular expressions in JavaScript/Python/PHP/Java and other languages, including validation, extraction, replacement and other common regex patterns |
+| [Website Performance](?tool=page-timing) | Comprehensive analysis of web performance metrics, including Core Web Vitals (LCP/FID/CLS), resource loading performance, memory usage, etc., with optimization suggestions |
 
-### 🔄 编解码转换类
-各种格式的数据转换和编解码工具，满足不同开发场景需求。
+### 🔄 Encoding & Conversion
+Data conversion and encoding/decoding tools for various formats to meet different development scenarios.
 
-| 工具名称 | 功能描述 | 
+| Tool Name | Description | 
 |---------|---------|
-| [信息编码转换](?tool=en-decode) | 支持多格式的信息编解码，如Unicode、UTF-8、UTF-16、URL、Base64、MD5、Hex、Gzip等 |
-| [进制转换工具](?tool=trans-radix) | 支持2进制到36进制数据之间的任意转换，比如：10进制转2进制，8进制转16进制等 |
-| [时间(戳)转换](?tool=timestamp) | 本地化时间与时间戳之间的相互转换，支持秒/毫秒、支持世界时区切换、各时区时钟展示等 |
-| [颜色转换工具](?tool=trans-color) | 支持HEX颜色到RGB格式的互转，比如HEX颜色「#43ad7f」转RGB后为「rgb(67, 173, 127)」 |
+| [Encoding Converter](?tool=en-decode) | Supports multi-format information encoding and decoding, such as Unicode, UTF-8, UTF-16, URL, Base64, MD5, Hex, Gzip, etc. |
+| [Radix Converter](?tool=trans-radix) | Supports arbitrary conversion between binary to base-36 data, such as: decimal to binary, octal to hexadecimal, etc. |
+| [Timestamp Converter](?tool=timestamp) | Mutual conversion between localized time and timestamp, supports seconds/milliseconds, supports world time zone switching, time zone clock display, etc. |
+| [Color Converter](?tool=trans-color) | Supports mutual conversion between HEX color and RGB format, such as HEX color "#43ad7f" converts to RGB as "rgb(67, 173, 127)" |
 
-### 🖼️ 图像处理类
-强大的图像处理和生成工具，支持多种格式和自定义配置。
+### 🖼️ Image Processing
+Powerful image processing and generation tools, supporting multiple formats and custom configurations.
 
-| 工具名称 | 功能描述 | 
+| Tool Name | Description | 
 |---------|---------|
-| [二维码工具](?tool=qr-code) | 支持自定义颜色和icon的二维码生成器，并且支持多种模式的二维码解码，包括截图后粘贴解码 |
-| [图片Base64转换](?tool=image-base64) | 支持多种模式的图片转Base64格式，比如链接粘贴/截图粘贴等，也支持Base64数据逆转图片 |
-| [SVG转为图片](?tool=svg-converter) | 支持SVG文件转换为PNG、JPG、WEBP等格式，可自定义输出尺寸，支持文件拖放和URL导入 |
-| [图表制作工具](?tool=chart-maker) | 快速制作各类数据可视化图表，支持柱状图、折线图、饼图等多种图表类型，可导出为图片格式 |
-| [海报快速生成](?tool=poster-maker) | 快速创建营销推广海报，支持朋友圈、小红书等多种模板，可自定义文字、图片和配色 |
-| [网页截屏工具](?tool=screenshot) | 可对任意网页进行截屏，支持可视区域截屏、全网页滚动截屏，最终结果可预览后再保存 |
-| [页面取色工具](?tool=color-picker) | 可直接在网页上针对任意元素进行色值采集，将光标移动到需要取色的位置，单击确定即可 |
+| [QR Code Tool](?tool=qr-code) | QR code generator with customizable colors and icons, supports multiple QR code decoding modes, including screenshot paste decoding |
+| [Image Base64 Converter](?tool=image-base64) | Supports multiple modes of image to Base64 format conversion, such as URL paste/screenshot paste, also supports Base64 data to image conversion |
+| [SVG to Image](?tool=svg-converter) | Supports SVG file conversion to PNG, JPG, WEBP and other formats, customizable output size, supports file drag-and-drop and URL import |
+| [Chart Maker](?tool=chart-maker) | Quickly create various data visualization charts, supports bar charts, line charts, pie charts and other chart types, exportable as image formats |
+| [Poster Generator](?tool=poster-maker) | Quickly create marketing and promotional posters, supports various templates like WeChat Moments, Xiaohongshu, customizable text, images and color schemes |
+| [Screenshot Tool](?tool=screenshot) | Take screenshots of any webpage, supports visible area screenshots and full-page scrolling screenshots, final results can be previewed before saving |
+| [Color Picker](?tool=color-picker) | Directly collect color values from any element on a webpage, move the cursor to the position where color needs to be picked, click to confirm |
 
-### ⚡ 效率工具类
-提升工作效率的实用工具，让日常开发更加便捷。
+### ⚡ Productivity Tools
+Practical tools to improve work efficiency and make daily development more convenient.
 
-| 工具名称 | 功能描述 | 
+| Tool Name | Description | 
 |---------|---------|
-| [AI智能助手](?tool=aiagent) | 由AI强力支撑的超智能对话工具，可以让它帮你写代码、改代码、做方案设计、查资料、做分析等 |
-| [我的便签笔记](?tool=sticky-notes) | 方便快捷的浏览器便签笔记工具，支持创建目录对笔记进行分类管理，笔记支持一键导出/导入 |
-| [Markdown转换](?tool=html2markdown) | Markdown编写/预览工具，支持HTML片段直接转Markdown，支持将内容以PDF格式进行下载 |
-| [网页油猴工具](?tool=page-monkey) | 自行配置页面匹配规则、编写Hack脚本，实现网页Hack，如页面自动刷新、自动抢票等 |
+| [AI Assistant](?tool=aiagent) | Super intelligent dialogue tool powered by AI, can help you write code, modify code, design solutions, research information, perform analysis, etc. |
+| [Sticky Notes](?tool=sticky-notes) | Convenient browser sticky notes tool, supports creating directories for note classification management, notes support one-click export/import |
+| [Markdown Converter](?tool=html2markdown) | Markdown writing/preview tool, supports direct HTML fragment to Markdown conversion, supports content download in PDF format |
+| [Page Monkey](?tool=page-monkey) | Configure page matching rules and write hack scripts to implement webpage hacks, such as automatic page refresh, auto ticket grabbing, etc. |
 
-### 🔢 计算工具类
-各种实用的计算和生成工具，解决特定场景的计算需求。
+### 🔢 Calculation Tools
+Various practical calculation and generation tools to solve specific calculation needs.
 
-| 工具名称 | 功能描述 | 
+| Tool Name | Description | 
 |---------|---------|
-| [Crontab工具](?tool=crontab) | 一个简易的Crontab生成工具，支持随机生成Demo，编辑过程中，分时日月周会高亮提示 |
-| [贷(还)款利率](?tool=loan-rate) | 贷款或还款利率的计算器，按月呈现还款计划；并支持按还款额反推贷款实际利率 |
-| [随机密码生成](?tool=password) | 将各种字符进行随机组合生成密码，可以由数字、大小写字母、特殊符号组成，支持指定长度 |
+| [Crontab Tool](?tool=crontab) | A simple Crontab generation tool, supports random demo generation, highlights minutes/hours/days/months/weeks during editing |
+| [Loan Calculator](?tool=loan-rate) | Loan or repayment rate calculator, presents monthly repayment plan; also supports reverse calculation of actual loan rate based on repayment amount |
+| [Password Generator](?tool=password) | Randomly combine various characters to generate passwords, can consist of numbers, uppercase and lowercase letters, special symbols, supports specified length |
 
-### 🧩 其他工具
-更多专业化和特殊用途的开发工具。
+### 🧩 Other Tools
+More specialized and special-purpose development tools.
 
-| 工具名称 | 功能描述 | 
+| Tool Name | Description | 
 |---------|---------|
-| [便捷思维导图](?tool=naotu) | 轻量便捷，随想随用，支持自动保存、本地数据存储、批量数据导入导出、图片格式下载等 |
-| [Excel转JSON](?tool=excel2json) | 将Excel或CVS中的数据，直接转换成为结构化数据，如JSON、XML、MySQL、PHP等 |
-| [网页栅格标尺](?tool=grid-ruler) | Web开发用，横竖两把尺子，以10px为单位，用以检测&校准当前网页的栅格对齐率 |
-| [FH开发者工具](?tool=devtools) | 以开发平台的思想，FeHelper支持用户进行本地开发，将自己的插件功能集成进FH工具市场 |
+| [Mind Map](?tool=naotu) | Lightweight and convenient, use as you think, supports auto-save, local data storage, batch data import/export, image format download, etc. |
+| [Excel to JSON](?tool=excel2json) | Directly convert data from Excel or CSV to structured data, such as JSON, XML, MySQL, PHP, etc. |
+| [Grid Ruler](?tool=grid-ruler) | For web development, horizontal and vertical rulers in 10px units, used to detect & calibrate grid alignment of current webpage |
+| [FH Developer Tools](?tool=devtools) | With development platform philosophy, FeHelper supports users to develop locally and integrate their plugin features into FH tool market |
 
-## 插件市场与配置管理
+## Plugin Market & Configuration Management
 
-FeHelper提供了完整的插件市场和配置管理功能，让用户可以根据自己的需求灵活安装、配置和管理各种工具。
+FeHelper provides complete plugin market and configuration management features, allowing users to flexibly install, configure and manage various tools according to their needs.
 
-### 🏪 插件市场功能
+### 🏪 Plugin Market Features
 
-#### 工具分类浏览
-- **全部分类**：查看所有可用工具的完整列表
-- **开发工具类**：JSON处理、Mock数据生成、代码美化、接口调试等核心开发工具
-- **编解码转换类**：各种格式的数据转换和编解码工具
-- **图像处理类**：二维码、图片转换、截图等图像相关工具
-- **效率工具类**：AI助手、便签、Markdown等提升效率的工具
-- **计算工具类**：Crontab、贷款计算、密码生成等计算工具
-- **其他工具**：思维导图、Excel转换等专业化工具
+#### Tool Category Browsing
+- **All Categories**: View complete list of all available tools
+- **Development Tools**: JSON processing, Mock data generation, code beautification, API debugging and other core development tools
+- **Encoding & Conversion**: Various format data conversion and encoding/decoding tools
+- **Image Processing**: QR code, image conversion, screenshots and other image-related tools
+- **Productivity Tools**: AI assistant, sticky notes, Markdown and other efficiency-enhancing tools
+- **Calculation Tools**: Crontab, loan calculation, password generation and other calculation tools
+- **Other Tools**: Mind map, Excel conversion and other specialized tools
 
-#### 我的工具管理
-- **已安装**：查看和管理已安装的工具，显示安装数量统计
-- **我的收藏**：收藏常用工具，快速访问收藏列表
-- **最近使用**：自动记录最近使用的工具，方便快速重新访问
+#### My Tools Management
+- **Installed**: View and manage installed tools, display installation count statistics
+- **My Favorites**: Favorite commonly used tools, quick access to favorites list
+- **Recently Used**: Automatically record recently used tools for quick re-access
 
-#### 搜索与筛选
-- **智能搜索**：支持按工具名称和功能描述进行搜索
-- **分类筛选**：快速筛选特定分类的工具
-- **排序方式**：支持默认排序、最新排序、最热排序
-- **视图切换**：支持网格视图和列表视图两种展示方式
+#### Search & Filter
+- **Smart Search**: Search by tool name and feature description
+- **Category Filter**: Quickly filter tools in specific categories
+- **Sorting Options**: Supports default sorting, newest sorting, hottest sorting
+- **View Toggle**: Supports grid view and list view display modes
 
-#### 工具操作
-- **一键安装/卸载**：快速安装或卸载工具
-- **右键菜单管理**：选择性地将工具加入或移出右键菜单
-- **收藏管理**：对常用工具进行收藏标记
-- **批量操作**：支持批量管理多个工具
+#### Tool Operations
+- **One-Click Install/Uninstall**: Quickly install or uninstall tools
+- **Context Menu Management**: Selectively add or remove tools from context menu
+- **Favorite Management**: Mark commonly used tools as favorites
+- **Batch Operations**: Supports batch management of multiple tools
 
-### ⚙️ 个性化配置
+### ⚙️ Personalization Settings
 
-#### FH快捷键设置
-- **自定义快捷键**：支持自定义FeHelper快捷键（默认：Alt+Shift+J）
-- **键盘导航**：快捷键打开后可用上/下方向键选择功能，回车键直接打开
-- **快速访问**：按下快捷键自动打开FeHelper工具面板
+#### FH Shortcut Key Settings
+- **Custom Shortcuts**: Supports customizing FeHelper shortcut keys (default: Alt+Shift+J)
+- **Keyboard Navigation**: After opening with shortcut key, use up/down arrow keys to select features, Enter key to open directly
+- **Quick Access**: Pressing shortcut key automatically opens FeHelper tool panel
 
-#### FH工具排序
-- **拖拽排序**：支持拖拽调整已安装工具在弹窗中的显示顺序
-- **可视化操作**：直观的拖拽界面，每个工具显示图标、名称和描述
-- **实时预览**：拖拽过程中提供视觉反馈和排序预览
-- **持久存储**：排序设置自动保存在本地，重启浏览器后依然有效
-- **一键重置**：支持重置为默认顺序，恢复初始排列
-- **智能排序**：新安装的工具会自动添加到列表末尾
+#### FH Tool Sorting
+- **Drag-and-Drop Sorting**: Supports dragging to adjust display order of installed tools in popup
+- **Visual Operations**: Intuitive drag interface, each tool displays icon, name and description
+- **Real-time Preview**: Provides visual feedback and sorting preview during dragging
+- **Persistent Storage**: Sorting settings automatically saved locally, remains effective after browser restart
+- **One-Click Reset**: Supports reset to default order, restore initial arrangement
+- **Smart Sorting**: Newly installed tools are automatically added to the end of the list
 
-#### FH基本配置
+#### FH Basic Configuration
 
-**右键菜单配置**
-- **工具集成**：将FeHelper工具添加到浏览器右键菜单
-- **插件分享/下载**：将插件分享和下载功能添加到右键菜单
-- **FeHelper设置**：将插件设置入口添加到右键菜单
-- **智能显示**：仅在相关上下文中显示对应的右键菜单项
+**Context Menu Configuration**
+- **Tool Integration**: Add FeHelper tools to browser context menu
+- **Plugin Share/Download**: Add plugin sharing and download features to context menu
+- **FeHelper Settings**: Add plugin settings entry to context menu
+- **Smart Display**: Only display corresponding context menu items in relevant contexts
 
-**窗口管理配置**
-- **单窗口模式**：禁止在多个Tab页/窗口同时打开相同工具
-- **防止冲突**：同一个工具只保留一个活动窗口，避免资源浪费
+**Window Management Configuration**
+- **Single Window Mode**: Prevent opening the same tool in multiple tabs/windows simultaneously
+- **Prevent Conflicts**: Keep only one active window for the same tool, avoid resource waste
 
-**页面权限配置**
-- **iframe支持**：授权FeHelper访问页面所有iframe框架
-- **扩展权限**：默认不对网页内嵌的iframe支持，可按需开启
+**Page Permission Configuration**
+- **iframe Support**: Authorize FeHelper to access all iframe frames on the page
+- **Extended Permissions**: By default does not support iframes embedded in webpages, can be enabled as needed
 
-**自动化功能配置**
-- **JSON自动美化**：开启JSON页面自动检测并格式化功能
-- **皮肤定制**：JSON自动美化后支持工具高级定制和皮肤设置
+**Automation Function Configuration**
+- **JSON Auto-Format**: Enable automatic JSON page detection and formatting feature
+- **Theme Customization**: Support advanced tool customization and theme settings after JSON auto-formatting
 
-**主题模式配置**
-- **自动夜间模式**：晚上19:00-06:00自动开启夜间模式
-- **始终夜间模式**：忽略时间限制，随时启用Dark Mode
-- **体验功能**：支持临时体验夜间模式效果
-- **护眼设计**：深色主题减少眼部疲劳
+**Theme Mode Configuration**
+- **Auto Night Mode**: Automatically enable night mode from 19:00-06:00
+- **Always Night Mode**: Ignore time restrictions, enable Dark Mode anytime
+- **Experience Feature**: Support temporary experience of night mode effects
+- **Eye Protection Design**: Dark theme reduces eye fatigue
 
-### 🎯 推荐与发现
+### 🎯 Recommendations & Discovery
 
-#### 热门工具推荐
-- **必装工具**：推荐最实用的核心开发工具
-- **最新工具**：展示新增的功能和工具
-- **推荐工具**：基于用户使用习惯的个性化推荐
-- **广告位**：支持第三方工具推广和合作
+#### Popular Tool Recommendations
+- **Must-Install Tools**: Recommend most practical core development tools
+- **Latest Tools**: Display newly added features and tools
+- **Recommended Tools**: Personalized recommendations based on user usage habits
+- **Ad Space**: Support third-party tool promotion and cooperation
 
-#### 智能推荐系统
-- **使用统计**：基于工具使用频率进行智能推荐
-- **分类推荐**：根据用户安装的工具类型推荐相关工具
-- **个性化**：学习用户习惯，提供个性化的工具推荐
+#### Smart Recommendation System
+- **Usage Statistics**: Smart recommendations based on tool usage frequency
+- **Category Recommendations**: Recommend related tools based on user-installed tool types
+- **Personalization**: Learn user habits, provide personalized tool recommendations
 
-## 安装方式
+## Installation
 
-### Chrome浏览器
-1. 访问 [Chrome网上应用店](https://chrome.google.com/webstore/detail/pkgccpejnmalmdinmhkkfafefagiiiad)
-2. 点击"添加到Chrome"即可安装
+### Chrome Browser
+1. Visit [Chrome Web Store](https://chrome.google.com/webstore/detail/pkgccpejnmalmdinmhkkfafefagiiiad)
+2. Click "Add to Chrome" to install
 
-### Firefox浏览器
-1. 访问 [FeHelper官网](https://addons.mozilla.org/zh-CN/firefox/addon/fehelper-%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8B/)
-2. 点击一键安装Firefox版本
+### Firefox Browser
+1. Visit [FeHelper Official Site](https://addons.mozilla.org/zh-CN/firefox/addon/fehelper-%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8B/)
+2. Click to install Firefox version with one click
 
-### Edge浏览器
-1. 访问 [Microsoft Edge扩展商店](https://microsoftedge.microsoft.com/addons/detail/feolnkbgcbjmamimpfcnklggdcbgakhe)
-2. 点击"获取"即可安装
+### Edge Browser
+1. Visit [Microsoft Edge Add-ons Store](https://microsoftedge.microsoft.com/addons/detail/feolnkbgcbjmamimpfcnklggdcbgakhe)
+2. Click "Get" to install
 
-### 本地安装
-- 官网下载：[FeHelper官网](https://www.baidufe.com/fehelper)
-- GitHub下载：[GitHub Release页面](https://github.com/zxlie/FeHelper/releases)
+### Local Installation
+- Official Site Download: [FeHelper Official Site](https://www.baidufe.com/fehelper)
+- GitHub Download: [GitHub Release Page](https://github.com/zxlie/FeHelper/releases)
 
-## 使用指南
+## User Guide
 
-### 基本使用
-1. **扩展图标访问**：点击浏览器工具栏的FeHelper图标打开工具面板
-2. **快捷键访问**：使用自定义快捷键（默认Alt+Shift+J）快速打开
-3. **右键菜单**：在网页上右键可通过菜单快速访问常用工具
-4. **方向键导航**：快捷键打开后可用上/下方向键选择功能，回车键直接打开
+### Basic Usage
+1. **Extension Icon Access**: Click the FeHelper icon in browser toolbar to open tool panel
+2. **Shortcut Key Access**: Use custom shortcut key (default Alt+Shift+J) to quickly open
+3. **Context Menu**: Right-click on webpage to quickly access common tools through menu
+4. **Arrow Key Navigation**: After opening with shortcut key, use up/down arrow keys to select features, Enter key to open directly
 
-### 高级功能
-1. **插件市场**：完整的工具市场，支持搜索、分类、安装、卸载等功能
-2. **配置管理**：丰富的个性化配置选项，包括快捷键、工具排序、主题模式等
-3. **收藏系统**：对常用工具进行收藏，快速访问收藏列表
-4. **使用统计**：自动记录工具使用情况，提供最近使用和热门推荐
-5. **版本管理**：自动检查版本更新，提供版本对比和一键更新
+### Advanced Features
+1. **Plugin Market**: Complete tool market, supports search, categorization, installation, uninstallation and other functions
+2. **Configuration Management**: Rich personalization options, including shortcut keys, tool sorting, theme modes, etc.
+3. **Favorite System**: Favorite commonly used tools, quick access to favorites list
+4. **Usage Statistics**: Automatically record tool usage, provide recently used and popular recommendations
+5. **Version Management**: Automatic version update checking, provides version comparison and one-click update
 
-### 插件市场使用技巧
-1. **搜索技巧**：
-   - 使用关键词搜索工具名称或功能描述
-   - 支持模糊搜索，快速定位所需工具
+### Plugin Market Usage Tips
+1. **Search Tips**:
+   - Use keywords to search tool names or feature descriptions
+   - Supports fuzzy search for quick location of needed tools
    
-2. **分类筛选**：
-   - 按工具类型进行分类筛选
-   - 结合搜索和分类，快速找到目标工具
+2. **Category Filtering**:
+   - Filter by tool type
+   - Combine search and categorization to quickly find target tools
    
-3. **视图切换**：
-   - 网格视图：适合浏览大量工具，视觉效果更好
-   - 列表视图：适合快速查看工具详情，信息更丰富
+3. **View Switching**:
+   - Grid View: Suitable for browsing many tools, better visual effect
+   - List View: Suitable for quickly viewing tool details, richer information
    
-4. **工具管理**：
-   - 根据实际需求安装工具，避免安装过多无用工具
-   - 定期查看"已安装"列表，清理不常用的工具
-   - 善用收藏功能，标记常用工具
+4. **Tool Management**:
+   - Install tools based on actual needs, avoid installing too many useless tools
+   - Regularly check "Installed" list, clean up infrequently used tools
+   - Make good use of favorites feature, mark commonly used tools
    
-5. **排序设置**：
-   - 通过拖拽调整工具在弹窗中的显示顺序
-   - 将常用工具排在前面，提高使用效率
+5. **Sorting Settings**:
+   - Adjust tool display order in popup through dragging
+   - Put commonly used tools at the front to improve efficiency
 
-### 性能优化建议
-- **精简安装**：只安装必要的工具以减少内存占用和启动时间
-- **定期清理**：定期清理不常用的工具，保持插件轻量化
-- **合理配置**：合理使用右键菜单功能，避免菜单过于冗长
-- **排序优化**：将常用工具排在前面，减少查找时间
-- **收藏管理**：善用收藏功能，快速访问常用工具
+### Performance Optimization Suggestions
+- **Streamlined Installation**: Only install necessary tools to reduce memory usage and startup time
+- **Regular Cleanup**: Regularly clean up infrequently used tools to keep the plugin lightweight
+- **Reasonable Configuration**: Use context menu features reasonably, avoid overly long menus
+- **Sorting Optimization**: Put commonly used tools at the front to reduce search time
+- **Favorites Management**: Make good use of favorites feature for quick access to common tools
 
-## 配置指南
+## Configuration Guide
 
-### 📋 首次使用配置建议
+### 📋 First-Time Usage Configuration Suggestions
 
-#### 1. 基础设置
-1. **访问配置页面**：
-   - 点击FeHelper图标旁的"插件设置"按钮
-   - 或在弹窗中点击"更多"进入插件市场
+#### 1. Basic Settings
+1. **Access Configuration Page**:
+   - Click the "Plugin Settings" button next to FeHelper icon
+   - Or click "More" in the popup to enter plugin market
 
-2. **快捷键配置**：
-   - 设置个人习惯的快捷键组合
-   - 测试快捷键是否与其他软件冲突
-   - 熟悉键盘导航方式（上下键选择，回车键确认）
+2. **Shortcut Key Configuration**:
+   - Set shortcut key combination according to personal habits
+   - Test whether shortcut key conflicts with other software
+   - Familiarize with keyboard navigation (up/down keys to select, Enter key to confirm)
 
-3. **右键菜单设置**：
-   - 根据使用习惯开启或关闭右键菜单功能
-   - 选择性添加常用功能到右键菜单
-   - 避免添加过多项目造成菜单冗长
+3. **Context Menu Settings**:
+   - Enable or disable context menu features based on usage habits
+   - Selectively add common features to context menu
+   - Avoid adding too many items causing lengthy menu
 
-#### 2. 工具安装与管理
-1. **按需安装**：
-   - 根据工作需要安装相应的工具
-   - 优先安装核心开发工具（JSON、代码美化等）
-   - 可以先试用再决定是否长期保留
+#### 2. Tool Installation and Management
+1. **Install As Needed**:
+   - Install corresponding tools based on work needs
+   - Prioritize installing core development tools (JSON, code beautification, etc.)
+   - Can try first before deciding whether to keep long-term
 
-2. **工具排序**：
-   - 将最常用的工具排在前面
-   - 按使用频率或功能类型进行排序
-   - 定期调整排序以适应工作变化
+2. **Tool Sorting**:
+   - Put most commonly used tools at the front
+   - Sort by usage frequency or feature type
+   - Regularly adjust sorting to adapt to work changes
 
-3. **收藏管理**：
-   - 收藏日常高频使用的工具
-   - 利用收藏列表快速访问工具
-   - 定期清理不再常用的收藏
+3. **Favorites Management**:
+   - Favorite daily high-frequency tools
+   - Use favorites list for quick tool access
+   - Regularly clean up no longer commonly used favorites
 
-#### 3. 高级配置
-1. **主题设置**：
-   - 根据使用时间设置自动夜间模式
-   - 或选择始终使用夜间模式保护视力
-   - 可先体验夜间模式效果再决定
+#### 3. Advanced Configuration
+1. **Theme Settings**:
+   - Set auto night mode based on usage time
+   - Or choose to always use night mode to protect eyesight
+   - Can experience night mode effect first before deciding
 
-2. **页面权限**：
-   - 根据实际需要开启iframe访问权限
-   - 开启JSON自动美化功能（推荐）
-   - 配置单窗口模式避免重复打开
+2. **Page Permissions**:
+   - Enable iframe access permissions based on actual needs
+   - Enable JSON auto-formatting feature (recommended)
+   - Configure single window mode to avoid duplicate opening
 
-### 🔧 常见配置场景
+### 🔧 Common Configuration Scenarios
 
-#### 前端开发者配置
-**推荐安装工具**：
-- JSON美化工具、JSON比对工具
-- Mock数据生成器、代码美化工具、代码压缩工具
-- 简易Postman、Websocket工具
-- 时间戳转换、信息编码转换
+#### Front-end Developer Configuration
+**Recommended Tools**:
+- JSON Formatter, JSON Diff
+- Mock Data Generator, Code Beautifier, Code Compressor
+- Simple Postman, Websocket Tool
+- Timestamp Converter, Encoding Converter
 
-**配置建议**：
-- 开启JSON自动美化功能
-- 设置快捷键为熟悉的组合
-- 将开发工具类排在前面
+**Configuration Suggestions**:
+- Enable JSON auto-formatting feature
+- Set shortcut key to familiar combination
+- Put development tools at the front
 
-#### 设计师配置
-**推荐安装工具**：
-- 二维码工具、图片Base64转换
-- 颜色转换工具、页面取色工具
-- SVG转换工具、海报生成工具
-- 网页截屏工具
+#### Designer Configuration
+**Recommended Tools**:
+- QR Code Tool, Image Base64 Converter
+- Color Converter, Color Picker
+- SVG Converter, Poster Generator
+- Screenshot Tool
 
-**配置建议**：
-- 将图像处理类工具排在前面
-- 开启右键菜单的取色和截图功能
-- 收藏常用的颜色和图像工具
+**Configuration Suggestions**:
+- Put image processing tools at the front
+- Enable context menu color picker and screenshot features
+- Favorite commonly used color and image tools
 
-#### 产品经理配置
-**推荐安装工具**：
-- 便签笔记、思维导图
-- Markdown转换、图表制作工具
-- 二维码工具、海报生成工具
-- AI智能助手
+#### Product Manager Configuration
+**Recommended Tools**:
+- Sticky Notes, Mind Map
+- Markdown Converter, Chart Maker
+- QR Code Tool, Poster Generator
+- AI Assistant
 
-**配置建议**：
-- 将效率工具类排在前面
-- 开启自动夜间模式保护视力
-- 善用收藏功能管理常用工具
+**Configuration Suggestions**:
+- Put productivity tools at the front
+- Enable auto night mode to protect eyesight
+- Make good use of favorites feature to manage common tools
 
-### 📊 使用数据与反馈
+### 📊 Usage Data & Feedback
 
-#### 统计功能
-- **使用记录**：自动记录每个工具的使用频率和时间
-- **热门统计**：基于使用数据推荐热门工具
-- **个性化推荐**：根据使用习惯提供个性化工具推荐
+#### Statistics Features
+- **Usage Records**: Automatically record usage frequency and time of each tool
+- **Popular Statistics**: Recommend popular tools based on usage data
+- **Personalized Recommendations**: Provide personalized tool recommendations based on usage habits
 
-#### 版本更新
-- **自动检查**：定期检查是否有新版本可用
-- **版本对比**：清晰显示当前版本和最新版本信息
-- **一键更新**：支持直接跳转到商店进行更新
+#### Version Updates
+- **Auto Check**: Regularly check if new versions are available
+- **Version Comparison**: Clearly display current version and latest version information
+- **One-Click Update**: Support direct jump to store for updates
 
-#### 用户反馈
-- **打赏支持**：支持微信打赏鼓励开发者持续更新
-- **反馈渠道**：提供多种反馈方式收集用户建议
-- **功能投票**：参与新功能的需求讨论和投票
+#### User Feedback
+- **Tip Support**: Support WeChat tipping to encourage developers to continue updating
+- **Feedback Channels**: Provide multiple feedback methods to collect user suggestions
+- **Feature Voting**: Participate in new feature requirement discussions and voting
 
-## 开发者支持
 
-### 开放平台
-FeHelper支持开发者进行本地开发，可以将自己的插件功能集成到FeHelper工具市场中。
+## Developer Support
 
-- **开发文档**：详细说明请参考[开发者工具](devtools.md)文档
-- **API接口**：提供完整的API接口供第三方工具接入
-- **模板工程**：提供标准的工具开发模板和最佳实践
+### Open Platform
+FeHelper supports developers to develop locally and integrate their plugin features into the FeHelper tool market.
 
-### 贡献方式
-1. **代码贡献**：通过GitHub提交Pull Request
-2. **Bug反馈**：通过GitHub Issues报告问题
-3. **功能建议**：提出新功能需求和改进建议
-4. **文档优化**：帮助完善文档和使用说明
+- **Development Documentation**: For detailed instructions, please refer to the [Developer Tools](devtools.md) documentation
+- **API Interface**: Provides complete API interface for third-party tool integration
+- **Template Project**: Provides standard tool development templates and best practices
 
-## 版本更新
+### Contribution Methods
+1. **Code Contribution**: Submit Pull Requests through GitHub
+2. **Bug Reporting**: Report issues through GitHub Issues
+3. **Feature Suggestions**: Propose new feature requirements and improvement suggestions
+4. **Documentation Improvement**: Help improve documentation and usage instructions
 
-### 最新功能
-- ✨ **个性化工具排序**：支持拖拽调整工具显示顺序
-- 🤖 **AI智能助手**：集成AI对话功能，支持代码编写和优化
-- 📊 **图表制作工具**：新增数据可视化图表制作功能
-- 🖼️ **海报生成工具**：快速创建营销推广海报
-- ⚡ **网站性能优化**：全面的网页性能分析和优化建议
-- 🔄 **SVG转换工具**：支持SVG转换为各种图片格式
+## Version Updates
 
-### 版本检查
-- 扩展会自动检查版本更新
-- 在设置页面可查看当前版本和最新版本信息
-- 支持一键跳转到商店进行更新
+### Latest Features
+- ✨ **Personalized Tool Sorting**: Support drag-and-drop to adjust tool display order
+- 🤖 **AI Assistant**: Integrated AI dialogue function, supports code writing and optimization
+- 📊 **Chart Maker**: New data visualization chart creation feature
+- 🖼️ **Poster Generator**: Quickly create marketing and promotional posters
+- ⚡ **Website Performance Optimization**: Comprehensive web performance analysis and optimization suggestions
+- 🔄 **SVG Converter**: Supports SVG conversion to various image formats
 
-## 社区与支持
+### Version Checking
+- The extension automatically checks for version updates
+- Can view current version and latest version information in settings page
+- Supports one-click jump to store for updates
 
-### 官方渠道
-- **官网**：[https://www.baidufe.com/fehelper](https://www.baidufe.com/fehelper)
-- **GitHub**：[https://github.com/zxlie/FeHelper](https://github.com/zxlie/FeHelper)
-- **反馈页面**：[在线反馈](https://www.baidufe.com/fehelper/feedback.html)
+## Community & Support
 
-### 联系方式
-- **邮箱反馈**：xianliezhao@foxmail.com
-- **微信反馈**：398824681
-- **QQ群**：前端开发者交流群
+### Official Channels
+- **Official Site**: [https://www.baidufe.com/fehelper](https://www.baidufe.com/fehelper)
+- **GitHub**: [https://github.com/zxlie/FeHelper](https://github.com/zxlie/FeHelper)
+- **Feedback Page**: [Online Feedback](https://www.baidufe.com/fehelper/feedback.html)
 
-### 打赏支持
-如果FeHelper对您的工作有帮助，欢迎通过微信打赏支持项目持续发展和功能改进。
+### Contact Information
+- **Email Feedback**: xianliezhao@foxmail.com
+- **WeChat Feedback**: 398824681
+- **QQ Group**: Front-end Developer Communication Group
 
-## 隐私与安全
+### Tip Support
+If FeHelper is helpful to your work, welcome to support the project's continuous development and feature improvements through WeChat tipping.
 
-### 隐私保护
-- 所有数据处理均在本地进行，不会上传用户数据
-- 工具使用过程中产生的临时数据会及时清理
-- 严格遵循最小权限原则，只申请必要的浏览器权限
+## Privacy & Security
 
-### 安全保障
-- 定期进行安全审计和漏洞修复
-- 遵循Chrome扩展安全最佳实践
-- 支持用户自定义权限管理
+### Privacy Protection
+- All data processing is performed locally, user data will not be uploaded
+- Temporary data generated during tool usage will be cleaned up promptly
+- Strictly follows the principle of minimum permissions, only requests necessary browser permissions
 
-## 许可证
+### Security Assurance
+- Regular security audits and vulnerability fixes
+- Follows Chrome extension security best practices
+- Supports user-customized permission management
 
-FeHelper采用MIT许可证。详情请查看[LICENSE](LICENSE)文件。
+## License
+
+FeHelper is licensed under the MIT License. For details, please check the [LICENSE](LICENSE) file.
 
 ---
 
-*FeHelper - 让前端开发更高效* 
+*FeHelper - Making front-end development more efficient* 

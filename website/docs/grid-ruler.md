@@ -1,168 +1,168 @@
-# 网格标尺工具
+# Grid Ruler Tool
 
-## 工具简介
+## Tool Introduction
 
-网格标尺工具是一个专业的网页布局辅助工具，为网页开发人员提供精确的网格参考线和像素标尺。该工具可以帮助开发者进行页面布局、元素定位和间距调整，提高开发效率和页面精确度。
+The Grid Ruler Tool is a professional web layout assistance tool that provides web developers with precise grid reference lines and pixel rulers. This tool helps developers with page layout, element positioning, and spacing adjustments, improving development efficiency and page precision.
 
-## 主要功能
+## Main Features
 
-### 1. 网格系统
-- 网格线显示
-- 网格间距调整
-- 网格颜色设置
-- 网格透明度
-- 网格开关控制
+### 1. Grid System
+- Grid line display
+- Grid spacing adjustment
+- Grid color settings
+- Grid transparency
+- Grid toggle control
 
-### 2. 标尺功能
-- 水平标尺
-- 垂直标尺
-- 像素刻度
-- 实时坐标
-- 滚动同步
+### 2. Ruler Features
+- Horizontal ruler
+- Vertical ruler
+- Pixel scale
+- Real-time coordinates
+- Scroll synchronization
 
-### 3. 测量功能
-- 元素尺寸测量
-- 间距测量
-- 位置坐标
-- 实时预览
-- 数据记录
+### 3. Measurement Features
+- Element size measurement
+- Spacing measurement
+- Position coordinates
+- Real-time preview
+- Data recording
 
-### 4. 辅助功能
-- 快捷键支持
-- 自动适应
-- 滚动同步
-- 窗口调整
-- 快速关闭
+### 4. Auxiliary Features
+- Keyboard shortcut support
+- Auto adaptation
+- Scroll synchronization
+- Window adjustment
+- Quick close
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 启用网格标尺
-2. 查看网格参考
-3. 使用标尺测量
-4. 调整页面布局
-5. 关闭工具
+### Basic Usage
+1. Enable grid ruler
+2. View grid reference
+3. Use ruler for measurement
+4. Adjust page layout
+5. Close tool
 
-### 使用方式
-1. **网格使用**：
-   - 显示网格线
-   - 调整网格间距
-   - 设置网格样式
-   - 对齐页面元素
+### Usage Methods
+1. **Grid Usage**:
+   - Display grid lines
+   - Adjust grid spacing
+   - Set grid style
+   - Align page elements
 
-2. **标尺使用**：
-   - 查看像素刻度
-   - 测量元素尺寸
-   - 调整元素位置
-   - 保持间距一致
+2. **Ruler Usage**:
+   - View pixel scale
+   - Measure element dimensions
+   - Adjust element position
+   - Maintain consistent spacing
 
-3. **测量操作**：
-   - 移动鼠标测量
-   - 查看实时坐标
-   - 记录测量数据
-   - 应用测量结果
+3. **Measurement Operations**:
+   - Move mouse to measure
+   - View real-time coordinates
+   - Record measurement data
+   - Apply measurement results
 
-## 使用技巧
+## Usage Tips
 
-1. **布局设计**：
-   - 使用网格对齐
-   - 保持间距一致
-   - 注意元素位置
-   - 优化页面结构
+1. **Layout Design**:
+   - Use grid alignment
+   - Maintain consistent spacing
+   - Pay attention to element position
+   - Optimize page structure
 
-2. **测量方法**：
-   - 精确测量尺寸
-   - 记录关键数据
-   - 保持测量习惯
-   - 验证测量结果
+2. **Measurement Methods**:
+   - Precise size measurement
+   - Record key data
+   - Maintain measurement habits
+   - Verify measurement results
 
-3. **效率提升**：
-   - 使用快捷键
-   - 快速开关工具
-   - 合理使用网格
-   - 保持工作流
+3. **Efficiency Enhancement**:
+   - Use keyboard shortcuts
+   - Quick toggle tool
+   - Use grid reasonably
+   - Maintain workflow
 
-## 适用场景
+## Application Scenarios
 
-1. **页面布局**：
-   - 响应式设计
-   - 网格系统
-   - 元素定位
-   - 间距调整
+1. **Page Layout**:
+   - Responsive design
+   - Grid system
+   - Element positioning
+   - Spacing adjustment
 
-2. **开发调试**：
-   - 布局检查
-   - 尺寸验证
-   - 对齐检查
-   - 间距调整
+2. **Development Debugging**:
+   - Layout inspection
+   - Size verification
+   - Alignment check
+   - Spacing adjustment
 
-3. **设计实现**：
-   - 设计稿还原
-   - 像素级调整
-   - 布局优化
-   - 视觉对齐
+3. **Design Implementation**:
+   - Design mockup restoration
+   - Pixel-level adjustment
+   - Layout optimization
+   - Visual alignment
 
-## 注意事项
+## Notes
 
-1. 注意网格密度
-2. 避免视觉干扰
-3. 合理使用标尺
-4. 及时关闭工具
+1. Pay attention to grid density
+2. Avoid visual interference
+3. Use ruler reasonably
+4. Close tool promptly
 
-## 技术实现
+## Technical Implementation
 
-- 基于jQuery开发
-- 动态创建网格
-- 实时坐标计算
-- 滚动事件处理
+- Based on jQuery development
+- Dynamically create grids
+- Real-time coordinate calculation
+- Scroll event handling
 
-## 更新日志
+## Update Log
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本网格
-- 提供标尺功能
+- Initial version release
+- Support basic grid
+- Provide ruler functionality
 
 ### v1.1.0
-- 添加测量功能
-- 优化网格显示
-- 改进用户界面
+- Add measurement features
+- Optimize grid display
+- Improve user interface
 
 ### v1.2.0
-- 添加快捷键
-- 支持滚动同步
-- 提升使用体验
+- Add keyboard shortcuts
+- Support scroll synchronization
+- Enhance user experience
 
-## 常见问题
+## FAQ
 
-1. **Q: 如何调整网格间距？**
-   A: 工具默认使用10px的网格间距，可以通过修改代码自定义间距。
+1. **Q: How to adjust grid spacing?**
+   A: The tool uses 10px grid spacing by default, which can be customized by modifying the code.
 
-2. **Q: 标尺如何跟随滚动？**
-   A: 工具会自动处理滚动事件，保持标尺位置同步。
+2. **Q: How does the ruler follow scrolling?**
+   A: The tool automatically handles scroll events to keep the ruler position synchronized.
 
-3. **Q: 如何快速关闭工具？**
-   A: 可以点击关闭按钮或使用ESC快捷键关闭工具。
+3. **Q: How to quickly close the tool?**
+   A: You can click the close button or use the ESC shortcut key to close the tool.
 
-4. **Q: 测量数据如何记录？**
-   A: 工具会实时显示坐标信息，可以手动记录需要的数据。
+4. **Q: How to record measurement data?**
+   A: The tool displays coordinate information in real-time, and you can manually record the needed data.
 
-## 最佳实践
+## Best Practices
 
-1. **布局技巧**：
-   - 使用网格对齐
-   - 保持间距一致
-   - 注意元素位置
-   - 优化页面结构
+1. **Layout Techniques**:
+   - Use grid alignment
+   - Maintain consistent spacing
+   - Pay attention to element position
+   - Optimize page structure
 
-2. **测量方法**：
-   - 精确测量尺寸
-   - 记录关键数据
-   - 保持测量习惯
-   - 验证测量结果
+2. **Measurement Methods**:
+   - Precise size measurement
+   - Record key data
+   - Maintain measurement habits
+   - Verify measurement results
 
-3. **使用建议**：
-   - 熟悉快捷键
-   - 合理使用网格
-   - 保持工作流
-   - 及时关闭工具 
+3. **Usage Recommendations**:
+   - Familiarize with keyboard shortcuts
+   - Use grid reasonably
+   - Maintain workflow
+   - Close tool promptly

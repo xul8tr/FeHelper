@@ -1,141 +1,141 @@
-# 便签工具
+# Sticky Notes Tool
 
-## 简介
-便签工具是FeHelper提供的一个轻量级网页便签笔记工具，支持多标签管理、文件夹分类、内容导入导出、批量删除等功能。适合日常备忘、灵感记录、任务管理等多种场景，数据本地存储，安全可靠。
+## Introduction
+The Sticky Notes Tool is a lightweight web-based sticky note tool provided by FeHelper, supporting multi-tab management, folder classification, content import/export, batch delete, and other functions. Suitable for daily memos, inspiration recording, task management, and other scenarios. Data is stored locally for security and reliability.
 
-## 主要功能
+## Main Features
 
-### 便签管理
-1. **新建便签**
-   - 一键新建便签
-   - 支持多标签并存
-   - 自动记录创建时间
+### Note Management
+1. **Create New Note**
+   - One-click create new note
+   - Support multiple tabs coexisting
+   - Auto-record creation time
 
-2. **编辑与保存**
-   - 支持富文本编辑（部分标签）
-   - 自动保存内容
-   - 编辑未保存时离开有提示
+2. **Edit and Save**
+   - Support rich text editing (partial tags)
+   - Auto-save content
+   - Prompt when leaving with unsaved edits
 
-3. **删除便签**
-   - 单条删除
-   - 批量全部删除
-   - 删除前确认，防止误删
+3. **Delete Notes**
+   - Single delete
+   - Batch delete all
+   - Confirm before deletion to prevent accidental deletion
 
-### 分类与文件夹
-1. **文件夹管理**
-   - 支持新建、切换、删除文件夹
-   - 文件夹内便签独立管理
-   - 文件夹计数显示
+### Classification and Folders
+1. **Folder Management**
+   - Support creating, switching, deleting folders
+   - Notes independently managed within folders
+   - Folder count display
 
-2. **便签归类**
-   - 便签可归属不同文件夹
-   - 支持跨文件夹移动
+2. **Note Classification**
+   - Notes can belong to different folders
+   - Support cross-folder movement
 
-### 导入导出
-1. **导出便签**
-   - 一键导出全部便签为zip包
-   - 便于备份和迁移
+### Import/Export
+1. **Export Notes**
+   - One-click export all notes as zip package
+   - Convenient for backup and migration
 
-2. **导入便签**
-   - 支持zip包一键导入
-   - 仅支持本工具导出的格式
+2. **Import Notes**
+   - Support one-click import of zip packages
+   - Only supports formats exported by this tool
 
-### 视图与交互
-1. **折叠/预览模式**
-   - 支持便签折叠与展开
-   - 便于快速浏览
+### View and Interaction
+1. **Collapse/Preview Mode**
+   - Support note collapse and expand
+   - Convenient for quick browsing
 
-2. **便签放大/关闭**
-   - 支持便签放大编辑
-   - ESC键快速关闭
+2. **Note Enlarge/Close**
+   - Support note enlargement for editing
+   - ESC key for quick close
 
-3. **批量操作**
-   - 批量删除、批量导出
-   - 文件夹批量切换
+3. **Batch Operations**
+   - Batch delete, batch export
+   - Folder batch switching
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 新建便签
-   - 点击"新建笔记"按钮
-   - 输入内容并保存
+### Basic Usage
+1. Create New Note
+   - Click "Create Note" button
+   - Enter content and save
 
-2. 编辑与删除
-   - 点击便签内容可放大编辑
-   - 编辑完成后保存
-   - 点击删除按钮可删除单条便签
+2. Edit and Delete
+   - Click note content to enlarge for editing
+   - Save after editing completion
+   - Click delete button to delete single note
 
-3. 文件夹管理
-   - 点击"新建文件夹"创建新分类
-   - 左侧切换不同文件夹
-   - 文件夹内便签独立管理
+3. Folder Management
+   - Click "Create Folder" to create new classification
+   - Switch between different folders on the left
+   - Notes independently managed within folders
 
-4. 导入导出
-   - 点击"全部导出"备份所有便签
-   - 点击"一键导入"恢复便签
+4. Import/Export
+   - Click "Export All" to backup all notes
+   - Click "One-click Import" to restore notes
 
-### 高级功能
-1. **批量管理**
-   - 批量删除全部便签
-   - 批量导出/导入
+### Advanced Functions
+1. **Batch Management**
+   - Batch delete all notes
+   - Batch export/import
 
-2. **快捷操作**
-   - ESC键关闭放大便签
-   - 鼠标悬停显示关闭按钮
+2. **Quick Operations**
+   - ESC key to close enlarged note
+   - Mouse hover shows close button
 
-3. **内容安全**
-   - 离开页面前自动提示未保存内容
-   - 本地存储，数据安全
+3. **Content Security**
+   - Auto-prompt for unsaved content before leaving page
+   - Local storage, data security
 
-## 使用技巧
-1. **高效分类**
-   - 合理使用文件夹管理不同主题
-   - 便于查找和归档
+## Usage Tips
+1. **Efficient Classification**
+   - Use folders reasonably to manage different topics
+   - Convenient for searching and archiving
 
-2. **内容备份**
-   - 定期导出便签，防止数据丢失
-   - 导入功能便于多设备迁移
+2. **Content Backup**
+   - Regularly export notes to prevent data loss
+   - Import function convenient for multi-device migration
 
-3. **便捷编辑**
-   - 放大模式下编辑更方便
-   - 支持部分富文本标签
+3. **Convenient Editing**
+   - Enlargement mode makes editing more convenient
+   - Support partial rich text tags
 
-## 注意事项
-1. 使用限制
-   - 单个便签数量建议不超过10000条
-   - 内容过多可能影响性能
+## Notes
+1. Usage Limitations
+   - Recommended single note count not exceed 10000
+   - Excessive content may affect performance
 
-2. 兼容性
-   - 支持主流浏览器
-   - 建议使用最新版Chrome
+2. Compatibility
+   - Support mainstream browsers
+   - Latest version of Chrome recommended
 
-3. 数据安全
-   - 数据本地存储，清理浏览器缓存会丢失数据
-   - 导出备份可防止意外丢失
+3. Data Security
+   - Data stored locally, clearing browser cache will lose data
+   - Export backup can prevent accidental loss
 
-## 常见问题
-1. **Q: 便签内容丢失怎么办？**
-   A: 检查是否清理了浏览器缓存，建议定期导出备份。
+## FAQ
+1. **Q: What if note content is lost?**
+   A: Check if browser cache was cleared. Recommend regularly exporting backups.
 
-2. **Q: 导入zip包失败？**
-   A: 仅支持本工具导出的zip包，确保格式正确。
+2. **Q: Import zip package fails?**
+   A: Only supports zip packages exported by this tool. Ensure format is correct.
 
-3. **Q: 如何批量删除便签？**
-   A: 点击"全部删除"按钮即可，操作前请备份。
+3. **Q: How to batch delete notes?**
+   A: Click "Delete All" button. Please backup before operation.
 
-## 更新日志
-- 2024-03-21: 优化导入导出体验
-- 2024-03-20: 增加文件夹批量管理功能
-- 2024-03-19: 改进便签编辑交互
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimize import/export experience
+- 2024-03-20: Add folder batch management function
+- 2024-03-19: Improve note editing interaction
+- 2024-03-18: Initial version release
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback and Suggestions
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on the tool page
 
-## 相关工具
-- [截图工具](../screenshot.md)
-- [SVG转换工具](../svg-converter.md)
-- [JSON格式化工具](../json-format.md) 
+## Related Tools
+- [Screenshot Tool](../screenshot.md)
+- [SVG Conversion Tool](../svg-converter.md)
+- [JSON Format Tool](../json-format.md)

@@ -1,162 +1,162 @@
-# AI助手工具
+# AI Assistant Tool
 
-## 简介
-AI助手工具是FeHelper提供的一个智能对话工具，基于OpenAI技术，为用户提供智能问答、代码生成、技术咨询等服务。该工具具有友好的界面和丰富的功能，能够帮助用户快速获取技术支持和解决方案。
+## Introduction
+AI Assistant is an intelligent dialogue tool provided by FeHelper, based on OpenAI technology, offering services such as intelligent Q&A, code generation, and technical consultation. With a user-friendly interface and rich features, this tool helps users quickly obtain technical support and solutions.
 
-## 主要功能
+## Main Features
 
-### 智能对话
-1. **技术咨询**
-   - 编程问题解答
-   - 代码调试建议
-   - 技术概念解释
-   - 最佳实践指导
+### Intelligent Dialogue
+1. **Technical Consultation**
+   - Programming problem solving
+   - Code debugging suggestions
+   - Technical concept explanations
+   - Best practice guidance
 
-2. **代码生成**
-   - 代码示例生成
-   - 算法实现
-   - 功能模块开发
-   - 代码优化建议
+2. **Code Generation**
+   - Code example generation
+   - Algorithm implementation
+   - Feature module development
+   - Code optimization suggestions
 
-3. **问题诊断**
-   - 错误分析
-   - 性能优化
-   - 兼容性问题
-   - 安全漏洞检测
+3. **Problem Diagnosis**
+   - Error analysis
+   - Performance optimization
+   - Compatibility issues
+   - Security vulnerability detection
 
-### 交互功能
-1. **对话管理**
-   - 新建对话
-   - 历史记录查看
-   - 对话内容保存
-   - 会话切换
+### Interactive Features
+1. **Dialogue Management**
+   - Create new conversation
+   - View history records
+   - Save conversation content
+   - Switch sessions
 
-2. **输入方式**
-   - 文本输入
-   - 快捷键支持
-   - 示例问题选择
-   - 代码块输入
+2. **Input Methods**
+   - Text input
+   - Shortcut key support
+   - Example question selection
+   - Code block input
 
-3. **显示功能**
-   - 代码高亮
-   - Markdown渲染
-   - 实时响应
-   - 滚动定位
+3. **Display Features**
+   - Code highlighting
+   - Markdown rendering
+   - Real-time response
+   - Scroll positioning
 
-### 历史记录
-1. **记录管理**
-   - 按日期分组
-   - 主题预览
-   - 快速访问
-   - 本地存储
+### History Records
+1. **Record Management**
+   - Group by date
+   - Topic preview
+   - Quick access
+   - Local storage
 
-2. **会话恢复**
-   - 历史对话加载
-   - 上下文保持
-   - 状态恢复
-   - 继续对话
+2. **Session Recovery**
+   - Load historical conversations
+   - Context preservation
+   - State restoration
+   - Continue dialogue
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 开始对话
-   - 在输入框输入问题
-   - 选择示例问题
-   - 按Enter发送
-   - 等待AI响应
+### Basic Usage
+1. Start Conversation
+   - Enter question in input box
+   - Select example question
+   - Press Enter to send
+   - Wait for AI response
 
-2. 查看响应
-   - 实时显示回答
-   - 代码高亮显示
-   - 支持Markdown
-   - 自动滚动
+2. View Response
+   - Display answer in real-time
+   - Code syntax highlighting
+   - Markdown support
+   - Auto scroll
 
-3. 管理对话
-   - 新建对话
-   - 查看历史
-   - 切换会话
-   - 保存记录
+3. Manage Conversations
+   - Create new conversation
+   - View history
+   - Switch sessions
+   - Save records
 
-### 高级功能
-1. **代码处理**
-   - 代码块识别
-   - 语法高亮
-   - 代码复制
-   - 格式优化
+### Advanced Features
+1. **Code Processing**
+   - Code block recognition
+   - Syntax highlighting
+   - Code copying
+   - Format optimization
 
-2. **多轮对话**
-   - 上下文理解
-   - 连续对话
-   - 问题追问
-   - 答案补充
+2. **Multi-turn Dialogue**
+   - Context understanding
+   - Continuous conversation
+   - Follow-up questions
+   - Answer supplementation
 
-3. **智能提示**
-   - 示例问题
-   - 相关建议
-   - 错误提示
-   - 使用指导
+3. **Smart Prompts**
+   - Example questions
+   - Related suggestions
+   - Error prompts
+   - Usage guidance
 
-## 使用技巧
-1. **提高效率**
-   - 使用快捷键
-   - 选择示例问题
-   - 保持对话连贯
-   - 合理组织问题
+## Usage Tips
+1. **Improve Efficiency**
+   - Use shortcut keys
+   - Select example questions
+   - Keep dialogue coherent
+   - Organize questions properly
 
-2. **优化体验**
-   - 清晰描述问题
-   - 提供必要信息
-   - 分步骤提问
-   - 及时反馈
+2. **Optimize Experience**
+   - Describe problem clearly
+   - Provide necessary information
+   - Ask step by step
+   - Give timely feedback
 
-3. **代码相关**
-   - 提供完整上下文
-   - 说明具体需求
-   - 指定编程语言
-   - 描述预期结果
+3. **Code Related**
+   - Provide complete context
+   - Explain specific requirements
+   - Specify programming language
+   - Describe expected results
 
-## 注意事项
-1. 使用限制
-   - 合理控制问题长度
-   - 避免过于复杂的问题
-   - 注意响应时间
-   - 保持网络稳定
+## Precautions
+1. Usage Limitations
+   - Control question length reasonably
+   - Avoid overly complex questions
+   - Note response time
+   - Maintain stable network
 
-2. 内容规范
-   - 遵守使用条款
-   - 避免敏感内容
-   - 注意版权问题
-   - 保护隐私信息
+2. Content Guidelines
+   - Follow terms of use
+   - Avoid sensitive content
+   - Note copyright issues
+   - Protect privacy information
 
-3. 技术考虑
-   - 检查代码正确性
-   - 验证解决方案
-   - 注意安全风险
-   - 考虑兼容性
+3. Technical Considerations
+   - Check code correctness
+   - Verify solutions
+   - Note security risks
+   - Consider compatibility
 
-## 常见问题
-1. **Q: 为什么AI回答不准确？**
-   A: 可能是问题描述不够清晰，建议提供更多上下文和具体细节。
+## Common Questions
+1. **Q: Why are AI answers inaccurate?**
+   A: The problem description may not be clear enough. It is recommended to provide more context and specific details.
 
-2. **Q: 如何处理代码生成问题？**
-   A: 建议明确指定编程语言、框架和具体需求，提供必要的上下文信息。
+2. **Q: How to handle code generation issues?**
+   A: It is recommended to clearly specify the programming language, framework, and specific requirements, and provide necessary context information.
 
-3. **Q: 如何提高回答质量？**
-   A: 可以尝试分步骤提问，提供更多细节，并在必要时进行追问。
+3. **Q: How to improve answer quality?**
+   A: You can try asking questions step by step, providing more details, and asking follow-up questions when necessary.
 
-## 更新日志
-- 2024-03-21: 优化对话体验
-- 2024-03-20: 添加代码高亮功能
-- 2024-03-19: 改进历史记录管理
-- 2024-03-18: 初始版本发布
+## Update Log
+- 2024-03-21: Optimized dialogue experience
+- 2024-03-20: Added code highlighting feature
+- 2024-03-19: Improved history management
+- 2024-03-18: Initial version released
 
-## 反馈与建议
-如果您在使用过程中遇到任何问题或有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件至开发者
-3. 在工具页面点击"反馈"按钮
+## Feedback & Suggestions
+If you encounter any problems or have suggestions for improvement during use, please feel free to provide feedback through:
+1. Submit Issue on GitHub
+2. Send email to developer
+3. Click "Feedback" button on tool page
 
-## 相关工具
-- [代码格式化工具](../code-beautify.md)
-- [正则表达式工具](../regexp.md)
-- [JSON格式化工具](../json-format.md) 
+## Related Tools
+- [Code Beautifier](../code-beautify.md)
+- [Regular Expression Tool](../regexp.md)
+- [JSON Formatter](../json-format.md) 

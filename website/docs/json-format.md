@@ -1,131 +1,131 @@
-# JSON格式化工具
+# JSON Format Tool
 
-## 简介
+## Introduction
 
-JSON格式化工具是FeHelper提供的一个强大的JSON数据处理工具，它能够帮助开发者快速格式化、美化、压缩和验证JSON数据。该工具支持多种JSON处理功能，包括自动格式化、手动格式化、乱码解码、排序、BigInt处理等，是Web开发中不可或缺的辅助工具。
+The JSON Format Tool is a powerful JSON data processing tool provided by FeHelper that helps developers quickly format, beautify, compress, and validate JSON data. This tool supports various JSON processing functions including auto-formatting, manual formatting, garbled code decoding, sorting, BigInt handling, etc., making it an indispensable auxiliary tool in web development.
 
 
 ![popup](static/screenshot/json-format.png)
 
 ![popup](static/screenshot/json-format-auto.png)
 
-## 主要功能
+## Main Features
 
-### 1. 基础格式化功能
-- **自动格式化**：一键将杂乱的JSON数据转换为格式化的、易读的形式
-- **手动格式化**：通过格式化按钮手动触发格式化操作
-- **压缩功能**：将JSON数据压缩为单行，去除所有不必要的空格和换行
-- **JSON验证**：自动检测JSON语法错误，并提供详细的错误信息
+### 1. Basic Formatting Functions
+- **Auto-formatting**: One-click conversion of messy JSON data to formatted, readable form
+- **Manual Formatting**: Manually trigger formatting operation via format button
+- **Compression Function**: Compress JSON data to a single line, removing all unnecessary spaces and line breaks
+- **JSON Validation**: Automatically detect JSON syntax errors and provide detailed error information
 
-### 2. 高级处理功能
-- **JSONP支持**：自动识别并处理JSONP格式的数据
-- **自动解码**：支持自动解码URL编码和Unicode编码的JSON数据
-- **BigInt支持**：正确处理JavaScript中的BigInt类型数据
-- **节点编辑**：支持直接编辑格式化后的JSON节点
-- **排序功能**：
-  - 默认排序：保持原始顺序
-  - 升序排序：按键名升序排列
-  - 降序排序：按键名降序排列
+### 2. Advanced Processing Functions
+- **JSONP Support**: Automatically recognize and process JSONP format data
+- **Auto-decode**: Support auto-decoding of URL-encoded and Unicode-encoded JSON data
+- **BigInt Support**: Correctly handle BigInt type data in JavaScript
+- **Node Editing**: Support direct editing of formatted JSON nodes
+- **Sorting Function**:
+  - Default sorting: Maintain original order
+  - Ascending sorting: Sort by key name in ascending order
+  - Descending sorting: Sort by key name in descending order
 
-### 3. 编码转换功能
-- **Unicode编码**：支持将JSON中的特殊字符转换为Unicode编码
-- **Unicode解码**：支持将Unicode编码转换回原始字符
-- **URL解码**：支持解码URL编码的JSON数据
+### 3. Encoding Conversion Functions
+- **Unicode Encoding**: Support converting special characters in JSON to Unicode encoding
+- **Unicode Decoding**: Support converting Unicode encoding back to original characters
+- **URL Decoding**: Support decoding URL-encoded JSON data
 
-### 4. 界面特性
-- **双模式布局**：
-  - 左右布局：适合宽屏显示器
-  - 上下布局：适合窄屏显示器
-- **语法高亮**：使用CodeMirror提供专业的代码编辑体验
-- **实时预览**：格式化结果实时显示
-- **错误提示**：清晰的错误提示和定位
+### 4. Interface Features
+- **Dual-mode Layout**:
+  - Left-right layout: Suitable for widescreen displays
+  - Top-bottom layout: Suitable for narrow displays
+- **Syntax Highlighting**: Uses CodeMirror to provide professional code editing experience
+- **Real-time Preview**: Formatting results display in real-time
+- **Error Prompts**: Clear error prompts and positioning
 
-## 使用说明
+## Usage Instructions
 
-### 基本使用
-1. 在输入框中粘贴需要格式化的JSON数据
-2. 点击"格式化"按钮进行格式化
-3. 格式化后的结果会显示在右侧（左右布局）或下方（上下布局）
+### Basic Usage
+1. Paste JSON data to be formatted in the input box
+2. Click "Format" button to format
+3. Formatted results will display on the right (left-right layout) or below (top-bottom layout)
 
-### 高级功能使用
-1. **自动解码**：
-   - 勾选"自动解码"选项
-   - 粘贴包含编码的JSON数据
-   - 工具会自动进行解码和格式化
+### Advanced Feature Usage
+1. **Auto-decode**:
+   - Check "Auto-decode" option
+   - Paste JSON data containing encoding
+   - Tool will automatically decode and format
 
-2. **JSON排序**：
-   - 选择排序方式（默认/升序/降序）
-   - 点击格式化按钮
-   - 结果会按照选择的方式重新排序
+2. **JSON Sorting**:
+   - Select sorting method (default/ascending/descending)
+   - Click format button
+   - Results will be reordered according to selected method
 
-3. **节点编辑**：
-   - 勾选"节点编辑"选项
-   - 点击格式化后的JSON节点
-   - 可以直接编辑节点内容
+3. **Node Editing**:
+   - Check "Node Editing" option
+   - Click formatted JSON nodes
+   - Can directly edit node content
 
-4. **编码转换**：
-   - 使用工具栏上的编码转换按钮
-   - 支持Unicode编码/解码
-   - 支持URL解码
+4. **Encoding Conversion**:
+   - Use encoding conversion button on toolbar
+   - Support Unicode encoding/decoding
+   - Support URL decoding
 
-## 使用技巧
+## Usage Tips
 
-1. **快速格式化**：
-   - 使用快捷键 `Ctrl + Enter` 快速格式化
-   - 支持自动检测页面中的JSON数据
+1. **Quick Formatting**:
+   - Use shortcut key `Ctrl + Enter` for quick formatting
+   - Support auto-detection of JSON data in page
 
-2. **错误处理**：
-   - 当JSON格式错误时，工具会显示具体的错误位置
-   - 支持自动修复常见的JSON格式问题
+2. **Error Handling**:
+   - When JSON format is incorrect, tool displays specific error positions
+   - Support automatic fixing of common JSON format issues
 
-3. **大数据处理**：
-   - 支持处理大型JSON数据
-   - 提供性能优化的处理方式
+3. **Large Data Processing**:
+   - Support processing of large JSON data
+   - Provide performance-optimized processing methods
 
-4. **JSONP处理**：
-   - 自动识别JSONP格式
-   - 支持提取JSONP中的JSON数据
+4. **JSONP Processing**:
+   - Auto-recognize JSONP format
+   - Support extracting JSON data from JSONP
 
-## 注意事项
+## Notes
 
-1. 处理大型JSON数据时，建议使用压缩模式
-2. 编辑JSON时注意保持JSON格式的正确性
-3. 使用自动解码功能时，确保原始数据是可解码的
-4. 处理BigInt数据时，注意数值的精度问题
+1. When processing large JSON data, it's recommended to use compression mode
+2. Pay attention to maintaining JSON format correctness when editing JSON
+3. When using auto-decode function, ensure original data is decodable
+4. Pay attention to precision issues when processing BigInt data
 
-## 常见问题
+## FAQ
 
-1. **Q: 为什么我的JSON格式化后显示错误？**
-   A: 请检查JSON数据是否符合标准格式，特别注意：
-   - 所有的键名必须用双引号包围
-   - 不能使用单引号
-   - 不能有多余的逗号
-   - 确保所有的括号都正确配对
+1. **Q: Why does my JSON display errors after formatting?**
+   A: Please check if JSON data conforms to standard format, especially note:
+   - All key names must be surrounded by double quotes
+   - Cannot use single quotes
+   - Cannot have extra commas
+   - Ensure all brackets are correctly paired
 
-2. **Q: 如何处理包含特殊字符的JSON？**
-   A: 可以使用Unicode编码功能，将特殊字符转换为Unicode编码，或者使用自动解码功能处理已编码的数据。
+2. **Q: How to handle JSON with special characters?**
+   A: You can use Unicode encoding function to convert special characters to Unicode encoding, or use auto-decode function to process already encoded data.
 
-3. **Q: 为什么我的BigInt数据在格式化后发生了变化？**
-   A: 工具会自动处理BigInt数据，确保数值的精确性。如果发现数值变化，请检查原始数据是否正确。
+3. **Q: Why did my BigInt data change after formatting?**
+   A: The tool automatically handles BigInt data to ensure numerical accuracy. If you find numerical changes, please check if the original data is correct.
 
-## 更新日志
+## Update Log
 
-### 最新版本
-- 支持BigInt类型数据处理
-- 优化了大型JSON的处理性能
-- 改进了错误提示的准确性
-- 新增了自动解码功能
-- 优化了界面布局和交互体验
+### Latest Version
+- Support BigInt type data processing
+- Optimized processing performance for large JSON
+- Improved error prompt accuracy
+- Added auto-decode function
+- Optimized interface layout and interaction experience
 
-## 反馈与建议
+## Feedback and Suggestions
 
-如果您在使用过程中遇到任何问题，或者有改进建议，欢迎通过以下方式反馈：
-1. 在GitHub上提交Issue
-2. 发送邮件到开发团队
-3. 在工具市场页面留言
+If you encounter any problems during use or have improvement suggestions, welcome to provide feedback through the following methods:
+1. Submit an Issue on GitHub
+2. Send email to development team
+3. Leave a message on the tool market page
 
-## 相关工具
+## Related Tools
 
-- [JSON比对工具](../json-diff.md)：用于比较两个JSON数据的差异
-- [代码美化工具](../code-beautify.md)：支持多种编程语言的代码格式化
-- [信息编码转换](../en-decode.md)：支持多种编码格式的转换 
+- [JSON Comparison Tool](../json-diff.md): For comparing differences between two JSON data sets
+- [Code Beautify Tool](../code-beautify.md): Supports code formatting for multiple programming languages
+- [Encoding Conversion Tool](../en-decode.md): Supports conversion of multiple encoding formats
