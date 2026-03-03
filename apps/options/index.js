@@ -158,13 +158,13 @@ new Vue({
                 return [];
             }
 
-            // 获取当前工具列表
+            // Get current tool list
             let result = Object.values(this.activeTools).map(tool => ({
                 ...tool,
                 favorite: this.favorites.has(tool.key)
             }));
 
-            // 搜索过滤
+            // Search filter
             if (this.searchKey) {
                 const key = this.searchKey.toLowerCase();
                 result = result.filter(tool => 
@@ -173,14 +173,14 @@ new Vue({
                 );
             }
 
-            // 分类过滤，在所有视图下生效
+            // Category filter, effective in all views
             if (this.currentCategory) {
                 const category = TOOL_CATEGORIES.find(c => c.key === this.currentCategory);
                 const categoryTools = category ? category.tools : [];
                 result = result.filter(tool => categoryTools.includes(tool.key));
             }
 
-            // 排序
+            // Sorting
             switch (this.sortType) {
                 case 'newest':
                     result.sort((a, b) => (b.updateTime || 0) - (a.updateTime || 0));
@@ -705,12 +705,12 @@ new Vue({
             this.updateActiveTools('favorites');
         },
 
-        // 重置工具列表到原始状态
+        // Reset tool list to original state
         resetTools() {
             this.currentView = 'all';
         },
 
-        // 安装工具
+        // Install tool
         async installTool(toolKey) {
             try {
                 // Find possible button element
@@ -742,7 +742,7 @@ new Vue({
                             
                             // Show installation success notification after progress bar completes
                             this.showInPageNotification({
-                                message: `${this.originalTools[toolKey].name} 安装成功！`,
+                                message: `${this.originalTools[toolKey].name} installed successfully!`,
                                 type: 'success',
                                 duration: 3000
                             });
@@ -751,7 +751,7 @@ new Vue({
                 } else {
                     // If no progress bar element, show notification directly
                     this.showInPageNotification({
-                        message: `${this.originalTools[toolKey].name} 安装成功！`,
+                        message: `${this.originalTools[toolKey].name} installed successfully!`,
                         type: 'success',
                         duration: 3000
                     });
@@ -823,7 +823,7 @@ new Vue({
                             
                             // Show uninstall success notification
                             this.showInPageNotification({
-                                message: `${this.originalTools[key].name} 已成功卸载！`,
+                                message: `${this.originalTools[key].name} successfully uninstalled!`,
                                 type: 'success',
                                 duration: 3000
                             });
@@ -858,7 +858,7 @@ new Vue({
                     this.activeTools[toolKey].inContextMenu = newState;
                 }
                 
-                // 发送消息Notify background to update context menu
+                // Notify background to update context menu
                 chrome.runtime.sendMessage({
                     type: MSG_TYPE.DYNAMIC_TOOL_INSTALL_OR_OFFLOAD,
                     action: `menu-${newState ? 'install' : 'offload'}`,
@@ -1029,7 +1029,7 @@ new Vue({
             const body = document.body;
             const shouldEnableDarkMode = this.shouldEnableDarkMode(opts);
             
-            // 同时设置localStorage和chrome.storage.local，确保与其他工具兼容
+            // Set both localStorage and chrome.storage.local to ensure compatibility with other tools
             localStorage.setItem('AUTO_DARK_MODE', opts.AUTO_DARK_MODE);
             localStorage.setItem('ALWAYS_DARK_MODE', opts.ALWAYS_DARK_MODE);
             
@@ -1095,8 +1095,8 @@ new Vue({
         showConfirm(options) {
             this.confirmDialog = {
                 show: true,
-                title: options.title || '操作确认',
-                message: options.message || '确定要执行此操作吗？',
+                title: options.title || 'Confirm Action',
+                message: options.message || 'Are you sure you want to proceed with this action?',
                 callback: options.callback || null,
                 data: options.data || null
             };
@@ -1469,7 +1469,7 @@ new Vue({
                 await this.loadSortableTools();
                 
                 this.showInPageNotification({
-                    message: '工具顺序已重置为默认排序',
+                    message: 'Tool order has been reset to default',
                     type: 'success'
                 });
             } catch (error) {
@@ -1490,7 +1490,7 @@ new Vue({
                 });
                 
                 this.showInPageNotification({
-                    message: '工具排序已保存！弹窗中的工具将按此顺序显示',
+                    message: 'Tool sorting saved! Tools in popup will be displayed in this order',
                     type: 'success'
                 });
             } catch (error) {
@@ -1555,7 +1555,7 @@ new Vue({
                                 window.evalCore.getEvalInstance(window)(patch.js);
                             }
                         } catch (e) {
-                            console.error('options补丁JS执行失败', e);
+                            console.error('Failed to execute options patch JS', e);
                         }
                     }
                 }
