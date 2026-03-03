@@ -1,5 +1,5 @@
 /**
- * FeHelper 右键菜单管理
+ * FeHelper context menu management
  * @type {{manage}}
  * @author zhaoxianlie
  */
@@ -15,25 +15,25 @@ export default (function () {
         contextMenuId:"fhm_main"
     };
 
-    // 邮件菜单配置项
+    // Context menu configuration items
     let defaultMenuOptions = {
         'download-crx': {
             icon: '♥',
-            text: '插件下载分享',
+            text: 'Plugin Download & Share',
             onClick: function (info, tab) {
                 CrxDownloader.downloadCrx(tab);
             }
         },
         'fehelper-setting': {
             icon: '❂',
-            text: 'FeHelper设置',
+            text: 'FeHelper Settings',
             onClick: function (info, tab) {
                 chrome.runtime.openOptionsPage();
             }
         }
     };
 
-    // 初始化菜单配置
+    // Initialize menu configuration
     let _initMenuOptions = (() => {
 
         Object.keys(toolMap).forEach(tool => {
@@ -107,7 +107,7 @@ export default (function () {
     })();
 
     /**
-     * 创建一个menu 菜单
+     * Create a menu item
      * @param toolName
      * @param menuList
      * @returns {boolean}
@@ -116,7 +116,7 @@ export default (function () {
     let _createItem = (toolName, menuList) => {
         menuList && menuList.forEach && menuList.forEach(menu => {
 
-            // 确保每次创建出来的是一个新的主菜单，防止onClick事件冲突
+            // Ensure each time a new main menu is created to prevent onClick event conflicts
             let menuItemId = 'fhm_c' + escape(menu.text).replace(/\W/g,'') + new Date*1;
 
             chrome.contextMenus.create({
@@ -140,7 +140,7 @@ export default (function () {
 
 
     /**
-     * 绘制一条分割线
+     * Draw a separator line
      * @private
      */
     let _createSeparator = function () {
@@ -152,7 +152,7 @@ export default (function () {
     };
 
     /**
-     * 创建扩展专属的右键菜单
+     * Create extension-specific context menu
      */
     let _initMenus = function () {
         _removeContextMenu(() => {
@@ -163,19 +163,19 @@ export default (function () {
                 documentUrlPatterns: ['http://*/*', 'https://*/*', 'file://*/*']
             });
 
-            // 绘制用户安装的菜单，放在前面
+            // Draw user-installed menus, place them first
             Awesome.getInstalledTools().then(tools => {
                 let allMenus = Object.keys(tools).filter(tool => tools[tool].installed && tools[tool].menu);
                 let onlineTools = allMenus.filter(tool => tool !== 'devtools' && !tools[tool].hasOwnProperty('_devTool'));
                 let devTools = allMenus.filter(tool => tool === 'devtools' || tools[tool].hasOwnProperty('_devTool'));
 
-                // 绘制FH提供的工具菜单
+                // Draw tool menus provided by FH
                 onlineTools.forEach(tool => _createItem(tool, tools[tool].menuConfig));
-                // 如果有本地工具的菜单需要绘制，则需要加一条分割线
+                // If there are local tool menus to draw, add a separator
                 devTools.length && _createSeparator();
-                // 绘制本地工具的菜单
+                // Draw local tool menus
                 devTools.forEach(tool => {
-                    // 说明是自定义工具 构造menuConfig
+                    // If it's a custom tool, construct menuConfig
                     if(!tools[tool].menuConfig) {
                         tools[tool].menuConfig = [{
                             icon: tools[tool].icon,
@@ -194,16 +194,16 @@ export default (function () {
                 });
               });
 
-            // 绘制两个系统提供的菜单，放到最后
+            // Draw two system-provided menus, place them last
             let sysMenu = ['download-crx', 'fehelper-setting'];
             let arrPromises = sysMenu.map(menu => Awesome.menuMgr(menu, 'get'));
             Promise.all(arrPromises).then(values => {
                 let needDraw = String(values[0]) === '1' || String(values[1]) !== '0';
 
-                // 绘制一条分割线
+                // Draw a separator line
                 _createSeparator();
 
-                // 绘制菜单
+                // Draw menus
                 String(values[0]) === '1' && _createItem(sysMenu[0], [defaultMenuOptions[sysMenu[0]]]);
                 String(values[1]) !== '0' && _createItem(sysMenu[1], [defaultMenuOptions[sysMenu[1]]]);
             });
@@ -211,14 +211,14 @@ export default (function () {
     };
 
     /**
-     * 移除扩展专属的右键菜单
+     * Remove extension-specific context menu
      */
     let _removeContextMenu = function (callback) {
         chrome.contextMenus.removeAll(callback);
     };
 
     /**
-     * 创建或移除扩展专属的右键菜单
+     * Create or remove extension-specific context menu
      */
     let _createOrRemoveContextMenu = function () {
         Settings.getOptions((opts) => {

@@ -2,21 +2,21 @@ window.baidu = {
     namespace: {
 
         /**
-         * 注册命名空间
-         * @param {String} fullNS 完整的命名空间字符串，如baidu.libs.Firefox
+         * Register namespace
+         * @param {String} fullNS Full namespace string, e.g. baidu.libs.Firefox
          * @example baidu.namespace.register("baidu.libs.Firefox");
          */
         register: function (fullNS) {
-            //命名空间合法性校验依据
+            // Namespace validity validation pattern
             var reg = /^[_$a-z]+[_$a-z0-9]*/i;
 
-            // 将命名空间切成N部分, 比如baidu.libs.Firefox等
+            // Split namespace into N parts, e.g. baidu.libs.Firefox etc.
             var nsArray = fullNS.split('.');
             var sEval = "";
             var sNS = "";
             var _tmpObj = [window];
             for (var i = 0; i < nsArray.length; i++) {
-                //命名空间合法性校验
+                // Namespace validity validation
                 if (!reg.test(nsArray[i])) {
                     throw new Error("Invalid namespace:" + nsArray[i] + "");
                     return;
@@ -32,7 +32,7 @@ window.baidu = {
 };
 
 /**
- * 获取某字符串的字节数
+ * Get number of bytes in a string
  */
 String.prototype.getBytes = function () {
     var stream = this.replace(/\n/g, 'xx').replace(/\t/g, 'x');
@@ -41,15 +41,15 @@ String.prototype.getBytes = function () {
 }
 
 /**
- * 让所有字符串支持空白过滤功能：trim
- * @retrn {String} 返回两端无空白的字符串
+ * Make all strings support whitespace filtering: trim
+ * @return {String} Returns string without leading/trailing whitespace
  */
 String.prototype.trim = function () {
     return this.replace(/^\s*|\s*$/g, "");
 };
 
 /**
- * 日期格式化
+ * Date formatting
  * @param {Object} pattern
  */
 Date.prototype.format = function (pattern) {
@@ -103,7 +103,7 @@ Date.prototype.format = function (pattern) {
 };
 
 /**
- * 自动消失的Alert弹窗
+ * Auto-dismiss alert popup
  * @param content
  */
 window.toast = function (content) {
@@ -127,7 +127,7 @@ window.toast = function (content) {
 };
 
 /**
- * 获取当前脚本的绝对路径
+ * Get absolute path of current script
  * @returns {string}
  */
 window.getCurrAbsPath = function () {

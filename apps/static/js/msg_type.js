@@ -3,24 +3,24 @@
  */
 const MSG_TYPE = {
 
-    // 正式版chrome extension id
+    // Official chrome extension id
     STABLE_EXTENSION_ID:'pkgccpejnmalmdinmhkkfafefagiiiad',
-    // github 上的下载地址
+    // Download address on github
     DOWNLOAD_FROM_GITHUB:'https://github.com/zxlie/FeHelper/tree/master/apps/static/screenshot/crx',
 
-    // 编码规范检测
+    // Code standards detection
     CODE_STANDARDS: "code_standards",
     FCP_HELPER_INIT: "fcp_helper_init",
     FCP_HELPER_DETECT: "fcp_helper_detect",
-    //提取CSS
+    //Extract CSS
     GET_CSS: "get-css",
-    //提取JS
+    //Extract JS
     GET_JS: "get-js",
-    //提取HTML
+    //Extract HTML
     GET_HTML: "get-html",
     //cookie
     GET_COOKIE: 'get-cookie',
-    //remvoe cookie
+    //remove cookie
     REMOVE_COOKIE: 'remove-cookie',
     //set cookie
     SET_COOKIE: 'set-cookie',
@@ -43,50 +43,50 @@ const MSG_TYPE = {
     // MENU SAVED
     MENU_SAVED: 'menu_saved',
 
-    //启动项
+    //Startup option
     START_OPTION: 'start-option',
-    //启动FCPHelper
+    //Start FCPHelper
     OPT_START_FCP: 'opt-item-fcp',
 
-    //计算网页加载时间
+    //Calculate page load time
     CALC_PAGE_LOAD_TIME: "calc-page-load-time",
-    //页面相关性能数据
+    //Page related performance data
     GET_PAGE_WPO_INFO: 'get_page_wpo_info',
 
-    //查看加载时间
+    //View load time
     SHOW_PAGE_LOAD_TIME: "wpo",
 
     TAB_CREATED_OR_UPDATED: 'tab_created_or_updated',
 
-    ////////////////////如下是popup中的menu，value和filename相同///////////////////
+    ////////////////////Below are menus in popup, value same as filename///////////////////
     REGEXP_TOOL: 'regexp',
-    //字符串编解码
+    //String encode/decode
     EN_DECODE: 'en-decode',
-    //json查看器
+    //JSON viewer
     JSON_FORMAT: 'json-format',
-    //QR生成器
+    //QR generator
     QR_CODE: 'qr-code',
-    //代码美化
+    //Code beautify
     CODE_BEAUTIFY: 'code-beautify',
     JS_CSS_PAGE_BEAUTIFY:'JS_CSS_PAGE_BEAUTIFY',
     JS_CSS_PAGE_BEAUTIFY_REQUEST:'JS_CSS_PAGE_BEAUTIFY_REQUEST',
-    //代码压缩
+    //Code compress
     CODE_COMPRESS: 'code-compress',
-    // 时间转换
+    // Time conversion
     TIME_STAMP: 'timestamp',
-    // 图片base64
+    // Image base64
     IMAGE_BASE64: 'image-base64',
-    // 随机密码生成
+    // Random password generation
     RANDOM_PASSWORD:'password',
-    // 二维码解码
+    // QR code decode
     QR_DECODE: 'qr-decode',
 
-    // JSON比对
+    // JSON comparison
     JSON_COMPARE:'json-diff',
-    // JSON页面自动格式化
+    // JSON page auto format
     JSON_PAGE_FORMAT: 'JSON_PAGE_FORMAT',
     JSON_PAGE_FORMAT_REQUEST: 'JSON_PAGE_FORMAT_REQUEST',
-    //页面取色器
+    //Page color picker
     COLOR_PICKER: "color-picker:newImage",
     SHOW_COLOR_PICKER: "show_color_picker",
 
@@ -100,33 +100,33 @@ const MSG_TYPE = {
     PAGE_CAPTURE_SCROLL:"page_capture_scroll",
     PAGE_CAPTURE_CAPTURE:"page_capture_capture",
 
-    // 便签几笔
+    // Sticky notes
     STICKY_NOTES: 'sticky-notes',
 
-    // dev tools页面
+    // Dev tools page
     DEV_TOOLS: 'dev-tools',
 
     OPEN_OPTIONS_PAGE:'open-options-page',
 
-    // 屏幕栅格标尺
+    // Grid ruler
     GRID_RULER: 'grid-ruler',
 
     // POST Man
     POST_MAN:'postman',
 
-    // 多维小工具
+    // Multi toolkit
     MULTI_TOOLKIT: 'toolkit',
 
-    // 打开page-monkey配置页
+    // Open page-monkey config page
     PAGE_MODIFIER:'page-monkey',
-    // 获取某个url对应的page-monkey配置
+    // Get page-monkey config for a url
     GET_PAGE_MODIFIER_CONFIG:'get_page_modifier_config',
-    // 保存page-monkey配置
+    // Save page-monkey config
     SAVE_PAGE_MODIFIER_CONFIG:'save_page_modifier_config',
-    // page-config配置项的本地缓存key
+    // page-config local cache key
     PAGE_MODIFIER_KEY:'PAGE-MODIFIER-LOCAL-STORAGE-KEY',
 
-    // 人像背景移除
+    // Remove person image background
     REMOVE_PERSON_IMG_BG:'remove-person-img-bg',
     REMOVE_BG:'remove-bg'
 };

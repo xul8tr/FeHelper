@@ -2,10 +2,10 @@ import Settings from '../options/settings.js';
 
 export default (() => {
     /**
-     * 如果tabId指定的tab还存在，就正常注入脚本
-     * @param tabId 需要注入脚本的tabId
-     * @param codeConfig 需要注入的代码
-     * @param callback 注入代码后的callback
+     * If the tab specified by tabId still exists, inject the script normally
+     * @param tabId Tab ID where script needs to be injected
+     * @param codeConfig Code to be injected
+     * @param callback Callback after code injection
      */
     let injectScriptIfTabExists = function (tabId, codeConfig, callback) {
         chrome.tabs.query({currentWindow: true}, (tabs) => {
@@ -18,9 +18,9 @@ export default (() => {
                     }
 
                     codeConfig.js = 'try{' + codeConfig.js + ';}catch(e){};';
-                    // 有文件就注入文件
+                    // If there are files, inject files
                     if(codeConfig.files && codeConfig.files.length){
-                        // 注入样式
+                        // Inject CSS
                         if(codeConfig.files.join(',').indexOf('.css') > -1) {
                             chrome.scripting.insertCSS({
                                 target: {tabId, allFrames: codeConfig.allFrames},
@@ -29,7 +29,7 @@ export default (() => {
                                 callback && callback.apply(this, arguments);
                             });
                         }
-                        // 注入js
+                        // Inject JS
                         else {
                             chrome.scripting.executeScript({
                                 target: {tabId, allFrames: codeConfig.allFrames},
@@ -45,7 +45,7 @@ export default (() => {
                             });
                         }
                     }else if(codeConfig.css){
-                        // 注入css样式
+                        // Inject CSS styles
                         chrome.scripting.executeScript({
                             target: {tabId, allFrames: codeConfig.allFrames},
                             css:codeConfig.css
@@ -53,7 +53,7 @@ export default (() => {
                             callback && callback.apply(this, arguments);
                         });
                     }else{
-                        // 注入js脚本
+                        // Inject JS script
                         chrome.scripting.executeScript({
                             target: {tabId, allFrames: codeConfig.allFrames},
                             func: function(code){try{evalCore.getEvalInstance(window)(code)}catch(x){}},
