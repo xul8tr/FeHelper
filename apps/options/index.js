@@ -3,17 +3,17 @@ import MSG_TYPE from '../static/js/common.js';
 import Settings from './settings.js';
 import Statistics from '../background/statistics.js';
 
-// 工具分类定义
+// Tool category definitions
 const TOOL_CATEGORIES = [
-    { key: 'dev', name: '开发工具类', tools: ['json-format', 'json-diff', 'code-beautify', 'code-compress', 'postman', 'websocket', 'regexp','page-timing'] },
-    { key: 'encode', name: '编解码转换类', tools: ['en-decode', 'trans-radix', 'timestamp', 'trans-color'] },
-    { key: 'image', name: '图像处理类', tools: ['qr-code', 'image-base64', 'svg-converter', 'chart-maker', 'poster-maker' ,'screenshot', 'color-picker'] },
-    { key: 'productivity', name: '效率工具类', tools: ['aiagent', 'sticky-notes', 'html2markdown', 'page-monkey'] },
-    { key: 'calculator', name: '计算工具类', tools: ['crontab', 'loan-rate', 'password'] },
-    { key: 'other', name: '其他工具', tools: [] }
+    { key: 'dev', name: 'Development Tools', tools: ['json-format', 'json-diff', 'code-beautify', 'code-compress', 'postman', 'websocket', 'regexp','page-timing'] },
+    { key: 'encode', name: 'Encoding & Conversion', tools: ['en-decode', 'trans-radix', 'timestamp', 'trans-color'] },
+    { key: 'image', name: 'Image Processing', tools: ['qr-code', 'image-base64', 'svg-converter', 'chart-maker', 'poster-maker' ,'screenshot', 'color-picker'] },
+    { key: 'productivity', name: 'Productivity Tools', tools: ['aiagent', 'sticky-notes', 'html2markdown', 'page-monkey'] },
+    { key: 'calculator', name: 'Calculator Tools', tools: ['crontab', 'loan-rate', 'password'] },
+    { key: 'other', name: 'Other Tools', tools: [] }
 ];
 
-// Vue实例
+// Vue instance
 new Vue({
     el: '#marketContainer',
     data: {
@@ -21,86 +21,86 @@ new Vue({
         searchKey: '',
         currentCategory: '',
         sortType: 'default',
-        viewMode: 'list', // 默认网格视图
+        viewMode: 'list', // Default list view
         categories: TOOL_CATEGORIES,
         favorites: new Set(),
         recentUsed: [],
         loading: true,
-        originalTools: {}, // 保存原始工具数据
-        currentView: 'all', // 当前视图类型（all/installed/favorites/recent）
-        activeTools: {}, // 当前显示的工具列表
-        installedCount: 0, // 已安装工具数量
+        originalTools: {}, // Save original tool data
+        currentView: 'all', // Current view type (all/installed/favorites/recent)
+        activeTools: {}, // Currently displayed tool list
+        installedCount: 0, // Number of installed tools
         
-        // 版本相关
-        latestVersion: '', // 最新版本号
-        needUpdate: false, // 是否需要更新
+        // Version related
+        latestVersion: '', // Latest version number
+        needUpdate: false, // Whether update is needed
         
-        // 设置相关
+        // Settings related
         showSettingsModal: false,
-        defaultKey: 'Alt+Shift+J', // 默认快捷键
-        countDown: 0, // 夜间模式倒计时
-        selectedOpts: [], // 选中的选项（已支持FORBID_STATISTICS）
-        menuDownloadCrx: false, // 菜单-插件下载
-        menuFeHelperSeting: false, // 菜单-FeHelper设置
-        isFirefox: false, // 是否Firefox浏览器
+        defaultKey: 'Alt+Shift+J', // Default shortcut
+        countDown: 0, // Dark mode countdown
+        selectedOpts: [], // Selected options (FORBID_STATISTICS now supported)
+        menuDownloadCrx: false, // Menu - Extension download
+        menuFeHelperSeting: false, // Menu - FeHelper settings
+        isFirefox: false, // Whether Firefox browser
 
-        // 打赏相关
+        // Donation related
         showDonateModal: false,
         donate: {
-            text: '感谢你对FeHelper的认可和支持！',
+            text: 'Thank you for your recognition and support of FeHelper!',
             image: './donate.jpeg'
         },
 
-        // 确认对话框
+        // Confirmation dialog
         confirmDialog: {
             show: false,
-            title: '操作确认',
+            title: 'Confirm Action',
             message: '',
             callback: null,
             data: null
         },
 
-        // 工具排序相关
-        sortableTools: [], // 可排序的工具列表
-        draggedIndex: -1, // 拖拽的工具索引
+        // Tool sorting related
+        sortableTools: [], // Sortable tool list
+        draggedIndex: -1, // Dragged tool index
 
         recentCount: 0,
         versionChecked: false,
         
-        // 推荐卡片配置，后续可从服务端获取
+        // Recommendation card configuration, can be fetched from server later
         recommendationCards: [
             {
                 toolKey: 'qr-code',
                 icon: '📱',
-                title: '二维码工具',
-                desc: '快速生成和识别二维码，支持自定义样式',
-                tag: '必装',
+                title: 'QR Code Tool',
+                desc: 'Quickly generate and recognize QR codes with custom styles',
+                tag: 'Must Have',
                 tagClass: 'must-tag',
                 isAd: false
             },
             {
                 toolKey: 'chart-maker',
                 icon: '📊',
-                title: '图表制作工具',
-                desc: '支持多种数据可视化图表，快速生成专业图表',
-                tag: '最新',
+                title: 'Chart Maker',
+                desc: 'Support multiple data visualization charts, quickly generate professional charts',
+                tag: 'New',
                 tagClass: 'new-tag',
                 isAd: false
             },
             {
                 toolKey: 'mock-data',
                 icon: '🎲',
-                title: '数据Mock工具',
-                desc: '快速生成各种测试数据，支持快速模板一键生成',
-                tag: '推荐',
+                title: 'Mock Data Tool',
+                desc: 'Quickly generate various test data, support quick template generation',
+                tag: 'Recommended',
                 tagClass: 'recommend-tag',
                 isAd: false
             },
             {
                 icon: '🔔',
-                title: '推广位',
-                desc: '广告位招租，欢迎流量主联系，开放合作，流量主请到github联系',
-                tag: '广告',
+                title: 'Ad Placement',
+                desc: 'Ad space for rent, traffic owners welcome to contact, open for cooperation via GitHub',
+                tag: 'Ad',
                 tagClass: 'ad-tag',
                 isAd: true,
                 url: 'https://github.com/zxlie/FeHelper'
@@ -109,7 +109,7 @@ new Vue({
     },
 
     async created() {
-        // 1. 读取URL中的query参数并赋值给searchKey
+        // 1. Read query parameters from URL and assign to searchKey
         try {
             const urlParams = new URLSearchParams(window.location.search);
             const query = urlParams.get('query');
@@ -117,32 +117,32 @@ new Vue({
                 this.searchKey = query;
             }
         } catch (e) {
-            // 忽略异常
+            // Ignore exceptions
         }
-        // 2. 初始化数据
+        // 2. Initialize data
         await this.initData();
         this.recentCount = (await Statistics.getRecentUsedTools(10)).length;
-        // 初始化后更新已安装工具数量
+        // Update installed tools count after initialization
         this.updateInstalledCount();
-        // 恢复用户的视图模式设置
+        // Restore user's view mode settings
         this.loadViewMode();
-        // 加载设置项
+        // Load settings
         this.loadSettings();
-        // 检查浏览器类型
+        // Check browser type
         this.checkBrowserType();
-        // 检查版本更新
+        // Check version update
         this.checkVersionUpdate();
         
-        // 加载远程推荐卡片配置
+        // Load remote recommendation card configuration
         this.loadRemoteRecommendationCards();
         
-        // 检查URL中是否有donate_from参数
+        // Check if URL has donate_from parameter
         this.checkDonateParam();
 
-        // 页面加载时自动获取并注入options页面的补丁
+        // Automatically load and inject hotfix patches for options page
         this.loadPatchHotfix();
 
-        // 埋点：自动触发options
+        // Analytics: automatically trigger options
         chrome.runtime.sendMessage({
             type: 'fh-dynamic-any-thing',
             thing: 'statistics-tool-usage',
@@ -198,9 +198,9 @@ new Vue({
                         const indexA = allTools.indexOf(a.key);
                         const indexB = allTools.indexOf(b.key);
                         
-                        // 如果工具不在任何类别中，放到最后
+                        // If tool is not in any category, put it last
                         if (indexA === -1 && indexB === -1) {
-                            return a.key.localeCompare(b.key); // 字母顺序排序
+                            return a.key.localeCompare(b.key); // Alphabetical order
                         }
                         if (indexA === -1) return 1;
                         if (indexB === -1) return -1;
@@ -218,64 +218,64 @@ new Vue({
             try {
                 this.loading = true;
 
-                // 获取manifest信息
+                // Get manifest information
                 const manifest = await chrome.runtime.getManifest();
                 this.manifest = manifest;
 
-                // 从 Awesome.getAllTools 获取工具列表
+                // Get tool list from Awesome.getAllTools
                 const tools = await Awesome.getAllTools();
                 
-                // 获取收藏数据
+                // Get favorites data
                 const favorites = await this.getFavoritesData();
                 this.favorites = new Set(favorites);
 
-                // 获取最近使用数据
+                // Get recently used data
                 const recentUsed = await this.getRecentUsedData();
                 this.recentUsed = recentUsed;
                 this.recentCount = recentUsed.length;
 
-                // 获取已安装工具列表
+                // Get installed tools list
                 const installedTools = await Awesome.getInstalledTools();
 
-                // 处理工具数据
+                // Process tool data
                 const processedTools = {};
                 Object.entries(tools).forEach(([key, tool]) => {
-                    // 检查工具是否已安装
+                    // Check if tool is installed
                     const isInstalled = installedTools.hasOwnProperty(key);
-                    // 检查是否有右键菜单
+                    // Check if has context menu
                     const hasMenu = tool.menu || false;
                     
                     processedTools[key] = {
                         ...tool,
-                        key, // 添加key到工具对象中
+                        key, // Add key to tool object
                         updateTime: Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000,
-                        installed: isInstalled, // 使用实时安装状态
-                        inContextMenu: hasMenu, // 使用实时菜单状态
-                        systemInstalled: tool.systemInstalled || false, // 是否系统预装
+                        installed: isInstalled, // Use real-time installation status
+                        inContextMenu: hasMenu, // Use real-time menu status
+                        systemInstalled: tool.systemInstalled || false, // Whether system pre-installed
                         favorite: this.favorites.has(key)
                     };
                 });
 
                 this.originalTools = processedTools;
                 
-                // 初始化activeTools为所有工具
+                // Initialize activeTools to all tools
                 this.activeTools = { ...processedTools };
                 
-                // 更新"其他工具"类别
+                // Update "Other Tools" category
                 this.updateOtherCategory(Object.keys(processedTools));
 
-                // 默认选中"全部分类"
+                // Default select "All Categories"
                 this.currentCategory = '';
             } catch (error) {
-                console.error('初始化数据失败:', error);
+                console.error('Failed to initialize data:', error);
             } finally {
                 this.loading = false;
             }
         },
         
-        // 更新"其他工具"类别，将未分类的工具添加到此类别
+        // Update "Other Tools" category, add uncategorized tools to this category
         updateOtherCategory(allToolKeys) {
-            // 获取所有已分类的工具
+            // Get all categorized tools
             const categorizedTools = new Set();
             TOOL_CATEGORIES.forEach(category => {
                 if (category.key !== 'other') {
@@ -283,33 +283,33 @@ new Vue({
                 }
             });
             
-            // 找出未分类的工具
+            // Find uncategorized tools
             const uncategorizedTools = allToolKeys.filter(key => !categorizedTools.has(key));
             
-            // 更新"其他工具"类别
+            // Update "Other Tools" category
             const otherCategory = TOOL_CATEGORIES.find(category => category.key === 'other');
             if (otherCategory) {
                 otherCategory.tools = uncategorizedTools;
             }
         },
 
-        // 检查版本更新
+        // Check version update
         async checkVersionUpdate() {
             try {
-                // 获取已安装的版本号
+                // Get installed version number
                 const currentVersion = this.manifest.version;
                 
-                // 尝试从本地存储获取最新版本信息，避免频繁请求
+                // Try to get latest version information from local storage to avoid frequent requests
                 const cachedData = await new Promise(resolve => {
                     chrome.storage.local.get('fehelper_latest_version_data', data => {
                         resolve(data.fehelper_latest_version_data || null);
                     });
                 });
         
-                // 检查是否需要重新获取版本信息：
-                // 1. 缓存不存在
-                // 2. 缓存已过期（超过24小时）
-                // 3. 缓存的当前版本与实际版本不同（说明插件已更新）
+                // Check if version information needs to be re-fetched:
+                // 1. Cache does not exist
+                // 2. Cache has expired (more than 24 hours)
+                // 3. Cached current version is different from actual version (indicating extension has been updated)
                 const now = Date.now();
                 const cacheExpired = !cachedData || !cachedData.timestamp || (now - cachedData.timestamp > 24 * 60 * 60 * 1000);
                 const versionChanged = cachedData && cachedData.currentVersion !== currentVersion;
@@ -317,29 +317,29 @@ new Vue({
                 this.versionChecked = !(cacheExpired || versionChanged);
                 if (!this.versionChecked) {
                     try {
-                        // 使用shields.io的JSON API获取最新版本号
+                        // Use shields.io JSON API to get latest version number
                         const response = await fetch('https://img.shields.io/chrome-web-store/v/pkgccpejnmalmdinmhkkfafefagiiiad.json');
                         if (!response.ok) {
-                            throw new Error(`HTTP错误：${response.status}`);
+                            throw new Error(`HTTP error: ${response.status}`);
                         }
                         this.versionChecked = true;
                         
                         const data = await response.json();
-                        // 提取版本号 - shields.io返回的数据中包含版本信息
+                        // Extract version number - shields.io returns data containing version information
                         let latestVersion = '';
                         if (data && data.value) {
-                            // 去掉版本号前的'v'字符（如果有）
+                            // Remove 'v' character before version number (if any)
                             latestVersion = data.value.replace(/^v/, '');
                         }
                         
-                        // 比较版本号
+                        // Compare version numbers
                         const needUpdate = this.compareVersions(currentVersion, latestVersion) < 0;
                         
-                        // 保存到本地存储中
+                        // Save to local storage
                         await chrome.storage.local.set({
                             'fehelper_latest_version_data': {
                                 timestamp: now,
-                                currentVersion, // 保存当前检查时的版本号
+                                currentVersion, // Save version number at time of check
                                 latestVersion,
                                 needUpdate
                             }
@@ -348,57 +348,57 @@ new Vue({
                         this.latestVersion = latestVersion;
                         this.needUpdate = needUpdate;
                     } catch (fetchError) {
-                        // 获取失败时不显示更新按钮
+                        // Don't show update button when fetch fails
                         this.needUpdate = false;
                         
-                        // 如果是版本变更导致的重新检查，但获取失败，则使用缓存数据
+                        // If recheck was triggered by version change but fetch fails, use cached data
                         if (versionChanged && cachedData) {
                             this.latestVersion = cachedData.latestVersion || '';
-                            // 比较新的currentVersion和缓存的latestVersion
+                            // Compare new currentVersion and cached latestVersion
                             this.needUpdate = this.compareVersions(currentVersion, cachedData.latestVersion) < 0;
                         }
                     }
                 } else {
-                    // 使用缓存数据
+                    // Use cached data
                     this.latestVersion = cachedData.latestVersion || '';
                     this.needUpdate = cachedData.needUpdate || false;
                 }
             } catch (error) {
-                this.needUpdate = false; // 出错时不显示更新提示
+                this.needUpdate = false; // Don't show update prompt when error occurs
             }
         },
         
-        // 比较版本号：如果v1 < v2返回-1，v1 = v2返回0，v1 > v2返回1
+        // Compare version numbers: returns -1 if v1 < v2, 0 if v1 = v2, 1 if v1 > v2
         compareVersions(v1, v2) {
-            // 将版本号拆分为数字数组
+            // Split version number into array of numbers
             const v1Parts = v1.split('.').map(Number);
             const v2Parts = v2.split('.').map(Number);
             
-            // 计算两个版本号中较长的长度
+            // Calculate the longer length of the two version numbers
             const maxLength = Math.max(v1Parts.length, v2Parts.length);
             
-            // 比较每一部分
+            // Compare each part
             for (let i = 0; i < maxLength; i++) {
-                // 获取当前部分，如果不存在则视为0
+                // Get current part, treat as 0 if doesn't exist
                 const part1 = v1Parts[i] || 0;
                 const part2 = v2Parts[i] || 0;
                 
-                // 比较当前部分
+                // Compare current part
                 if (part1 < part2) return -1;
                 if (part1 > part2) return 1;
             }
             
-            // 所有部分都相等
+            // All parts are equal
             return 0;
         },
         
-        // 打开Chrome商店页面
+        // Open Chrome Web Store page
         openStorePage() {
             try {
-                // 使用Chrome Extension API请求检查更新
-                // Manifest V3中requestUpdateCheck返回Promise，结果是一个对象而不是数组
+                // Use Chrome Extension API to check for updates
+                // In Manifest V3, requestUpdateCheck returns Promise, result is an object not an array
                 chrome.runtime.requestUpdateCheck().then(result => {
-                    // 正确获取status和details，它们是result对象的属性
+                    // Correctly get status and details, they are properties of result object
                     this.handleUpdateStatus(result.status, result.details);
                 }).catch(error => {
                     this.handleUpdateError(error);
@@ -408,79 +408,79 @@ new Vue({
             }
         },
 
-        // 处理更新状态
+        // Handle update status
         handleUpdateStatus(status, details) {
             if (status === 'update_available') {
-                // 显示更新通知
+                // Show update notification
                 this.showNotification({
                     title: 'FeHelper 更新',
-                    message: '已发现新版本，正在更新...'
+                    message: 'New version found, updating...'
                 });
                 
-                // 重新加载扩展以应用更新
+                // Reload extension to apply update
                 setTimeout(() => {
                     chrome.runtime.reload();
                 }, 1000);
             } else if (status === 'no_update') {
-                // 如果没有可用更新，但用户点击了更新按钮
+                // If no update available, but user clicked update button
                 this.showNotification({
                     title: 'FeHelper 更新',
-                    message: '您的FeHelper已经是最新版本。'
+                    message: 'Your FeHelper is already the latest version.'
                 });
             } else {
-                // 其他情况，如更新检查失败等
-                // 备选方案：跳转到官方网站
+                // Other cases, such as update check failure
+                // Alternative: redirect to official website
                 chrome.tabs.create({ 
                     url: 'https://fehelper.com/'
                 });
                 
                 this.showNotification({
                     title: 'FeHelper 更新',
-                    message: '自动更新失败，请访问FeHelper官网手动获取最新版本。'
+                    message: 'Auto-update failed, please visit FeHelper official website to manually get the latest version.'
                 });
             }
         },
 
-        // 处理更新错误
+        // Handle update error
         handleUpdateError(error) {
-            // 出错时跳转到官方网站
+            // Redirect to official website when error occurs
             chrome.tabs.create({ 
                 url: 'https://fehelper.com/'
             });
             
             this.showNotification({
                 title: 'FeHelper 更新错误',
-                message: '更新过程中出现错误，请手动检查更新。'
+                message: 'Error occurred during update, please check for updates manually.'
             });
         },
 
-        // 显示通知的统一方法
+        // Unified method to show notification
         showNotification(options) {
             try {
-                // 定义通知ID，方便后续关闭
+                // Define notification ID for easy closing later
                 const notificationId = 'fehelper-update-notification';
                 const simpleNotificationId = 'fehelper-simple-notification';
 
-                // 直接尝试创建通知，不检查权限
-                // Chrome扩展在manifest中已声明notifications权限，应该可以直接使用
+                // Try to create notification directly without checking permissions
+                // Chrome extension has declared notifications permission in manifest, should be able to use directly
                 const notificationOptions = {
                     type: 'basic',
                     iconUrl: chrome.runtime.getURL('static/img/fe-48.png'),
                     title: options.title || 'FeHelper',
                     message: options.message || '',
                     priority: 2,
-                    requireInteraction: false, // 改为false，因为我们会手动关闭
-                    silent: false // 播放音效
+                    requireInteraction: false, // Changed to false, because we will close it manually
+                    silent: false // Play sound effect
                 };
                 
-                // 首先尝试直接创建通知
+                // First try to create notification directly
                 chrome.notifications.create(notificationId, notificationOptions, (createdId) => {
                     const error = chrome.runtime.lastError;
                     if (error) {
-                        // 通知创建失败，尝试使用alert作为备选方案
+                        // Notification creation failed, try using alert as backup
                         alert(`${options.title}: ${options.message}`);
                         
-                        // 再尝试使用不同的选项创建通知
+                        // Try creating notification again with different options
                         const simpleOptions = {
                             type: 'basic',
                             iconUrl: chrome.runtime.getURL('static/img/fe-48.png'),
@@ -488,41 +488,41 @@ new Vue({
                             message: options.message || ''
                         };
                         
-                        // 使用简化选项再次尝试
+                        // Try again with simplified options
                         chrome.notifications.create(simpleNotificationId, simpleOptions, (simpleId) => {
                             if (chrome.runtime.lastError) {
-                                console.error('简化通知创建也失败:', chrome.runtime.lastError);
+                                console.error('Simplified notification creation also failed:', chrome.runtime.lastError);
                             } else {
-                                // 3秒后自动关闭简化通知
+                                // Auto-close simplified notification after 3 seconds
                                 setTimeout(() => {
                                     chrome.notifications.clear(simpleId);
                                 }, 3000);
                             }
                         });
                     } else {
-                        // 3秒后自动关闭通知
+                        // Auto-close notification after 3 seconds
                         setTimeout(() => {
                             chrome.notifications.clear(createdId);
                         }, 3000);
                     }
                 });
                 
-                // 同时使用内置UI显示消息
+                // Also use built-in UI to show message
                 this.showInPageNotification(options);
             } catch (error) {
-                // 降级为alert
+                // Fallback to alert
                 alert(`${options.title}: ${options.message}`);
             }
         },
 
-        // 在页面内显示通知消息
+        // Show notification message within page
         showInPageNotification(options) {
             try {
-                // 确保 options 是一个对象
+                // Ensure options is an object
                 if (!options || typeof options !== 'object') {
                     options = { message: String(options || '') };
                 }
-                // 创建一个通知元素
+                // Create a notification element
                 const notificationEl = document.createElement('div');
                 notificationEl.className = 'in-page-notification';
                 const title = (options && options.title) ? String(options.title) : 'FeHelper';
@@ -535,7 +535,7 @@ new Vue({
                     <button class="notification-close">×</button>
                 `;
                 
-                // 添加样式
+                // Add styles
                 const style = document.createElement('style');
                 style.textContent = `
                     .in-page-notification {
@@ -583,11 +583,11 @@ new Vue({
                     }
                 `;
                 
-                // 添加到页面
+                // Add to page
                 document.head.appendChild(style);
                 document.body.appendChild(notificationEl);
                 
-                // 点击关闭按钮移除通知
+                // Click close button to remove notification
                 const closeBtn = notificationEl.querySelector('.notification-close');
                 if (closeBtn) {
                     closeBtn.addEventListener('click', () => {
@@ -598,7 +598,7 @@ new Vue({
                     });
                 }
                 
-                // 3秒后自动移除（从5秒改为3秒）
+                // Auto-remove after 3 seconds (changed from 5 seconds)
                 setTimeout(() => {
                     notificationEl.style.animation = 'slideOut 0.3s ease-out forwards';
                     notificationEl.addEventListener('animationend', () => {
@@ -606,7 +606,7 @@ new Vue({
                     });
                 }, 3000);
             } catch (error) {
-                console.error('创建页内通知出错:', error);
+                console.error('Error creating in-page notification:', error);
             }
         },
 
@@ -619,7 +619,7 @@ new Vue({
         },
 
         async getRecentUsedData() {
-            // 直接从Statistics模块获取最近使用的工具
+            // Get recently used tools directly from Statistics module
             return await Statistics.getRecentUsedTools(10);
         },
 
@@ -628,33 +628,33 @@ new Vue({
                 await chrome.storage.local.set({
                     favorites: Array.from(this.favorites)
                 });
-                // 更新工具的收藏状态
+                // Update tool favorite status
                 Object.keys(this.originalTools).forEach(key => {
                     this.originalTools[key].favorite = this.favorites.has(key);
                 });
             } catch (error) {
-                console.error('保存收藏失败:', error);
+                console.error('Failed to save favorites:', error);
             }
         },
 
         handleSearch() {
-            // 搜索时不重置视图类型，允许在已过滤的结果中搜索
+            // Don't reset view type when searching, allow searching in filtered results
         },
 
         handleCategoryChange(category) {
-            // 切换到全部工具视图
+            // Switch to all tools view
             if (this.currentView !== 'all') {
                 this.currentView = 'all';
                 this.updateActiveTools('all');
             }
             this.currentCategory = category;
             this.searchKey = '';
-            // 确保工具显示正确
+            // Ensure tools display correctly
             this.activeTools = { ...this.originalTools };
         },
 
         handleSort() {
-            // 排序逻辑已在computed中实现
+            // Sorting logic is implemented in computed
         },
 
         getCategoryCount(categoryKey) {
@@ -665,11 +665,11 @@ new Vue({
 
         async getInstalledCount() {
             try {
-                // 使用Awesome.getInstalledTools实时获取已安装工具数量
+                // Use Awesome.getInstalledTools to get real-time installed tools count
                 const installedTools = await Awesome.getInstalledTools();
                 return Object.keys(installedTools).length;
             } catch (error) {
-                // 回退到本地数据
+                // Fall back to local data
                 return Object.values(this.originalTools).filter(tool => 
                     tool.installed || tool.systemInstalled || false
                 ).length;
@@ -694,7 +694,7 @@ new Vue({
             this.currentCategory = '';
             this.searchKey = '';
             await this.updateActiveTools('installed');
-            // 更新已安装工具数量
+            // Update installed tools count
             await this.updateInstalledCount();
         },
 
@@ -713,11 +713,11 @@ new Vue({
         // 安装工具
         async installTool(toolKey) {
             try {
-                // 查找可能存在的按钮元素
+                // Find possible button element
                 const btnElement = document.querySelector(`button[data-tool="${toolKey}"]`);
                 let elProgress = null;
                 
-                // 如果是通过按钮点击调用的，获取进度条元素
+                // If called through button click, get progress bar element
                 if (btnElement) {
                     if (btnElement.getAttribute('data-undergoing') === '1') {
                         return false;
@@ -726,11 +726,11 @@ new Vue({
                     elProgress = btnElement.querySelector('span.x-progress');
                 }
                 
-                // 显示安装进度
+                // Show installation progress
                 let pt = 1;
                 await Awesome.install(toolKey);
                 
-                // 只有当进度条元素存在时才更新文本内容
+                // Only update text content when progress bar element exists
                 if (elProgress) {
                     elProgress.textContent = `(${pt}%)`;
                     let ptInterval = setInterval(() => {
@@ -740,7 +740,7 @@ new Vue({
                             clearInterval(ptInterval);
                             elProgress.textContent = ``;
                             
-                            // 在进度条完成后显示安装成功的通知
+                            // Show installation success notification after progress bar completes
                             this.showInPageNotification({
                                 message: `${this.originalTools[toolKey].name} 安装成功！`,
                                 type: 'success',
@@ -749,7 +749,7 @@ new Vue({
                         }
                     }, 100);
                 } else {
-                    // 如果没有进度条元素，直接显示通知
+                    // If no progress bar element, show notification directly
                     this.showInPageNotification({
                         message: `${this.originalTools[toolKey].name} 安装成功！`,
                         type: 'success',
@@ -757,21 +757,21 @@ new Vue({
                     });
                 }
                 
-                // 更新原始数据和当前活动数据
+                // Update original data and current active data
                 this.originalTools[toolKey].installed = true;
                 if (this.activeTools[toolKey]) {
                     this.activeTools[toolKey].installed = true;
                 }
                 
-                // 更新已安装工具数量
+                // Update installed tools count
                 this.updateInstalledCount();
                 
-                // 如果按钮存在，更新其状态
+                // If button exists, update its status
                 if (btnElement) {
                     btnElement.setAttribute('data-undergoing', '0');
                 }
                 
-                // 发送消息通知后台更新
+                // Send message to notify background to update
                 chrome.runtime.sendMessage({
                     type: MSG_TYPE.DYNAMIC_TOOL_INSTALL_OR_OFFLOAD,
                     toolName: toolKey,
@@ -780,7 +780,7 @@ new Vue({
                 });
                 
             } catch (error) {
-                // 显示安装失败的通知
+                // Show installation failure notification
                 this.showInPageNotification({
                     message: `安装失败：${error.message || '未知错误'}`,
                     type: 'error',
@@ -789,19 +789,19 @@ new Vue({
             }
         },
 
-        // 卸载工具
+        // Uninstall tool
         async uninstallTool(toolKey) {
             try {
-                // 使用自定义确认对话框而非浏览器原生的confirm
+                // Use custom confirmation dialog instead of native confirm
                 this.showConfirm({
                     title: '卸载确认',
-                    message: `确定要卸载"${this.originalTools[toolKey].name}"工具吗？`,
+                    message: `Are you sure you want to uninstall "${this.originalTools[toolKey].name}" tool?`,
                     callback: async (key) => {
                         try {
-                            // 先调用Awesome.offLoad卸载工具（确保存储数据先被删除）
+                            // First call Awesome.offLoad to uninstall tool (ensure storage data is deleted first)
                             await Awesome.offLoad(key);
                             
-                            // 再发送消息给background更新browser action
+                            // Then send message to background to update browser action
                             await chrome.runtime.sendMessage({
                                 type: MSG_TYPE.DYNAMIC_TOOL_INSTALL_OR_OFFLOAD,
                                 toolName: key,
@@ -809,7 +809,7 @@ new Vue({
                                 showTips: true
                             });
                             
-                            // 更新原始数据和当前活动数据
+                            // Update original data and current active data
                             this.originalTools[key].installed = false;
                             this.originalTools[key].inContextMenu = false;
                             
@@ -818,17 +818,17 @@ new Vue({
                                 this.activeTools[key].inContextMenu = false;
                             }
                             
-                            // 更新已安装工具数量
+                            // Update installed tools count
                             this.updateInstalledCount();
                             
-                            // 显示卸载成功的通知
+                            // Show uninstall success notification
                             this.showInPageNotification({
                                 message: `${this.originalTools[key].name} 已成功卸载！`,
                                 type: 'success',
                                 duration: 3000
                             });
                         } catch (error) {
-                            // 显示卸载失败的通知
+                            // Show uninstall failure notification
                             this.showInPageNotification({
                                 message: `卸载失败：${error.message || '未知错误'}`,
                                 type: 'error',
@@ -839,26 +839,26 @@ new Vue({
                     data: toolKey
                 });
             } catch (error) {
-                console.error('准备卸载过程中出错:', error);
+                console.error('Error during uninstall preparation:', error);
             }
         },
 
-        // 切换右键菜单
+        // Toggle context menu
         async toggleContextMenu(toolKey) {
             try {
                 const tool = this.originalTools[toolKey];
                 const newState = !tool.inContextMenu;
                 
-                // 更新菜单状态
+                // Update menu status
                 await Awesome.menuMgr(toolKey, newState ? 'install' : 'offload');
                 
-                // 更新原始数据和当前活动数据
+                // Update original data and current active data
                 tool.inContextMenu = newState;
                 if (this.activeTools[toolKey]) {
                     this.activeTools[toolKey].inContextMenu = newState;
                 }
                 
-                // 发送消息通知后台更新右键菜单
+                // 发送消息Notify background to update context menu
                 chrome.runtime.sendMessage({
                     type: MSG_TYPE.DYNAMIC_TOOL_INSTALL_OR_OFFLOAD,
                     action: `menu-${newState ? 'install' : 'offload'}`,
@@ -866,23 +866,23 @@ new Vue({
                     menuOnly: true
                 });
             } catch (error) {
-                console.error('切换右键菜单失败:', error);
+                console.error('Failed to toggle context menu:', error);
             }
         },
 
-        // 切换收藏状态
+        // Toggle favorite status
         async toggleFavorite(toolKey) {
             try {
                 if (this.favorites.has(toolKey)) {
                     this.favorites.delete(toolKey);
-                    // 更新原始数据和当前活动数据
+                    // Update original data and current active data
                     this.originalTools[toolKey].favorite = false;
                     if (this.activeTools[toolKey]) {
                         this.activeTools[toolKey].favorite = false;
                     }
                 } else {
                     this.favorites.add(toolKey);
-                    // 更新原始数据和当前活动数据
+                    // Update original data and current active data
                     this.originalTools[toolKey].favorite = true;
                     if (this.activeTools[toolKey]) {
                         this.activeTools[toolKey].favorite = true;
@@ -890,12 +890,12 @@ new Vue({
                 }
                 await this.saveFavorites();
                 
-                // 如果是在收藏视图，需要更新视图
+                // If in favorites view, need to update view
                 if (this.currentView === 'favorites') {
                     this.updateActiveTools('favorites');
                 }
             } catch (error) {
-                console.error('切换收藏状态失败:', error);
+                console.error('Failed to toggle favorite status:', error);
             }
         },
 
@@ -906,17 +906,17 @@ new Vue({
 
             switch (view) {
                 case 'installed':
-                    // 使用Awesome.getInstalledTools实时获取已安装工具
+                    // Use Awesome.getInstalledTools to get installed tools in real-time
                     try {
                         const installedTools = await Awesome.getInstalledTools();
-                        // 合并installedTools与originalTools的数据
+                        // Merge installedTools with originalTools data
                         this.activeTools = Object.fromEntries(
                             Object.entries(this.originalTools).filter(([key]) => 
                                 installedTools.hasOwnProperty(key)
                             )
                         );
                     } catch (error) {
-                        // 回退到本地数据
+                        // Fall back to local data
                         this.activeTools = Object.fromEntries(
                             Object.entries(this.originalTools).filter(([_, tool]) => 
                                 tool.installed || tool.systemInstalled || false
@@ -930,7 +930,7 @@ new Vue({
                     );
                     break;
                 case 'recent':
-                    // 切换recent时，recentUsed已在showRecentUsed中实时拉取
+                    // When switching to recent, recentUsed has been fetched in real-time in showRecentUsed
                     this.activeTools = Object.fromEntries(
                         Object.entries(this.originalTools).filter(([key]) => this.recentUsed.includes(key))
                     );
@@ -938,17 +938,17 @@ new Vue({
                 case 'all':
                 default:
                     this.activeTools = { ...this.originalTools };
-                    // 分类过滤在computed属性中处理
+                    // Category filtering is handled in computed property
                     break;
             }
         },
 
-        // 新增更新已安装工具数量的方法
+        // New method to update installed tools count
         async updateInstalledCount() {
             this.installedCount = await this.getInstalledCount();
         },
 
-        // 加载用户保存的视图模式
+        // Load user saved view mode
         async loadViewMode() {
             try {
                 const result = await new Promise(resolve => {
@@ -961,11 +961,11 @@ new Vue({
                     this.viewMode = result;
                 }
             } catch (error) {
-                console.error('加载视图模式失败:', error);
+                console.error('Failed to load view mode:', error);
             }
         },
 
-        // 保存用户的视图模式选择
+        // Save user's view mode selection
         async saveViewMode(mode) {
             try {
                 this.viewMode = mode;
@@ -973,11 +973,11 @@ new Vue({
                     'fehelper_view_mode': mode
                 });
             } catch (error) {
-                console.error('保存视图模式失败:', error);
+                console.error('Failed to save view mode:', error);
             }
         },
 
-        // 加载设置项
+        // Load settings
         async loadSettings() {
             try {
                 Settings.getOptions(async (opts) => {
@@ -989,18 +989,18 @@ new Vue({
                     });
                     this.selectedOpts = selectedOpts;
                     
-                    // 同步localStorage设置，确保与其他工具兼容
+                    // Sync localStorage settings to ensure compatibility with other tools
                     localStorage.setItem('AUTO_DARK_MODE', opts.AUTO_DARK_MODE);
                     localStorage.setItem('ALWAYS_DARK_MODE', opts.ALWAYS_DARK_MODE);
                     
-                    // 应用深色模式设置
+                    // Apply dark mode settings
                     this.applyDarkModeSettings(opts);
                     
-                    // 加载右键菜单设置
+                    // Load context menu settings
                     this.menuDownloadCrx = await Awesome.menuMgr('download-crx', 'get') === '1';
                     this.menuFeHelperSeting = await Awesome.menuMgr('fehelper-setting', 'get') !== '0';
                     
-                    // 获取快捷键
+                    // Get shortcuts
                     chrome.commands.getAll((commands) => {
                         for (let command of commands) {
                             if (command.name === '_execute_action') {
@@ -1011,11 +1011,11 @@ new Vue({
                     });
                 });
             } catch (error) {
-                console.error('加载设置项失败:', error);
+                console.error('Failed to load settings:', error);
             }
         },
         
-        // 检查浏览器类型
+        // Check browser type
         checkBrowserType() {
             try {
                 this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
@@ -1024,7 +1024,7 @@ new Vue({
             }
         },
 
-        // 应用深色模式设置
+        // Apply dark mode settings
         applyDarkModeSettings(opts) {
             const body = document.body;
             const shouldEnableDarkMode = this.shouldEnableDarkMode(opts);
@@ -1035,7 +1035,7 @@ new Vue({
             
             if (shouldEnableDarkMode) {
                 body.classList.add('dark-mode');
-                // 设置html属性，方便其他工具检测
+                // Set html attribute for easy detection by other tools
                 document.documentElement.setAttribute('data-theme', 'dark');
                 document.documentElement.setAttribute('dark-mode', 'on');
             } else {
@@ -1045,14 +1045,14 @@ new Vue({
             }
         },
 
-        // 判断是否应该启用深色模式
+        // Determine if dark mode should be enabled
         shouldEnableDarkMode(opts) {
-            // 如果始终开启深色模式，直接返回true
+            // If always enable dark mode, return true directly
             if (opts.ALWAYS_DARK_MODE === true || opts.ALWAYS_DARK_MODE === 'true') {
                 return true;
             }
             
-            // 如果自动开启深色模式，检查时间
+            // If auto enable dark mode, check time
             if (opts.AUTO_DARK_MODE === true || opts.AUTO_DARK_MODE === 'true') {
                 return this.isNightTime();
             }
@@ -1060,38 +1060,38 @@ new Vue({
             return false;
         },
 
-        // 检查当前时间是否在夜间时段（19:00-06:00）
+        // Check if current time is in night period (19:00-06:00)
         isNightTime() {
             const now = new Date();
             const hour = now.getHours();
             
-            // 19:00-23:59 或 00:00-05:59
+            // 19:00-23:59 or 00:00-05:59
             return hour >= 19 || hour < 6;
         },
         
-        // 显示设置模态框
+        // Show settings modal
         async showSettings() {
             this.showSettingsModal = true;
-            // 加载可排序的工具列表
+            // Load sortable tool list
             await this.loadSortableTools();
         },
 
-        // 关闭设置模态框
+        // Close settings modal
         closeSettings() {
             this.showSettingsModal = false;
         },
 
-        // 显示打赏模态框
+        // Show donation modal
         openDonateModal() {
             this.showDonateModal = true;
         },
 
-        // 关闭打赏模态框
+        // Close donation modal
         closeDonateModal() {
             this.showDonateModal = false;
         },
 
-        // 显示确认对话框
+        // Show confirmation dialog
         showConfirm(options) {
             this.confirmDialog = {
                 show: true,
@@ -1102,7 +1102,7 @@ new Vue({
             };
         },
 
-        // 确认操作
+        // Confirm action
         confirmAction() {
             if (this.confirmDialog.callback) {
                 this.confirmDialog.callback(this.confirmDialog.data);
@@ -1110,15 +1110,15 @@ new Vue({
             this.confirmDialog.show = false;
         },
 
-        // 取消确认
+        // Cancel confirmation
         cancelConfirm() {
             this.confirmDialog.show = false;
         },
 
-        // 保存设置
+        // Save settings
         async saveSettings() {
             try {
-                // 构建设置对象
+                // Build settings object
                 let opts = {};
                 [
                     'OPT_ITEM_CONTEXTMENUS',
@@ -1127,12 +1127,12 @@ new Vue({
                     'JSON_PAGE_FORMAT',
                     'AUTO_DARK_MODE',
                     'ALWAYS_DARK_MODE',
-                    'FORBID_STATISTICS' // 新增，确保保存
+                    'FORBID_STATISTICS' // New, ensure it's saved
                 ].forEach(key => {
                     opts[key] = this.selectedOpts.includes(key).toString();
                 });
                 
-                // 先保存工具排序（如果用户有修改）
+                // First save tool sorting (if user has modified)
                 if (this.sortableTools && this.sortableTools.length > 0) {
                     try {
                         const toolOrder = this.sortableTools.map(tool => tool.key);
@@ -1140,15 +1140,15 @@ new Vue({
                             tool_custom_order: JSON.stringify(toolOrder)
                         });
                     } catch (sortError) {
-                        console.warn('保存工具排序时出现错误:', sortError);
-                        // 工具排序保存失败不应该阻止设置保存
+                        console.warn('Error occurred when saving tool sorting:', sortError);
+                        // Tool sorting save failure should not prevent settings save
                     }
                 }
                 
-                // 保存设置 - 直接传递对象，settings.js已增加对对象类型的支持
+                // Save settings - pass object directly, settings.js now supports object types
                 Settings.setOptions(opts, async () => {
                     try {
-                        // 处理右键菜单
+                        // Handle context menu
                         const crxAction = this.menuDownloadCrx ? 'install' : 'offload';
                         const settingAction = this.menuFeHelperSeting ? 'install' : 'offload';
                         
@@ -1157,54 +1157,54 @@ new Vue({
                             Awesome.menuMgr('fehelper-setting', settingAction)
                         ]);
                         
-                        // 通知后台更新右键菜单
+                        // Notify background to update context menu
                         chrome.runtime.sendMessage({
                             type: MSG_TYPE.DYNAMIC_TOOL_INSTALL_OR_OFFLOAD,
                             action: 'menu-change',
                             menuOnly: true
                         });
                         
-                        // 应用深色模式设置
+                        // Apply dark mode settings
                         this.applyDarkModeSettings(opts);
                         
-                        // 关闭弹窗
+                        // Close popup
                         this.closeSettings();
                         
-                        // 显示提示
+                        // Show notification
                         this.showNotification({
                             title: 'FeHelper 设置',
-                            message: '设置和工具排序已保存！'
+                            message: 'Settings and tool sorting saved!'
                         });
                     } catch (innerError) {
                         this.showNotification({
                             title: 'FeHelper 设置错误',
-                            message: '保存菜单设置失败: ' + innerError.message
+                            message: 'Failed to save menu settings: ' + innerError.message
                         });
                     }
                 });
             } catch (error) {
                 this.showNotification({
                     title: 'FeHelper 设置错误',
-                    message: '保存设置失败: ' + error.message
+                    message: 'Failed to save settings: ' + error.message
                 });
             }
         },
         
-        // 设置快捷键
+        // Set shortcuts
         setShortcuts() {
             chrome.tabs.create({
                 url: 'chrome://extensions/shortcuts'
             });
         },
         
-        // 体验夜间模式
+        // Try dark mode
         turnLight(event) {
             event.preventDefault();
             
-            // 获取body元素
+            // Get body element
             const body = document.body;
             
-            // 切换夜间模式
+            // Toggle dark mode
             if (body.classList.contains('dark-mode')) {
                 body.classList.remove('dark-mode');
                 document.documentElement.setAttribute('data-theme', 'light');
@@ -1214,10 +1214,10 @@ new Vue({
                 document.documentElement.setAttribute('data-theme', 'dark');
                 document.documentElement.setAttribute('dark-mode', 'on');
                 
-                // 设置倒计时
+                // Set countdown
                 this.countDown = 10;
                 
-                // 启动倒计时
+                // Start countdown
                 const timer = setInterval(() => {
                     this.countDown--;
                     if (this.countDown <= 0) {
@@ -1231,29 +1231,29 @@ new Vue({
         },
 
 
-        // 检查URL中的donate_from参数并显示打赏弹窗
+        // Check donate_from parameter in URL and show donation popup
         checkDonateParam() {
             try {
                 const urlParams = new URLSearchParams(window.location.search);
                 const donateFrom = urlParams.get('donate_from');
                 
                 if (donateFrom) {
-                    // 记录打赏来源
+                    // Record donation source
                     chrome.storage.local.set({
                         'fehelper_donate_from': donateFrom,
                         'fehelper_donate_time': Date.now()
                     });
                     
-                    // 等待工具数据加载完成
+                    // Wait for tool data to load
                     this.$nextTick(() => {
-                        // 在所有工具中查找匹配项
+                        // Search for matching item in all tools
                         let matchedTool = null;
                         
-                        // 首先尝试直接匹配工具key
+                        // First try to match tool key directly
                         if (this.originalTools && this.originalTools[donateFrom]) {
                             matchedTool = this.originalTools[donateFrom];
                         } else if (this.originalTools) {
-                            // 如果没有直接匹配，尝试在所有工具中查找部分匹配
+                            // If no direct match, try to find partial match in all tools
                             for (const [key, tool] of Object.entries(this.originalTools)) {
                                 if (key.includes(donateFrom) || donateFrom.includes(key) ||
                                     (tool.name && tool.name.includes(donateFrom)) || 
@@ -1264,19 +1264,19 @@ new Vue({
                             }
                         }
                         
-                        // 更新打赏文案
+                        // Update donation text
                         if (matchedTool) {
-                            this.donate.text = `看起来【${matchedTool.name}】工具帮助到了你，感谢你的认可！`;
+                            this.donate.text = `It looks like [${matchedTool.name}] tool has helped you, thank you for your recognition!`;
                         } else {
-                            // 没有匹配到特定工具，使用通用文案
-                            this.donate.text = `感谢你对FeHelper的认可和支持！`;
+                            // No specific tool matched, use general text
+                            this.donate.text = `Thank you for your recognition and support of FeHelper!`;
                         }
                         
-                        // 显示打赏弹窗
+                        // Show donation popup
                         this.showDonateModal = true;
                     });
 
-                    // 埋点：自动触发options
+                    // Analytics: automatically trigger options
                     chrome.runtime.sendMessage({
                         type: 'fh-dynamic-any-thing',
                         thing: 'statistics-tool-usage',
@@ -1286,11 +1286,11 @@ new Vue({
                     });
                 }
             } catch (error) {
-                console.error('处理打赏参数时出错:', error);
+                console.error('Error processing donation parameters:', error);
             }
         },
 
-        // 补充 getRecentCount，保证模板调用不报错，且数据源唯一
+        // Add getRecentCount to ensure template calls don't error and data source is unique
         async getRecentCount() {
             const recent = await Statistics.getRecentUsedTools(10);
             return recent.length;
@@ -1300,10 +1300,10 @@ new Vue({
             this.currentView = 'recent';
             this.currentCategory = '';
             this.searchKey = '';
-            // 重新获取最近使用的工具数据
+            // Re-fetch recently used tools data
             this.recentUsed = await Statistics.getRecentUsedTools(10);
             this.recentCount = this.recentUsed.length;
-            // activeTools会通过currentView的watcher自动更新
+            // activeTools will be auto-updated by currentView watcher
         },
 
         handleRecommendClick(card) {
@@ -1314,10 +1314,10 @@ new Vue({
             }
         },
 
-        // 加载远程推荐卡片配置
+        // Load remote recommendation card configuration
         async loadRemoteRecommendationCards() {
             try {
-                // 通过background代理请求，解决CORS问题
+                // Request through background proxy to solve CORS issues
                 const result = await new Promise((resolve) => {
                     chrome.runtime.sendMessage({
                         type: 'fh-dynamic-any-thing',
@@ -1325,19 +1325,19 @@ new Vue({
                     }, resolve);
                 });
                 if (!result || !result.success) {
-                    throw new Error('获取远程配置失败: ' + (result && result.error ? result.error : '未知错误'));
+                    throw new Error('Failed to get remote configuration: ' + (result && result.error ? result.error : '未知错误'));
                 }
-                // 获取脚本内容
+                // Get script content
                 const scriptContent = result.content;
-                // 解析脚本内容，提取GlobalRecommendationCards变量
+                // Parse script content, extract GlobalRecommendationCards variable
                 let remoteCards = null;
                 try {
                     remoteCards = JSON.parse(scriptContent);
                 } catch (parseError) {
-                    console.error('解析远程推荐卡片配置失败:', parseError);
+                    console.error('Failed to parse remote recommendation card configuration:', parseError);
                 }
                 
-                // 如果成功解析到配置，则更新本地配置
+                // If successfully parsed configuration, update local configuration
                 if (remoteCards && Array.isArray(remoteCards) && remoteCards.length > 0) {
                     remoteCards.forEach((card, idx) => {
                         if (
@@ -1346,29 +1346,29 @@ new Vue({
                             this.originalTools &&
                             !this.originalTools.hasOwnProperty(card.toolKey)
                         ) {
-                            // toolKey 不存在于本地工具，跳过赋值，保留本地默认
+                            // toolKey does not exist in local tools, skip assignment, keep local default
                             return;
                         }
-                        // 没有 toolKey 字段，或者 toolKey 存在于本地工具，直接覆盖
+                        // No toolKey field, or toolKey exists in local tools, directly overwrite
                         this.recommendationCards[idx] = card;
                     });
                     this.$forceUpdate();
                 }
             } catch (error) {
-                console.error('获取远程推荐卡片配置失败:', error);
+                console.error('Failed to get remote recommendation card configuration:', error);
             }
         },
 
-        // 工具排序相关方法
+        // Tool sorting related methods
         async loadSortableTools() {
             try {
                 const installedTools = await Awesome.getInstalledTools();
                 
-                // 从存储中加载自定义排序
+                // Load custom sorting from storage
                 const customOrder = await chrome.storage.local.get('tool_custom_order');
                 const savedOrder = customOrder.tool_custom_order ? JSON.parse(customOrder.tool_custom_order) : null;
                 
-                // 转换为可排序的数组格式
+                // Convert to sortable array format
                 let toolsArray = Object.entries(installedTools).map(([key, tool]) => ({
                     key,
                     name: tool.name,
@@ -1376,12 +1376,12 @@ new Vue({
                     icon: tool.icon || (tool.menuConfig && tool.menuConfig[0] ? tool.menuConfig[0].icon : '🔧')
                 }));
                 
-                // 如果有保存的自定义排序，按照该顺序排列
+                // If saved custom sorting exists, arrange in that order
                 if (savedOrder && Array.isArray(savedOrder)) {
                     const orderedTools = [];
                     const unorderedTools = [...toolsArray];
                     
-                    // 按照保存的顺序添加工具
+                    // Add tools in saved order
                     savedOrder.forEach(toolKey => {
                         const toolIndex = unorderedTools.findIndex(t => t.key === toolKey);
                         if (toolIndex !== -1) {
@@ -1389,36 +1389,36 @@ new Vue({
                         }
                     });
                     
-                    // 添加新安装的工具（不在保存的顺序中的）
+                    // Add newly installed tools (not in saved order)
                     orderedTools.push(...unorderedTools);
                     toolsArray = orderedTools;
                 }
                 
                 this.sortableTools = toolsArray;
             } catch (error) {
-                console.error('加载可排序工具失败:', error);
+                console.error('Failed to load sortable tools:', error);
             }
         },
 
-        // 拖拽开始
+        // Drag start
         handleDragStart(event, index) {
             this.draggedIndex = index;
             event.target.classList.add('dragging');
             event.dataTransfer.setData('text/plain', index);
         },
 
-        // 拖拽经过
+        // Drag over
         handleDragOver(event) {
             event.preventDefault();
-            // 移除所有 drag-over 类
+            // Remove all drag-over classes
             document.querySelectorAll('.sortable-item').forEach(item => {
                 item.classList.remove('drag-over');
             });
-            // 添加到当前元素
+            // Add to current element
             event.currentTarget.classList.add('drag-over');
         },
 
-        // 放置
+        // Drop
         handleDrop(event, dropIndex) {
             event.preventDefault();
             
@@ -1426,14 +1426,14 @@ new Vue({
                 return;
             }
 
-            // 重新排列数组
+            // Rearrange array
             const draggedItem = this.sortableTools[this.draggedIndex];
             const newTools = [...this.sortableTools];
             
-            // 移除被拖拽的项目
+            // Remove dragged item
             newTools.splice(this.draggedIndex, 1);
             
-            // 在新位置插入
+            // Insert at new position
             if (dropIndex > this.draggedIndex) {
                 newTools.splice(dropIndex - 1, 0, draggedItem);
             } else {
@@ -1442,30 +1442,30 @@ new Vue({
             
             this.sortableTools = newTools;
             
-            // 清理样式
+            // Clean up styles
             this.cleanupDragStyles();
         },
 
-        // 拖拽结束
+        // Drag end
         handleDragEnd(event) {
             this.cleanupDragStyles();
             this.draggedIndex = -1;
         },
 
-        // 清理拖拽样式
+        // Clean up drag styles
         cleanupDragStyles() {
             document.querySelectorAll('.sortable-item').forEach(item => {
                 item.classList.remove('dragging', 'drag-over');
             });
         },
 
-        // 重置工具顺序为默认
+        // Reset tool order to default
         async resetToolOrder() {
             try {
-                // 移除保存的自定义排序
+                // Remove saved custom sorting
                 await chrome.storage.local.remove('tool_custom_order');
                 
-                // 重新加载工具列表（会使用默认顺序）
+                // Reload tool list (will use default order)
                 await this.loadSortableTools();
                 
                 this.showInPageNotification({
@@ -1473,7 +1473,7 @@ new Vue({
                     type: 'success'
                 });
             } catch (error) {
-                console.error('重置工具顺序失败:', error);
+                console.error('Failed to reset tool order:', error);
                 this.showInPageNotification({
                     message: '重置失败，请重试',
                     type: 'error'
@@ -1481,7 +1481,7 @@ new Vue({
             }
         },
 
-        // 保存工具排序
+        // Save tool sorting
         async saveToolOrder() {
             try {
                 const toolOrder = this.sortableTools.map(tool => tool.key);
@@ -1494,7 +1494,7 @@ new Vue({
                     type: 'success'
                 });
             } catch (error) {
-                console.error('保存工具排序失败:', error);
+                console.error('Failed to save tool sorting:', error);
                 this.showInPageNotification({
                     message: '保存失败，请重试',
                     type: 'error'
@@ -1505,7 +1505,7 @@ new Vue({
         async autoFixBugs() {
             this.showNotification({ 
                 title: 'FeHelper 一键修复',
-                message: '正在拉取修复补丁，请稍候...' 
+                message: 'Fetching fix patches, please wait...' 
             });
             chrome.runtime.sendMessage({
                 type: 'fh-dynamic-any-thing',
@@ -1514,7 +1514,7 @@ new Vue({
                 if (chrome.runtime.lastError) {
                     this.showNotification({ 
                         title: 'FeHelper 一键修复',
-                        message: '补丁拉取失败：' + chrome.runtime.lastError.message 
+                        message: 'Failed to fetch patches: ' + chrome.runtime.lastError.message 
                     });
                     return;
                 }
@@ -1528,16 +1528,16 @@ new Vue({
                 }
                 this.showNotification({
                     title: 'FeHelper 一键修复',
-                    message: '当前FeHelper插件中的已知Bug都已修复，你可以去验证了。',
+                    message: 'All known bugs in FeHelper extension have been fixed, you can verify now.',
                     duration: 5000
                 });
-                // 当前页面的bug立即更新
+                // Update current page bugs immediately
                 this.loadPatchHotfix();
             });
         },
 
         loadPatchHotfix() {
-            // 页面加载时自动获取并注入options页面的补丁
+            // Automatically load and inject hotfix patches for options page
             chrome.runtime.sendMessage({
                 type: 'fh-dynamic-any-thing',
                 thing: 'fh-get-tool-patch',
@@ -1564,7 +1564,7 @@ new Vue({
     },
 
     watch: {
-        // 监听currentView变化
+        // Watch currentView changes
         currentView: {
             immediate: true,
             handler(newView) {
@@ -1572,14 +1572,14 @@ new Vue({
             }
         },
         
-        // 监听currentCategory变化
+        // Watch currentCategory changes
         currentCategory: {
             handler(newCategory) {
-                // 保证在视图模式之外的分类切换也能正确显示
+                // Ensure category switching outside view mode displays correctly
                 if (this.currentView === 'all') {
                     this.activeTools = { ...this.originalTools };
                 }
-                // 重置搜索条件
+                // Reset search condition
                 if (this.searchKey) {
                     this.searchKey = '';
                 }
@@ -1588,7 +1588,7 @@ new Vue({
     },
 });
 
-// 添加滚动事件监听
+// Add scroll event listener
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.market-header');
     const sidebar = document.querySelector('.market-sidebar');
@@ -1602,7 +1602,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 页面加载后自动采集
+// Auto-collect after page load
 if (window.chrome && chrome.runtime && chrome.runtime.sendMessage) {
     Awesome.collectAndSendClientInfo();
 } 

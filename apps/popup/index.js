@@ -11,15 +11,15 @@ function triggerScreenshot() {
         
         const tabId = tabs[0].id;
         
-        // 先尝试直接发送消息给content script
+        // Try to send message directly to content script first
         chrome.tabs.sendMessage(tabId, {
             type: 'fh-screenshot-start'
         }).then(response => {
-            console.log('截图工具触发成功');
+            console.log('Screenshot tool triggered successfully');
             window.close();
         }).catch(error => {
-            console.log('无法直接触发截图工具，尝试使用noPage模式', error);
-            // 如果发送消息失败，使用noPage模式
+            console.log('Unable to trigger screenshot tool directly, trying noPage mode', error);
+            // If sending message fails, use noPage mode
             chrome.runtime.sendMessage({
                 type: 'fh-dynamic-any-thing',
                 thing: 'trigger-screenshot',
@@ -39,54 +39,54 @@ new Vue({
     },
 
     computed: {
-        // 计算已安装的工具数量
+        // Calculate number of installed tools
         installedToolsCount() {
             return Object.values(this.fhTools).filter(tool => tool.installed).length;
         }
     },
 
     created: function () {
-        // 获取当前ctx的version
+        // Get current extension version
         this.manifest = chrome.runtime.getManifest();
         
-        // 立即开始加载工具列表，不阻塞页面渲染
+        // Start loading tools list immediately without blocking page rendering
         this.loadTools();
 
-        // 页面加载时自动获取并注入popup页面的补丁
+        // Automatically load and inject hotfix patch for popup page
         this.loadPatchHotfix();
     },
 
     mounted: function () {
-        // 页面DOM渲染完成后，执行非关键操作
+        // Execute non-critical operations after page DOM is rendered
         this.$nextTick(() => {
-            // 延迟执行非关键操作，避免阻塞UI渲染
+            // Delay non-critical operations to avoid blocking UI rendering
             setTimeout(() => {
-                // 自动开关灯
+                // Auto dark mode
                 if (typeof DarkModeMgr !== 'undefined') {
                     DarkModeMgr.turnLightAuto();
                 }
 
-                // 记录工具使用（非关键操作）
+                // Record usage (non-critical operation)
                 this.recordUsage();
 
-                // 页面加载后自动采集（非关键操作）
+                // Auto collect after page load (non-critical operation)
                 if (window.chrome && chrome.runtime && chrome.runtime.sendMessage) {
                     Awesome.collectAndSendClientInfo();
                 }
-            }, 50); // 延迟50ms执行，让UI先渲染
+            }, 50); // Delay 50ms to let UI render first
         });
 
-        // 整个popup窗口支持上下键选择
+        // Support arrow keys for navigation in popup window
         this.setupKeyboardNavigation();
         
-        // 查找截图按钮并绑定事件
+        // Find screenshot button and bind event
         this.setupScreenshotButton();
     },
 
     methods: {
 
         loadPatchHotfix() {
-            // 页面加载时自动获取并注入options页面的补丁
+            // Automatically load and inject hotfix patch for popup page
             chrome.runtime.sendMessage({
                 type: 'fh-dynamic-any-thing',
                 thing: 'fh-get-tool-patch',
@@ -104,7 +104,7 @@ new Vue({
                                 window.evalCore.getEvalInstance(window)(patch.js);
                             }
                         } catch (e) {
-                            console.error('popup补丁JS执行失败', e);
+                            console.error('Failed to execute popup patch JS', e);
                         }
                     }
                 }
@@ -128,16 +128,16 @@ new Vue({
             try {
                 const tools = await Awesome.getInstalledTools();
                 
-                // 获取用户自定义的工具排序
+                // Get user's custom tool order
                 const customOrder = await chrome.storage.local.get('tool_custom_order');
                 const savedOrder = customOrder.tool_custom_order ? JSON.parse(customOrder.tool_custom_order) : null;
                 
-                // 如果有自定义排序，重新排列工具
+                // If custom order exists, rearrange tools
                 if (savedOrder && Array.isArray(savedOrder)) {
                     const orderedTools = {};
                     const unorderedTools = { ...tools };
                     
-                    // 按照保存的顺序添加工具
+                    // Add tools in saved order
                     savedOrder.forEach(toolKey => {
                         if (unorderedTools[toolKey]) {
                             orderedTools[toolKey] = unorderedTools[toolKey];
@@ -145,7 +145,7 @@ new Vue({
                         }
                     });
                     
-                    // 添加新安装的工具（不在保存的顺序中的）
+                    // Add newly installed tools (not in saved order)
                     Object.assign(orderedTools, unorderedTools);
                     
                     this.fhTools = orderedTools;
@@ -155,17 +155,17 @@ new Vue({
                 
                 this.isLoading = false;
                 
-                // 根据工具数量添加相应的CSS类来优化显示
+                // Add corresponding CSS classes based on number of tools to optimize display
                 this.$nextTick(() => {
                     this.updateLayoutClasses();
                 });
             } catch (error) {
-                console.error('加载工具列表失败:', error);
+                console.error('Failed to load tools list:', error);
                 this.isLoading = false;
-                // 即使加载失败，也不应该让popup完全无法使用
+                // Even if loading fails, popup should not be completely unusable
                 this.fhTools = {};
                 
-                // 加载失败时也需要更新布局类
+                // Update layout classes even when loading fails
                 this.$nextTick(() => {
                     this.updateLayoutClasses();
                 });
@@ -174,7 +174,7 @@ new Vue({
 
         recordUsage() {
             try {
-                // 埋点：自动触发popup统计
+                // Analytics: automatically trigger popup statistics
                 chrome.runtime.sendMessage({
                     type: 'fh-dynamic-any-thing',
                     thing: 'statistics-tool-usage',
@@ -183,8 +183,8 @@ new Vue({
                     }
                 });
             } catch (error) {
-                // 忽略统计错误，不影响主功能
-                console.warn('统计记录失败:', error);
+                // Ignore statistics errors, don't affect main functionality
+                console.warn('Failed to record statistics:', error);
             }
         },
 
@@ -212,24 +212,24 @@ new Vue({
                 }
 
                 switch (keyCode) {
-                    case 38: // 方向键：↑
+                    case 38: // Arrow key: ↑
                         if (prev) prev.classList.add('x-hovered');
                         break;
-                    case 40: // 方向键：↓
+                    case 40: // Arrow key: ↓
                         if (next) next.classList.add('x-hovered');
                         break;
-                    case 13: // 回车键：选择
+                    case 13: // Enter key: select
                         if (hovered) hovered.click();
                 }
             }, false);
         },
 
         setupScreenshotButton() {
-            // 查找截图按钮并绑定事件
+            // Find screenshot button and bind event
             const screenshotButtons = Array.from(document.querySelectorAll('a[data-tool="screenshot"], button[data-tool="screenshot"]'));
             
             screenshotButtons.forEach(button => {
-                // 移除原有的点击事件
+                // Remove original click event
                 button.onclick = function(e) {
                     e.preventDefault();
                     e.stopPropagation();
@@ -261,7 +261,7 @@ new Vue({
 
         openUrl: function (event) {
             event.preventDefault();
-            // 获取后台页面，返回window对象
+            // Get background page, returns window object
             chrome.tabs.create({url: event.currentTarget.href});
             return false;
         },
@@ -272,18 +272,18 @@ new Vue({
             
             const installedCount = this.installedToolsCount;
             
-            // 移除所有布局相关的类
+            // Remove all layout-related classes
             container.classList.remove('few-tools', 'very-few-tools');
             
-            // 根据工具数量添加相应的类
+            // Add corresponding classes based on number of tools
             if (installedCount <= 1) {
                 container.classList.add('very-few-tools');
-                console.log('Popup布局：应用very-few-tools类 (工具数量:', installedCount, ')');
+                console.log('Popup layout: Apply very-few-tools class (tool count:', installedCount, ')');
             } else if (installedCount <= 3) {
                 container.classList.add('few-tools');
-                console.log('Popup布局：应用few-tools类 (工具数量:', installedCount, ')');
+                console.log('Popup layout: Apply few-tools class (tool count:', installedCount, ')');
             } else {
-                console.log('Popup布局：使用默认布局 (工具数量:', installedCount, ')');
+                console.log('Popup layout: Use default layout (tool count:', installedCount, ')');
             }
         }
     }
