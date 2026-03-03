@@ -1,5 +1,5 @@
 /**
- * 工具更新
+ * Tool update module
  * @type {{download}}
  */
 import toolMap from './tools.js';
@@ -16,11 +16,11 @@ let Awesome = (() => {
     const TOOL_MENU_TPL = 'DYNAMIC_MENU:#TOOL-NAME#';
 
     /**
-     * 管理本地存储
+     * Manage local storage
      */
     let StorageMgr = (() => {
 
-        // 获取chrome.storage.local中的内容，返回Promise，可直接await
+        // Get content from chrome.storage.local, returns Promise, can be directly awaited
         let get = keyArr => {
             return new Promise((resolve, reject) => {
                 chrome.storage.local.get(keyArr, result => {
@@ -55,9 +55,9 @@ let Awesome = (() => {
     })();
 
     /**
-     * 检测工具是否已被成功安装
-     * @param toolName 工具名称
-     * @param detectMenu 是否进一步检测Menu的设置情况
+     * Detect if a tool is successfully installed
+     * @param toolName Tool name
+     * @param detectMenu Whether to further detect Menu settings
      * @returns {Promise}
      */
     let detectInstall = (toolName, detectMenu) => {
@@ -67,7 +67,7 @@ let Awesome = (() => {
 
         return Promise.all([StorageMgr.get(toolKey), StorageMgr.get(menuKey)]).then(values => {
             let toolInstalled = !!values[0];
-            // 系统预置的功能，是强制 installed 状态的
+            // System pre-installed features are forcibly in installed state
             if(toolMap[toolName] && toolMap[toolName].systemInstalled) {
                 toolInstalled = true;
             }
@@ -83,16 +83,16 @@ let Awesome = (() => {
     };
 
     /**
-     * 安装/更新工具，支持显示安装进度
+     * Install/update tool, supports displaying installation progress
      * @param toolName
      * @param fnProgress
      * @returns {Promise<any>}
      */
     let install = (toolName, fnProgress) => {
         return new Promise((resolve, reject) => {
-            // 存储html文件
+            // Store HTML file
             StorageMgr.set(TOOL_NAME_TPL.replace('#TOOL-NAME#', toolName), new Date().getTime());
-            log(toolName + '工具html模板安装/更新成功！');
+            log(toolName + ' tool HTML template installed/updated successfully!');
             resolve();
         });
     };
@@ -103,20 +103,20 @@ let Awesome = (() => {
         items.push(TOOL_CONTENT_SCRIPT_TPL.replace('#TOOL-NAME#', toolName));
         items.push(TOOL_CONTENT_SCRIPT_CSS_TPL.replace('#TOOL-NAME#', toolName));
 
-        // 删除所有静态文件
+        // Delete all static files
         chrome.storage.local.get(null, allDatas => {
             if (allDatas) {
                 StorageMgr.remove(Object.keys(allDatas).filter(key => String(key).startsWith(`../${toolName}/`)));
             }
         });
 
-        log(toolName + ' 卸载成功！');
+        log(toolName + ' uninstalled successfully!');
 
         return StorageMgr.remove(items);
     };
 
     /**
-     * 有些工具其实已经卸载过了，但是本地还有冗余的静态文件，都需要统一清理一遍
+     * Some tools have already been uninstalled, but there are still redundant static files locally, all need to be cleaned up
      */
     let gcLocalFiles = () => getAllTools().then(tools => {
         if (!tools) return;
@@ -129,7 +129,7 @@ let Awesome = (() => {
 
     let getAllTools = async () => {
 
-        // 获取本地开发的插件，也拼接进来
+        // Get locally developed plugins and merge them
         try {
             const DEV_TOOLS_MY_TOOLS = 'DEV-TOOLS:MY-TOOLS';
             let _tools = await StorageMgr.get(DEV_TOOLS_MY_TOOLS);
@@ -150,7 +150,7 @@ let Awesome = (() => {
                 let tool = tools[Math.floor(i / 2)];
                 let key = i % 2 === 0 ? 'installed' : 'menu';
                 toolMap[tool][key] = v;
-                // 本地工具，还需要看是否处于开启状态
+                // For local tools, also need to check if they are in enabled state
                 if (toolMap[tool].hasOwnProperty('_devTool')) {
                     toolMap[tool][key] = toolMap[tool][key] && toolMap[tool]._enable;
                 }
@@ -161,19 +161,19 @@ let Awesome = (() => {
     };
 
     /**
-     * 检查看本地已安装过哪些工具 - 性能优化版本
+     * Check which tools are installed locally - performance optimized version
      * @returns {Promise}
      */
     let getInstalledTools = async () => {
         try {
-            // 一次性获取所有存储数据，避免多次访问
+            // Get all storage data at once to avoid multiple accesses
             const allStorageData = await new Promise((resolve, reject) => {
                 chrome.storage.local.get(null, result => {
                     resolve(result || {});
                 });
             });
 
-            // 获取本地开发的插件
+            // Get locally developed plugins
             const DEV_TOOLS_MY_TOOLS = 'DEV-TOOLS:MY-TOOLS';
             let localDevTools = {};
             try {
@@ -182,33 +182,33 @@ let Awesome = (() => {
                     toolMap[tool] = localDevTools[tool];
                 });
             } catch (e) {
-                // 忽略解析错误
+                // Ignore parsing errors
             }
 
             let installedTools = {};
             
-            // 遍历所有工具，从存储数据中检查安装状态
+            // Iterate all tools and check installation status from storage data
             Object.keys(toolMap).forEach(toolName => {
                 const toolKey = TOOL_NAME_TPL.replace('#TOOL-NAME#', toolName);
                 const menuKey = TOOL_MENU_TPL.replace('#TOOL-NAME#', toolName);
                 
-                // 检查工具是否已安装
+                // Check if tool is installed
                 let toolInstalled = !!allStorageData[toolKey];
-                // 系统预置的功能，是强制 installed 状态的
+                // System pre-installed features are forcibly in installed state
                 if (toolMap[toolName] && toolMap[toolName].systemInstalled) {
                     toolInstalled = true;
                 }
                 
-                // 检查菜单状态
+                // Check menu status
                 let menuInstalled = String(allStorageData[menuKey]) === '1';
                 
-                // 本地工具，还需要看是否处于开启状态
+                // For local tools, also need to check if they are in enabled state
                 if (toolMap[toolName].hasOwnProperty('_devTool')) {
                     toolInstalled = toolInstalled && toolMap[toolName]._enable;
                     menuInstalled = menuInstalled && toolMap[toolName]._enable;
                 }
                 
-                // 只收集已安装的工具
+                // Only collect installed tools
                 if (toolInstalled) {
                     installedTools[toolName] = {
                         ...toolMap[toolName],
@@ -219,7 +219,7 @@ let Awesome = (() => {
                 }
             });
 
-            // 按安装时间排序
+            // Sort by installation time
             const sortedToolNames = Object.keys(installedTools).sort((a, b) => {
                 return installedTools[a].installTime - installedTools[b].installTime;
             });
@@ -232,13 +232,13 @@ let Awesome = (() => {
             return sortedToolMap;
         } catch (error) {
             console.error('getInstalledTools error:', error);
-            // 发生错误时返回空对象，避免popup完全无法加载
+            // Return empty object on error to avoid popup loading failure
             return {};
         }
     };
 
     /**
-     * 获取工具的content-script
+     * Get tool's content-script
      * @param toolName
      * @param cssMode
      */
@@ -248,14 +248,14 @@ let Awesome = (() => {
     };
 
     /**
-     * 获取工具的html模板
+     * Get tool's HTML template
      * @param toolName
      * @returns {*}
      */
     let getToolTpl = (toolName) => StorageMgr.get(TOOL_NAME_TPL.replace('#TOOL-NAME#', toolName));
 
     /**
-     * 从服务器检查，看本地已安装的工具，有哪些又已经升级过了
+     * Check from server to see which locally installed tools have been upgraded
      * @param tool
      */
     let checkUpgrade = (tool) => {
@@ -269,9 +269,9 @@ let Awesome = (() => {
     };
 
     /**
-     * 管理右键菜单
+     * Manage context menu
      * @param toolName
-     * @param action 具体动作install/offload/get
+     * @param action Specific action: install/offload/get
      * @returns {Promise<any>}
      */
     let menuMgr = (toolName, action) => {
@@ -280,18 +280,18 @@ let Awesome = (() => {
             case 'get':
                 return StorageMgr.get(menuKey);
             case 'offload':
-                // 必须用setItem模式，而不是removeItem，要处理 0/1/null三种结果
-                log(toolName + ' 卸载成功！');
+                // Must use setItem mode instead of removeItem to handle 0/1/null three results
+                log(toolName + ' uninstalled successfully!');
                 return StorageMgr.set(menuKey, 0);
             case 'install':
-                log(toolName + ' 安装成功！');
+                log(toolName + ' installed successfully!');
                 return StorageMgr.set(menuKey, 1);
         }
     };
 
 
     /**
-     * 采集客户端信息并发送给background
+     * Collect client information and send to background
      */
     let collectAndSendClientInfo = () => {
         try {
@@ -341,7 +341,7 @@ let Awesome = (() => {
             };
             chrome.runtime.sendMessage({ type: 'clientInfo', data: clientInfo });
         } catch (e) {
-            // 忽略采集异常
+            // Ignore collection exceptions
         }
     };
 

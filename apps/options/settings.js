@@ -7,7 +7,7 @@ import Awesome from '../background/awesome.js';
 
 export default (() => {
 
-    // 所有配置项
+    // All configuration items
     let optionItemsWithDefaultValue = {
         'OPT_ITEM_CONTEXTMENUS': true,
         'JSON_PAGE_FORMAT': true,
@@ -19,7 +19,7 @@ export default (() => {
     };
 
     /**
-     * 获取全部配置项
+     * Get all configuration items
      * @returns {string[]}
      * @private
      */
@@ -27,21 +27,21 @@ export default (() => {
 
 
     /**
-     * 提取配置项
-     * @param {Function} callback 回调方法
+     * Extract configuration items
+     * @param {Function} callback callback function
      */
     let _getOptions = function (callback) {
         let rst = {};
         chrome.storage.local.get(_getAllOpts(),(objs) => {
-            // 确保objs是一个对象
+            // Ensure objs is an object
             objs = objs || {};
             
-            // 遍历所有配置项，确保每个配置项都有值
+            // Iterate through all configuration items to ensure each has a value
             _getAllOpts().forEach(item => {
                 if (objs.hasOwnProperty(item) && objs[item] !== null) {
                     rst[item] = objs[item];
                 } else {
-                    // 使用默认值
+                    // Use default value
                     rst[item] = optionItemsWithDefaultValue[item];
                 }
             });
@@ -51,15 +51,15 @@ export default (() => {
     };
 
     /**
-     * 保存配置
+     * Save configuration
      * @param items
      * @param callback
      * @private
      */
     let _setOptions = function (items, callback) {
-        // 确保items是数组类型
+        // Ensure items is an array type
         if (!Array.isArray(items)) {
-            // 如果传入的是对象类型，转换为数组形式
+            // If items is an object type, convert it to array format
             if (typeof items === 'object' && items !== null) {
                 let tempItems = [];
                 Object.keys(items).forEach(key => {
@@ -92,8 +92,8 @@ export default (() => {
                     chrome.storage.local.set({[opt]: 'false'});
                 }
             } catch (e) {
-                console.error('保存设置出错:', e, opt);
-                // 出错时设置为默认值
+                console.error('Error saving settings:', e, opt);
+                // Set to default value when error occurs
                 chrome.storage.local.set({
                     [opt]: optionItemsWithDefaultValue[opt] === true ? 'true' : 'false'
                 });

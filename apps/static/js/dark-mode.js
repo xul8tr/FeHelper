@@ -1,5 +1,5 @@
 /**
- * 对整个页面增加多种滤镜选择，比如：增强对比度、反色等
+ * Add multiple filter options to the entire page, such as: enhanced contrast, invert colors, etc.
  * @example PageGrayTool.init('0/1/2/3/4/5')
  */
 var DarkModeMgr = (function () {
@@ -127,7 +127,7 @@ var DarkModeMgr = (function () {
         }
     }
 
-    // 自动开关等
+    // Auto switch, etc.
     function turnLightAuto() {
         if (isFirefox) return;
 
@@ -136,11 +136,11 @@ var DarkModeMgr = (function () {
         }, (params) => {
             let hour = new Date().getHours();
             let auto = localStorage.getItem('AUTO_DARK_MODE') === 'true';
-            // 支持强制开启，优先级高
+            // Support force enable, higher priority
             let always = localStorage.getItem('ALWAYS_DARK_MODE') === 'true';
             let switchOn = auto && always;
             if (!switchOn) {
-                // 不强制开启的情况下，看是否时间条件满足
+                // If not forced, check if time condition is met
                 switchOn = auto && (hour >= 19 || hour < 6);
             }
             switchOn && turnLight(switchOn);

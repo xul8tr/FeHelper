@@ -1,7 +1,7 @@
 {
   "name": "FeHelper",
   "version": "1.0.0",
-  "description": "FeHelper-前端助手",
+  "description": "FeHelper - Frontend Assistant",
   "main": "index.js",
   "dependencies": {
     "crypto": "^1.0.1",

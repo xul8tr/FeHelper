@@ -1,20 +1,20 @@
 /**
- * FeHelper 公共文件
+ * FeHelper common file
  * @author zhaoxianlie
  */
 
-// 常量定义
+// Constants definition
 export let MSG_TYPE = {
 
-    // 正式版chrome extension id
+    // Official chrome extension id
     STABLE_EXTENSION_ID: 'pkgccpejnmalmdinmhkkfafefagiiiad',
-    // github 上的下载地址
+    // Download address on github
     DOWNLOAD_FROM_GITHUB: 'https://github.com/zxlie/FeHelper/tree/master/apps/static/screenshot/crx',
 
     // MENU SAVED
     MENU_SAVED: 'menu_saved',
 
-    // JSON手动格式化
+    // JSON manual formatting
     JSON_FORMAT: 'json-format',
     DYNAMIC_TOOL: 'dynamic',
 

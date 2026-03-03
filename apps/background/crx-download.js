@@ -1,5 +1,5 @@
 /**
- * FeHelper：从chrome webstore下载extension文件的工具
+ * FeHelper: Tool for downloading extension files from chrome webstore
  * @author zhaoxianlie
  */
 
@@ -9,12 +9,12 @@ export default (function () {
 
     let FeJson = {notifyTimeoutId:-1};
     /**
-     * 文本格式，可以设置一个图标和标题
+     * Text format notification with icon and title
      * @param {Object} options
-     * @config {string} type notification的类型，可选值：html、text
-     * @config {string} icon 图标
-     * @config {string} title 标题
-     * @config {string} message 内容
+     * @config {string} type Notification type, options: html, text
+     * @config {string} icon Icon
+     * @config {string} title Title
+     * @config {string} message Message content
      */
     let notifyText = function (options) {
         let notifyId = 'FeJson-notify-id';
@@ -30,7 +30,7 @@ export default (function () {
             options.icon = "static/img/fe-48.png";
         }
         if (!options.title) {
-            options.title = "温馨提示";
+            options.title = "Friendly Reminder";
         }
         chrome.notifications.create(notifyId, {
             type: 'basic',
@@ -46,7 +46,7 @@ export default (function () {
     };
 
     /**
-     * 检测Google chrome服务能不能访问，在2s内检测心跳
+     * Detect if Google Chrome service is accessible, check heartbeat within 2s
      * @param success
      * @param failure
      */
@@ -64,14 +64,14 @@ export default (function () {
     };
 
     /**
-     * 从google官方渠道下载chrome扩展
-     * @param crxId 需要下载的extension id
-     * @param crxName 扩展名称
-     * @param callback 下载动作结束后的回调
+     * Download chrome extension from official Google channel
+     * @param crxId Extension ID to download
+     * @param crxName Extension name
+     * @param callback Callback after download action ends
      */
     let downloadCrxFileByCrxId = function (crxId, crxName, callback) {
         detectGoogleDotCom(() => {
-            // google可以正常访问，则正常下载
+            // Google is accessible, proceed with normal download
             let url = "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&x=id%3D"
                 + crxId + "%26uc&prodversion=" + navigator.userAgent.split("Chrome/")[1].split(" ")[0];
             if (!chrome.downloads) {
@@ -89,20 +89,20 @@ export default (function () {
                     saveAs: true
                 }, function (downloadId) {
                     if (chrome.runtime.lastError) {
-                        notifyText('抱歉，下载失败！错误信息：' + chrome.runtime.lastError.message);
+                        notifyText('Sorry, download failed! Error message: ' + chrome.runtime.lastError.message);
                     }
                 });
             }
         }, () => {
-            // google不能正常访问
-            callback ? callback() : notifyText('抱歉，下载失败！');
+            // Google is not accessible
+            callback ? callback() : notifyText('Sorry, download failed!');
         });
 
     };
 
     /**
-     * 从chrome webstore下载crx文件
-     * 在chrome extension详情页使用
+     * Download crx file from chrome webstore
+     * Used on chrome extension detail page
      */
     let downloadCrxFileFromWebStoreDetailPage = function (callback) {
 
@@ -117,19 +117,19 @@ export default (function () {
     };
 
     /**
-     * 通过右键菜单下载或者分享crx
+     * Download or share crx through context menu
      * @param tab
      * @private
      */
     let _downloadCrx = function (tab) {
         let isWebStoreDetailPage = tab.url.indexOf('https://chrome.google.com/webstore/detail/') === 0;
         if (isWebStoreDetailPage) {
-            // 如果是某个chrome extension的详情页面了，直接下载当前crx文件
+            // If already on a chrome extension detail page, download current crx file directly
             downloadCrxFileFromWebStoreDetailPage(() => {
-                notifyText('下载失败，可能是当前网络无法访问Google站点！');
+                notifyText('Download failed, the current network may not be able to access Google sites!');
             });
         } else {
-            // 否则，下载FeHelper并分享出去
+            // Otherwise, download FeHelper and share it
             let crxId = MSG_TYPE.STABLE_EXTENSION_ID;
             let crxName = chrome.runtime.getManifest().name + '-latestVersion.crx';
 

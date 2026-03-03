@@ -1,5 +1,5 @@
 /**
- * FeJson后台运行程序
+ * FeJson background service
  * @author zhaoxianlie
  */
 
@@ -19,21 +19,21 @@ let BgPageInstance = (function () {
         notifyTimeoutId: -1
     };
 
-    // 黑名单页面
+    // Blacklist pages
     let blacklist = [
         /^https:\/\/chrome\.google\.com/
     ];
 
-    // 全局缓存最新的客户端信息
+    // Global cache for latest client information
     let FH_CLIENT_INFO = {};
 
     /**
-     * 文本格式，可以设置一个图标和标题
+     * Text format notification with icon and title
      * @param {Object} options
-     * @config {string} type notification的类型，可选值：html、text
-     * @config {string} icon 图标
-     * @config {string} title 标题
-     * @config {string} message 内容
+     * @config {string} type Notification type, options: html, text
+     * @config {string} icon Icon
+     * @config {string} title Title
+     * @config {string} message Message content
      */
     let notifyText = function (options) {
         let notifyId = 'FeJson-notify-id';
@@ -47,7 +47,7 @@ let BgPageInstance = (function () {
             options.icon = "static/img/fe-48.png";
         }
         if (!options.title) {
-            options.title = "温馨提示";
+            options.title = "Friendly Reminder";
         }
         chrome.notifications.create(notifyId, {
             type: 'basic',
@@ -62,7 +62,7 @@ let BgPageInstance = (function () {
 
     };
 
-    // 像页面注入css脚本
+    // Inject CSS script to page
     let _injectContentCss = function(tabId,toolName,isDevTool){
         if(isDevTool){
             Awesome.getContentScript(toolName, true)
@@ -75,13 +75,13 @@ let BgPageInstance = (function () {
     };
 
 
-    // 往当前页面直接注入脚本，不再使用content-script的配置了
+    // Directly inject scripts to current page, no longer using content-script configuration
     let _injectContentScripts = function (tabId) {
 
-        // FH工具脚本注入
+        // FH tool script injection
         Awesome.getInstalledTools().then(tools => {
 
-            // 注入js
+            // Inject JS
             let jsTools = Object.keys(tools)
                         .filter(tool => !tools[tool]._devTool
                                 && (tools[tool].contentScriptJs || tools[tool].contentScript));
@@ -94,11 +94,11 @@ let BgPageInstance = (function () {
             InjectTools.inject(tabId, {files: jsFiles,js: jsCodes.join(';')});
         });
 
-        // 其他开发者自定义工具脚本注入======For FH DevTools
+        // Other developer custom tool script injection ====== For FH DevTools
         Awesome.getInstalledTools().then(tools => {
             let list = Object.keys(tools).filter(tool => tools[tool]._devTool);
 
-            // 注入js脚本
+            // Inject JS scripts
             list.filter(tool => (tools[tool].contentScriptJs || tools[tool].contentScript))
                     .map(tool => Awesome.getContentScript(tool).then(js => {
                         InjectTools.inject(tabId, { js });
@@ -107,8 +107,8 @@ let BgPageInstance = (function () {
     };
 
     /**
-     * 打开打赏弹窗
-     * @param {string} toolName - 工具名称
+     * Open donation popup
+     * @param {string} toolName - Tool name
      */
     chrome.gotoDonateModal = function (toolName) {
         chrome.tabs.query({currentWindow: true}, function (tabs) {
@@ -133,7 +133,7 @@ let BgPageInstance = (function () {
                         chrome.tabs.reload(tabId);
                     });
                 }
-                // 记录工具使用
+                // Record tool usage
                 Statistics.recordToolUsage('donate',{from: toolName});
 
             });
@@ -142,12 +142,12 @@ let BgPageInstance = (function () {
     };
 
     /**
-     * 动态运行工具
+     * Dynamically run tool
      * @param configs
-     * @config tool 工具名称
-     * @config withContent 默认携带的内容
-     * @config query 请求参数
-     * @config noPage 无页面模式
+     * @config tool Tool name
+     * @config withContent Default carried message content
+     * @config query Request parameters
+     * @config noPage No page mode
      * @constructor
      */
     chrome.DynamicToolRunner = async function (configs) {
@@ -157,7 +157,7 @@ let BgPageInstance = (function () {
         let activeTab = null;
         let query = configs.query;
 
-        // 如果是noPage模式，则表名只完成content-script的工作，直接发送命令即可
+        // If in noPage mode, only complete content-script work, just send command directly
         if (configs.noPage) {
             let toolFunc = tool.replace(/-/g, '');
             chrome.tabs.query({active: true, currentWindow: true}, tabs => {
@@ -171,7 +171,7 @@ let BgPageInstance = (function () {
                 });
                 if (!found) {
                     notifyText({
-                        message: '抱歉，此工具无法在当前页面使用！'
+                        message: 'Sorry, this tool cannot be used on the current page!'
                     });
                 }
             });
@@ -182,7 +182,7 @@ let BgPageInstance = (function () {
 
             activeTab = tabs.filter(tab => tab.active)[0];
 
-            // 如果是二维码工具，且没有传入内容，则使用当前页面的URL
+            // If it's QR code tool and no message content is passed, use current page URL
             if (tool === 'qr-code' && !withContent && activeTab) {
                 withContent = activeTab.url;
             }
@@ -191,7 +191,7 @@ let BgPageInstance = (function () {
                 let isOpened = false;
                 let tabId;
 
-                // 允许在新窗口打开
+                // Allow opening in new window
                 if (String(opts['FORBID_OPEN_IN_NEW_TAB']) === 'true') {
                     let reg = new RegExp("^chrome.*\\/" + tool + "\\/index.html" + (query ? "\\?" + query : '') + "$", "i");
                     for (let i = 0, len = tabs.length; i < len; i++) {
@@ -222,7 +222,7 @@ let BgPageInstance = (function () {
     };
 
     /**
-     * 动态在icon处显示提示
+     * Dynamically display tooltip at icon
      * @param tips
      * @private
      */
@@ -236,13 +236,13 @@ let BgPageInstance = (function () {
     };
 
     /**
-     * 插件图标点击后的默认动作
+     * Default action after clicking plugin icon
      * @param request
      * @param sender
      * @param callback
      */
     let browserActionClickedHandler = function (request, sender, callback) {
-        // 获取当前唯一安装的工具并直接打开
+        // Get currently installed single tool and open it directly
         Awesome.getInstalledTools().then(tools => {
             const installedTools = Object.keys(tools).filter(tool => tools[tool].installed);
             if (installedTools.length === 1) {
@@ -252,67 +252,67 @@ let BgPageInstance = (function () {
                     noPage: !!tools[singleTool].noPage
                 });
                 
-                // 记录工具使用
+                // Record tool usage
                 Statistics.recordToolUsage(singleTool);
             } else {
-                // 备用方案：如果检测失败，打开JSON格式化工具
+                // Fallback: if detection fails, open JSON formatter tool
                 chrome.DynamicToolRunner({
                     tool: MSG_TYPE.JSON_FORMAT
                 });
                 
-                // 记录工具使用
+                // Record tool usage
                 Statistics.recordToolUsage(MSG_TYPE.JSON_FORMAT);
             }
         }).catch(error => {
-            console.error('获取工具列表失败，使用默认工具:', error);
-            // 出错时的备用方案
+            console.error('Failed to get tool list, using default tool:', error);
+            // Fallback when error occurs
             chrome.DynamicToolRunner({
                 tool: MSG_TYPE.JSON_FORMAT
             });
             
-            // 记录工具使用
+            // Record tool usage
             Statistics.recordToolUsage(MSG_TYPE.JSON_FORMAT);
         });
     };
 
     /**
-     * 更新browser action的点击动作
+     * Update browser action click behavior
      * @param action install / upgrade / offload
-     * @param showTips 是否notify
-     * @param menuOnly 只管理Menu
+     * @param showTips Whether to notify
+     * @param menuOnly Only manage menu
      * @private
      */
     let _updateBrowserAction = function (action, showTips, menuOnly) {
         if (!menuOnly) {
-            // 对于卸载操作，添加一个小延迟确保存储操作完成
+            // For uninstall operation, add a small delay to ensure storage operation completes
             const delay = action === 'offload' ? 100 : 0;
             
             setTimeout(() => {
-                // 如果有安装过工具，则显示Popup模式
+                // If tools are installed, show popup mode
                 Awesome.getInstalledTools().then(tools => {
-                // 计算已安装的工具数量
+                // Calculate number of installed tools
                 const installedTools = Object.keys(tools).filter(tool => tools[tool].installed);
                 const installedCount = installedTools.length;
                 
                 if (installedCount > 1) {
-                    // 多个工具：显示popup
+                    // Multiple tools: show popup
                     chrome.action.setPopup({ popup: '/popup/index.html' });
-                    // 移除点击监听器（如果存在）
+                    // Remove click listener (if exists)
                     if (chrome.action.onClicked.hasListener(browserActionClickedHandler)) {
                         chrome.action.onClicked.removeListener(browserActionClickedHandler);
                     }
                 } else if (installedCount === 1) {
-                    // 只有一个工具：直接打开工具，不显示popup
+                    // Only one tool: open tool directly, don't show popup
                     chrome.action.setPopup({ popup: '' });
                     
-                    // 添加点击监听器
+                    // Add click listener
                     if (!chrome.action.onClicked.hasListener(browserActionClickedHandler)) {
                         chrome.action.onClicked.addListener(browserActionClickedHandler);
                     }
                 } else {
-                    // 没有安装任何工具：显示popup（让用户去安装工具）
+                    // No tools installed: show popup (let user install tools)
                     chrome.action.setPopup({ popup: '/popup/index.html' });
-                    // 移除点击监听器（如果存在）
+                    // Remove click listener (if exists)
                     if (chrome.action.onClicked.hasListener(browserActionClickedHandler)) {
                         chrome.action.onClicked.removeListener(browserActionClickedHandler);
                     }
@@ -326,7 +326,7 @@ let BgPageInstance = (function () {
                 _animateTips('+1');
             }
         } else {
-            // 重绘菜单
+            // Redraw menu
             Menu.rebuild();
         }
 
@@ -334,19 +334,19 @@ let BgPageInstance = (function () {
             let actionTxt = '';
             switch (action) {
                 case 'install':
-                    actionTxt = '工具已「安装」成功，并已添加到弹出下拉列表，点击FeHelper图标可正常使用！';
+                    actionTxt = 'Tool has been successfully installed and added to the dropdown list. Click FeHelper icon to use it!';
                     break;
                 case 'offload':
-                    actionTxt = '工具已「卸载」成功，并已从弹出下拉列表中移除！';
+                    actionTxt = 'Tool has been successfully uninstalled and removed from the dropdown list!';
                     break;
                 case 'menu-install':
-                    actionTxt = '已将此工具快捷方式加入到「右键菜单」中！';
+                    actionTxt = 'This tool shortcut has been added to the context menu!';
                     break;
                 case 'menu-offload':
-                    actionTxt = '已将此工具快捷方式从「右键菜单」中移除！';
+                    actionTxt = 'This tool shortcut has been removed from the context menu!';
                     break;
                 default:
-                    actionTxt = '恭喜，操作成功！';
+                    actionTxt = 'Congratulations, operation successful!';
             }
             notifyText({
                 message: actionTxt,
@@ -356,7 +356,7 @@ let BgPageInstance = (function () {
     };
 
 
-    // 捕获当前页面可视区域
+    // Capture current page visible area
     let _captureVisibleTab = function (callback) {
         chrome.tabs.captureVisibleTab(null, {format: 'png', quality: 100}, uri => {
             callback && callback(uri);
@@ -370,7 +370,7 @@ let BgPageInstance = (function () {
     };
 
     let _showScreenShotResult = function(data){
-        // 确保截图数据完整有效
+        // Ensure screenshot data is complete and valid
         if (!data || !data.screenshots || !data.screenshots.length) {
             return;
         }
@@ -398,158 +398,158 @@ let BgPageInstance = (function () {
             if(val !== '0') {
                 let js = `window._codebutifydetect_('${params.fileType}')`;
                 InjectTools.inject(params.tabId, { js });
-                // 记录工具使用
+                // Record tool usage
                 Statistics.recordToolUsage('code-beautify');
             }
         });
     };
 
     /**
-     * 接收来自content_scripts发来的消息
+     * Receive messages from content_scripts
      */
     let _addExtensionListener = function () {
 
         _updateBrowserAction();
 
         chrome.runtime.onMessage.addListener(function (request, sender, callback) {
-            // 如果发生了错误，就啥都别干了
+            // If an error occurred, do nothing
             if (chrome.runtime.lastError) {
                 return true;
             }
 
-            // 动态安装工具或者卸载工具，需要更新browserAction
+            // Dynamically install or uninstall tool, need to update browserAction
             if (request.type === MSG_TYPE.DYNAMIC_TOOL_INSTALL_OR_OFFLOAD) {
                 _updateBrowserAction(request.action, request.showTips, request.menuOnly);
                 callback && callback();
             }
-            // 截屏
+            // Screenshot
             else if (request.type === MSG_TYPE.CAPTURE_VISIBLE_PAGE) {
                 _captureVisibleTab(callback);
-                // 记录工具使用
+                // Record tool usage
                 Statistics.recordToolUsage('screenshot');
             }
-            // 直接处理content-script.js中的截图请求
+            // Directly handle screenshot request from content-script.js
             else if (request.type === 'fh-screenshot-capture-visible') {
                 _captureVisibleTab(callback);
-                // 记录工具使用
+                // Record tool usage
                 Statistics.recordToolUsage('screenshot');
             }
-            // 打开动态工具页面
+            // Open dynamic tool page
             else if (request.type === MSG_TYPE.OPEN_DYNAMIC_TOOL) {
                 chrome.DynamicToolRunner(request);
-                // 记录工具使用
+                // Record tool usage
                 if (request.page) {
                     Statistics.recordToolUsage(request.page);
                 }
                 callback && callback();
             }
-            // 打开其他页面
+            // Open other page
             else if (request.type === MSG_TYPE.OPEN_PAGE) {
                 chrome.DynamicToolRunner({
                     tool: request.page
                 });
-                // 记录工具使用
+                // Record tool usage
                 if (request.page) {
                     Statistics.recordToolUsage(request.page);
                 }
                 callback && callback();
             }
-            // 任何事件，都可以通过这个钩子来完成
+            // Any event can be completed through this hook
             else if (request.type === MSG_TYPE.DYNAMIC_ANY_THING) {
                 switch(request.thing){
-                    // 插件选项保存成功提示
+                    // Plugin options saved successfully notification
                     case 'save-options':
                         notifyText({
-                            message: '配置修改已生效，请继续使用!',
+                            message: 'Configuration changes have taken effect, please continue to use!',
                             autoClose: 2000
                         });
                         break;
-                    // 触发网页截图功能
+                    // Trigger webpage screenshot function
                     case 'trigger-screenshot':
                         handleTriggerScreenshot(request.tabId);
                         break;
-                    // 获取JSON格式化工具的配置选项
+                    // Get JSON formatter tool configuration options
                     case 'request-jsonformat-options':
                         requestJsonformatOptions(request.params, callback);
-                        return true; // 这个返回true是非常重要的！！！要不然callback会拿不到结果
-                    // 保存JSON格式化工具的配置选项
+                        return true; // This return true is very important!!! Otherwise callback won't get results
+                    // Save JSON formatter tool configuration options
                     case 'save-jsonformat-options':
                         saveJsonformatOptions(request.params, callback);
                         return true;
-                    // 切换JSON格式化工具栏显示状态
+                    // Toggle JSON formatter toolbar display state
                     case 'toggle-jsonformat-options':
                         toggleJsonformatOptions(callback);
-                        return true; // 这个返回true是非常重要的！！！要不然callback会拿不到结果
-                    // 代码美化功能
+                        return true; // This return true is very important!!! Otherwise callback won't get results
+                    // Code beautify function
                     case 'code-beautify':
                         _codeBeautify(request.params);
                         break;
-                    // 关闭代码美化功能
+                    // Close code beautify function
                     case 'close-beautify':
                         handleCloseBeautify();
                         break;
-                    // 二维码解码功能
+                    // QR code decode function
                     case 'qr-decode':
                         handleQrDecode(request.params.uri);
                         break;
-                    // 请求页面内容数据
+                    // Request page message content data
                     case 'request-page-content':
                         handleRequestPageContent(request);
                         break;
-                    // 设置页面性能时序数据
+                    // Set page performance timing data
                     case 'set-page-timing-data':
                         handleSetPageTimingData(request.wpoInfo);
                         break;
-                    // 颜色拾取器截图功能
+                    // Color picker screenshot function
                     case 'color-picker-capture':
                         _colorPickerCapture(request.params);
-                        // 记录工具使用
+                        // Record tool usage
                         Statistics.recordToolUsage('color-picker');
                         break;
-                    // 分页截图功能
+                    // Paginated screenshot function
                     case 'add-screen-shot-by-pages':
                         _addScreenShotByPages(request.params,callback);
-                        // 记录工具使用
+                        // Record tool usage
                         Statistics.recordToolUsage('screenshot');
                         return true;
-                    // 页面截图完成处理
+                    // Page screenshot completion handling
                     case 'page-screenshot-done':
                         _showScreenShotResult(request.params);
                         break;
-                    // 启动页面脚本注入（油猴功能）
+                    // Start page script injection (monkey function)
                     case 'request-monkey-start':
                         Monkey.start(request.params);
                         break;
-                    // 注入内容脚本CSS样式
+                    // Inject message content script CSS style
                     case 'inject-content-css':
                         _injectContentCss(sender.tab.id,request.tool,!!request.devTool);
                         break;
-                    // 打开插件选项页面
+                    // Open plugin options page
                     case 'open-options-page':
                         chrome.runtime.openOptionsPage();
                         break;
-                    // 打开打赏弹窗
+                    // Open donation popup
                     case 'open-donate-modal':
                         chrome.gotoDonateModal(request.params.toolName);
                         break;
-                    // 加载本地脚本文件
+                    // Load local script file
                     case 'load-local-script':
                         loadLocalScript(request.script, callback);
-                        return true; // 异步响应需要返回true
-                    // 工具使用统计埋点
+                        return true; // Async response needs to return true
+                    // Tool usage statistics tracking
                     case 'statistics-tool-usage':
-                        // 埋点：自动触发json-format-auto
+                        // Tracking: auto-trigger json-format-auto
                         Statistics.recordToolUsage(request.params.tool_name,request.params);
                         break;
-                    // 获取热修复脚本
+                    // Get hot fix script
                     case 'fetch-hotfix-json':
                         fetchHotfixJson(callback);
-                        return true; // 异步响应必须返回true
-                    // 获取插件补丁数据
+                        return true; // Async response must return true
+                    // Get plugin patch data
                     case 'fetch-fehelper-patchs':
                         fetchFehelperPatchs(callback);
                         return true;
-                    // 获取指定工具的补丁
+                    // Get patch for specified tool
                     case 'fh-get-tool-patch':
                         getToolPatch(request.toolName, callback);
                         return true;
@@ -563,7 +563,7 @@ let BgPageInstance = (function () {
         });
 
 
-        // 每开一个窗口，都向内容脚本注入一个js，绑定tabId
+        // For each window opened, inject a js to message content script, bind tabId
         chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             if (String(changeInfo.status).toLowerCase() === "complete") {
                 if(/^(http(s)?|file):\/\//.test(tab.url) && blacklist.every(reg => !reg.test(tab.url))){
@@ -573,27 +573,27 @@ let BgPageInstance = (function () {
             }
         });
 
-        // 安装与更新
+        // Install and update
         chrome.runtime.onInstalled.addListener(({reason, previousVersion}) => {
             switch (reason) {
                 case 'install':
                     chrome.runtime.openOptionsPage();
-                    // 记录新安装用户
+                    // Record new installation
                     Statistics.recordInstallation();
                     break;
                 case 'update':
                     _animateTips('+++1');
-                    // 记录更新安装
+                    // Record update installation
                     Statistics.recordUpdate(previousVersion);
                     if (previousVersion === '2019.12.2415') {
                         notifyText({
-                            message: '历尽千辛万苦，FeHelper已升级到最新版本，可以到插件设置页去安装旧版功能了！',
+                            message: 'After going through countless difficulties, FeHelper has been upgraded to the latest version. You can go to the plugin settings page to install old version features!',
                             autoClose: 5000
                         });
                     }
 
-                    // 从V2020.02.1413版本开始，本地的数据存储大部分迁移至chrome.storage.local
-                    // 这里需要对老版本升级过来的情况进行强制数据迁移
+                    // Starting from V2020.02.1413, most local data storage has been migrated to chrome.storage.local
+                    // Need to force data migration for old version upgrades
                     let getAbsNum = num => parseInt(num.split(/\./).map(n => n.padStart(4, '0')).join(''), 10);
                     // let preVN = getAbsNum(previousVersion);
                     // let minVN = getAbsNum('2020.02.1413');
@@ -605,17 +605,17 @@ let BgPageInstance = (function () {
             }
         });
         
-        // 卸载
+        // Uninstall
         chrome.runtime.setUninstallURL(chrome.runtime.getManifest().homepage_url);
     };
 
     /**
-     * 检查插件更新
+     * Check for plugin updates
      * @private
      */
     let _checkUpdate = function () {
         setTimeout(() => {
-            // 检查是否为 Firefox 浏览器，Firefox 不支持 requestUpdateCheck API
+            // Check if Firefox browser, Firefox does not support requestUpdateCheck API
             if (chrome.runtime.requestUpdateCheck && navigator.userAgent.indexOf("Firefox") === -1) {
                 chrome.runtime.requestUpdateCheck((status) => {
                     if (status === "update_available") {
@@ -627,41 +627,41 @@ let BgPageInstance = (function () {
     };
 
     /**
-     * 初始化
+     * Initialize
      */
     let _init = function () {
-        console.log(`[FeHelper] Background初始化开始 - ${new Date().toLocaleString()}`);
-        console.log(`[FeHelper] 扩展版本: ${chrome.runtime.getManifest().version}`);
-        console.log(`[FeHelper] Service Worker启动原因: ${chrome.runtime.getContexts ? 'Context API可用' : '传统模式'}`);
+        console.log(`[FeHelper] Background initialization started - ${new Date().toLocaleString()}`);
+        console.log(`[FeHelper] Extension version: ${chrome.runtime.getManifest().version}`);
+        console.log(`[FeHelper] Service Worker startup reason: ${chrome.runtime.getContexts ? 'Context API available' : 'Legacy mode'}`);
         
         _checkUpdate();
         _addExtensionListener();
         
-        // 初始化统计功能
+        // Initialize statistics function
         Statistics.init();
         
         Menu.rebuild();
         
-        // 定期清理冗余的垃圾
+        // Periodically clean up redundant garbage
         setTimeout(() => {
             Awesome.gcLocalFiles();
         }, 1000 * 10);
         
-        console.log(`[FeHelper] Background初始化完成 - ${new Date().toLocaleString()}`);
+        console.log(`[FeHelper] Background initialization completed - ${new Date().toLocaleString()}`);
     };
 
     /**
-     * 触发截图工具的执行
-     * @param {number} tabId - 标签页ID
+     * Trigger screenshot tool execution
+     * @param {number} tabId - Tab ID
      */
     function _triggerScreenshotTool(tabId) {
-        // 先尝试直接发送消息给content script
+        // First try to send message directly to content script
         chrome.tabs.sendMessage(tabId, {
             type: 'fh-screenshot-start'
         }).then(() => {
-            // 成功触发
+            // Successfully triggered
         }).catch(() => {
-            // 如果发送消息失败，使用noPage模式
+            // If message sending fails, use noPage mode
             chrome.DynamicToolRunner({
                 tool: 'screenshot',
                 noPage: true
@@ -669,14 +669,14 @@ let BgPageInstance = (function () {
         });
     }
 
-    // 监听options页面传递的客户端信息
+    // Listen for client information passed from options page
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request && request.type === 'clientInfo' && request.data) {
             FH_CLIENT_INFO = request.data;
         }
     });
 
-    // 处理从popup触发的截图请求
+    // Handle screenshot request triggered from popup
     function handleTriggerScreenshot(tabId) {
         if (tabId) {
             _triggerScreenshotTool(tabId);
@@ -686,11 +686,11 @@ let BgPageInstance = (function () {
                 noPage: true
             });
         }
-        // 记录工具使用
+        // Record tool usage
         Statistics.recordToolUsage('screenshot');
     }
 
-    // 请求JSON格式化选项配置
+    // Request JSON formatter option configuration
     function requestJsonformatOptions(params, callback) {
         Awesome.StorageMgr.get(params).then(result => {
             Object.keys(result).forEach(key => {
@@ -704,16 +704,16 @@ let BgPageInstance = (function () {
         });
     }
 
-    // 保存JSON格式化选项配置
+    // Save JSON formatter option configuration
     function saveJsonformatOptions(params, callback) {
         Awesome.StorageMgr.set(params).then(() => {
             callback && callback();
         });
-        // 记录工具使用
+        // Record tool usage
         Statistics.recordToolUsage('save-jsonformat-options');
     }
 
-    // 切换JSON格式化选项显示状态
+    // Toggle JSON formatter option display state
     function toggleJsonformatOptions(callback) {
         Awesome.StorageMgr.get('JSON_TOOL_BAR_ALWAYS_SHOW').then(result => {
             let show = result !== false;
@@ -721,47 +721,47 @@ let BgPageInstance = (function () {
                 callback && callback(!show);
             });
         });
-        // 记录工具使用
+        // Record tool usage
         Statistics.recordToolUsage('json-format');
     }
 
-    // 关闭代码美化功能
+    // Close code beautify function
     function handleCloseBeautify() {
         Awesome.StorageMgr.set('JS_CSS_PAGE_BEAUTIFY',0);
-        // 记录工具使用
+        // Record tool usage
         Statistics.recordToolUsage('code-beautify-close');
     }
 
-    // 处理二维码解码
+    // Handle QR code decode
     function handleQrDecode(uri) {
         chrome.DynamicToolRunner({
             withContent: uri,
             tool: 'qr-code',
             query: `mode=decode`
         });
-        // 记录工具使用
+        // Record tool usage
         Statistics.recordToolUsage('qr-code');
     }
 
-    // 处理页面内容请求
+    // Handle page message content request
     function handleRequestPageContent(request) {
         request.params = FeJson[request.tabId];
         delete FeJson[request.tabId];
     }
 
-    // 处理页面性能数据设置
+    // Handle page performance data settings
     function handleSetPageTimingData(wpoInfo) {
         chrome.DynamicToolRunner({
             tool: 'page-timing',
             withContent: wpoInfo
         });
-        // 记录工具使用
+        // Record tool usage
         Statistics.recordToolUsage('page-timing');
     }
 
-    // 获取指定工具的补丁（css/js）
+    // Get patch for specified tool (css/js)
     function getToolPatch(toolName, callback) {
-        // 如果没有提供toolName，直接返回空补丁
+        // If toolName not provided, return empty patch directly
         if (!toolName) {
             callback && callback({ css: '', js: '' });
             return;
@@ -780,7 +780,7 @@ let BgPageInstance = (function () {
         });
     }
 
-    // 加载本地脚本，处理加载JSON格式化相关脚本的请求
+    // Load local script, handle request to load JSON formatter related scripts
     function loadLocalScript(scriptUrl, callback) {
         fetch(scriptUrl)
             .then(response => response.text())
@@ -788,12 +788,12 @@ let BgPageInstance = (function () {
                 callback && callback(scriptContent);
             })
             .catch(error => {
-                console.error('加载脚本失败:', error);
+                console.error('Failed to load script:', error);
                 callback && callback(null);
             });
     }
 
-    // 获取热修复脚本，代理请求 hotfix.json，解决CORS问题
+    // Get hot fix script, proxy request hotfix.json to solve CORS issue
     function fetchHotfixJson(callback) {
         fetch('https://fehelper.com/static/js/hotfix.json?v=' + Date.now())
             .then(response => response.text())
@@ -805,7 +805,7 @@ let BgPageInstance = (function () {
             });
     }
 
-    // 检查并获取补丁（带频率控制）
+    // Check and get patch (with frequency control)
     function checkAndFetchPatchs() {
         const PATCH_CHECK_INTERVAL = 5 * 60 * 1000; // 5min
         const STORAGE_KEY = 'FH_LAST_PATCH_CHECK';
@@ -815,37 +815,37 @@ let BgPageInstance = (function () {
             const now = Date.now();
             
             if (now - lastCheck > PATCH_CHECK_INTERVAL) {
-                console.log(`[FeHelper] 距离上次检查已超过5min，开始检查热更新...`);
+                console.log(`[FeHelper] More than 5 minutes since last check, starting hot update check...`);
                 
                 fetchFehelperPatchs((result) => {
                     if (result && result.success) {
-                        console.log(`[FeHelper] 自动热更新成功，版本: v${result.version}`);
+                        console.log(`[FeHelper] Automatic hot update successful, version: v${result.version}`);
                     } else if (result && result.notFound) {
-                        console.log(`[FeHelper] 当前版本暂无热更新补丁`);
+                        console.log(`[FeHelper] No hot update patch available for current version`);
                     } else {
-                        console.log(`[FeHelper] 自动热更新检查失败:`, result?.error);
+                        console.log(`[FeHelper] Automatic hot update check failed:`, result?.error);
                     }
                     
-                    // 更新最后检查时间
+                    // Update last check time
                     chrome.storage.local.set({ [STORAGE_KEY]: now });
                 });
             } else {
                 const nextCheck = new Date(lastCheck + PATCH_CHECK_INTERVAL);
-                console.log(`[FeHelper] 距离上次检查不足5min，下次检查时间: ${nextCheck.toLocaleString()}`);
+                console.log(`[FeHelper] Less than 5 minutes since last check, next check time: ${nextCheck.toLocaleString()}`);
             }
         });
     }
 
-    // 获取FeHelper热修复补丁
+    // Get FeHelper hot fix patch
     function fetchFehelperPatchs(callback) {
         let version = String(chrome.runtime.getManifest().version).split('.').map(n => parseInt(n)).join('.');
         let patchUrl = `https://fehelper.com/v1/fh-patchs/v${version}.json`;
         
-        // 先检测文件是否存在（使用HEAD请求）
+        // First detect if file exists (using HEAD request)
         fetch(patchUrl, { method: 'HEAD' })
             .then(response => {
                 if (response.ok) {
-                    // 文件存在，进行正常的fetch操作
+                    // File exists, proceed with normal fetch operation
                     return fetch(`${patchUrl}?t=${Date.now()}`)
                         .then(resp => {
                             if (!resp.ok) {
@@ -858,18 +858,18 @@ let BgPageInstance = (function () {
                             const storageData = {};
                             storageData[`FH_PATCH_HOTFIX_${version}`] = patchs;
                             chrome.storage.local.set(storageData, () => {
-                                console.log(`[FeHelper] 成功获取版本 v${version} 的热修复补丁`);
+                                console.log(`[FeHelper] Successfully retrieved version v${version} hot fix patch`);
                                 callback && callback({ success: true, version });
                             });
                         });
                 } else {
-                    // 文件不存在
-                    console.log(`[FeHelper] 服务器上不存在版本 v${version} 的补丁文件`);
-                    callback && callback({ success: false, error: '补丁文件不存在', notFound: true });
+                    // File does not exist
+                    console.log(`[FeHelper] Version does not exist on server v${version} patch file`);
+                    callback && callback({ success: false, error: 'Patch file does not exist', notFound: true });
                 }
             })
             .catch(e => {
-                callback && callback({ success: false, error: '没有需要修复的补丁' });
+                callback && callback({ success: false, error: 'No patches need to be fixed' });
             });
     }
 
